@@ -46,4 +46,5 @@ This requirement maps to a MindScript Turn contract with `fields` (`username`, `
 
 * [context-turn.md](./context-turn.md) → Context vs Turn model
 * [verification.md](./verification.md) → how acceptance criteria are validated
+* [mcp-profile.md](./mcp-profile.md) → normative MCP coupling profile
 * [spec-bdd-context-turn.md](./context-turn.md) → portable BDD profile for non-software domains

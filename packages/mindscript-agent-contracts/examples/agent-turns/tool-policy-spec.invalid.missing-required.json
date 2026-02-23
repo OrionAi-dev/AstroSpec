@@ -1,0 +1,6 @@
+{
+  "workspaceAllowlist": ["/workspace"],
+  "commandDenylist": ["rm -rf"],
+  "readOnlyDefault": true,
+  "writeRequiresApprovalToken": true
+}

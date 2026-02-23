@@ -47,6 +47,8 @@ jobs:
       - name: Check schema drift (docs vs canonical)
         run: pnpm check:schema-drift
 
+      - name: Check Starconsole contract drift
+        run: pnpm check:starconsole-contract-drift
+
       - name: Verify monorepo (smoke)
         run: bash ./tools/verify-monorepo.sh
-

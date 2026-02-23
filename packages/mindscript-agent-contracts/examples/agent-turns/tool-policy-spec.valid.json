@@ -1,0 +1,7 @@
+{
+  "allowedTools": ["filesystem.read", "filesystem.write"],
+  "workspaceAllowlist": [".", "docs"],
+  "commandDenylist": ["rm -rf /", "curl .*\\|\\s*sh"],
+  "readOnlyDefault": true,
+  "writeRequiresApprovalToken": true
+}

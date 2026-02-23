@@ -66,6 +66,7 @@ MindScript unifies and extends behavioral driven specification platforms into a 
 
 - **Structured nodes**: requirements are expressed in a clear, linked format.  
 - **Interoperability**: layers on top of existing workflows.  
+- **MCP-native profile**: can run as an MCP contract layer with deterministic tool/error semantics.  
 - **Compatibility**: works with familiar formats and standards.  
 - **Extensibility**: adapts to new domains without breaking the core.  
 

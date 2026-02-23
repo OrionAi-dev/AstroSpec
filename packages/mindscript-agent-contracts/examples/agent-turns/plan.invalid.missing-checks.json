@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "intent": "plan",
+  "objective": "Invalid plan fixture",
+  "constraints": [],
+  "assumptions": [],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Missing check",
+      "description": "This should fail verifier",
+      "toolIntents": [{ "name": "filesystem.list", "mode": "read" }],
+      "acceptanceCheck": ""
+    }
+  ],
+  "completionChecks": []
+}

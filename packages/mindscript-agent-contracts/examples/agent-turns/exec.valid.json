@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "intent": "execute",
+  "executedSteps": [{ "stepId": "step-1", "status": "success" }],
+  "toolCalls": [
+    {
+      "id": "tool_1",
+      "name": "filesystem.list",
+      "mode": "read",
+      "args": { "path": "." }
+    }
+  ],
+  "evidenceRefs": ["artifact:abc123"],
+  "changedFiles": [],
+  "checks": [{ "command": "filesystem.list", "status": "passed", "outputRef": "artifact:abc123" }],
+  "outcome": "success"
+}

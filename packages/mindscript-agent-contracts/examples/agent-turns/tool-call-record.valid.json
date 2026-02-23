@@ -1,0 +1,11 @@
+{
+  "id": "call_1",
+  "runId": "run_1",
+  "name": "filesystem.read",
+  "mode": "read",
+  "args": { "path": "README.md" },
+  "status": "executed",
+  "startedAt": "2026-02-23T08:00:00.000Z",
+  "finishedAt": "2026-02-23T08:00:01.000Z",
+  "outputRef": "artifact:abc123"
+}

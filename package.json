@@ -11,7 +11,9 @@
     "docs": "tools/gen-docs.sh",
     "fix:doc-links": "node tools/clean-doc-links.mjs --write",
     "check:schema-drift": "node tools/check-schema-drift.mjs",
-    "fix:schema-drift": "node tools/check-schema-drift.mjs --write"
+    "fix:schema-drift": "node tools/check-schema-drift.mjs --write",
+    "check:starconsole-contract-drift": "node tools/check-starconsole-contract-drift.mjs",
+    "verify:contracts": "pnpm -F @orionai/mindscript-agent-contracts typecheck && pnpm -F @orionai/mindscript-agent-contracts test && pnpm check:starconsole-contract-drift"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.6",
