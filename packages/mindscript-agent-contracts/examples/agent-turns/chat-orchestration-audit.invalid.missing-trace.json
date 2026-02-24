@@ -1,0 +1,23 @@
+{
+  "auditVersion": "1.0",
+  "enabled": true,
+  "decisionSource": "policy_auto",
+  "preference": "auto",
+  "lanes": {
+    "planner": { "provider": "gemini", "model": "gemini-2.5-pro" },
+    "reviewer": { "provider": "gemini", "model": "gemini-2.5-pro" },
+    "responder": { "provider": "openai", "model": "gpt-5.3-codex" }
+  },
+  "fallback": {
+    "triggered": true,
+    "target": "gpt-5.3-codex"
+  },
+  "degradedCode": "CHAT_HANDOFF_PROVIDER_TIMEOUT",
+  "timingsMs": {
+    "total": 1540
+  },
+  "toolPolicy": {
+    "mode": "read-only",
+    "allowedTools": ["filesystem.read"]
+  }
+}

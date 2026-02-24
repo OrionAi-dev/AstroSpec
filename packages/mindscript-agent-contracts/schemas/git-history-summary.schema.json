@@ -1,60 +1,37 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.stardrive.dev/starconsole/repopack.schema.json",
-  "title": "RepoPack",
+  "$id": "https://schemas.orionai.dev/mindscript/git-history-summary.schema.json",
+  "title": "GitHistorySummary",
   "type": "object",
   "additionalProperties": false,
-  "required": ["repoRoot", "generatedAt", "files"],
+  "required": ["windowDays", "headSha", "indexedAt", "commits", "files", "hotspots"],
   "properties": {
-    "repoRoot": { "type": "string", "minLength": 1 },
-    "generatedAt": { "type": "string", "format": "date-time" },
-    "gitHistory": { "$ref": "#/$defs/gitHistorySummary" },
+    "windowDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
+    "headSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+    "indexedAt": { "type": "string", "format": "date-time" },
+    "commits": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/commitSummary" }
+    },
     "files": {
       "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["path", "rationale", "content"],
-        "properties": {
-          "path": { "type": "string", "minLength": 1 },
-          "rationale": { "type": "string", "minLength": 1 },
-          "content": { "type": "string" }
-        }
+      "items": { "$ref": "#/$defs/fileSummary" }
+    },
+    "hotspots": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hotspotSummary" }
+    },
+    "cursor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lastIndexedSha", "stale"],
+      "properties": {
+        "lastIndexedSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "stale": { "type": "boolean" }
       }
     }
   },
   "$defs": {
-    "gitHistorySummary": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["windowDays", "headSha", "indexedAt", "commits", "files", "hotspots"],
-      "properties": {
-        "windowDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
-        "headSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
-        "indexedAt": { "type": "string", "format": "date-time" },
-        "commits": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/commitSummary" }
-        },
-        "files": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/fileSummary" }
-        },
-        "hotspots": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/hotspotSummary" }
-        },
-        "cursor": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["lastIndexedSha", "stale"],
-          "properties": {
-            "lastIndexedSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
-            "stale": { "type": "boolean" }
-          }
-        }
-      }
-    },
     "commitSummary": {
       "type": "object",
       "additionalProperties": false,

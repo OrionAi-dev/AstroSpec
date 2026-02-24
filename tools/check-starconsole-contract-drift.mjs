@@ -14,6 +14,8 @@ const pairs = [
   ['exec-turn.schema.json', 'exec-turn.schema.json'],
   ['repopack.schema.json', 'repopack.schema.json'],
   ['run-log-entry.schema.json', 'run-log-entry.schema.json'],
+  ['chat-orchestration-audit.schema.json', 'chat-orchestration-audit.schema.json'],
+  ['git-history-summary.schema.json', 'git-history-summary.schema.json'],
 ];
 
 function digest(filePath) {

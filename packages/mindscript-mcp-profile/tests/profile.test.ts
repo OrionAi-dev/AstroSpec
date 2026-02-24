@@ -102,6 +102,29 @@ test('contract.validate tool supports deterministic kind validation', async () =
   }
 });
 
+test('contract.validate supports chat orchestration and git-history kinds', async () => {
+  const chatAudit = readFixture('chat-orchestration-audit.valid.json');
+  const gitHistory = readFixture('git-history-summary.valid.json');
+
+  const chatOut = await callMindscriptMcpTool({
+    name: 'mindscript.contract.validate',
+    arguments: {
+      kind: 'chat-orchestration-audit',
+      payload: chatAudit,
+    },
+  });
+  assert.equal(chatOut.ok, true);
+
+  const gitOut = await callMindscriptMcpTool({
+    name: 'mindscript.contract.validate',
+    arguments: {
+      kind: 'git-history-summary',
+      payload: gitHistory,
+    },
+  });
+  assert.equal(gitOut.ok, true);
+});
+
 test('turn.verify returns verification failure code when criterion fails', async () => {
   const turn: MindScriptTurn = {
     kind: 'turn',

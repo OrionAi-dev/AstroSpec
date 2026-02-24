@@ -9,6 +9,8 @@ import {
   validateExecTurn,
   validateToolPolicySpec,
   validateToolCallRecord,
+  validateChatOrchestrationAudit,
+  validateGitHistorySummary,
 } from '../src/index.js';
 
 const fixturesDir = path.resolve(
@@ -57,4 +59,18 @@ test('invalid tool call fixture returns deterministic issue code', () => {
   const out = validateToolCallRecord(readFixture('tool-call-record.invalid.bad-status.json'));
   assert.equal(out.ok, false);
   assert.ok(out.issues.some((issue) => issue.code === 'SCHEMA_ENUM'));
+});
+
+test('chat orchestration audit fixtures validate deterministically', () => {
+  const valid = validateChatOrchestrationAudit(readFixture('chat-orchestration-audit.valid.json'));
+  assert.equal(valid.ok, true);
+
+  const invalid = validateChatOrchestrationAudit(readFixture('chat-orchestration-audit.invalid.missing-trace.json'));
+  assert.equal(invalid.ok, false);
+  assert.ok(invalid.issues.some((issue) => issue.code === 'SCHEMA_REQUIRED'));
+});
+
+test('git history summary fixture validates', () => {
+  const out = validateGitHistorySummary(readFixture('git-history-summary.valid.json'));
+  assert.equal(out.ok, true);
 });

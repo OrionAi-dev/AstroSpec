@@ -1,5 +1,7 @@
 import {
+  validateChatOrchestrationAudit,
   validateExecTurn,
+  validateGitHistorySummary,
   validatePlanTurn,
   validateRepoPack,
   validateRunLogEntry,
@@ -41,7 +43,9 @@ export type MindscriptContractKind =
   | 'tool-policy-spec'
   | 'tool-call-record'
   | 'repopack'
-  | 'run-log-entry';
+  | 'run-log-entry'
+  | 'chat-orchestration-audit'
+  | 'git-history-summary';
 
 export type MindscriptMcpError = {
   code: MindscriptMcpErrorCode;
@@ -133,6 +137,10 @@ function contractValidator(kind: MindscriptContractKind, payload: unknown): Cont
       return validateRepoPack(payload);
     case 'run-log-entry':
       return validateRunLogEntry(payload);
+    case 'chat-orchestration-audit':
+      return validateChatOrchestrationAudit(payload);
+    case 'git-history-summary':
+      return validateGitHistorySummary(payload);
   }
 }
 
@@ -230,6 +238,8 @@ export async function callMindscriptMcpTool(input: MindscriptMcpToolCall): Promi
       'tool-call-record',
       'repopack',
       'run-log-entry',
+      'chat-orchestration-audit',
+      'git-history-summary',
     ]);
 
     if (!kinds.has(kindRaw as MindscriptContractKind)) {

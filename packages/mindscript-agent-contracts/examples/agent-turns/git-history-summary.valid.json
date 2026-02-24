@@ -1,0 +1,34 @@
+{
+  "windowDays": 90,
+  "headSha": "a1b2c3d4e5f6a7b8c9d0a1b2c3d4e5f6a7b8c9d0",
+  "indexedAt": "2026-02-24T04:10:00.000Z",
+  "commits": [
+    {
+      "sha": "a1b2c3d4e5f6a7b8c9d0a1b2c3d4e5f6a7b8c9d0",
+      "authoredAt": "2026-02-23T23:18:10.000Z",
+      "authorName": "Orion",
+      "authorEmail": "orion@example.com",
+      "messageSummary": "feat(runtime): add signed request verification",
+      "parents": ["9f8e7d6c5b4a3f20112233445566778899aabbcc"],
+      "filesChanged": 6
+    }
+  ],
+  "files": [
+    {
+      "path": "packages/starconsole-runtime/src/app.ts",
+      "lastCommitSha": "a1b2c3d4e5f6a7b8c9d0a1b2c3d4e5f6a7b8c9d0",
+      "changeCount": 4
+    }
+  ],
+  "hotspots": [
+    {
+      "path": "packages/telescope-api/src/middleware/authenticate.ts",
+      "score": 0.82,
+      "reasons": ["high_change_frequency", "security_sensitive"]
+    }
+  ],
+  "cursor": {
+    "lastIndexedSha": "a1b2c3d4e5f6a7b8c9d0a1b2c3d4e5f6a7b8c9d0",
+    "stale": false
+  }
+}

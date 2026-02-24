@@ -1,0 +1,28 @@
+{
+  "auditVersion": "1.0",
+  "enabled": true,
+  "decisionSource": "policy_auto",
+  "preference": "auto",
+  "lanes": {
+    "planner": { "provider": "gemini", "model": "gemini-2.5-pro" },
+    "reviewer": { "provider": "gemini", "model": "gemini-2.5-pro" },
+    "responder": { "provider": "openai", "model": "gpt-5.3-codex" }
+  },
+  "fallback": {
+    "triggered": false,
+    "target": "gpt-5.3-codex"
+  },
+  "degradedCode": null,
+  "traceId": "trace_chat_handoff_01",
+  "timingsMs": {
+    "total": 2450,
+    "planner": 820,
+    "reviewer": 770,
+    "responder": 860
+  },
+  "toolPolicy": {
+    "mode": "read-only",
+    "allowedTools": ["filesystem.read", "git.diff"],
+    "blockedTools": ["filesystem.write", "terminal.exec"]
+  }
+}

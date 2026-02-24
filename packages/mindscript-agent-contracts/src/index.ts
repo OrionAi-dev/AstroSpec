@@ -8,6 +8,8 @@ import toolPolicySpecSchema from '../schemas/tool-policy-spec.schema.json' with 
 import toolCallRecordSchema from '../schemas/tool-call-record.schema.json' with { type: 'json' };
 import repoPackSchema from '../schemas/repopack.schema.json' with { type: 'json' };
 import runLogEntrySchema from '../schemas/run-log-entry.schema.json' with { type: 'json' };
+import chatOrchestrationAuditSchema from '../schemas/chat-orchestration-audit.schema.json' with { type: 'json' };
+import gitHistorySummarySchema from '../schemas/git-history-summary.schema.json' with { type: 'json' };
 
 export {
   planTurnSchema,
@@ -16,6 +18,8 @@ export {
   toolCallRecordSchema,
   repoPackSchema,
   runLogEntrySchema,
+  chatOrchestrationAuditSchema,
+  gitHistorySummarySchema,
 };
 
 export type ValidationIssueCode =
@@ -49,13 +53,15 @@ const addFormats = (AjvFormatsModule as unknown as { default?: (ajv: unknown) =>
   ?? (AjvFormatsModule as unknown as (ajv: unknown) => void);
 addFormats(ajv);
 
-const validators = {
+  const validators = {
   planTurn: ajv.compile(planTurnSchema),
   execTurn: ajv.compile(execTurnSchema),
   toolPolicySpec: ajv.compile(toolPolicySpecSchema),
   toolCallRecord: ajv.compile(toolCallRecordSchema),
   repoPack: ajv.compile(repoPackSchema),
   runLogEntry: ajv.compile(runLogEntrySchema),
+  chatOrchestrationAudit: ajv.compile(chatOrchestrationAuditSchema),
+  gitHistorySummary: ajv.compile(gitHistorySummarySchema),
 };
 
 function issueCodeFromKeyword(keyword: string): ValidationIssueCode {
@@ -124,4 +130,12 @@ export function validateRepoPack(value: unknown): ValidationResult {
 
 export function validateRunLogEntry(value: unknown): ValidationResult {
   return runValidation(validators.runLogEntry, value);
+}
+
+export function validateChatOrchestrationAudit(value: unknown): ValidationResult {
+  return runValidation(validators.chatOrchestrationAudit, value);
+}
+
+export function validateGitHistorySummary(value: unknown): ValidationResult {
+  return runValidation(validators.gitHistorySummary, value);
 }
