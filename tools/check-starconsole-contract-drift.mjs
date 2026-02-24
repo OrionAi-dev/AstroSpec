@@ -54,4 +54,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('[contracts] no drift detected between mindscript-agent-contracts and starconsole-contracts');
+console.log('[contracts] no drift detected between @mindscript/agent-contracts schemas and starconsole-contracts');

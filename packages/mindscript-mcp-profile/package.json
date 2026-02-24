@@ -1,10 +1,13 @@
 {
-  "name": "@orionai/mindscript-mcp-profile",
+  "name": "@mindscript/mcp-profile",
   "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "description": "MindScript MCP interoperability profile with deterministic tool and error semantics.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,6 +15,12 @@
       "require": "./dist/index.cjs"
     }
   },
+  "keywords": [
+    "mindscript",
+    "mcp",
+    "contracts",
+    "llm"
+  ],
   "files": [
     "dist"
   ],
@@ -22,11 +31,14 @@
   },
   "dependencies": {
     "@mindscript/runtime": "workspace:*",
-    "@orionai/mindscript-agent-contracts": "workspace:*"
+    "@mindscript/agent-contracts": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

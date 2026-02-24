@@ -108,6 +108,7 @@ nav:
 
   - MindScript Spec:
       - Overview: mindscript/spec-overview.md
+      - Adoption Charter: mindscript/adoption-charter.md
       - Language: mindscript/spec-language.md
       - Schema: mindscript/spec-schema.md
       - Validation: mindscript/spec-validation.md
@@ -119,8 +120,19 @@ nav:
       - Verification: mindscript/verification.md
       - Examples: mindscript/spec-examples.md
       - Quickstart: mindscript/quickstart.md
+      - Consumer Quickstart (Schema): mindscript/consumer-quickstart-schema.md
+      - Consumer Quickstart (MCP): mindscript/consumer-quickstart-mcp.md
+      - Scope Migration: mindscript/migration-orionai-to-mindscript-scope.md
+      - Extension Registry: mindscript/extension-registry.md
       - Roadmap: mindscript/roadmap.md
       - Whitepaper: mindscript/whitepaper.md
+
+  - Governance:
+      - RFC Process: governance/rfc-process.md
+      - Compatibility Policy: governance/compatibility-policy.md
+      - Release Policy: governance/release-policy.md
+      - Maintainers: governance/maintainers.md
+      - RFC Template: governance/rfcs/RFC-000-template.md
 
   - Integrations:
       - BDD:

@@ -1,7 +1,7 @@
 {
   "name": "@mindscript/cli",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "bin": {
     "mindscript": "dist/cli.js"
@@ -16,6 +16,7 @@
     "test": "node --test"
   },
   "dependencies": {
+    "@mindscript/kit": "workspace:*",
     "@mindscript/runtime": "workspace:*",
     "yaml": "^2.8.1"
   },

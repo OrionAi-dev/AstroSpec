@@ -1,9 +1,9 @@
 # MindScript (formerly OpenSpec)
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
-[![Release](https://img.shields.io/github/v/release/YourOrg/openspec)](../../releases/latest)
+[![Release](https://img.shields.io/github/v/release/OrionAi-dev/MindScript)](https://github.com/OrionAi-dev/MindScript/releases/latest)
 [![Docs](https://img.shields.io/badge/docs-whitepaper-success)](./docs/mindscript/whitepaper.md)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](../../issues)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/OrionAi-dev/MindScript/issues)
 
 ---
 
@@ -12,7 +12,7 @@
 🔭 Clarity before creation • ✅ Acceptance criteria first • 🌐 Cross-domain  
 
 📄 [Read the white paper (Markdown)](./docs/mindscript/whitepaper.md)  
-⬇️ [Get the latest release](../../releases/latest)
+⬇️ [Get the latest release](https://github.com/OrionAi-dev/MindScript/releases/latest)
 
 ---
 
@@ -24,6 +24,7 @@
 - [Applications](#applications)
 - [BDD providers](#bdd-providers)
 - [Quick start](#quick-start)
+- [AI developer quickstarts](#ai-developer-quickstarts)
 - [Release expectations](#release-expectations)
 - [Contributing](#contributing)
 - [License](#license)
@@ -123,17 +124,40 @@ requirements:
 ---
 
 ## Quick start
-1. Read the white paper: [docs/mindscript/whitepaper.md](./docs/mindscript/whitepaper.md).  
-2. (Optional) Build a PDF locally with Pandoc:  
+1. Read the protocol quickstart: [docs/mindscript/quickstart.md](./docs/mindscript/quickstart.md).
+2. Review public adoption charter: [docs/mindscript/adoption-charter.md](./docs/mindscript/adoption-charter.md).
+3. (Optional) Build the white paper PDF locally with Pandoc:  
    ```bash
    pandoc docs/mindscript/whitepaper.md -o docs/mindscript/whitepaper.pdf
    ```  
-3. Create a release with GitHub CLI:  
+4. Create a release with GitHub CLI:  
    ```bash
    gh release create v0.1.0 docs/mindscript/whitepaper.pdf 
      --title "MindScript v0.1.0" 
      --notes "Initial publication of the MindScript (formerly OpenSpec) white paper."
    ```  
+
+---
+
+## AI developer quickstarts
+
+Canonical public packages:
+
+- `@mindscript/agent-contracts`
+- `@mindscript/mcp-profile`
+- `@mindscript/kit`
+
+Quickstarts:
+
+1. MCP-native path (default): [docs/mindscript/consumer-quickstart-mcp.md](./docs/mindscript/consumer-quickstart-mcp.md)
+2. Schema-first fallback path: [docs/mindscript/consumer-quickstart-schema.md](./docs/mindscript/consumer-quickstart-schema.md)
+3. Package migration map: [docs/mindscript/migration-orionai-to-mindscript-scope.md](./docs/mindscript/migration-orionai-to-mindscript-scope.md)
+4. Minimal external E2E sample: [examples/external/mcp-default-fallback/README.md](./examples/external/mcp-default-fallback/README.md)
+
+Compatibility aliases are available for existing users:
+
+- `@orionai/mindscript-agent-contracts` (deprecated, wraps `@mindscript/agent-contracts`)
+- `@orionai/mindscript-mcp-profile` (deprecated, wraps `@mindscript/mcp-profile`)
 
 ---
 

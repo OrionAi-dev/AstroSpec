@@ -13,6 +13,8 @@ import {
   diffSpecs,
   verifyOutput
 } from "@mindscript/runtime";
+import { validate as validateContract } from "@mindscript/kit";
+import type { MindscriptKitKind } from "@mindscript/kit";
 
 type Format = "json" | "yaml" | "text";
 
@@ -24,7 +26,9 @@ function usage(): never {
       "  mindscript lock <file> [--write] [--yaml]",
       "  mindscript merge --context <ctxFile> --turn <turnFile> [--yaml]",
       "  mindscript diff <fileA> <fileB> [--json]",
-      "  mindscript verify --turn <turnFile> --output <outputFile> [--context <ctxFile>] [--write <reportFile>] [--yaml]"
+      "  mindscript verify --turn <turnFile> --output <outputFile> [--context <ctxFile>] [--write <reportFile>] [--yaml]",
+      "  mindscript validate-contract --kind <kind> <file>",
+      "  mindscript doctor"
     ].join("\n")
   );
   process.exit(1);
@@ -188,6 +192,61 @@ async function cmdVerify(args: string[]) {
   }
 }
 
+async function cmdValidateContract(args: string[]) {
+  const kindRaw = takeOpt(args, "--kind");
+  const file = args.find((arg) => !arg.startsWith("-") && arg !== kindRaw) || takeOpt(args, "--file");
+  if (!kindRaw || !file) usage();
+
+  const validKinds = new Set<MindscriptKitKind>([
+    "plan-turn",
+    "exec-turn",
+    "tool-policy-spec",
+    "tool-call-record",
+    "repopack",
+    "run-log-entry",
+    "chat-orchestration-audit",
+    "git-history-summary",
+  ]);
+
+  if (!validKinds.has(kindRaw as MindscriptKitKind)) {
+    console.error(`Unsupported kind: ${kindRaw}`);
+    process.exit(1);
+  }
+
+  const payload = readFileAny(file).value;
+  const out = validateContract(kindRaw as MindscriptKitKind, payload);
+
+  if (out.ok) {
+    process.exit(0);
+  }
+
+  console.error(`Contract validation failed for ${kindRaw}:`);
+  for (const e of out.errors) {
+    console.error(`- ${e}`);
+  }
+  if (out.nextHint) {
+    console.error(`hint: ${out.nextHint}`);
+  }
+  process.exit(1);
+}
+
+async function cmdDoctor() {
+  const report = {
+    cli: "mindscript",
+    protocol: "mindscript",
+    canonicalPackages: [
+      "@mindscript/agent-contracts",
+      "@mindscript/mcp-profile",
+      "@mindscript/kit",
+    ],
+    deprecatedAliases: [
+      "@orionai/mindscript-agent-contracts",
+      "@orionai/mindscript-mcp-profile",
+    ],
+  };
+  process.stdout.write(JSON.stringify(report, null, 2) + "\n");
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const cmd = args[0];
@@ -209,6 +268,12 @@ async function main() {
     case "verify":
       await cmdVerify(rest);
       return;
+    case "validate-contract":
+      await cmdValidateContract(rest);
+      return;
+    case "doctor":
+      await cmdDoctor();
+      return;
     default:
       usage();
   }
@@ -218,4 +283,3 @@ main().catch(err => {
   console.error(err);
   process.exit(2);
 });
-

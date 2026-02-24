@@ -13,7 +13,13 @@
     "check:schema-drift": "node tools/check-schema-drift.mjs",
     "fix:schema-drift": "node tools/check-schema-drift.mjs --write",
     "check:starconsole-contract-drift": "node tools/check-starconsole-contract-drift.mjs",
-    "verify:contracts": "pnpm -F @orionai/mindscript-agent-contracts typecheck && pnpm -F @orionai/mindscript-agent-contracts test && pnpm check:starconsole-contract-drift"
+    "check:mcp-parity": "pnpm -F @mindscript/mcp-profile test",
+    "smoke:external:mcp-default-fallback": "pnpm exec tsx examples/external/mcp-default-fallback/run.ts",
+    "check:public-boundaries": "node tools/check-public-boundaries.mjs",
+    "check:deep-imports": "node tools/check-deep-imports.mjs",
+    "check:breaking-gate": "node tools/check-breaking-change-gate.mjs",
+    "verify:contracts": "pnpm -F @mindscript/agent-contracts typecheck && pnpm -F @mindscript/agent-contracts test && pnpm check:starconsole-contract-drift",
+    "verify:adoption": "pnpm check:public-boundaries && pnpm check:deep-imports && pnpm check:mcp-parity && pnpm verify:contracts && pnpm smoke:external:mcp-default-fallback"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.6",

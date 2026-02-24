@@ -7,7 +7,7 @@ import {
   validateRunLogEntry,
   validateToolCallRecord,
   validateToolPolicySpec,
-} from '@orionai/mindscript-agent-contracts';
+} from '@mindscript/agent-contracts';
 import {
   validateTurn,
   verifyOutput,

@@ -1,122 +1,68 @@
-# Quickstart
+# Quickstart (MCP-Default)
 
-This quickstart shows the core MindScript loop:
-
-1. Define **Context** + **Turn** contracts
-2. Validate against the canonical **JSON Schemas**
-3. Lock deterministically (timestamp + signature)
-4. Verify an output against acceptance criteria
-
----
+This quickstart uses the **MCP-native profile** as the default integration path and keeps direct schema validation as the fallback path.
 
 ## 1. Install
 
-**In this monorepo**
-
 ```bash
-pnpm install
-pnpm -r build
+npm i @mindscript/mcp-profile @mindscript/kit
 ```
 
----
+## 2. Default Path: Validate Through MCP Tool Contract
 
-## 2. Create a Context
+```ts
+import { callMindscriptMcpTool } from '@mindscript/mcp-profile';
 
-Create `context.json`:
+const payload = {
+  id: 'log_1',
+  runId: 'run_1',
+  phase: 'run.start',
+  createdAt: new Date().toISOString(),
+  status: 'ok',
+};
 
-```json
-{
-  "kind": "context",
-  "id": "ctx:demo",
-  "intent": "demo session",
-  "scope": { "type": "session" },
-  "lifespan": { "mode": "session" },
-  "fields": {
-    "tone": { "type": "string", "value": "concise", "source": "user" }
+const out = await callMindscriptMcpTool({
+  name: 'mindscript.contract.validate',
+  arguments: {
+    kind: 'run-log-entry',
+    payload,
   },
-  "acceptanceCriteria": [],
-  "lockedAt": "2026-02-09T00:00:00.000Z"
+});
+
+if (!out.ok) {
+  console.error(out.error.code, out.error.message);
 }
 ```
 
----
+## 3. Fallback Path: Direct Schema Validation (No MCP)
 
-## 3. Create a Turn
+```ts
+import { validate } from '@mindscript/kit';
 
-Create `turn.json`:
+const out = validate('run-log-entry', {
+  id: 'log_1',
+  runId: 'run_1',
+  phase: 'run.start',
+  createdAt: new Date().toISOString(),
+  status: 'ok',
+});
 
-```json
-{
-  "kind": "turn",
-  "id": "turn:demo",
-  "intent": "demo verification",
-  "inheritsFrom": "ctx:demo",
-  "fields": {},
-  "acceptanceCriteria": [
-    {
-      "id": "has_ok_true",
-      "description": "Output must equal { ok: true }",
-      "verifier": "equals",
-      "params": { "value": { "ok": true } }
-    }
-  ],
-  "lockedAt": "2026-02-09T00:00:00.000Z"
+if (!out.ok) {
+  console.error(out.nextHint);
+  console.error(out.errors);
 }
 ```
 
----
+## 4. Deterministic Parity Requirement
 
-## 4. Validate and Lock
+The contract rule is:
 
-From the repo root:
+1. If direct validation passes, MCP validation for the same payload must pass.
+2. If direct validation fails, MCP must fail with deterministic contract error code (`MS_MCP_CONTRACT_INVALID`).
 
-```bash
-node packages/mindscript-cli/dist/cli.js validate context.json
-node packages/mindscript-cli/dist/cli.js validate turn.json
-node packages/mindscript-cli/dist/cli.js lock turn.json --write
-```
+## 5. Next Steps
 
----
-
-## 5. Verify an Output
-
-Create `output.json`:
-
-```json
-{ "ok": true }
-```
-
-Run verification:
-
-```bash
-node packages/mindscript-cli/dist/cli.js verify --turn turn.json --output output.json --write report.json
-node packages/mindscript-cli/dist/cli.js validate report.json
-```
-
-The report is a stable, machine-readable `VerificationReport`:
-
-```json
-{
-  "overall": true,
-  "results": [
-    { "criterionId": "has_ok_true", "verifier": "equals", "pass": true }
-  ],
-  "at": "..."
-}
-```
-
----
-
-## Built-In Verifiers (Core)
-
-Core ships a small, stable verifier set:
-
-* `equals`
-* `contains_fields`
-* `regex_match`
-* `count_between`
-* `json_schema` (inline schema or local `schemaRef`)
-* `artifact_exists` (checks `criterion.evidence[]` local refs)
-
-See [verification.md](./verification.md) for details.
-
+1. MCP-native integration guide: [consumer-quickstart-mcp.md](./consumer-quickstart-mcp.md)
+2. Fallback/no-MCP guide: [consumer-quickstart-schema.md](./consumer-quickstart-schema.md)
+3. Full Context/Turn/verification lifecycle: [context-turn.md](./context-turn.md) and [verification.md](./verification.md)
+4. Minimal external E2E sample: [`examples/external/mcp-default-fallback`](../../examples/external/mcp-default-fallback/README.md)

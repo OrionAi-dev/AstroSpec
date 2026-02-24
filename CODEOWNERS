@@ -1,0 +1,8 @@
+* @OrionAi-dev
+
+# Public adoption contract surfaces
+/packages/mindscript-agent-contracts/** @OrionAi-dev
+/packages/mindscript-mcp-profile/** @OrionAi-dev
+/packages/mindscript-kit/** @OrionAi-dev
+/docs/mindscript/adoption-charter.md @OrionAi-dev
+/docs/governance/** @OrionAi-dev

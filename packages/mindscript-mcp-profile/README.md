@@ -1,4 +1,4 @@
-# @orionai/mindscript-mcp-profile
+# @mindscript/mcp-profile
 
 Reference MCP profile adapters for MindScript contracts.
 
@@ -9,3 +9,11 @@ This package freezes:
 3. Resource URI serializers for Context, Turn, and Verification artifacts.
 
 It is intentionally lightweight so runtimes can adopt MCP interoperability without replacing existing MindScript schema/validator pipelines.
+
+## Commands
+
+```bash
+pnpm -F @mindscript/mcp-profile typecheck
+pnpm -F @mindscript/mcp-profile test
+pnpm -F @mindscript/mcp-profile build
+```

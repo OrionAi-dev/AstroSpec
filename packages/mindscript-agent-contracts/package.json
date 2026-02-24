@@ -1,10 +1,13 @@
 {
-  "name": "@orionai/mindscript-agent-contracts",
+  "name": "@mindscript/agent-contracts",
   "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "description": "MindScript public contract bundle with schemas and deterministic validators.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -12,6 +15,13 @@
       "require": "./dist/index.cjs"
     }
   },
+  "keywords": [
+    "mindscript",
+    "contracts",
+    "schema",
+    "mcp",
+    "llm"
+  ],
   "files": [
     "dist",
     "schemas",
@@ -30,5 +40,8 @@
     "tsx": "^4.20.4",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

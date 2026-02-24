@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+
+const repoRoot = process.cwd();
+const corePackageDirs = [
+  'packages/mindscript-agent-contracts',
+  'packages/mindscript-mcp-profile',
+  'packages/mindscript-kit',
+];
+
+function listSourceFiles(absDir) {
+  const srcDir = path.join(absDir, 'src');
+  if (!fs.existsSync(srcDir)) return [];
+  const out = [];
+  const stack = [srcDir];
+  while (stack.length) {
+    const dir = stack.pop();
+    if (!dir) continue;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const abs = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(abs);
+        continue;
+      }
+      if (!entry.isFile()) continue;
+      if (!/\.(ts|tsx|mts|cts|js|mjs|cjs)$/.test(entry.name)) continue;
+      out.push(abs);
+    }
+  }
+  return out;
+}
+
+function findDeepImports(filePath) {
+  const text = fs.readFileSync(filePath, 'utf8');
+  const out = [];
+  const importRe = /(import\s+[^'"`]*from\s+['"]([^'"`]+)['"]|import\s*\(\s*['"]([^'"`]+)['"]\s*\)|require\(\s*['"]([^'"`]+)['"]\s*\))/g;
+  let m;
+  while ((m = importRe.exec(text))) {
+    const spec = m[2] || m[3] || m[4] || '';
+    if (!spec.startsWith('@mindscript/')) continue;
+    const afterScope = spec.replace(/^@mindscript\//, '');
+    if (!afterScope.includes('/')) continue;
+    out.push(spec);
+  }
+  return out;
+}
+
+const failures = [];
+for (const relDir of corePackageDirs) {
+  const absDir = path.join(repoRoot, relDir);
+  for (const filePath of listSourceFiles(absDir)) {
+    for (const spec of findDeepImports(filePath)) {
+      failures.push(`${path.relative(repoRoot, filePath)} uses deep import: ${spec}`);
+    }
+  }
+}
+
+if (failures.length > 0) {
+  console.error('[imports] deep import violations detected');
+  for (const failure of failures) {
+    console.error(` - ${failure}`);
+  }
+  console.error('Use public package roots only (for example: @mindscript/agent-contracts).');
+  process.exit(1);
+}
+
+console.log('[imports] deep import checks passed');

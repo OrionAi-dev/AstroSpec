@@ -100,3 +100,45 @@ test("validate + lock + merge + verify smoke", () => {
   }
 });
 
+test("validate-contract and doctor commands", () => {
+  const dir = mkdtempSync(join(tmpdir(), "mindscript-cli-contract-"));
+  const planPath = join(dir, "plan.json");
+  writeFileSync(
+    planPath,
+    JSON.stringify(
+      {
+        schemaVersion: "1.0",
+        intent: "plan",
+        objective: "demo objective",
+        constraints: ["read-only"],
+        assumptions: [],
+        steps: [
+          {
+            id: "s1",
+            title: "read repo",
+            description: "baseline",
+            acceptanceCheck: "repo read complete",
+            toolIntents: [{ name: "filesystem.read", mode: "read" }],
+          },
+        ],
+        riskRollback: [],
+        completionChecks: ["done"],
+      },
+      null,
+      2
+    )
+  );
+
+  {
+    const res = runCli(["validate-contract", "--kind", "plan-turn", planPath]);
+    assert.equal(res.status, 0, res.stderr || res.stdout);
+  }
+
+  {
+    const res = runCli(["doctor"]);
+    assert.equal(res.status, 0, res.stderr || res.stdout);
+    const report = JSON.parse(res.stdout);
+    assert.ok(Array.isArray(report.canonicalPackages));
+    assert.ok(report.canonicalPackages.includes("@mindscript/kit"));
+  }
+});

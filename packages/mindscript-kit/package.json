@@ -1,9 +1,9 @@
 {
-  "name": "@mindscript/runtime",
+  "name": "@mindscript/kit",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "MindScript runtime validators, locking, and verification engine.",
+  "description": "Simple adapter API for MindScript validation and MCP tool calls.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,23 +15,20 @@
       "require": "./dist/index.cjs"
     }
   },
-  "keywords": [
-    "mindscript",
-    "runtime",
-    "contracts",
-    "verification"
+  "files": [
+    "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "build": "tsup src/index.ts --dts --format esm,cjs --shims",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
-    "test": "node --test"
+    "test": "node --test --import tsx tests/**/*.test.ts"
   },
   "dependencies": {
-    "@mindscript/schema": "workspace:*",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "@mindscript/agent-contracts": "workspace:*",
+    "@mindscript/mcp-profile": "workspace:*"
   },
   "devDependencies": {
+    "tsx": "^4.20.4",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   },

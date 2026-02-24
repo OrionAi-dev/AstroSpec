@@ -9,8 +9,18 @@ import {
   createMindscriptMcpProfileServer,
   MINDSCRIPT_MCP_ERROR_CODES,
   MINDSCRIPT_MCP_TOOL_NAMES,
+  type MindscriptContractKind,
 } from '../src/index.js';
-import { validateExecTurn, validatePlanTurn } from '@orionai/mindscript-agent-contracts';
+import {
+  validateChatOrchestrationAudit,
+  validateExecTurn,
+  validateGitHistorySummary,
+  validatePlanTurn,
+  validateRepoPack,
+  validateRunLogEntry,
+  validateToolCallRecord,
+  validateToolPolicySpec,
+} from '@mindscript/agent-contracts';
 import type { MindScriptTurn } from '@mindscript/runtime';
 
 const fixturesDir = path.resolve(
@@ -73,56 +83,166 @@ test('exec-turn MCP tool parity with direct validator', async () => {
   }
 });
 
-test('invalid payload returns deterministic MCP contract code', async () => {
-  const invalidPlan = readFixture('plan.invalid.missing-checks.json');
-  const viaMcp = await callMindscriptMcpTool({
-    name: 'mindscript.plan_turn.generate',
-    arguments: { planTurn: invalidPlan },
-  });
+test('contract.validate parity with direct validators for all supported kinds (valid payloads)', async () => {
+  const now = new Date().toISOString();
 
-  assert.equal(viaMcp.ok, false);
-  if (!viaMcp.ok) {
-    assert.equal(viaMcp.error.code, 'MS_MCP_CONTRACT_INVALID');
-  }
-});
-
-test('contract.validate tool supports deterministic kind validation', async () => {
-  const payload = readFixture('tool-policy-spec.valid.json');
-  const out = await callMindscriptMcpTool({
-    name: 'mindscript.contract.validate',
-    arguments: {
+  const validCases: Array<{
+    kind: MindscriptContractKind;
+    payload: unknown;
+    direct: (value: unknown) => { ok: boolean; errors: string[] };
+  }> = [
+    {
+      kind: 'plan-turn',
+      payload: readFixture('plan.valid.json'),
+      direct: validatePlanTurn,
+    },
+    {
+      kind: 'exec-turn',
+      payload: readFixture('exec.valid.json'),
+      direct: validateExecTurn,
+    },
+    {
       kind: 'tool-policy-spec',
-      payload,
+      payload: readFixture('tool-policy-spec.valid.json'),
+      direct: validateToolPolicySpec,
     },
-  });
+    {
+      kind: 'tool-call-record',
+      payload: readFixture('tool-call-record.valid.json'),
+      direct: validateToolCallRecord,
+    },
+    {
+      kind: 'repopack',
+      payload: {
+        repoRoot: '/tmp/repo',
+        generatedAt: now,
+        files: [
+          {
+            path: 'README.md',
+            rationale: 'entrypoint context',
+            content: '# demo',
+          },
+        ],
+      },
+      direct: validateRepoPack,
+    },
+    {
+      kind: 'run-log-entry',
+      payload: {
+        id: 'log_1',
+        runId: 'run_1',
+        phase: 'run.start',
+        createdAt: now,
+        status: 'ok',
+      },
+      direct: validateRunLogEntry,
+    },
+    {
+      kind: 'chat-orchestration-audit',
+      payload: readFixture('chat-orchestration-audit.valid.json'),
+      direct: validateChatOrchestrationAudit,
+    },
+    {
+      kind: 'git-history-summary',
+      payload: readFixture('git-history-summary.valid.json'),
+      direct: validateGitHistorySummary,
+    },
+  ];
 
-  assert.equal(out.ok, true);
-  if (out.ok) {
-    assert.deepEqual(out.result, { kind: 'tool-policy-spec', valid: true });
+  for (const c of validCases) {
+    const direct = c.direct(c.payload);
+    const viaMcp = await callMindscriptMcpTool({
+      name: 'mindscript.contract.validate',
+      arguments: {
+        kind: c.kind,
+        payload: c.payload,
+      },
+    });
+
+    assert.equal(direct.ok, true, `direct validation should pass for kind=${c.kind}`);
+    assert.equal(viaMcp.ok, true, `mcp validation should pass for kind=${c.kind}`);
+
+    if (viaMcp.ok) {
+      assert.deepEqual(viaMcp.result, { kind: c.kind, valid: true });
+    }
   }
 });
 
-test('contract.validate supports chat orchestration and git-history kinds', async () => {
-  const chatAudit = readFixture('chat-orchestration-audit.valid.json');
-  const gitHistory = readFixture('git-history-summary.valid.json');
-
-  const chatOut = await callMindscriptMcpTool({
-    name: 'mindscript.contract.validate',
-    arguments: {
+test('contract.validate parity with direct validators for all supported kinds (invalid payloads)', async () => {
+  const invalidCases: Array<{
+    kind: MindscriptContractKind;
+    payload: unknown;
+    direct: (value: unknown) => { ok: boolean; errors: string[] };
+  }> = [
+    {
+      kind: 'plan-turn',
+      payload: readFixture('plan.invalid.missing-checks.json'),
+      direct: validatePlanTurn,
+    },
+    {
+      kind: 'exec-turn',
+      payload: {},
+      direct: validateExecTurn,
+    },
+    {
+      kind: 'tool-policy-spec',
+      payload: readFixture('tool-policy-spec.invalid.missing-required.json'),
+      direct: validateToolPolicySpec,
+    },
+    {
+      kind: 'tool-call-record',
+      payload: readFixture('tool-call-record.invalid.bad-status.json'),
+      direct: validateToolCallRecord,
+    },
+    {
+      kind: 'repopack',
+      payload: {
+        repoRoot: '/tmp/repo',
+        generatedAt: 'not-a-date',
+        files: [{ path: 'README.md' }],
+      },
+      direct: validateRepoPack,
+    },
+    {
+      kind: 'run-log-entry',
+      payload: {
+        id: 'log_1',
+        runId: 'run_1',
+        phase: 'run.start',
+        createdAt: 'not-a-date',
+      },
+      direct: validateRunLogEntry,
+    },
+    {
       kind: 'chat-orchestration-audit',
-      payload: chatAudit,
+      payload: readFixture('chat-orchestration-audit.invalid.missing-trace.json'),
+      direct: validateChatOrchestrationAudit,
     },
-  });
-  assert.equal(chatOut.ok, true);
-
-  const gitOut = await callMindscriptMcpTool({
-    name: 'mindscript.contract.validate',
-    arguments: {
+    {
       kind: 'git-history-summary',
-      payload: gitHistory,
+      payload: {},
+      direct: validateGitHistorySummary,
     },
-  });
-  assert.equal(gitOut.ok, true);
+  ];
+
+  for (const c of invalidCases) {
+    const direct = c.direct(c.payload);
+    const viaMcp = await callMindscriptMcpTool({
+      name: 'mindscript.contract.validate',
+      arguments: {
+        kind: c.kind,
+        payload: c.payload,
+      },
+    });
+
+    assert.equal(direct.ok, false, `direct validation should fail for kind=${c.kind}`);
+    assert.equal(viaMcp.ok, false, `mcp validation should fail for kind=${c.kind}`);
+
+    if (!viaMcp.ok) {
+      assert.equal(viaMcp.error.code, 'MS_MCP_CONTRACT_INVALID');
+      assert.ok(viaMcp.error.details);
+    }
+  }
 });
 
 test('turn.verify returns verification failure code when criterion fails', async () => {
