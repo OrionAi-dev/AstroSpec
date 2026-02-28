@@ -10,6 +10,7 @@
     "lint": "turbo run lint --parallel",
     "docs": "tools/gen-docs.sh",
     "fix:doc-links": "node tools/clean-doc-links.mjs --write",
+    "check:duplicate-artifacts": "node tools/check-duplicate-artifacts.mjs",
     "check:schema-drift": "node tools/check-schema-drift.mjs",
     "fix:schema-drift": "node tools/check-schema-drift.mjs --write",
     "check:starconsole-contract-drift": "node tools/check-starconsole-contract-drift.mjs",
@@ -20,7 +21,7 @@
     "check:deep-imports": "node tools/check-deep-imports.mjs",
     "check:breaking-gate": "node tools/check-breaking-change-gate.mjs",
     "verify:contracts": "pnpm -F @astrospec/agent-contracts typecheck && pnpm -F @astrospec/agent-contracts test && pnpm check:starconsole-contract-drift",
-    "verify:adoption": "pnpm check:public-boundaries && pnpm check:deep-imports && pnpm check:mcp-parity && pnpm check:retrieval-profile && pnpm verify:contracts && pnpm smoke:external:mcp-default-fallback"
+    "verify:adoption": "pnpm check:duplicate-artifacts && pnpm check:public-boundaries && pnpm check:deep-imports && pnpm check:mcp-parity && pnpm check:retrieval-profile && pnpm verify:contracts && pnpm smoke:external:mcp-default-fallback"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.6",
