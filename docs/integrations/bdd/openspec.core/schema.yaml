@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://mindscript.dev/schemas/bdd/openspec.core-1.0.json"
-title: "MindScript Core BDD"
+$id: "https://orionai-dev.github.io/AstroSpec/schemas/bdd/openspec.core-1.0.json"
+title: "AstroSpec Core BDD"
 type: object
 required: [profile, kind, meta, scenarios]
 additionalProperties: false
@@ -8,7 +8,7 @@ additionalProperties: false
 properties:
   profile:
     type: string
-    const: "https://mindscript.dev/profiles/bdd/openspec.core"
+    const: "https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core"
 
   kind:
     type: string

@@ -1,0 +1,8 @@
+{
+  "resources": [
+    "astrospec://sources/src_1",
+    "astrospec://retrieval-runs/req_1",
+    "astrospec://memories/policy/retention.default",
+    "astrospec://graphs/compliance/policy%3Aretention"
+  ]
+}

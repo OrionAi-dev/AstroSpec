@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / JsonPatch
+[@astrospec/runtime](../README.md) / JsonPatch
 
 # Type Alias: JsonPatch
 
 > **JsonPatch** = `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:199
+Defined in: packages/astrospec-runtime/dist/index.d.ts:220
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:199
 
 > **op**: `"add"` \| `"replace"` \| `"remove"`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:200
+Defined in: packages/astrospec-runtime/dist/index.d.ts:221
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:200
 
 > **path**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:201
+Defined in: packages/astrospec-runtime/dist/index.d.ts:222
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:201
 
 > `optional` **value**: `unknown`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:202
+Defined in: packages/astrospec-runtime/dist/index.d.ts:223

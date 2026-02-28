@@ -1,14 +1,14 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / ISODateTime
+[@astrospec/openspec-types](../README.md) / ISODateTime
 
 # Type Alias: ISODateTime
 
 > **ISODateTime** = `string` & `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:8
+Defined in: packages/astrospec-runtime/dist/index.d.ts:8
 
 ## Type Declaration
 

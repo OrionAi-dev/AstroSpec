@@ -1,5 +1,5 @@
 {
-  "name": "@mindscript/openspec-plugin-mindql",
+  "name": "@astrospec/openspec-plugin-mindql",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -18,8 +18,8 @@
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@mindscript/mindql-core": "workspace:*",
-    "@mindscript/openspec-types": "workspace:*"
+    "@astrospec/mindql-core": "workspace:*",
+    "@astrospec/openspec-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

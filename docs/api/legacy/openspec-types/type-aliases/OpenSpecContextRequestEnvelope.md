@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / OpenSpecContextRequestEnvelope
+[@astrospec/openspec-types](../README.md) / OpenSpecContextRequestEnvelope
 
 # ~~Type Alias: OpenSpecContextRequestEnvelope\<TContext\>~~
 
-> **OpenSpecContextRequestEnvelope**\<`TContext`\> = [`MindScriptContextRequestEnvelope`](../interfaces/MindScriptContextRequestEnvelope.md)\<`TContext`\>
+> **OpenSpecContextRequestEnvelope**\<`TContext`\> = [`AstroSpecContextRequestEnvelope`](../interfaces/AstroSpecContextRequestEnvelope.md)\<`TContext`\>
 
 Defined in: packages/openspec-types/dist/index.d.ts:30
 
@@ -14,8 +14,8 @@ Defined in: packages/openspec-types/dist/index.d.ts:30
 
 ### TContext
 
-`TContext` *extends* [`MindScriptContext`](../interfaces/MindScriptContext.md) = [`MindScriptContext`](../interfaces/MindScriptContext.md)
+`TContext` *extends* [`AstroSpecContext`](../interfaces/AstroSpecContext.md) = [`AstroSpecContext`](../interfaces/AstroSpecContext.md)
 
 ## Deprecated
 
-Use `MindScriptContextRequestEnvelope`.
+Use `AstroSpecContextRequestEnvelope`.

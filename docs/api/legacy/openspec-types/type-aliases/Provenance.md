@@ -1,11 +1,11 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / Provenance
+[@astrospec/openspec-types](../README.md) / Provenance
 
 # Type Alias: Provenance
 
 > **Provenance** = `ReadonlyArray`\<[`ProvenanceEntry`](../interfaces/ProvenanceEntry.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:93
+Defined in: packages/astrospec-runtime/dist/index.d.ts:114

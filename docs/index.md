@@ -1,42 +1,59 @@
-# MindScript Docs
+# AstroSpec Docs
 
-Welcome to the canonical entry point for MindScript documentation. (Formerly OpenSpec.)
+AstroSpec is a vendor-neutral contract standard for humans, LLMs, agents, tools, and runtimes.
 
-MindScript should be understood as a vendor-neutral contract and protocol layer for humans, LLMs, agents, and tools.
+It should be understood as:
 
-That includes:
+- a contract language
+- a schema and validation layer
+- a protocol and interoperability layer
+- a profile registry for domain-specific contracts
+- a neutral standard surface for retrieval and evidence exchange
 
-- requirements/spec authoring
-- Context/Turn style contracts
-- LLM-to-LLM and agent-to-agent handoff envelopes
-- MCP-native interoperability
-- schema-first validation and verification flows
+## Start Here
 
-## Start here
+If you are new to AstroSpec, read in this order:
 
-1. **Get oriented:** Read the [MindScript overview](mindscript/spec-overview.md) for the contract-language model and core concepts.
-2. **Understand the wire/runtime shape:** Read the [protocol overview](mindscript/protocol.md).
-3. **See it in action:** Walk through the [Quickstart](mindscript/quickstart.md).
-4. **Integrate quickly (default):** Start with [MCP-native](mindscript/consumer-quickstart-mcp.md).
-5. **Fallback path:** Use [schema-first / no-MCP mode](mindscript/consumer-quickstart-schema.md) when MCP plumbing is not available yet.
-6. **Go deeper:** Learn the [spec language](mindscript/spec-language.md), [validation model](mindscript/spec-validation.md), and [adoption charter](mindscript/adoption-charter.md).
+1. [Overview](astrospec/spec-overview.md)
+2. [Protocol](astrospec/protocol.md)
+3. [Retrieval Profile](astrospec/retrieval-profile.md)
+4. [Evidence and Provenance](astrospec/evidence-provenance.md)
+5. [MCP Profile](astrospec/mcp-profile.md)
+6. [Governance Charter](governance/charter.md)
 
-## Documentation map
+## Documentation Map
 
-- **MindScript Overview** — What MindScript is as a contract language and protocol layer. Start with the [spec overview](mindscript/spec-overview.md) and [protocol overview](mindscript/protocol.md).
-- **Specification Layer** — Requirements/spec authoring, language shape, templates, and verification model.
-- **Adoption** — Public package policy, migration map, compatibility promises, and extension rules. Start with the [adoption charter](mindscript/adoption-charter.md).
-- **Integrations** — MCP profile, BDD adapters, and external examples.
-- **API Reference** — Generated TypeDoc references for the TypeScript packages. Jump to the [runtime API docs](api/runtime/README.md).
-- **Legacy** — Historical OpenSPI/OpenSpec pages preserved for compatibility.
+- **Overview**: [spec-overview](astrospec/spec-overview.md)
+- **Protocol**: [protocol](astrospec/protocol.md)
+- **Core API**: [api](astrospec/api.md), [typescript](astrospec/typescript.md), [verification](astrospec/verification.md)
+- **Retrieval profile**: [retrieval-profile](astrospec/retrieval-profile.md), [retrieval examples](astrospec/retrieval-examples.md)
+- **Interop**: [mcp-profile](astrospec/mcp-profile.md)
+- **Governance**: [charter](governance/charter.md), [compatibility-policy](governance/compatibility-policy.md), [profile-registry-policy](governance/profile-registry-policy.md), [change-control](governance/change-control.md)
+- **Migrations**: [OpenSpec to AstroSpec](migrations/openspec-to-astrospec.md), [MindScript to AstroSpec](migrations/mindscript-to-astrospec.md), [OrionAI scope to AstroSpec](astrospec/migration-orionai-to-astrospec-scope.md)
+- **Integrations**: [BDD adapters](integrations/bdd/@software/README.md)
+- **API reference**: generated under `docs/api/`
 
-## Looking for something specific?
+## Package Roles
 
-- **What MindScript is:** [spec overview](mindscript/spec-overview.md) and [protocol](mindscript/protocol.md)
-- **Adoption charter:** [adoption-charter](mindscript/adoption-charter.md)
-- **Spec language details:** [spec language](mindscript/spec-language.md) and [schema](mindscript/spec-schema.md)
-- **Package migration:** [orionai-to-mindscript scope migration](mindscript/migration-orionai-to-mindscript-scope.md)
-- **Minimal external MCP + fallback E2E:** [examples/external/mcp-default-fallback](../examples/external/mcp-default-fallback/README.md)
-- **Verification:** [verification](mindscript/verification.md)
-- **Context & Turn lifecycle:** [context turn](mindscript/context-turn.md)
-- **MindScript BDD Core (legacy id `openspec.core`):** [openspec.core](integrations/bdd/openspec.core/README.md)
+- `@astrospec/schema`: canonical core schemas
+- `@astrospec/runtime`: validation, locking, diffing, verification
+- `@astrospec/mcp-profile`: canonical MCP mapping
+- `@astrospec/retrieval-profile`: retrieval and evidence profile contracts
+- `@astrospec/kit`: small DX layer
+- `@astrospec/cli`: contract tooling
+- `@astrospec/agent-contracts`: specialized downstream bundle
+
+## How to Adopt
+
+Use AstroSpec in layers:
+
+1. start with core schemas and runtime validation
+2. add the retrieval profile if the system exchanges evidence, citations, memory, or graph assertions
+3. add the MCP profile only when a tool/runtime transport mapping is needed
+4. keep product-specific semantics in downstream extensions rather than extending AstroSpec core casually
+
+## Legacy Surface
+
+Legacy OpenSpec wrapper packages and archived integration material remain in the repo for compatibility and historical context.
+
+MindScript should only appear in migration material, not in the current public story.

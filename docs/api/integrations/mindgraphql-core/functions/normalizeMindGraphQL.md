@@ -1,8 +1,8 @@
-[**@mindscript/mindgraphql-core**](../README.md)
+[**@astrospec/mindgraphql-core**](../README.md)
 
 ***
 
-[@mindscript/mindgraphql-core](../README.md) / normalizeMindGraphQL
+[@astrospec/mindgraphql-core](../README.md) / normalizeMindGraphQL
 
 # Function: normalizeMindGraphQL()
 

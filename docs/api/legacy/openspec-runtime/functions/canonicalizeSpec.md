@@ -1,16 +1,16 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / canonicalizeSpec
+[@astrospec/openspec-runtime](../README.md) / canonicalizeSpec
 
 # Function: canonicalizeSpec()
 
 > **canonicalizeSpec**\<`T`\>(`spec`): `T`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:190
+Defined in: packages/astrospec-runtime/dist/index.d.ts:211
 
-Canonicalize a MindScript spec for deterministic hashing:
+Canonicalize a AstroSpec spec for deterministic hashing:
 - sort object keys recursively
 - sort `fields` keys
 - sort `acceptanceCriteria` by criterion id
@@ -20,7 +20,7 @@ Canonicalize a MindScript spec for deterministic hashing:
 
 ### T
 
-`T` *extends* [`MindScriptBase`](../interfaces/MindScriptBase.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
+`T` *extends* [`AstroSpecBase`](../interfaces/AstroSpecBase.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
 
 ## Parameters
 

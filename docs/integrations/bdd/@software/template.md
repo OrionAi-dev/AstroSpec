@@ -1,14 +1,14 @@
-# MindScript `@software` Template
+# AstroSpec `@software` Template
 
 Use this template to author a spec that validates against the **@software** profile.  
-It keeps MindScript agnostic and **references** external BDD artifacts instead of embedding them.
+It keeps AstroSpec agnostic and **references** external BDD artifacts instead of embedding them.
 
 ---
 
 ## Minimal spec (copy/paste)
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 
 meta:
@@ -35,10 +35,10 @@ requirements:
 Import only what your project needs (e.g., TypeScript language and OpenAPI for REST):
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 imports:
-  - https://mindscript.dev/profiles/@software.language.typescript
-  - https://mindscript.dev/profiles/@software.api.openapi   # versionless; set version below
+  - https://orionai-dev.github.io/AstroSpec/profiles/@software.language.typescript
+  - https://orionai-dev.github.io/AstroSpec/profiles/@software.api.openapi   # versionless; set version below
 
 kind: software
 
@@ -72,7 +72,7 @@ requirements:
 ```
 
 > If you need a strictly pinned OpenAPI profile, import  
-> `https://mindscript.dev/profiles/@software.api.openapi.v3_1` instead.
+> `https://orionai-dev.github.io/AstroSpec/profiles/@software.api.openapi.v3_1` instead.
 
 ---
 
@@ -82,7 +82,7 @@ Bind a criterion to an existing Behave/Behat/Cucumber/etc. file.
 You can also set a **spec-level default** under `meta.bdd` and omit per-criterion `bdd_ref`.
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 
 meta:
@@ -99,7 +99,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/behave  # URL from your bdd-registry.yaml
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behave  # URL from your bdd-registry.yaml
           path: ./BEHAVE-LOGIN.feature                      # local path or absolute URL
           scenario: Valid credentials produce a successful session
 ```
@@ -111,13 +111,13 @@ requirements:
 - `meta.id`: `^[A-Z]+-[0-9]+$` (e.g., `FEATURE-101`)
 - `requirements[].id` and `criteria[].id`: hierarchical, e.g., `FEATURE-101.1`, `FEATURE-101.1.1`
 - Keep `text` statements **clear and testable**
-- **No inline steps** in MindScript (no Given/When/Then). Always link external BDD via `bdd_ref`.
+- **No inline steps** in AstroSpec (no Given/When/Then). Always link external BDD via `bdd_ref`.
 
 ---
 
 ## Authoring checklist
 
-- [ ] `profile` is `https://mindscript.dev/profiles/@software`
+- [ ] `profile` is `https://orionai-dev.github.io/AstroSpec/profiles/@software`
 - [ ] `kind: software`
 - [ ] `meta` includes `id`, `title`, `owner`, `priority`
 - [ ] `requirements[*].criteria[*]` each have an `id`, `type`, and `text`

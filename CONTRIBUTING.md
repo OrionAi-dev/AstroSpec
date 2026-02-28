@@ -1,11 +1,11 @@
-# Contributing to MindScript
+# Contributing to AstroSpec
 
 Thank you for your interest in contributing!
 
 ## How to Contribute
 - Open issues for bugs or feature requests
 - Submit pull requests for improvements
-- Share examples of MindScript in practice
+- Share examples of AstroSpec in practice
 
 ## Development Setup
 ### Prerequisites
@@ -18,7 +18,7 @@ Thank you for your interest in contributing!
    ```bash
    pnpm install --frozen-lockfile
    ```
-3. Create or edit specs in `docs/mindscript/`.
+3. Create or edit specs in `docs/astrospec/`.
 4. Follow the guidelines in the white paper.
 
 ### Common commands
@@ -71,8 +71,8 @@ To rebuild the API docs and MkDocs site locally:
 CI runs a doc-drift check after generation. If it fails, rerun the steps above
 and ensure `git diff -- docs/` is clean before pushing.
 ## Generated Artifacts
-- Package builds output to each package's `dist/` directory (for example `packages/mindscript-runtime/dist/`).
-- MindScript CLI runs (see `tools/verify-monorepo.sh`) emit artifacts under `generated/`, including:
+- Package builds output to each package's `dist/` directory (for example `packages/astrospec-runtime/dist/`).
+- AstroSpec CLI runs (see `tools/verify-monorepo.sh`) emit artifacts under `generated/`, including:
   - `generated/mindql/ast.json`
   - `generated/graphql/schema.graphql`
 

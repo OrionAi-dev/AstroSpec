@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / canonicalizeValue
+[@astrospec/runtime](../README.md) / canonicalizeValue
 
 # Function: canonicalizeValue()
 
 > **canonicalizeValue**(`v`): `unknown`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:182
+Defined in: packages/astrospec-runtime/dist/index.d.ts:203
 
 ## Parameters
 

@@ -1,14 +1,14 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / Context
+[@astrospec/openspec-runtime](../README.md) / Context
 
 # Type Alias: Context\<F\>
 
-> **Context**\<`F`\> = [`MindScriptContext`](../interfaces/MindScriptContext.md)\<`F`\>
+> **Context**\<`F`\> = [`AstroSpecContext`](../interfaces/AstroSpecContext.md)\<`F`\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:122
+Defined in: packages/astrospec-runtime/dist/index.d.ts:143
 
 ## Type Parameters
 

@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / OpenSpecContext
+[@astrospec/openspec-types](../README.md) / OpenSpecContext
 
 # ~~Type Alias: OpenSpecContext\<F\>~~
 
-> **OpenSpecContext**\<`F`\> = [`MindScriptContext`](../interfaces/MindScriptContext.md)\<`F`\>
+> **OpenSpecContext**\<`F`\> = [`AstroSpecContext`](../interfaces/AstroSpecContext.md)\<`F`\>
 
 Defined in: packages/openspec-types/dist/index.d.ts:18
 
@@ -18,4 +18,4 @@ Defined in: packages/openspec-types/dist/index.d.ts:18
 
 ## Deprecated
 
-Use `MindScriptContext`.
+Use `AstroSpecContext`.

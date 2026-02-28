@@ -1,0 +1,41 @@
+{
+  "name": "@astrospec/runtime",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "AstroSpec runtime validators, locking, and verification engine.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "astrospec",
+    "runtime",
+    "contracts",
+    "verification"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@astrospec/schema": "workspace:*",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

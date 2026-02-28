@@ -1,14 +1,14 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / assertContext
+[@astrospec/openspec-types](../README.md) / assertContext
 
 # Function: assertContext()
 
-> **assertContext**(`context`): [`MindScriptContext`](../interfaces/MindScriptContext.md)
+> **assertContext**(`context`): [`AstroSpecContext`](../interfaces/AstroSpecContext.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:179
+Defined in: packages/astrospec-runtime/dist/index.d.ts:200
 
 ## Parameters
 
@@ -18,4 +18,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:179
 
 ## Returns
 
-[`MindScriptContext`](../interfaces/MindScriptContext.md)
+[`AstroSpecContext`](../interfaces/AstroSpecContext.md)

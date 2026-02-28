@@ -1,4 +1,4 @@
-import('@mindscript/integration-audio-openai')
+import('@astrospec/integration-audio-openai')
   .then(m => {
     console.log('✅ workspace import ok', !!m.OpenAITranscriptionAdapter);
     if (!m.OpenAITranscriptionAdapter) process.exit(1);

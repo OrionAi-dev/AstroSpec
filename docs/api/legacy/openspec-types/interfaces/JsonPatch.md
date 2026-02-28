@@ -1,8 +1,8 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / JsonPatch
+[@astrospec/openspec-types](../README.md) / JsonPatch
 
 # Interface: JsonPatch
 

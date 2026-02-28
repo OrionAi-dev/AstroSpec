@@ -1,4 +1,4 @@
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: AUTH-101
@@ -15,7 +15,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: https://example.org/bdd/jbehave/AUTH-101.story
           scenario: Valid credentials produce a successful session
 
@@ -23,7 +23,7 @@ requirements:
         type: security
         text: Invalid credentials are rejected with a generic error that does not reveal whether the email exists
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: https://example.org/bdd/jbehave/AUTH-101.story
           scenario: Invalid credentials are rejected
 
@@ -31,7 +31,7 @@ requirements:
         type: security
         text: Passwords must be at least 12 characters and include at least one uppercase letter, one lowercase letter, and one digit
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: https://example.org/bdd/jbehave/AUTH-101.story
           scenario: Password policy is enforced
 
@@ -39,7 +39,7 @@ requirements:
         type: security
         text: After 5 failed attempts within 15 minutes the account is locked for 15 minutes or until a successful password reset
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: https://example.org/bdd/jbehave/AUTH-101.story
           scenario: Account lockout after repeated failures
 
@@ -47,6 +47,6 @@ requirements:
         type: security
         text: If the user has MFA enabled, a second factor challenge is required after password verification before the session is created
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: https://example.org/bdd/jbehave/AUTH-101.story
           scenario: MFA challenge shown for enrolled users

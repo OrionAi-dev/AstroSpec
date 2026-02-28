@@ -1,9 +1,9 @@
-site_name: MindScript
-site_description: MindScript — specs, runtime, and plugins
-site_url: https://orionai-dev.github.io/MindScript
+site_name: AstroSpec
+site_description: AstroSpec — specs, runtime, and plugins
+site_url: https://orionai-dev.github.io/AstroSpec
 
-repo_url: https://github.com/OrionAi-dev/MindScript
-repo_name: OrionAi-dev/MindScript
+repo_url: https://github.com/OrionAi-dev/AstroSpec
+repo_name: OrionAi-dev/AstroSpec
 edit_uri: ""
 docs_dir: docs
 exclude_docs: |
@@ -59,28 +59,28 @@ plugins:
         "api/openspec-plugin-mindql/README.md": "api/integrations/openspec-plugin-mindql/README.md"
         "api/openspec-plugin-mindgraphql/README.md": "api/integrations/openspec-plugin-mindgraphql/README.md"
 
-        # Old "openspi" paths -> canonical "mindscript" paths
-        "openspi/spec-language.md": "mindscript/spec-language.md"
-        "openspi/context-turn.md": "mindscript/context-turn.md"
-        "openspi/typescript.md": "mindscript/typescript.md"
-        "openspi/verification.md": "mindscript/verification.md"
-        "openspi/templates.md": "mindscript/templates.md"
-        "openspi/quickstart.md": "mindscript/quickstart.md"
-        "openspi/roadmap.md": "mindscript/roadmap.md"
+        # Old "openspi" paths -> canonical "astrospec" paths
+        "openspi/spec-language.md": "astrospec/spec-language.md"
+        "openspi/context-turn.md": "astrospec/context-turn.md"
+        "openspi/typescript.md": "astrospec/typescript.md"
+        "openspi/verification.md": "astrospec/verification.md"
+        "openspi/templates.md": "astrospec/templates.md"
+        "openspi/quickstart.md": "astrospec/quickstart.md"
+        "openspi/roadmap.md": "astrospec/roadmap.md"
 
         # Old "openspec" links referenced by spec docs
-        "openspec/overview.md": "mindscript/spec-overview.md"
-        "openspec/spec-language.md": "mindscript/spec-language.md"
-        "openspec/templates.md": "mindscript/templates.md"
+        "openspec/overview.md": "astrospec/spec-overview.md"
+        "openspec/spec-language.md": "astrospec/spec-language.md"
+        "openspec/templates.md": "astrospec/templates.md"
 
         # Context Turn page was renamed
-        "spec-bdd-context-turn.md": "mindscript/context-turn.md"
+        "spec-bdd-context-turn.md": "astrospec/context-turn.md"
 
         # Old implementations docs -> integrations
-        "mindscript/implementations/@software/README.md": "integrations/bdd/@software/README.md"
-        "mindscript/implementations/@software/template.md": "integrations/bdd/@software/template.md"
-        "mindscript/implementations/@software/examples.md": "integrations/bdd/@software/template.md"
-        "mindscript/implementations/bdd/openspec.core/README.md": "integrations/bdd/openspec.core/README.md"
+        "astrospec/implementations/@software/README.md": "integrations/bdd/@software/README.md"
+        "astrospec/implementations/@software/template.md": "integrations/bdd/@software/template.md"
+        "astrospec/implementations/@software/examples.md": "integrations/bdd/@software/template.md"
+        "astrospec/implementations/bdd/openspec.core/README.md": "integrations/bdd/openspec.core/README.md"
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
@@ -106,26 +106,26 @@ markdown_extensions:
 nav:
   - Start here: index.md
 
-  - MindScript Spec:
-      - Overview: mindscript/spec-overview.md
-      - Adoption Charter: mindscript/adoption-charter.md
-      - Language: mindscript/spec-language.md
-      - Schema: mindscript/spec-schema.md
-      - Validation: mindscript/spec-validation.md
-      - API: mindscript/api.md
-      - Context Turn: mindscript/context-turn.md
-      - Protocol: mindscript/protocol.md
-      - Templates: mindscript/templates.md
-      - TypeScript: mindscript/typescript.md
-      - Verification: mindscript/verification.md
-      - Examples: mindscript/spec-examples.md
-      - Quickstart: mindscript/quickstart.md
-      - Consumer Quickstart (Schema): mindscript/consumer-quickstart-schema.md
-      - Consumer Quickstart (MCP): mindscript/consumer-quickstart-mcp.md
-      - Scope Migration: mindscript/migration-orionai-to-mindscript-scope.md
-      - Extension Registry: mindscript/extension-registry.md
-      - Roadmap: mindscript/roadmap.md
-      - Whitepaper: mindscript/whitepaper.md
+  - AstroSpec Spec:
+      - Overview: astrospec/spec-overview.md
+      - Adoption Charter: astrospec/adoption-charter.md
+      - Language: astrospec/spec-language.md
+      - Schema: astrospec/spec-schema.md
+      - Validation: astrospec/spec-validation.md
+      - API: astrospec/api.md
+      - Context Turn: astrospec/context-turn.md
+      - Protocol: astrospec/protocol.md
+      - Templates: astrospec/templates.md
+      - TypeScript: astrospec/typescript.md
+      - Verification: astrospec/verification.md
+      - Examples: astrospec/spec-examples.md
+      - Quickstart: astrospec/quickstart.md
+      - Consumer Quickstart (Schema): astrospec/consumer-quickstart-schema.md
+      - Consumer Quickstart (MCP): astrospec/consumer-quickstart-mcp.md
+      - Scope Migration: astrospec/migration-orionai-to-astrospec-scope.md
+      - Extension Registry: astrospec/extension-registry.md
+      - Roadmap: astrospec/roadmap.md
+      - Whitepaper: astrospec/whitepaper.md
 
   - Governance:
       - RFC Process: governance/rfc-process.md

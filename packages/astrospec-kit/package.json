@@ -1,0 +1,39 @@
+{
+  "name": "@astrospec/kit",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Simple DX surface for AstroSpec contract validation and MCP tool calls.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --shims",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "@astrospec/agent-contracts": "workspace:*",
+    "@astrospec/mcp-profile": "workspace:*",
+    "@astrospec/retrieval-profile": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

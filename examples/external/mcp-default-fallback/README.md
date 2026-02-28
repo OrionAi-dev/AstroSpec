@@ -24,11 +24,11 @@ external-e2e-result: ok
 ## External usage shape (npm packages)
 
 ```bash
-npm i @mindscript/mcp-profile @mindscript/kit
+npm i @astrospec/mcp-profile @astrospec/kit
 ```
 
 Use the same payload flow:
 
-1. Validate with `mindscript.contract.validate` via MCP profile.
-2. Validate same payload with `@mindscript/kit` fallback.
+1. Validate with `astrospec.contract.validate` via MCP profile.
+2. Validate same payload with `@astrospec/kit` fallback.
 3. Assert parity for pass/fail and deterministic MCP error code on invalid payloads.

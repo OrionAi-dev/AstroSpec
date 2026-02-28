@@ -1,9 +1,9 @@
-# MindScript BDD: `openspec.core` (Legacy)
+# AstroSpec BDD: `openspec.core` (Legacy)
 
-This page is kept for backward compatibility. The canonical documentation now lives under the MindScript spec section:
+This page is kept for backward compatibility. The canonical documentation now lives under the AstroSpec spec section:
 
-- [MindScript BDD Core (canonical)](integrations/bdd/openspec.core/README.md)
-- [MindScript docs index](index.md)
+- [AstroSpec BDD Core (canonical)](integrations/bdd/openspec.core/README.md)
+- [AstroSpec docs index](index.md)
 
 ---
 

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/retrieval/retrieval-stream-event-0.1.json",
+  "title": "AstroSpec Retrieval Stream Event",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "requestId", "status"],
+      "properties": {
+        "kind": { "const": "status-update" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "timestamp"],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": ["submitted", "working", "input-required", "completed", "failed"]
+            },
+            "message": { "type": "string" },
+            "timestamp": { "type": "string", "format": "date-time" }
+          }
+        },
+        "final": { "type": "boolean" }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "requestId", "candidate"],
+      "properties": {
+        "kind": { "const": "candidate-update" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "candidate": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalCandidate" },
+        "append": { "type": "boolean" },
+        "lastChunk": { "type": "boolean" }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "requestId", "response"],
+      "properties": {
+        "kind": { "const": "final" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "response": { "$ref": "./retrieval-response-0.1.json" }
+      }
+    }
+  ]
+}

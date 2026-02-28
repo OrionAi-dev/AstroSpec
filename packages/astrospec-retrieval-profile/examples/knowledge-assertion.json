@@ -1,0 +1,14 @@
+{
+  "subject": "policy:retention",
+  "predicate": "requiresYears",
+  "object": 7,
+  "confidence": 0.9,
+  "assertedAt": "2026-02-28T00:00:00.000Z",
+  "evidence": [
+    {
+      "ref": "astrospec://sources/src_policy_v2",
+      "sourceId": "src_policy_v2",
+      "span": { "page": 12, "start": 0, "end": 41 }
+    }
+  ]
+}

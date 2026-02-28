@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 
-import { callMindscriptMcpTool } from '../../../packages/mindscript-mcp-profile/src/index.ts';
-import { validate } from '../../../packages/mindscript-kit/src/index.ts';
+import { callAstroSpecMcpTool } from '../../../packages/astrospec-mcp-profile/src/index.ts';
+import { validate } from '../../../packages/astrospec-kit/src/index.ts';
 
 function print(label: string, value: unknown) {
   process.stdout.write(`${label}: ${JSON.stringify(value)}\n`);
@@ -17,8 +17,8 @@ async function main() {
   };
 
   const directValid = validate('run-log-entry', validPayload);
-  const mcpValid = await callMindscriptMcpTool({
-    name: 'mindscript.contract.validate',
+  const mcpValid = await callAstroSpecMcpTool({
+    name: 'astrospec.contract.validate',
     arguments: {
       kind: 'run-log-entry',
       payload: validPayload,
@@ -36,8 +36,8 @@ async function main() {
   };
 
   const directInvalid = validate('run-log-entry', invalidPayload);
-  const mcpInvalid = await callMindscriptMcpTool({
-    name: 'mindscript.contract.validate',
+  const mcpInvalid = await callAstroSpecMcpTool({
+    name: 'astrospec.contract.validate',
     arguments: {
       kind: 'run-log-entry',
       payload: invalidPayload,
@@ -47,7 +47,7 @@ async function main() {
   assert.equal(directInvalid.ok, false, 'direct invalid payload should fail');
   assert.equal(mcpInvalid.ok, false, 'mcp invalid payload should fail');
   if (!mcpInvalid.ok) {
-    assert.equal(mcpInvalid.error.code, 'MS_MCP_CONTRACT_INVALID');
+    assert.equal(mcpInvalid.error.code, 'AS_MCP_CONTRACT_INVALID');
   }
 
   print('valid.direct', directValid);

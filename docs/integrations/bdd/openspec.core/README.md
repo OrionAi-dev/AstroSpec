@@ -1,14 +1,14 @@
-# MindScript BDD: `openspec.core`
+# AstroSpec BDD: `openspec.core`
 
-**What it is:** a minimal, portable BDD scenario format in YAML.  
-**How it is used:** like any other BDD provider. Your MindScript specs point to it with `bdd_ref.source` and `bdd_ref.path`.
+**What it is:** a minimal, portable BDD scenario format in YAML.
+**How it is used:** like any other BDD provider. Your AstroSpec specs point to it with `bdd_ref.source` and `bdd_ref.path`.
 
 ---
 
 ## Why use `openspec.core`?
 
-- You want human-readable scenarios but do not want to lock into Cucumber, Behave, or Behat yet.  
-- You need a source file that can generate multiple BDD stacks later.  
+- You want human-readable scenarios but do not want to lock into Cucumber, Behave, or Behat yet.
+- You need a source file that can generate multiple BDD stacks later.
 - You work in a domain without a mature BDD language and still want schema-validated scenarios.
 
 If you already have a mature BDD toolchain, prefer that and just reference it.
@@ -34,7 +34,7 @@ docs/
 ## Minimal scenario file
 
 ```yaml
-profile: https://mindscript.dev/profiles/bdd/openspec.core
+profile: https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core
 kind: bdd-core
 meta:
   id: AUTH-101.core
@@ -53,8 +53,8 @@ scenarios:
 ```
 
 Key fields:
-- `profile` must be `https://mindscript.dev/profiles/bdd/openspec.core`  
-- `kind` is `bdd-core`  
+- `profile` must be `https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core`
+- `kind` is `bdd-core`
 - Steps use `keyword` in `Given`, `When`, `Then`, `And`, `But`
 
 ---
@@ -65,7 +65,7 @@ Point a criterion to an `openspec.core` scenario the same way you would point to
 
 ```yaml
 # docs/integrations/bdd/@software/examples/AUTH-101.context-turn.yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta: { id: AUTH-101, title: User can log in, owner: app-auth, priority: P0 }
 
@@ -77,7 +77,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/openspec.core
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core
           path: ../../bdd/openspec.core/examples/AUTH-101.core.yaml
           scenario: auth-login-success
 ```
@@ -89,21 +89,21 @@ Add `openspec.core` to the `@software` BDD registry:
 version: 1
 supported:
   - id: cucumber
-    url: https://mindscript.dev/profiles/bdd/cucumber
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
   - id: behave
-    url: https://mindscript.dev/profiles/bdd/behave
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behave
   - id: behat
-    url: https://mindscript.dev/profiles/bdd/behat
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behat
   - id: jbehave
-    url: https://mindscript.dev/profiles/bdd/jbehave
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
   - id: karate
-    url: https://mindscript.dev/profiles/bdd/karate
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/karate
   - id: robot
-    url: https://mindscript.dev/profiles/bdd/robot
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/robot
   - id: specflow
-    url: https://mindscript.dev/profiles/bdd/specflow
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/specflow
   - id: openspec.core
-    url: https://mindscript.dev/profiles/bdd/openspec.core
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core
 ```
 
 ---
@@ -111,8 +111,8 @@ supported:
 ## Validate with AJV
 
 ```bash
-ajv validate 
-  -s <(yq -o=json docs/integrations/bdd/openspec.core/schema.yaml) 
+ajv validate
+  -s <(yq -o=json docs/integrations/bdd/openspec.core/schema.yaml)
   -d <(yq -o=json docs/integrations/bdd/openspec.core/examples/AUTH-101.core.yaml)
 ```
 
@@ -120,16 +120,16 @@ ajv validate
 
 ## Tooling notes
 
-- **Traceability:** produce `dist/context-turn/index.json` that maps `criteria.id` to `{ file, scenario_id }`.  
-- **Generators (optional):** render `.feature` files for Cucumber, Behave, Behat, Robot.  
+- **Traceability:** produce `dist/context-turn/index.json` that maps `criteria.id` to `{ file, scenario_id }`.
+- **Generators (optional):** render `.feature` files for Cucumber, Behave, Behat, Robot.
 - **Round trip (optional):** import or export Gherkin for migration.
 
 ---
 
 ## Versioning
 
-- Profile URL: `https://mindscript.dev/profiles/bdd/openspec.core`  
-- Schema URL: `https://mindscript.dev/schemas/bdd/openspec.core-1.0.json`  
+- Profile URL: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core`
+- Schema URL: `https://orionai-dev.github.io/AstroSpec/schemas/bdd/openspec.core-1.0.json`
 - Use SemVer for schema changes.
 
 ---
@@ -142,6 +142,6 @@ This repository uses **Apache-2.0**. See `LICENSE`.
 
 ## Contributing
 
-- Keep `openspec.core` small and stable.  
-- Changes should be backward compatible when possible.  
+- Keep `openspec.core` small and stable.
+- Changes should be backward compatible when possible.
 - Add examples and update docs under `docs/integrations/bdd/`.

@@ -1,8 +1,8 @@
-**@mindscript/mindgraphql-core**
+**@astrospec/mindgraphql-core**
 
 ***
 
-# @mindscript/mindgraphql-core
+# @astrospec/mindgraphql-core
 
 ## Functions
 

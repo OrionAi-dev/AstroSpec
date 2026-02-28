@@ -1,17 +1,17 @@
 # Behat Mapper
 
-This adapter connects MindScript `@software` criteria to **Behat** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from MindScript. Instead, it looks up the Behat `.feature` file and `Scenario` you reference and produces a traceability index.
+This adapter connects AstroSpec `@software` criteria to **Behat** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from AstroSpec. Instead, it looks up the Behat `.feature` file and `Scenario` you reference and produces a traceability index.
 
 ## Design principles
 
-- **MindScript stays agnostic.** We only link to Behat; we do not copy Gherkin semantics into MindScript.
+- **AstroSpec stays agnostic.** We only link to Behat; we do not copy Gherkin semantics into AstroSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., Behat).
 
 ## What it does
 
-- Reads an MindScript YAML that declares:
-  - `profile: https://mindscript.dev/profiles/@software`
+- Reads an AstroSpec YAML that declares:
+  - `profile: https://orionai-dev.github.io/AstroSpec/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Behat artifacts
 - For each criterion with `bdd_ref`:
   - Validates `bdd_ref.source` is the Behat profile URL from your registry
@@ -22,19 +22,19 @@ This adapter connects MindScript `@software` criteria to **Behat** by **referenc
 
 ## Inputs (required fields)
 
-- `criteria[].bdd_ref.source` → Behat profile URL  
-  Example: `https://mindscript.dev/profiles/bdd/behat`
+- `criteria[].bdd_ref.source` → Behat profile URL
+  Example: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/behat`
 - `criteria[].bdd_ref.path` → path/URL to the `.feature`
 - `criteria[].bdd_ref.scenario` → scenario name inside that feature
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (MindScript → Behat reference)
+## Minimal example (AstroSpec → Behat reference)
 
-MindScript input:
+AstroSpec input:
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: BEHAT-501
@@ -51,7 +51,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/behat
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behat
           path: ./BEHAT-LOGIN.feature
           scenario: Valid credentials produce a successful session
 ```
@@ -70,7 +70,7 @@ Mapper output (traceability index):
 
 ```json
 {
-  "profile": "https://mindscript.dev/profiles/@software",
+  "profile": "https://orionai-dev.github.io/AstroSpec/profiles/@software",
   "tool": "behat",
   "mappings": [
     {
@@ -84,7 +84,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-MindScript → Behat
+AstroSpec → Behat
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -96,7 +96,7 @@ MindScript → Behat
 ## File layout
 
 **Inputs**
-- MindScript specs: anywhere (examples live under `docs/integrations/bdd/@software/examples/`)
+- AstroSpec specs: anywhere (examples live under `docs/integrations/bdd/@software/examples/`)
 - Behat features: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -105,11 +105,11 @@ MindScript → Behat
 
 ## Validation rules applied
 
-- MindScript file must validate against `@software` schema
+- AstroSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under Behat in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.feature`
-- Inline step fields are ignored; MindScript does **not** define steps
+- Inline step fields are ignored; AstroSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ MindScript → Behat
 ## Integration tips
 
 - Keep your Behat context classes under `tests/Behat/Context/`
-- Tag scenarios with MindScript IDs for easier back-references:
+- Tag scenarios with AstroSpec IDs for easier back-references:
 
 ```gherkin
-@mindscript(BEHAT-501.1.1)
+@astrospec(BEHAT-501.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -136,8 +136,8 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] MindScript YAML validates against `@software` schema  
-- [ ] `bdd-registry.yaml` includes the Behat profile URL  
-- [ ] External `.feature` file exists and contains the named Scenario  
-- [ ] `dist/behat/index.json` produced for traceability  
+- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] `bdd-registry.yaml` includes the Behat profile URL
+- [ ] External `.feature` file exists and contains the named Scenario
+- [ ] `dist/behat/index.json` produced for traceability
 - [ ] (Optional) Features copied to `dist/behat/features/` without modification

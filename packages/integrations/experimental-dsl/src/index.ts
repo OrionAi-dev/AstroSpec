@@ -1,13 +1,13 @@
-// MindScript core parser + AST
+// AstroSpec core parser + AST
 // File extension: .ms
 
-export type MindScriptDocument = {
-  kind: "MindScriptDocument";
+export type AstroSpecDocument = {
+  kind: "AstroSpecDocument";
   version: string;
-  blocks: MindScriptBlock[];
+  blocks: AstroSpecBlock[];
 };
 
-export type MindScriptBlock =
+export type AstroSpecBlock =
   | SourceBlock
   | EntityBlock
   | MappingBlock
@@ -53,19 +53,19 @@ export type ParseOptions = {
 };
 
 /**
- * Parse a .ms MindScript file into an AST.
+ * Parse a .ms AstroSpec file into an AST.
  * This parser is intentionally forgiving.
  */
-export function parseMindScript(
+export function parseAstroSpec(
   source: string,
   _options: ParseOptions = {}
-): MindScriptDocument {
+): AstroSpecDocument {
   const lines = source
     .split(/\r?\n/)
     .map(l => l.trim())
     .filter(l => l.length > 0 && !l.startsWith("#"));
 
-  const blocks: MindScriptBlock[] = [];
+  const blocks: AstroSpecBlock[] = [];
   let i = 0;
 
   function peek() {
@@ -167,7 +167,7 @@ export function parseMindScript(
   }
 
   return {
-    kind: "MindScriptDocument",
+    kind: "AstroSpecDocument",
     version: "0.1",
     blocks
   };

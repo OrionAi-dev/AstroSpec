@@ -1,8 +1,8 @@
-[**@mindscript/schema**](../README.md)
+[**@astrospec/schema**](../README.md)
 
 ***
 
-[@mindscript/schema](../README.md) / getSchemaPath
+[@astrospec/schema](../README.md) / getSchemaPath
 
 # Function: getSchemaPath()
 
@@ -16,7 +16,7 @@ Get the on-disk path to a bundled schema JSON file.
 
 ### name
 
-[`MindScriptSchemaName`](../type-aliases/MindScriptSchemaName.md)
+[`AstroSpecSchemaName`](../type-aliases/AstroSpecSchemaName.md)
 
 ## Returns
 

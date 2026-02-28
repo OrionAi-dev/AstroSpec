@@ -1,12 +1,12 @@
-**@mindscript/schema**
+**@astrospec/schema**
 
 ***
 
-# @mindscript/schema
+# @astrospec/schema
 
 ## Type Aliases
 
-- [MindScriptSchemaName](type-aliases/MindScriptSchemaName.md)
+- [AstroSpecSchemaName](type-aliases/AstroSpecSchemaName.md)
 
 ## Functions
 

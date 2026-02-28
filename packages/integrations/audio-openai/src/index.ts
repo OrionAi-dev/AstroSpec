@@ -1,4 +1,4 @@
-import type { JsonValue,  } from '@mindscript/openspec-types';
+import type { JsonValue,  } from '@astrospec/openspec-types';
 
 /* ---------- Branded IDs ---------- */
 export type AudioId = string & { readonly __brand: 'AudioId' };

@@ -1,8 +1,8 @@
-[**@mindscript/openspec-plugin-mindgraphql**](../README.md)
+[**@astrospec/openspec-plugin-mindgraphql**](../README.md)
 
 ***
 
-[@mindscript/openspec-plugin-mindgraphql](../README.md) / default
+[@astrospec/openspec-plugin-mindgraphql](../README.md) / default
 
 # Function: default()
 

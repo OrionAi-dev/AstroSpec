@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / OpenSpecBase
+[@astrospec/openspec-types](../README.md) / OpenSpecBase
 
 # ~~Type Alias: OpenSpecBase\<F\>~~
 
-> **OpenSpecBase**\<`F`\> = [`MindScriptBase`](../interfaces/MindScriptBase.md)\<`F`\>
+> **OpenSpecBase**\<`F`\> = [`AstroSpecBase`](../interfaces/AstroSpecBase.md)\<`F`\>
 
 Defined in: packages/openspec-types/dist/index.d.ts:14
 
@@ -18,4 +18,4 @@ Defined in: packages/openspec-types/dist/index.d.ts:14
 
 ## Deprecated
 
-Use `MindScriptBase`.
+Use `AstroSpecBase`.

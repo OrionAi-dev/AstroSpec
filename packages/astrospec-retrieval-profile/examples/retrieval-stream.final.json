@@ -1,0 +1,24 @@
+{
+  "kind": "final",
+  "requestId": "req_demo_1",
+  "response": {
+    "ok": true,
+    "requestId": "req_demo_1",
+    "techniqueUsed": ["pageindex"],
+    "results": [
+      {
+        "candidateId": "cand_1",
+        "sourceId": "src_policy_v2",
+        "ref": "astrospec://sources/src_policy_v2",
+        "kind": "document",
+        "stage": "retrieve"
+      }
+    ],
+    "citations": [
+      {
+        "citationId": "cit_1",
+        "candidateId": "cand_1"
+      }
+    ]
+  }
+}

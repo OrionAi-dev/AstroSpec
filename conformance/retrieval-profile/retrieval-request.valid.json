@@ -1,0 +1,5 @@
+{
+  "requestId": "req_1",
+  "query": "Find the retention policy",
+  "techniques": ["pageindex", "graph"]
+}

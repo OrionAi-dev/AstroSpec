@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/acceptance-criteria-0.1.json",
+  "title": "AstroSpec Acceptance Criteria",
+  "description": "Structured, verifiable conditions attached to a Context or Turn.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "description", "verifier"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Stable identifier for the criterion."
+      },
+      "description": {
+        "type": "string",
+        "description": "Human-readable requirement."
+      },
+      "verifier": {
+        "type": "string",
+        "description": "Verifier ID (e.g., json_schema, contains_fields)."
+      },
+      "params": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "Verifier-specific parameters."
+      },
+      "evidence": {
+        "type": "array",
+        "description": "Framework-agnostic evidence references.",
+        "items": { "$ref": "./defs-0.1.json#/$defs/evidenceRef" }
+      }
+    }
+  }
+}
+

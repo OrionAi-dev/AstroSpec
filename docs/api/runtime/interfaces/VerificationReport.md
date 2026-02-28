@@ -1,12 +1,12 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / VerificationReport
+[@astrospec/runtime](../README.md) / VerificationReport
 
 # Interface: VerificationReport
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:247
+Defined in: packages/astrospec-runtime/dist/index.d.ts:268
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:247
 
 > **at**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:252
+Defined in: packages/astrospec-runtime/dist/index.d.ts:273
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:252
 
 > `optional` **contextId**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:248
+Defined in: packages/astrospec-runtime/dist/index.d.ts:269
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:248
 
 > `optional` **meta**: [`JsonObject`](JsonObject.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:253
+Defined in: packages/astrospec-runtime/dist/index.d.ts:274
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:253
 
 > **overall**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:250
+Defined in: packages/astrospec-runtime/dist/index.d.ts:271
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:250
 
 > **results**: [`VerifierResult`](VerifierResult.md)[]
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:251
+Defined in: packages/astrospec-runtime/dist/index.d.ts:272
 
 ***
 
@@ -54,4 +54,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:251
 
 > `optional` **turnId**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:249
+Defined in: packages/astrospec-runtime/dist/index.d.ts:270

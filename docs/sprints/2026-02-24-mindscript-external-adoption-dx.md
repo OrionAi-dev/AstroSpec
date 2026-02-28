@@ -1,14 +1,14 @@
-# Sprint: MindScript External Adoption + AI Developer DX (2026-02-24)
+# Sprint: AstroSpec External Adoption + AI Developer DX (2026-02-24)
 
 ## Goal
 
-Make MindScript easy for external LLM vendors and AI developers to adopt with minimal coupling to Orion/Stardrive product internals.
+Make AstroSpec easy for external LLM vendors and AI developers to adopt with minimal coupling to Orion/Stardrive product internals.
 
 ## Scope
 
-1. Neutral public package namespace (`@mindscript/*`).
+1. Neutral public package namespace (`@astrospec/*`).
 2. Compatibility wrappers for `@orionai/*` imports.
-3. Simple adapter package (`@mindscript/kit`) for 5-minute integration.
+3. Simple adapter package (`@astrospec/kit`) for 5-minute integration.
 4. Protocol-first docs and quickstarts.
 5. OSS governance baseline + compatibility policy.
 6. Boundary and deep-import CI checks.
@@ -17,21 +17,21 @@ Make MindScript easy for external LLM vendors and AI developers to adopt with mi
 
 ### Pass 0: Adoption Contract Freeze
 
-- Add `docs/mindscript/adoption-charter.md`.
+- Add `docs/astrospec/adoption-charter.md`.
 - Freeze public vs private extension rules.
 
 ### Pass 1: Namespace Neutralization
 
 - Canonical package names:
-  - `@mindscript/agent-contracts`
-  - `@mindscript/mcp-profile`
+  - `@astrospec/agent-contracts`
+  - `@astrospec/mcp-profile`
 - Add compatibility wrapper packages:
-  - `@orionai/mindscript-agent-contracts`
-  - `@orionai/mindscript-mcp-profile`
+  - `@astrospec/agent-contracts`
+  - `@astrospec/mcp-profile`
 
 ### Pass 2: AI Developer Easy Path
 
-- Add `@mindscript/kit` with:
+- Add `@astrospec/kit` with:
   - `validate(kind, payload)`
   - `callTool(name, args)`
 - Keep wrappers and advanced surfaces separate.
@@ -49,19 +49,19 @@ Make MindScript easy for external LLM vendors and AI developers to adopt with mi
 
 ### Pass 5: Migration + Adoption Docs
 
-- Add migration map (`@orionai/*` -> `@mindscript/*`).
+- Add migration map (`@orionai/*` -> `@astrospec/*`).
 - Add consumer quickstarts (schema-first, MCP-native).
 - Update root README links and adoption guidance.
 
 ## Validation Gates
 
 ```bash
-pnpm -F @mindscript/agent-contracts typecheck
-pnpm -F @mindscript/agent-contracts test
-pnpm -F @mindscript/mcp-profile typecheck
-pnpm -F @mindscript/mcp-profile test
-pnpm -F @mindscript/kit typecheck
-pnpm -F @mindscript/kit test
+pnpm -F @astrospec/agent-contracts typecheck
+pnpm -F @astrospec/agent-contracts test
+pnpm -F @astrospec/mcp-profile typecheck
+pnpm -F @astrospec/mcp-profile test
+pnpm -F @astrospec/kit typecheck
+pnpm -F @astrospec/kit test
 pnpm check:public-boundaries
 pnpm check:deep-imports
 pnpm check:starconsole-contract-drift
@@ -71,6 +71,6 @@ pnpm check:starconsole-contract-drift
 
 1. Public packages use neutral namespace.
 2. Compatibility wrappers preserve existing consumers.
-3. AI devs can integrate through one small package (`@mindscript/kit`).
+3. AI devs can integrate through one small package (`@astrospec/kit`).
 4. Governance and compatibility policy are explicit.
 5. CI catches cross-brand coupling and deep import drift.

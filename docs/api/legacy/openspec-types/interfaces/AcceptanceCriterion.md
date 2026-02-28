@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / AcceptanceCriterion
+[@astrospec/openspec-types](../README.md) / AcceptanceCriterion
 
 # Interface: AcceptanceCriterion
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:76
+Defined in: packages/astrospec-runtime/dist/index.d.ts:92
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:76
 
 > **description**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:78
+Defined in: packages/astrospec-runtime/dist/index.d.ts:94
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:78
 
 > `optional` **evidence**: readonly [`EvidenceRef`](EvidenceRef.md)[]
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:81
+Defined in: packages/astrospec-runtime/dist/index.d.ts:97
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:81
 
 > **id**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:77
+Defined in: packages/astrospec-runtime/dist/index.d.ts:93
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:77
 
 > `optional` **params**: [`JsonObject`](JsonObject.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:80
+Defined in: packages/astrospec-runtime/dist/index.d.ts:96
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:80
 
 > **verifier**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:79
+Defined in: packages/astrospec-runtime/dist/index.d.ts:95

@@ -23,31 +23,31 @@ function rel(fromAbs, toAbs) {
 }
 
 const target = {
-  contextTurn: path.join(docsDir, "mindscript", "context-turn.md"),
+  contextTurn: path.join(docsDir, "astrospec", "context-turn.md"),
 };
 
 const legacyLinkMap = {
   openspi: {
     overview: path.join(docsDir, "openspi", "overview.md"),
-    "spec-language": path.join(docsDir, "mindscript", "spec-language.md"),
-    "context-turn": path.join(docsDir, "mindscript", "context-turn.md"),
-    typescript: path.join(docsDir, "mindscript", "typescript.md"),
-    verification: path.join(docsDir, "mindscript", "verification.md"),
-    templates: path.join(docsDir, "mindscript", "templates.md"),
-    quickstart: path.join(docsDir, "mindscript", "quickstart.md"),
-    roadmap: path.join(docsDir, "mindscript", "roadmap.md"),
+    "spec-language": path.join(docsDir, "astrospec", "spec-language.md"),
+    "context-turn": path.join(docsDir, "astrospec", "context-turn.md"),
+    typescript: path.join(docsDir, "astrospec", "typescript.md"),
+    verification: path.join(docsDir, "astrospec", "verification.md"),
+    templates: path.join(docsDir, "astrospec", "templates.md"),
+    quickstart: path.join(docsDir, "astrospec", "quickstart.md"),
+    roadmap: path.join(docsDir, "astrospec", "roadmap.md"),
   },
   openspec: {
-    overview: path.join(docsDir, "mindscript", "spec-overview.md"),
-    "spec-language": path.join(docsDir, "mindscript", "spec-language.md"),
-    templates: path.join(docsDir, "mindscript", "templates.md"),
+    overview: path.join(docsDir, "astrospec", "spec-overview.md"),
+    "spec-language": path.join(docsDir, "astrospec", "spec-language.md"),
+    templates: path.join(docsDir, "astrospec", "templates.md"),
   },
 };
 
 function rewrite(fileAbs, content) {
   let txt = content;
 
-  // 1) Any variant of ".../spec-bdd-context-turn.md" -> relative path to mindscript/context-turn.md
+  // 1) Any variant of ".../spec-bdd-context-turn.md" -> relative path to astrospec/context-turn.md
   txt = txt.replace(
     /\((?:\.{1,2}\/)*spec-bdd-context-turn\.md\)/gi,
     () => `(${rel(fileAbs, target.contextTurn)})`

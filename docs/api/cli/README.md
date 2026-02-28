@@ -1,5 +1,5 @@
-**@mindscript/cli**
+**@astrospec/cli**
 
 ***
 
-# @mindscript/cli
+# @astrospec/cli

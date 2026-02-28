@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/provenance-0.1.json",
+  "title": "AstroSpec Provenance",
+  "description": "Audit trail entries that describe how contract data was produced.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["source", "at"],
+    "properties": {
+      "source": { "$ref": "./defs-0.1.json#/$defs/source" },
+      "at": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "field": {
+        "type": "string",
+        "description": "Optional affected field (top-level key or JSON Pointer)."
+      },
+      "actor": {
+        "type": "string",
+        "description": "Identifier for the agent/system that created the entry."
+      },
+      "note": {
+        "type": "string",
+        "description": "Short explanation."
+      },
+      "data": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "entityId": {
+        "type": "string",
+        "description": "Optional W3C PROV-style entity identifier."
+      },
+      "activityId": {
+        "type": "string",
+        "description": "Optional W3C PROV-style activity identifier."
+      },
+      "agentId": {
+        "type": "string",
+        "description": "Optional W3C PROV-style agent identifier."
+      },
+      "role": {
+        "type": "string",
+        "description": "Optional attribution role."
+      },
+      "derivedFrom": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "description": "Optional source entity identifiers used to derive this entry."
+      },
+      "ext": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}

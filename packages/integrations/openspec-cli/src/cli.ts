@@ -14,13 +14,13 @@ const tryLoad = (id: string) => { try { const m = require(id); return m.default 
 
 function loadPlugins(): Plugin[] {
   return [
-    "@mindscript/openspec-plugin-mindql",
-    "@mindscript/openspec-plugin-mindgraphql"
+    "@astrospec/openspec-plugin-mindql",
+    "@astrospec/openspec-plugin-mindgraphql"
   ].map(tryLoad).filter(Boolean).map((p: any) => typeof p === "function" ? p() : p) as Plugin[];
 }
 
 async function main() {
-  const cmd = basename(process.argv[1] ?? "mindscript");
+  const cmd = basename(process.argv[1] ?? "astrospec");
   const input = process.argv[2];
   const outDir = process.argv[3] ?? "generated";
   if (!input) { console.error(`Usage: ${cmd} <file> [outDir]`); process.exit(1); }

@@ -1,14 +1,14 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / registerVerifier
+[@astrospec/openspec-runtime](../README.md) / registerVerifier
 
 # Function: registerVerifier()
 
 > **registerVerifier**(`id`, `fn`): `void`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:266
+Defined in: packages/astrospec-runtime/dist/index.d.ts:287
 
 ## Parameters
 

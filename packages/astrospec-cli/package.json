@@ -1,0 +1,32 @@
+{
+  "name": "@astrospec/cli",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Command-line tooling for AstroSpec core and retrieval profile validation workflows.",
+  "bin": {
+    "astrospec": "dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/cli.ts --dts --format esm",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@astrospec/kit": "workspace:*",
+    "@astrospec/retrieval-profile": "workspace:*",
+    "@astrospec/runtime": "workspace:*",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

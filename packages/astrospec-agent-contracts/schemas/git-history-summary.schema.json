@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.orionai.dev/astrospec/git-history-summary.schema.json",
+  "title": "GitHistorySummary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["windowDays", "headSha", "indexedAt", "commits", "files", "hotspots"],
+  "properties": {
+    "windowDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
+    "headSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+    "indexedAt": { "type": "string", "format": "date-time" },
+    "commits": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/commitSummary" }
+    },
+    "files": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fileSummary" }
+    },
+    "hotspots": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hotspotSummary" }
+    },
+    "cursor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lastIndexedSha", "stale"],
+      "properties": {
+        "lastIndexedSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "stale": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "commitSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha", "authoredAt", "authorName", "messageSummary", "parents", "filesChanged"],
+      "properties": {
+        "sha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "authoredAt": { "type": "string", "format": "date-time" },
+        "authorName": { "type": "string", "minLength": 1 },
+        "authorEmail": { "type": "string", "format": "email" },
+        "messageSummary": { "type": "string", "minLength": 1 },
+        "parents": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" }
+        },
+        "filesChanged": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "fileSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "lastCommitSha", "changeCount"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "lastCommitSha": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "changeCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "hotspotSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "score", "reasons"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "score": { "type": "number", "minimum": 0 },
+        "reasons": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

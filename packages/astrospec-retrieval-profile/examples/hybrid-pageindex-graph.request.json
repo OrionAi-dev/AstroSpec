@@ -1,0 +1,29 @@
+{
+  "requestId": "req_demo_1",
+  "query": "Summarize the retention policy and cite the authoritative source.",
+  "topK": 5,
+  "techniques": ["pageindex", "graph"],
+  "memoryNamespaces": ["policy"],
+  "graphScopes": ["compliance"],
+  "plan": {
+    "strategy": "adaptive",
+    "steps": [
+      {
+        "id": "step_1",
+        "technique": "pageindex",
+        "purpose": "Find canonical source passages",
+        "topK": 8
+      },
+      {
+        "id": "step_2",
+        "technique": "graph_expand",
+        "purpose": "Expand linked obligations",
+        "dependsOn": ["step_1"]
+      }
+    ]
+  },
+  "stream": true,
+  "meta": {
+    "product": "telescope"
+  }
+}

@@ -1,20 +1,20 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / signSpec
+[@astrospec/runtime](../README.md) / signSpec
 
 # Function: signSpec()
 
 > **signSpec**(`spec`): `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:193
+Defined in: packages/astrospec-runtime/dist/index.d.ts:214
 
 ## Parameters
 
 ### spec
 
-[`MindScriptBase`](../interfaces/MindScriptBase.md)
+[`AstroSpecBase`](../interfaces/AstroSpecBase.md)
 
 ## Returns
 

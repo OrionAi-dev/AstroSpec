@@ -1,9 +1,9 @@
 id: "openspec.core"
-namespace: "mindscript"
-url: "https://mindscript.dev/profiles/bdd/openspec.core"
+namespace: "astrospec"
+url: "https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core"
 version: "1.0"
-description: "MindScript Core BDD format (YAML) for portable scenarios across domains"
-schema: "https://mindscript.dev/schemas/bdd/openspec.core-1.0.json"
+description: "AstroSpec Core BDD format (YAML) for portable scenarios across domains"
+schema: "https://orionai-dev.github.io/AstroSpec/schemas/bdd/openspec.core-1.0.json"
 registry: "../profiles-registry.yaml"
 maintainers:
   - name: "OrionAI / Telescope"

@@ -1,4 +1,4 @@
-import { parseMindQL } from "@mindscript/mindql-core";
+import { parseMindQL } from "@astrospec/mindql-core";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 export default function mindql() {

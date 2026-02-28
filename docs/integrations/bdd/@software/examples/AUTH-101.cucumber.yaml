@@ -1,5 +1,5 @@
 # docs/integrations/bdd/@software/examples/AUTH-101.cucumber.yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: AUTH-101
@@ -16,7 +16,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: https://example.org/bdd/cucumber/FEATURE-LOGIN.feature
           scenario: Valid credentials produce a successful session
 
@@ -24,7 +24,7 @@ requirements:
         type: security
         text: Invalid credentials are rejected with a generic error that does not reveal whether the email exists
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: https://example.org/bdd/cucumber/FEATURE-LOGIN.feature
           scenario: Invalid credentials are rejected
 
@@ -32,7 +32,7 @@ requirements:
         type: security
         text: Passwords must be at least 12 characters and include at least one uppercase letter, one lowercase letter, and one digit
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: https://example.org/bdd/cucumber/FEATURE-LOGIN.feature
           scenario: Password policy is enforced
 
@@ -40,7 +40,7 @@ requirements:
         type: security
         text: After 5 failed attempts within 15 minutes the account is locked for 15 minutes or until a successful password reset
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: https://example.org/bdd/cucumber/FEATURE-LOGIN.feature
           scenario: Account lockout after repeated failures
 
@@ -48,6 +48,6 @@ requirements:
         type: security
         text: If the user has MFA enabled, a second factor challenge is required after password verification before the session is created
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: https://example.org/bdd/cucumber/FEATURE-LOGIN.feature
           scenario: MFA challenge shown for enrolled users

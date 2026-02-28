@@ -1,20 +1,20 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / signSpec
+[@astrospec/openspec-types](../README.md) / signSpec
 
 # Function: signSpec()
 
 > **signSpec**(`spec`): `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:193
+Defined in: packages/astrospec-runtime/dist/index.d.ts:214
 
 ## Parameters
 
 ### spec
 
-[`MindScriptBase`](../interfaces/MindScriptBase.md)
+[`AstroSpecBase`](../interfaces/AstroSpecBase.md)
 
 ## Returns
 

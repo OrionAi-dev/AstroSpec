@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.orionai.dev/astrospec/tool-policy-spec.schema.json",
+  "title": "ToolPolicySpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "allowedTools",
+    "workspaceAllowlist",
+    "commandDenylist",
+    "readOnlyDefault",
+    "writeRequiresApprovalToken"
+  ],
+  "properties": {
+    "allowedTools": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "workspaceAllowlist": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "commandDenylist": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "readOnlyDefault": { "type": "boolean" },
+    "writeRequiresApprovalToken": { "type": "boolean" },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "boolean" },
+        "riskTier": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "critical"]
+        },
+        "approvalRef": { "type": "string", "minLength": 1 }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "defaultWriteRisk": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "critical"]
+        },
+        "uncertaintyRisk": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "critical"]
+        },
+        "allowRiskDowngrade": { "type": "boolean" },
+        "toolRisk": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["low", "moderate", "high", "critical"]
+          }
+        },
+        "pathRisk": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["pattern", "risk"],
+            "properties": {
+              "pattern": { "type": "string", "minLength": 1 },
+              "risk": {
+                "type": "string",
+                "enum": ["low", "moderate", "high", "critical"]
+              }
+            }
+          }
+        },
+        "commandRisk": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["pattern", "risk"],
+            "properties": {
+              "pattern": { "type": "string", "minLength": 1 },
+              "risk": {
+                "type": "string",
+                "enum": ["low", "moderate", "high", "critical"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

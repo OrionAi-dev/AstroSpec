@@ -1,0 +1,7 @@
+{
+  "namespace": "policy",
+  "key": "retention.default",
+  "kind": "semantic",
+  "content": { "years": 7 },
+  "updatedAt": "2026-02-28T00:00:00.000Z"
+}

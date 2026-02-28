@@ -1,12 +1,12 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / BaseField
+[@astrospec/runtime](../README.md) / BaseField
 
 # Interface: BaseField\<T\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:25
+Defined in: packages/astrospec-runtime/dist/index.d.ts:25
 
 ## Type Parameters
 
@@ -20,7 +20,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:25
 
 > `optional` **confidence**: `number`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:38
+Defined in: packages/astrospec-runtime/dist/index.d.ts:38
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:38
 
 > `optional` **default**: `T`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:35
+Defined in: packages/astrospec-runtime/dist/index.d.ts:35
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:35
 
 > `optional` **description**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:36
+Defined in: packages/astrospec-runtime/dist/index.d.ts:36
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:36
 
 > `optional` **enum**: readonly `T`[]
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:31
+Defined in: packages/astrospec-runtime/dist/index.d.ts:31
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:31
 
 > `optional` **ext**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:41
+Defined in: packages/astrospec-runtime/dist/index.d.ts:41
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:41
 
 > `optional` **many**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:33
+Defined in: packages/astrospec-runtime/dist/index.d.ts:33
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:33
 
 > `optional` **max**: `number`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:30
+Defined in: packages/astrospec-runtime/dist/index.d.ts:30
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:30
 
 > `optional` **min**: `number`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:29
+Defined in: packages/astrospec-runtime/dist/index.d.ts:29
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:29
 
 > `optional` **noneAllowed**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:34
+Defined in: packages/astrospec-runtime/dist/index.d.ts:34
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:34
 
 > `optional` **pattern**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:32
+Defined in: packages/astrospec-runtime/dist/index.d.ts:32
 
 ***
 
@@ -100,7 +100,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:32
 
 > `optional` **rationale**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:39
+Defined in: packages/astrospec-runtime/dist/index.d.ts:39
 
 ***
 
@@ -108,7 +108,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:39
 
 > `optional` **required**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:28
+Defined in: packages/astrospec-runtime/dist/index.d.ts:28
 
 ***
 
@@ -116,7 +116,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:28
 
 > `optional` **scope**: [`FieldScope`](../type-aliases/FieldScope.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:40
+Defined in: packages/astrospec-runtime/dist/index.d.ts:40
 
 ***
 
@@ -124,7 +124,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:40
 
 > `optional` **source**: [`FieldSource`](../type-aliases/FieldSource.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:37
+Defined in: packages/astrospec-runtime/dist/index.d.ts:37
 
 ***
 
@@ -132,7 +132,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:37
 
 > **type**: [`FieldType`](../type-aliases/FieldType.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:26
+Defined in: packages/astrospec-runtime/dist/index.d.ts:26
 
 ***
 
@@ -140,4 +140,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:26
 
 > `optional` **value**: `T`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:27
+Defined in: packages/astrospec-runtime/dist/index.d.ts:27

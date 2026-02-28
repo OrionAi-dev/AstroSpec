@@ -3,9 +3,9 @@ set -euo pipefail
 
 echo "== Verify directories =="
 for d in \
-  packages/mindscript-schema \
-  packages/mindscript-runtime \
-  packages/mindscript-cli \
+  packages/astrospec-schema \
+  packages/astrospec-runtime \
+  packages/astrospec-cli \
   packages/openspec-types \
   packages/openspec-runtime \
   packages/integrations/mindql-core \
@@ -32,8 +32,8 @@ check_dual() {
 }
 
 for pkg in \
-  packages/mindscript-schema \
-  packages/mindscript-runtime \
+  packages/astrospec-schema \
+  packages/astrospec-runtime \
   packages/openspec-types \
   packages/openspec-runtime \
   packages/integrations/mindql-core \
@@ -51,8 +51,8 @@ node - <<'NODE'
 const fs = require('fs');
 const path = require('path');
 const pkgs = [
-  "packages/mindscript-schema",
-  "packages/mindscript-runtime",
+  "packages/astrospec-schema",
+  "packages/astrospec-runtime",
   "packages/openspec-types",
   "packages/openspec-runtime",
   "packages/integrations/mindql-core",
@@ -74,8 +74,8 @@ if (!ok) process.exit(1);
 NODE
 
 echo "== Verify CLIs are ESM-only and built =="
-[ -f packages/mindscript-cli/dist/cli.js ] && echo "PASS  mindscript-cli dist/cli.js" || { echo "FAIL  mindscript-cli dist missing"; exit 1; }
-[ ! -f packages/mindscript-cli/dist/cli.cjs ] && echo "PASS  mindscript-cli has no CJS" || { echo "FAIL  mindscript-cli CJS exists (should be ESM-only)"; exit 1; }
+[ -f packages/astrospec-cli/dist/cli.js ] && echo "PASS  astrospec-cli dist/cli.js" || { echo "FAIL  astrospec-cli dist missing"; exit 1; }
+[ ! -f packages/astrospec-cli/dist/cli.cjs ] && echo "PASS  astrospec-cli has no CJS" || { echo "FAIL  astrospec-cli CJS exists (should be ESM-only)"; exit 1; }
 [ -f packages/integrations/openspec-cli/dist/cli.js ] && echo "PASS  openspec-cli dist/cli.js" || { echo "FAIL  openspec-cli dist missing"; exit 1; }
 [ ! -f packages/integrations/openspec-cli/dist/cli.cjs ] && echo "PASS  openspec-cli has no CJS" || { echo "FAIL  openspec-cli CJS exists (should be ESM-only)"; exit 1; }
 
@@ -126,14 +126,14 @@ cat >"$tmpdir/output.json" <<'JSON'
 { "a": 1 }
 JSON
 
-node packages/mindscript-cli/dist/cli.js validate "$tmpdir/context.json"
-node packages/mindscript-cli/dist/cli.js validate "$tmpdir/turn.json"
-node packages/mindscript-cli/dist/cli.js verify --turn "$tmpdir/turn.json" --output "$tmpdir/output.json" --write "$tmpdir/report.json" >/dev/null
-node packages/mindscript-cli/dist/cli.js validate "$tmpdir/report.json"
+node packages/astrospec-cli/dist/cli.js validate "$tmpdir/context.json"
+node packages/astrospec-cli/dist/cli.js validate "$tmpdir/turn.json"
+node packages/astrospec-cli/dist/cli.js verify --turn "$tmpdir/turn.json" --output "$tmpdir/output.json" --write "$tmpdir/report.json" >/dev/null
+node packages/astrospec-cli/dist/cli.js validate "$tmpdir/report.json"
 
 echo "== Quick import/require smoke (direct dist paths) =="
-node -e 'require("./packages/mindscript-runtime/dist/index.cjs"); console.log("PASS  CJS require mindscript-runtime")'
-node --input-type=module -e 'import("./packages/mindscript-runtime/dist/index.js").then(()=>console.log("PASS  ESM import mindscript-runtime"))'
+node -e 'require("./packages/astrospec-runtime/dist/index.cjs"); console.log("PASS  CJS require astrospec-runtime")'
+node --input-type=module -e 'import("./packages/astrospec-runtime/dist/index.js").then(()=>console.log("PASS  ESM import astrospec-runtime"))'
 node -e 'require("./packages/integrations/mindql-core/dist/index.cjs"); console.log("PASS  CJS require mindql-core")'
 node --input-type=module -e 'import("./packages/integrations/mindql-core/dist/index.js").then(()=>console.log("PASS  ESM import mindql-core"))'
 

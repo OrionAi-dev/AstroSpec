@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.orionai.dev/astrospec/tool-call-record.schema.json",
+  "title": "ToolCallRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "runId",
+    "name",
+    "mode",
+    "args",
+    "status",
+    "startedAt"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "runId": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "mode": { "type": "string", "enum": ["read", "write"] },
+    "args": { "type": "object", "additionalProperties": true },
+    "status": { "type": "string", "enum": ["executed", "denied"] },
+    "reasonCode": { "type": "string" },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "boolean" },
+        "riskTier": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "critical"]
+        },
+        "approvalRef": { "type": "string", "minLength": 1 }
+      }
+    },
+    "startedAt": { "type": "string", "format": "date-time" },
+    "finishedAt": { "type": "string", "format": "date-time" },
+    "outputRef": { "type": "string" }
+  }
+}

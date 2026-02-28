@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / OpenSpecTurnRequestEnvelope
+[@astrospec/openspec-types](../README.md) / OpenSpecTurnRequestEnvelope
 
 # ~~Type Alias: OpenSpecTurnRequestEnvelope\<TTurn\>~~
 
-> **OpenSpecTurnRequestEnvelope**\<`TTurn`\> = [`MindScriptTurnRequestEnvelope`](../interfaces/MindScriptTurnRequestEnvelope.md)\<`TTurn`\>
+> **OpenSpecTurnRequestEnvelope**\<`TTurn`\> = [`AstroSpecTurnRequestEnvelope`](../interfaces/AstroSpecTurnRequestEnvelope.md)\<`TTurn`\>
 
 Defined in: packages/openspec-types/dist/index.d.ts:34
 
@@ -14,8 +14,8 @@ Defined in: packages/openspec-types/dist/index.d.ts:34
 
 ### TTurn
 
-`TTurn` *extends* [`MindScriptTurn`](../interfaces/MindScriptTurn.md) = [`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+`TTurn` *extends* [`AstroSpecTurn`](../interfaces/AstroSpecTurn.md) = [`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)
 
 ## Deprecated
 
-Use `MindScriptTurnRequestEnvelope`.
+Use `AstroSpecTurnRequestEnvelope`.

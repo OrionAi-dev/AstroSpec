@@ -1,5 +1,5 @@
 {
-  "name": "@mindscript/integration-events",
+  "name": "@astrospec/integration-events",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -18,7 +18,7 @@
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@mindscript/openspec-types": "workspace:*"
+    "@astrospec/openspec-types": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

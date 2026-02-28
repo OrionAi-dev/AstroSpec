@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / ISODateTime
+[@astrospec/runtime](../README.md) / ISODateTime
 
 # Type Alias: ISODateTime
 
 > **ISODateTime** = `string` & `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:8
+Defined in: packages/astrospec-runtime/dist/index.d.ts:8
 
 ## Type Declaration
 

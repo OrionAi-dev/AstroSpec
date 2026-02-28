@@ -1,24 +1,24 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / diffSpecs
+[@astrospec/openspec-runtime](../README.md) / diffSpecs
 
 # Function: diffSpecs()
 
 > **diffSpecs**(`a`, `b`): [`SpecDiff`](../type-aliases/SpecDiff.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:237
+Defined in: packages/astrospec-runtime/dist/index.d.ts:258
 
 ## Parameters
 
 ### a
 
-[`MindScriptBase`](../interfaces/MindScriptBase.md)
+[`AstroSpecBase`](../interfaces/AstroSpecBase.md)
 
 ### b
 
-[`MindScriptBase`](../interfaces/MindScriptBase.md)
+[`AstroSpecBase`](../interfaces/AstroSpecBase.md)
 
 ## Returns
 

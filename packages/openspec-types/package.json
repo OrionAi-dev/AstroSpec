@@ -1,5 +1,5 @@
 {
-  "name": "@mindscript/openspec-types",
+  "name": "@astrospec/openspec-types",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -18,7 +18,7 @@
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@mindscript/runtime": "workspace:*"
+    "@astrospec/runtime": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

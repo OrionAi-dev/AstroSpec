@@ -1,214 +1,220 @@
-# MindScript
+# AstroSpec
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
-[![Release](https://img.shields.io/github/v/release/OrionAi-dev/MindScript)](https://github.com/OrionAi-dev/MindScript/releases/latest)
-[![Docs](https://img.shields.io/badge/docs-whitepaper-success)](./docs/mindscript/whitepaper.md)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/OrionAi-dev/MindScript/issues)
+[![Release](https://img.shields.io/github/v/release/OrionAi-dev/AstroSpec)](https://github.com/OrionAi-dev/AstroSpec/releases/latest)
+[![Docs](https://img.shields.io/badge/docs-spec-success)](./docs/index.md)
 
----
+**AstroSpec is a vendor-neutral contract standard for humans, LLMs, agents, tools, and runtimes.**
 
-**MindScript is a vendor-neutral contract language for humans, LLMs, agents, and tools.**
+It exists to make intent, constraints, evidence, citations, grounding, and verification explicit in stable machine-readable contracts.
 
-It is designed to make intent, constraints, acceptance criteria, and machine-readable execution contracts explicit before generation or action.
+AstroSpec is designed to be infrastructure:
 
-MindScript can be used as:
+- a contract language
+- a schema and validation layer
+- a protocol and interoperability layer
+- a profile registry for domain-specific contracts
+- a neutral standard surface for retrieval and evidence exchange
 
-- a requirements and acceptance-criteria language
-- an LLM-to-LLM and agent-to-agent contract layer
-- a schema surface for deterministic validation and interoperability
-- a protocol layer over MCP or direct schema validation flows
+## What AstroSpec Is
 
-📄 [Read the white paper (Markdown)](./docs/mindscript/whitepaper.md)  
-⬇️ [Get the latest release](https://github.com/OrionAi-dev/MindScript/releases/latest)
+AstroSpec is not just a spec-authoring format and it is not just a prompt wrapper.
 
----
-
-## Table of Contents
-- [What is MindScript](#what-is-mindscript)
-- [Core Principles](#core-principles)
-- [Why it matters](#why-it-matters)
-- [Technical alignment](#technical-alignment)
-- [Applications](#applications)
-- [BDD providers](#bdd-providers)
-- [Quick start](#quick-start)
-- [AI developer quickstarts](#ai-developer-quickstarts)
-- [Release expectations](#release-expectations)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## What is MindScript
-
-MindScript provides a structured way to define intent, requirements, constraints, and verification criteria in forms that both humans and machines can use.
-
-That means it is not only a spec-authoring format. It is also a contract language that can sit between:
+It can sit between:
 
 - humans and AI systems
 - one model and another model
 - agents and tool runtimes
-- planning layers and execution layers
+- retrieval systems and consuming applications
+- governance layers and execution layers
 
-The requirements-first/spec-first workflow remains an important use case, but it is no longer the only correct description of the project.
+Its first serious adoption wedge is **RAG interoperability**:
 
-### Naming note
+- retrieval requests and results
+- citations and evidence
+- memory records
+- graph knowledge assertions
+- grounding and verification
 
-This repository is not affiliated with the separate “MindScript” programming language project (and its `msg` CLI) from Daios.
+## Why It Matters
 
----
+Without a contract layer, systems fall back to prompt text, hidden assumptions, brittle JSON, and adapter sprawl.
 
-## Core Principles
-- **Intent before generation**: clarify what must happen before asking a model or runtime to act.
-- **Acceptance criteria first**: define “done” and “valid” up front.
-- **Machine-readable contracts**: contracts should be structured enough for deterministic validation.
-- **Interoperability**: MindScript should work across runtimes, tools, and integration styles.
-- **Traceability**: keep a clear line from intent to output to verification.
-- **Extensibility**: support new domains without breaking the public contract model.
-- **Fail-closed semantics**: validation and contract enforcement should prefer explicit failure over ambiguous interpretation.
+AstroSpec makes the exchange explicit so systems can:
 
----
+- validate before acting
+- verify after acting
+- cite evidence deterministically
+- attribute provenance clearly
+- interoperate across tools and vendors
+- keep product-specific behavior out of the standard surface
 
-## Why it matters
-- **For humans**: requirements, criteria, and expectations become explicit instead of implied.
-- **For models**: prompts can terminate in stable machine-readable envelopes rather than brittle free text.
-- **For agents**: planning, handoff, and execution can be validated and replayed more safely.
-- **For organizations**: policy, compliance, legal, and software workflows can share a common contract vocabulary.
+## Public Package Map
 
----
+### Core
 
-## Technical alignment
-MindScript is a protocol and contract layer, not just a document format.
+- `@astrospec/schema`
+- `@astrospec/runtime`
 
-It currently aligns around:
+### Interop
 
-- **Structured nodes**: requirements, fields, criteria, references, and envelopes are explicit.
-- **MCP-native interoperability**: MCP is the default tool/profile integration path.
-- **Schema-first fallback**: direct schema validation remains supported when MCP is unavailable.
-- **Deterministic error semantics**: compatibility depends on stable validation and error behavior.
-- **Extensible profiles**: domain-specific profiles can be layered without redefining the core contract language.
+- `@astrospec/mcp-profile`
 
----
+### Profiles
 
-## Applications
-- **Software engineering**: define features and acceptance criteria before implementation.
-- **Legal drafting**: define obligations, clauses, constraints, and review expectations explicitly.
-- **Compliance and governance**: encode policy expectations and verification rules.
-- **Enterprise knowledge workflows**: make structured intent portable across teams and systems.
-- **AI and automation**: use MindScript as the contract layer between planners, executors, reviewers, and tools.
+- `@astrospec/retrieval-profile`
 
----
+### DX
 
-## BDD providers
+- `@astrospec/kit`
+- `@astrospec/cli`
 
-MindScript references executable scenarios through `bdd_ref`. Use any supported provider:
+### Specialized downstream bundles
 
-- Cucumber  
-- Behave  
-- Behat  
-- JBehave  
-- Karate  
-- Robot  
-- SpecFlow  
-- **MindScript Core (formerly OpenSpec Core)**: a minimal YAML BDD format for domains without a native BDD stack, and for teams that want a flexible, schema-validated BDD language.  
-  - Docs: `docs/integrations/bdd/openspec.core/README.md`  
-  - Schema: `docs/integrations/bdd/openspec.core/schema.yaml`  
-  - Example: `docs/integrations/bdd/openspec.core/examples/AUTH-101.core.yaml`
+- `@astrospec/agent-contracts`
 
-**Example: referencing `openspec.core` from a spec**
-```yaml
-profile: https://mindscript.dev/profiles/@software
-kind: software
-meta:
-  id: AUTH-101
-  title: User can log in with email and password
-  owner: app-auth
-  priority: P0
+### Compatibility wrappers
 
-requirements:
-  - id: AUTH-101.1
-    statement: Users can authenticate with valid credentials
-    criteria:
-      - id: AUTH-101.1.1
-        type: functional
-        text: Valid credentials produce a successful session
-        bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/openspec.core
-          path: docs/integrations/bdd/openspec.core/examples/AUTH-101.core.yaml
-          scenario: auth-login-success
-```
+- `@astrospec/openspec-runtime`
+- `@astrospec/openspec-types`
 
----
+These wrappers exist for legacy OpenSpec compatibility. They are not the preferred integration surface for new consumers.
 
-## Quick start
-1. Read the protocol quickstart: [docs/mindscript/quickstart.md](./docs/mindscript/quickstart.md).
-2. Review the public adoption charter: [docs/mindscript/adoption-charter.md](./docs/mindscript/adoption-charter.md).
-3. Review the protocol and spec overviews:
-   - [docs/mindscript/protocol.md](./docs/mindscript/protocol.md)
-   - [docs/mindscript/spec-overview.md](./docs/mindscript/spec-overview.md)
-4. (Optional) Build the white paper PDF locally with Pandoc:
-   ```bash
-   pandoc docs/mindscript/whitepaper.md -o docs/mindscript/whitepaper.pdf
-   ```
+## Implementation Layers
 
----
+1. **Language layer**: human- and machine-readable contract concepts such as Context, Turn, evidence, provenance, and verification.
+2. **Schema layer**: canonical JSON Schemas published by `@astrospec/schema`.
+3. **Runtime validation and verification layer**: deterministic validation, locking, merging, diffing, and verifier execution in `@astrospec/runtime`.
+4. **MCP interoperability layer**: canonical MCP tool names, resource URIs, and deterministic error semantics in `@astrospec/mcp-profile`.
+5. **Retrieval profile layer**: portable RAG contracts in `@astrospec/retrieval-profile`.
+6. **Integrations and downstream bundles**: BDD mappings, generators, vendor adapters, and specialized orchestration bundles.
 
-## AI developer quickstarts
+## Core vs Profiles vs Integrations
 
-Canonical public packages:
+### Core
 
-- `@mindscript/agent-contracts`
-- `@mindscript/mcp-profile`
-- `@mindscript/kit`
+Core stays small and conservative.
 
-Quickstarts:
+Core covers:
 
-1. MCP-native path (default): [docs/mindscript/consumer-quickstart-mcp.md](./docs/mindscript/consumer-quickstart-mcp.md)
-2. Schema-first fallback path: [docs/mindscript/consumer-quickstart-schema.md](./docs/mindscript/consumer-quickstart-schema.md)
-3. Package migration map: [docs/mindscript/migration-orionai-to-mindscript-scope.md](./docs/mindscript/migration-orionai-to-mindscript-scope.md)
-4. Minimal external E2E sample: [examples/external/mcp-default-fallback/README.md](./examples/external/mcp-default-fallback/README.md)
+- Context and Turn contracts
+- evidence and provenance
+- validation and verification
+- compatibility semantics
 
-Compatibility aliases are available for existing users:
+### Profiles
 
-- `@orionai/mindscript-agent-contracts` (deprecated, wraps `@mindscript/agent-contracts`)
-- `@orionai/mindscript-mcp-profile` (deprecated, wraps `@mindscript/mcp-profile`)
+Profiles standardize domain-specific contract families without bloating core.
 
----
+The first normative profile is the retrieval profile.
 
-## API docs regeneration
-To refresh the TypeDoc-generated API docs locally:
+### Integrations
 
-```bash
-pnpm install
-pnpm -r build
-bash tools/gen-docs.sh
-node tools/clean-doc-links.mjs --write
-```
+Integrations adapt AstroSpec to specific ecosystems such as:
 
-The scripts write API output to `docs/api/` and normalize internal links for MkDocs.
-CI validates that `docs/` stays in sync with generated output, so ensure
-`git diff -- docs/` is clean before pushing.
+- MCP tools and resources
+- BDD frameworks
+- generators and DSLs
+- product-specific runtimes
 
-## Release expectations
-- We use **SemVer + Changesets** for package versioning across the monorepo.
-- Pre-1.0 releases treat **minor** versions as breaking changes, and **patch** as backwards-compatible fixes/features.
-- Every release should be tagged `v<version>` and include release notes tied to the changesets.
-- See the release guide for the full workflow: [docs/mindscript/release.md](./docs/mindscript/release.md).
+BDD remains supported, but it is an integration family, not the top-level identity of AstroSpec.
 
----
+## Retrieval Profile
+
+`@astrospec/retrieval-profile` defines portable envelopes for:
+
+- `RetrievalRequest`
+- `RetrievalResponse`
+- `RetrievalPlan`
+- `MemoryRecord`
+- `KnowledgeAssertion`
+- `RetrievalStreamEvent`
+
+This is a contract surface for retrieval interoperability. It does not implement a retrieval engine.
+
+## MCP Interoperability
+
+AstroSpec is transport-agnostic, but MCP is the default interop path.
+
+The MCP profile standardizes:
+
+- tool names
+- resource URI shapes
+- deterministic error codes
+- retrieval, memory, and graph tool surfaces
+
+## Quickstart
+
+1. Read the docs index: [docs/index.md](./docs/index.md)
+2. Read the overview: [docs/astrospec/spec-overview.md](./docs/astrospec/spec-overview.md)
+3. Read the protocol: [docs/astrospec/protocol.md](./docs/astrospec/protocol.md)
+4. Read the retrieval profile: [docs/astrospec/retrieval-profile.md](./docs/astrospec/retrieval-profile.md)
+5. Start with MCP: [docs/astrospec/consumer-quickstart-mcp.md](./docs/astrospec/consumer-quickstart-mcp.md)
+6. Use schema-first fallback when needed: [docs/astrospec/consumer-quickstart-schema.md](./docs/astrospec/consumer-quickstart-schema.md)
+
+## Adoption Path
+
+A typical adopter should integrate in this order:
+
+1. validate core payloads with `@astrospec/runtime`
+2. adopt the retrieval profile if the system exchanges retrieval evidence or grounding data
+3. expose MCP mappings only if tool/runtime interoperability is needed
+4. add product-specific behavior in downstream packages or vendor-namespaced extensions, not in AstroSpec core
+
+## Governance and Compatibility
+
+AstroSpec is being positioned as a neutral standard surface.
+
+Start here:
+
+- [Governance Charter](./docs/governance/charter.md)
+- [Compatibility Policy](./docs/governance/compatibility-policy.md)
+- [Profile Registry Policy](./docs/governance/profile-registry-policy.md)
+- [Change Control](./docs/governance/change-control.md)
+
+## Conformance
+
+Normative additions are expected to ship with:
+
+- schema
+- validator
+- docs
+- example
+- conformance fixture
+
+See:
+
+- [conformance/core](./conformance/core)
+- [conformance/retrieval-profile](./conformance/retrieval-profile)
+- [conformance/mcp-profile](./conformance/mcp-profile)
+
+## Legacy and History
+
+Two older names still appear in this repo:
+
+- `OpenSpec` for legacy compatibility wrappers and archived integration material
+- `MindScript` only in migration documentation
+
+New integrations, examples, and public references should use AstroSpec only.
+
+## Integrations
+
+AstroSpec supports integrations for MCP, BDD, generators, and other ecosystems.
+
+BDD references and adapters live under [docs/integrations/bdd](./docs/integrations/bdd/).
 
 ## Contributing
-Ideas, issues, and pull requests are welcome.
 
 Useful contributions include:
 
-- example specs and contract envelopes
-- deterministic validation and compatibility improvements
-- profile adapters and MCP integrations
-- docs that clarify how MindScript works across human and machine workflows
-
----
+- new examples and conformance fixtures
+- compatibility and validation improvements
+- new profile proposals
+- alternate implementations that prove interoperability
+- documentation that clarifies the standard surface
 
 ## License
-Copyright © 2025 Michael Gregory Mahoney
+
+Copyright 2025 Michael Gregory Mahoney
 
 Licensed under the [Apache License 2.0](./LICENSE).

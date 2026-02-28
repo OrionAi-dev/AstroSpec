@@ -19,8 +19,8 @@ if (changed.length === 0) {
 }
 
 const contractTouched = changed.some((p) =>
-  p.startsWith('packages/mindscript-agent-contracts/schemas/')
-  || p === 'packages/mindscript-mcp-profile/src/index.ts'
+  p.startsWith('packages/astrospec-agent-contracts/schemas/')
+  || p === 'packages/astrospec-mcp-profile/src/index.ts'
 );
 
 if (!contractTouched) {

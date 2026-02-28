@@ -1,20 +1,36 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / ProvenanceEntry
+[@astrospec/openspec-runtime](../README.md) / ProvenanceEntry
 
 # Interface: ProvenanceEntry
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:84
+Defined in: packages/astrospec-runtime/dist/index.d.ts:100
 
 ## Properties
+
+### activityId?
+
+> `optional` **activityId**: `string`
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:108
+
+***
 
 ### actor?
 
 > `optional` **actor**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:88
+Defined in: packages/astrospec-runtime/dist/index.d.ts:104
+
+***
+
+### agentId?
+
+> `optional` **agentId**: `string`
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:109
 
 ***
 
@@ -22,7 +38,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:88
 
 > **at**: [`ISODateTime`](../type-aliases/ISODateTime.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:86
+Defined in: packages/astrospec-runtime/dist/index.d.ts:102
 
 ***
 
@@ -30,7 +46,23 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:86
 
 > `optional` **data**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:90
+Defined in: packages/astrospec-runtime/dist/index.d.ts:106
+
+***
+
+### derivedFrom?
+
+> `optional` **derivedFrom**: `string`[]
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:111
+
+***
+
+### entityId?
+
+> `optional` **entityId**: `string`
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:107
 
 ***
 
@@ -38,7 +70,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:90
 
 > `optional` **ext**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:91
+Defined in: packages/astrospec-runtime/dist/index.d.ts:112
 
 ***
 
@@ -46,7 +78,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:91
 
 > `optional` **field**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:87
+Defined in: packages/astrospec-runtime/dist/index.d.ts:103
 
 ***
 
@@ -54,7 +86,15 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:87
 
 > `optional` **note**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:89
+Defined in: packages/astrospec-runtime/dist/index.d.ts:105
+
+***
+
+### role?
+
+> `optional` **role**: `string`
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:110
 
 ***
 
@@ -62,4 +102,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:89
 
 > **source**: [`FieldSource`](../type-aliases/FieldSource.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:85
+Defined in: packages/astrospec-runtime/dist/index.d.ts:101

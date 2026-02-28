@@ -1,4 +1,4 @@
-import { normalizeMindGraphQL } from "@mindscript/mindgraphql-core";
+import { normalizeMindGraphQL } from "@astrospec/mindgraphql-core";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 export default function mindgraphql() {

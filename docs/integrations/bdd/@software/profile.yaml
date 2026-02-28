@@ -1,9 +1,9 @@
 id: "@software"
-namespace: "mindscript"
-url: "https://mindscript.dev/profiles/@software"
+namespace: "astrospec"
+url: "https://orionai-dev.github.io/AstroSpec/profiles/@software"
 version: "1.0"
-description: "MindScript profile for software delivery"
-schema: "https://mindscript.dev/schemas/@software-1.0.json"
+description: "AstroSpec profile for software delivery"
+schema: "https://orionai-dev.github.io/AstroSpec/schemas/@software-1.0.json"
 registry: "../profiles-registry.yaml"
 maintainers:
   - name: "OrionAI / Telescope"

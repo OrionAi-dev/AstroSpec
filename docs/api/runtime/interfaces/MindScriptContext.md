@@ -1,16 +1,16 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / MindScriptContext
+[@astrospec/runtime](../README.md) / AstroSpecContext
 
-# Interface: MindScriptContext\<F\>
+# Interface: AstroSpecContext\<F\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:106
+Defined in: packages/astrospec-runtime/dist/index.d.ts:127
 
 ## Extends
 
-- [`MindScriptBase`](MindScriptBase.md)\<`F`\>
+- [`AstroSpecBase`](AstroSpecBase.md)\<`F`\>
 
 ## Type Parameters
 
@@ -24,11 +24,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:106
 
 > **acceptanceCriteria**: [`AcceptanceCriteria`](../type-aliases/AcceptanceCriteria.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:99
+Defined in: packages/astrospec-runtime/dist/index.d.ts:120
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`acceptanceCriteria`](MindScriptBase.md#acceptancecriteria)
+[`AstroSpecBase`](AstroSpecBase.md).[`acceptanceCriteria`](AstroSpecBase.md#acceptancecriteria)
 
 ***
 
@@ -36,11 +36,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:99
 
 > **fields**: `F`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:98
+Defined in: packages/astrospec-runtime/dist/index.d.ts:119
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`fields`](MindScriptBase.md#fields)
+[`AstroSpecBase`](AstroSpecBase.md).[`fields`](AstroSpecBase.md#fields)
 
 ***
 
@@ -48,11 +48,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:98
 
 > **id**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:96
+Defined in: packages/astrospec-runtime/dist/index.d.ts:117
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`id`](MindScriptBase.md#id)
+[`AstroSpecBase`](AstroSpecBase.md).[`id`](AstroSpecBase.md#id)
 
 ***
 
@@ -60,11 +60,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:96
 
 > **intent**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:97
+Defined in: packages/astrospec-runtime/dist/index.d.ts:118
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`intent`](MindScriptBase.md#intent)
+[`AstroSpecBase`](AstroSpecBase.md).[`intent`](AstroSpecBase.md#intent)
 
 ***
 
@@ -72,11 +72,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:97
 
 > **kind**: `"context"`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:107
+Defined in: packages/astrospec-runtime/dist/index.d.ts:128
 
 #### Overrides
 
-[`MindScriptBase`](MindScriptBase.md).[`kind`](MindScriptBase.md#kind)
+[`AstroSpecBase`](AstroSpecBase.md).[`kind`](AstroSpecBase.md#kind)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:107
 
 > **lifespan**: `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:112
+Defined in: packages/astrospec-runtime/dist/index.d.ts:133
 
 #### maxUses?
 
@@ -104,11 +104,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:112
 
 > **lockedAt**: [`ISODateTime`](../type-aliases/ISODateTime.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:101
+Defined in: packages/astrospec-runtime/dist/index.d.ts:122
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`lockedAt`](MindScriptBase.md#lockedat)
+[`AstroSpecBase`](AstroSpecBase.md).[`lockedAt`](AstroSpecBase.md#lockedat)
 
 ***
 
@@ -116,11 +116,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:101
 
 > `optional` **meta**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:104
+Defined in: packages/astrospec-runtime/dist/index.d.ts:125
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`meta`](MindScriptBase.md#meta)
+[`AstroSpecBase`](AstroSpecBase.md).[`meta`](AstroSpecBase.md#meta)
 
 ***
 
@@ -128,11 +128,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:104
 
 > `optional` **provenance**: [`Provenance`](../type-aliases/Provenance.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:100
+Defined in: packages/astrospec-runtime/dist/index.d.ts:121
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`provenance`](MindScriptBase.md#provenance)
+[`AstroSpecBase`](AstroSpecBase.md).[`provenance`](AstroSpecBase.md#provenance)
 
 ***
 
@@ -140,7 +140,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:100
 
 > **scope**: `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:108
+Defined in: packages/astrospec-runtime/dist/index.d.ts:129
 
 #### id?
 
@@ -156,11 +156,11 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:108
 
 > `optional` **signature**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:103
+Defined in: packages/astrospec-runtime/dist/index.d.ts:124
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`signature`](MindScriptBase.md#signature)
+[`AstroSpecBase`](AstroSpecBase.md).[`signature`](AstroSpecBase.md#signature)
 
 ***
 
@@ -168,8 +168,8 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:103
 
 > `optional` **version**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:102
+Defined in: packages/astrospec-runtime/dist/index.d.ts:123
 
 #### Inherited from
 
-[`MindScriptBase`](MindScriptBase.md).[`version`](MindScriptBase.md#version)
+[`AstroSpecBase`](AstroSpecBase.md).[`version`](AstroSpecBase.md#version)

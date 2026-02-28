@@ -1,14 +1,14 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / VerifierFn
+[@astrospec/openspec-types](../README.md) / VerifierFn
 
 # Type Alias: VerifierFn()
 
 > **VerifierFn** = (`input`) => `Promise`\<`Omit`\<[`VerifierResult`](../interfaces/VerifierResult.md), `"criterionId"` \| `"verifier"`\>\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:259
+Defined in: packages/astrospec-runtime/dist/index.d.ts:280
 
 ## Parameters
 
@@ -16,7 +16,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:259
 
 #### context?
 
-[`MindScriptContext`](../interfaces/MindScriptContext.md)
+[`AstroSpecContext`](../interfaces/AstroSpecContext.md)
 
 #### criterion
 
@@ -32,7 +32,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:259
 
 #### turn?
 
-[`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+[`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)
 
 ## Returns
 

@@ -1,17 +1,17 @@
 # JBehave Mapper
 
-This adapter connects MindScript `@software` criteria to **JBehave** by **referencing external artifacts only**. It does **not** embed or generate `.story` content from MindScript. Instead, it verifies links to JBehave `.story` files and `Scenario`s you reference, and produces a traceability index.
+This adapter connects AstroSpec `@software` criteria to **JBehave** by **referencing external artifacts only**. It does **not** embed or generate `.story` content from AstroSpec. Instead, it verifies links to JBehave `.story` files and `Scenario`s you reference, and produces a traceability index.
 
 ## Design principles
 
-- **MindScript stays agnostic.** We only link to JBehave; we do not copy JBehave semantics into MindScript.
+- **AstroSpec stays agnostic.** We only link to JBehave; we do not copy JBehave semantics into AstroSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author stories or Java steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., JBehave).
 
 ## What it does
 
-- Reads an MindScript YAML that declares:
-  - `profile: https://mindscript.dev/profiles/@software`
+- Reads an AstroSpec YAML that declares:
+  - `profile: https://orionai-dev.github.io/AstroSpec/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to JBehave artifacts
 - For each criterion with `bdd_ref`:
   - Validates `bdd_ref.source` matches the JBehave profile URL from your registry
@@ -22,19 +22,19 @@ This adapter connects MindScript `@software` criteria to **JBehave** by **refere
 
 ## Inputs (required fields)
 
-- `criteria[].bdd_ref.source` → JBehave profile URL  
-  Example: `https://mindscript.dev/profiles/bdd/jbehave`
+- `criteria[].bdd_ref.source` → JBehave profile URL
+  Example: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave`
 - `criteria[].bdd_ref.path` → path/URL to the `.story`
 - `criteria[].bdd_ref.scenario` → scenario name inside that story
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (MindScript → JBehave reference)
+## Minimal example (AstroSpec → JBehave reference)
 
-MindScript input:
+AstroSpec input:
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: JBEHAVE-401
@@ -51,7 +51,7 @@ requirements:
         type: functional
         text: JBehave story executes the login flow
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/jbehave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
           path: ./JBEHAVE-LOGIN.story
           scenario: Valid credentials produce a successful session
 ```
@@ -69,7 +69,7 @@ Mapper output (traceability index):
 
 ```json
 {
-  "profile": "https://mindscript.dev/profiles/@software",
+  "profile": "https://orionai-dev.github.io/AstroSpec/profiles/@software",
   "tool": "jbehave",
   "mappings": [
     {
@@ -83,7 +83,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-MindScript → JBehave
+AstroSpec → JBehave
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -95,7 +95,7 @@ MindScript → JBehave
 ## File layout
 
 **Inputs**
-- MindScript specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
+- AstroSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
 - JBehave stories: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -104,11 +104,11 @@ MindScript → JBehave
 
 ## Validation rules applied
 
-- MindScript file must validate against `@software` schema
+- AstroSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under JBehave in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.story` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.story`
-- Inline step fields are ignored; MindScript does **not** define steps
+- Inline step fields are ignored; AstroSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ MindScript → JBehave
 
 - Keep JBehave step classes in your Java test sources (e.g., `src/test/java/...`)
 - Typical execution via Maven Surefire or JUnit runners
-- Tag scenarios with MindScript IDs in comments if you want back-references:
+- Tag scenarios with AstroSpec IDs in comments if you want back-references:
 
 ```
-!-- @mindscript(JBEHAVE-401.1.1)
+!-- @astrospec(JBEHAVE-401.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -136,8 +136,8 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] MindScript YAML validates against `@software` schema  
-- [ ] `bdd-registry.yaml` includes the JBehave profile URL  
-- [ ] External `.story` file exists and contains the named Scenario  
-- [ ] `dist/jbehave/index.json` produced for traceability  
+- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] `bdd-registry.yaml` includes the JBehave profile URL
+- [ ] External `.story` file exists and contains the named Scenario
+- [ ] `dist/jbehave/index.json` produced for traceability
 - [ ] (Optional) Stories copied to `dist/jbehave/stories/` without modification

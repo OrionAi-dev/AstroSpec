@@ -1,18 +1,18 @@
 version: 1
 supported:
   - id: openspec.core
-    url: https://mindscript.dev/profiles/bdd/openspec.core
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/openspec.core
   - id: behave
-    url: https://mindscript.dev/profiles/bdd/behave
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behave
   - id: cucumber
-    url: https://mindscript.dev/profiles/bdd/cucumber
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
   - id: jbehave
-    url: https://mindscript.dev/profiles/bdd/jbehave
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/jbehave
   - id: robot
-    url: https://mindscript.dev/profiles/bdd/robot
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/robot
   - id: karate
-    url: https://mindscript.dev/profiles/bdd/karate
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/karate
   - id: specflow
-    url: https://mindscript.dev/profiles/bdd/specflow
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/specflow
   - id: behat
-    url: https://mindscript.dev/profiles/bdd/behat
+    url: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behat

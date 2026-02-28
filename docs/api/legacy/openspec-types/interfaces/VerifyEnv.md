@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / VerifyEnv
+[@astrospec/openspec-types](../README.md) / VerifyEnv
 
 # Interface: VerifyEnv
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:255
+Defined in: packages/astrospec-runtime/dist/index.d.ts:276
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:255
 
 > `optional` **cwd**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:256
+Defined in: packages/astrospec-runtime/dist/index.d.ts:277
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:256
 
 > `optional` **now**: () => `Date`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:257
+Defined in: packages/astrospec-runtime/dist/index.d.ts:278
 
 #### Returns
 

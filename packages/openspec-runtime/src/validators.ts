@@ -1,4 +1,4 @@
-// MindScript validators
+// AstroSpec validators
 // Runtime validation using zod; schema export for interoperability
 
 import { z } from "zod";
@@ -62,7 +62,7 @@ export const zISODateTime = z
   .string()
   .regex(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z?/, "ISO datetime expected");
 
-export const zMindScriptBase = z.object({
+export const zAstroSpecBase = z.object({
   kind: z.enum(["context", "turn"]),
   id: z.string().min(1),
   intent: z.string().min(1),
@@ -76,7 +76,7 @@ export const zMindScriptBase = z.object({
 });
 
 // ---------- Context & Turn ----------
-export const zMindScriptContext = zMindScriptBase.extend({
+export const zAstroSpecContext = zAstroSpecBase.extend({
   kind: z.literal("context"),
   scope: z.object({
     type: z.enum(["session", "project", "workspace", "global"]),
@@ -89,7 +89,7 @@ export const zMindScriptContext = zMindScriptBase.extend({
   })
 });
 
-export const zMindScriptTurn = zMindScriptBase.extend({
+export const zAstroSpecTurn = zAstroSpecBase.extend({
   kind: z.literal("turn"),
   inheritsFrom: z.string().min(1)
 });
@@ -115,6 +115,6 @@ export const zToolBinding = z.object({
 });
 
 // ---------- Helpers (inferred types) ----------
-export type ZContext = z.infer<typeof zMindScriptContext>;
-export type ZTurn = z.infer<typeof zMindScriptTurn>;
+export type ZContext = z.infer<typeof zAstroSpecContext>;
+export type ZTurn = z.infer<typeof zAstroSpecTurn>;
 export type ZField = z.infer<typeof zSpecField>;

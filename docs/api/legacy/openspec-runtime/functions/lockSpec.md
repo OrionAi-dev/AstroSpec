@@ -1,20 +1,20 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / lockSpec
+[@astrospec/openspec-runtime](../README.md) / lockSpec
 
 # Function: lockSpec()
 
 > **lockSpec**\<`T`\>(`spec`, `opts?`): `T`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:194
+Defined in: packages/astrospec-runtime/dist/index.d.ts:215
 
 ## Type Parameters
 
 ### T
 
-`T` *extends* [`MindScriptBase`](../interfaces/MindScriptBase.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
+`T` *extends* [`AstroSpecBase`](../interfaces/AstroSpecBase.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
 
 ## Parameters
 

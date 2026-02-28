@@ -36,9 +36,147 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
 
+  packages/astrospec-agent-contracts:
+    dependencies:
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-cli:
+    dependencies:
+      '@astrospec/kit':
+        specifier: workspace:*
+        version: link:../astrospec-kit
+      '@astrospec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../astrospec-retrieval-profile
+      '@astrospec/runtime':
+        specifier: workspace:*
+        version: link:../astrospec-runtime
+      yaml:
+        specifier: ^2.8.1
+        version: 2.8.2
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-kit:
+    dependencies:
+      '@astrospec/agent-contracts':
+        specifier: workspace:*
+        version: link:../astrospec-agent-contracts
+      '@astrospec/mcp-profile':
+        specifier: workspace:*
+        version: link:../astrospec-mcp-profile
+      '@astrospec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../astrospec-retrieval-profile
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-mcp-profile:
+    dependencies:
+      '@astrospec/agent-contracts':
+        specifier: workspace:*
+        version: link:../astrospec-agent-contracts
+      '@astrospec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../astrospec-retrieval-profile
+      '@astrospec/runtime':
+        specifier: workspace:*
+        version: link:../astrospec-runtime
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-retrieval-profile:
+    dependencies:
+      '@astrospec/runtime':
+        specifier: workspace:*
+        version: link:../astrospec-runtime
+      '@astrospec/schema':
+        specifier: workspace:*
+        version: link:../astrospec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-runtime:
+    dependencies:
+      '@astrospec/schema':
+        specifier: workspace:*
+        version: link:../astrospec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/astrospec-schema:
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
   packages/integrations/audio-openai:
     dependencies:
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
       openai:
@@ -54,7 +192,7 @@ importers:
 
   packages/integrations/events:
     dependencies:
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
     devDependencies:
@@ -67,13 +205,13 @@ importers:
 
   packages/integrations/examples-derivedspec:
     dependencies:
-      '@mindscript/mindql-core':
+      '@astrospec/mindql-core':
         specifier: workspace:*
         version: link:../mindql-core
-      '@mindscript/openspec-runtime':
+      '@astrospec/openspec-runtime':
         specifier: workspace:*
         version: link:../../openspec-runtime
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
     devDependencies:
@@ -86,7 +224,7 @@ importers:
 
   packages/integrations/mindgraphql-core:
     dependencies:
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
       graphql:
@@ -102,7 +240,7 @@ importers:
 
   packages/integrations/mindql-core:
     dependencies:
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
     devDependencies:
@@ -115,22 +253,22 @@ importers:
 
   packages/integrations/openspec-cli:
     dependencies:
-      '@mindscript/openspec-plugin-mindgraphql':
+      '@astrospec/openspec-plugin-mindgraphql':
         specifier: workspace:*
         version: link:../openspec-plugin-mindgraphql
-      '@mindscript/openspec-plugin-mindql':
+      '@astrospec/openspec-plugin-mindql':
         specifier: workspace:*
         version: link:../openspec-plugin-mindql
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
 
   packages/integrations/openspec-plugin-mindgraphql:
     dependencies:
-      '@mindscript/mindgraphql-core':
+      '@astrospec/mindgraphql-core':
         specifier: workspace:*
         version: link:../mindgraphql-core
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
     devDependencies:
@@ -143,10 +281,10 @@ importers:
 
   packages/integrations/openspec-plugin-mindql:
     dependencies:
-      '@mindscript/mindql-core':
+      '@astrospec/mindql-core':
         specifier: workspace:*
         version: link:../mindql-core
-      '@mindscript/openspec-types':
+      '@astrospec/openspec-types':
         specifier: workspace:*
         version: link:../../openspec-types
     devDependencies:
@@ -157,115 +295,11 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
 
-  packages/mindscript-agent-contracts:
-    dependencies:
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/mindscript-cli:
-    dependencies:
-      '@mindscript/kit':
-        specifier: workspace:*
-        version: link:../mindscript-kit
-      '@mindscript/runtime':
-        specifier: workspace:*
-        version: link:../mindscript-runtime
-      yaml:
-        specifier: ^2.8.1
-        version: 2.8.2
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/mindscript-kit:
-    dependencies:
-      '@mindscript/agent-contracts':
-        specifier: workspace:*
-        version: link:../mindscript-agent-contracts
-      '@mindscript/mcp-profile':
-        specifier: workspace:*
-        version: link:../mindscript-mcp-profile
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/mindscript-mcp-profile:
-    dependencies:
-      '@mindscript/agent-contracts':
-        specifier: workspace:*
-        version: link:../mindscript-agent-contracts
-      '@mindscript/runtime':
-        specifier: workspace:*
-        version: link:../mindscript-runtime
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/mindscript-runtime:
-    dependencies:
-      '@mindscript/schema':
-        specifier: workspace:*
-        version: link:../mindscript-schema
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/mindscript-schema:
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
   packages/openspec-runtime:
     dependencies:
-      '@mindscript/runtime':
+      '@astrospec/runtime':
         specifier: workspace:*
-        version: link:../mindscript-runtime
+        version: link:../astrospec-runtime
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -276,45 +310,13 @@ importers:
 
   packages/openspec-types:
     dependencies:
-      '@mindscript/runtime':
+      '@astrospec/runtime':
         specifier: workspace:*
-        version: link:../mindscript-runtime
+        version: link:../astrospec-runtime
     devDependencies:
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/orionai-mindscript-agent-contracts:
-    dependencies:
-      '@mindscript/agent-contracts':
-        specifier: workspace:*
-        version: link:../mindscript-agent-contracts
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/orionai-mindscript-mcp-profile:
-    dependencies:
-      '@mindscript/mcp-profile':
-        specifier: workspace:*
-        version: link:../mindscript-mcp-profile
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
       typescript:
         specifier: ^5.9.2
         version: 5.9.2

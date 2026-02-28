@@ -1,395 +1,395 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/spec-bdd-openspec-core/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/spec-bdd-openspec-core/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/mindgraphql-core/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/mindgraphql-core/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/mindgraphql-core/functions/normalizeMindGraphQL/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/mindgraphql-core/functions/normalizeMindGraphQL/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/mindql-core/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/mindql-core/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/mindql-core/functions/parseMindQL/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/mindql-core/functions/parseMindQL/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/mindql-core/type-aliases/MindQLNode/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/mindql-core/type-aliases/MindQLNode/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-plugin-mindgraphql/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-plugin-mindgraphql/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-plugin-mindgraphql/functions/default/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-plugin-mindgraphql/functions/default/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-plugin-mindql/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-plugin-mindql/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-plugin-mindql/functions/default/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-plugin-mindql/functions/default/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/functions/applyPatches/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/functions/applyPatches/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/functions/mergeContextIntoTurn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/functions/mergeContextIntoTurn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/functions/registerVerifier/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/functions/registerVerifier/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/functions/verifyOutput/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/functions/verifyOutput/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/AcceptanceCriterion/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/AcceptanceCriterion/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/BaseField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/BaseField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/DerivedSpec/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/DerivedSpec/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/JsonArray/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/JsonArray/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/JsonObject/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/JsonObject/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/JsonPatch/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/JsonPatch/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/OpenSpecBase/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/OpenSpecBase/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/OpenSpecContext/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/OpenSpecContext/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/OpenSpecTurn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/OpenSpecTurn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/Provenance/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/Provenance/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/ToolBinding/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/ToolBinding/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/VerifierFn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/VerifierFn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/interfaces/VerifierResult/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/interfaces/VerifierResult/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/DeepReadonly/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/DeepReadonly/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/FieldScope/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/FieldScope/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/FieldType/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/FieldType/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/ISODateTime/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/ISODateTime/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/JsonPatchOp/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/JsonPatchOp/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/JsonPrimitive/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/JsonPrimitive/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/JsonValue/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/JsonValue/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/SpecField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/SpecField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/ZContext/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/ZContext/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/ZField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/ZField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/type-aliases/ZTurn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/type-aliases/ZTurn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zAcceptance/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zAcceptance/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zBaseField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zBaseField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zDerivedSpec/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zDerivedSpec/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zFieldScope/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zFieldScope/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zISODateTime/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zISODateTime/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zJsonPatch/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zJsonPatch/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zOpenSpecBase/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zOpenSpecBase/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zOpenSpecContext/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zOpenSpecContext/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zOpenSpecTurn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zOpenSpecTurn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zProvenance/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zProvenance/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zSpecField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zSpecField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-runtime/variables/zToolBinding/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-runtime/variables/zToolBinding/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/AcceptanceCriterion/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/AcceptanceCriterion/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/BaseField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/BaseField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/DerivedSpec/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/DerivedSpec/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/JsonArray/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/JsonArray/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/JsonObject/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/JsonObject/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/JsonPatch/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/JsonPatch/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/OpenSpecBase/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/OpenSpecBase/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/OpenSpecContext/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/OpenSpecContext/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/OpenSpecTurn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/OpenSpecTurn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/Provenance/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/Provenance/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/interfaces/ToolBinding/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/interfaces/ToolBinding/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/DeepReadonly/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/DeepReadonly/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/FieldScope/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/FieldScope/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/FieldType/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/FieldType/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/ISODateTime/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/ISODateTime/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/JsonPatchOp/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/JsonPatchOp/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/JsonPrimitive/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/JsonPrimitive/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/JsonValue/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/JsonValue/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/api/openspec-types/type-aliases/SpecField/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/api/openspec-types/type-aliases/SpecField/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/context-turn/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/context-turn/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/quickstart/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/quickstart/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/roadmap/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/roadmap/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-bdd-openspec-core/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-bdd-openspec-core/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-examples/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-examples/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-language/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-language/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-overview/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-overview/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-schema/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-schema/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/spec-validation/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/spec-validation/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/templates/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/templates/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/typescript/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/typescript/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/verification/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/verification/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/whitepaper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/whitepaper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/template/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/template/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/behat-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/behat-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/behave-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/behave-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/context-turn-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/context-turn-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/cucumber-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/cucumber-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/jbehave-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/jbehave-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/jest-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/jest-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/karate-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/karate-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/robot-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/robot-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/%40software/adapters/specflow-mapper/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/%40software/adapters/specflow-mapper/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/mindscript/implementations/bdd/openspec.core/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/astrospec/implementations/bdd/openspec.core/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
     <url>
-         <loc>https://orionai-dev.github.io/MindScript/openspi/overview/</loc>
+         <loc>https://orionai-dev.github.io/AstroSpec/openspi/overview/</loc>
          <lastmod>2025-09-07</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/retrieval/retrieval-response-0.1.json",
+  "title": "AstroSpec Retrieval Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ok", "requestId", "techniqueUsed", "results", "citations"],
+  "properties": {
+    "ok": { "type": "boolean" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "techniqueRequested": {
+      "type": "array",
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/techniqueId" }
+    },
+    "techniqueUsed": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/techniqueId" }
+    },
+    "fallback": { "$ref": "./retrieval-defs-0.1.json#/$defs/fallback" },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalCandidate" }
+    },
+    "citations": {
+      "type": "array",
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalCitation" }
+    },
+    "grounding": { "$ref": "./retrieval-defs-0.1.json#/$defs/groundingAssessment" },
+    "diagnostics": {
+      "type": "array",
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalStageTrace" }
+    },
+    "error": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalError" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "citations": {
+            "contains": { "type": "object", "required": ["candidateId"] }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "results": {
+            "type": "array",
+            "contains": { "type": "object", "required": ["candidateId"] }
+          }
+        }
+      }
+    }
+  ]
+}

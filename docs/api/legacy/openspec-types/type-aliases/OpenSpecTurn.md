@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / OpenSpecTurn
+[@astrospec/openspec-types](../README.md) / OpenSpecTurn
 
 # ~~Type Alias: OpenSpecTurn\<F\>~~
 
-> **OpenSpecTurn**\<`F`\> = [`MindScriptTurn`](../interfaces/MindScriptTurn.md)\<`F`\>
+> **OpenSpecTurn**\<`F`\> = [`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)\<`F`\>
 
 Defined in: packages/openspec-types/dist/index.d.ts:22
 
@@ -18,4 +18,4 @@ Defined in: packages/openspec-types/dist/index.d.ts:22
 
 ## Deprecated
 
-Use `MindScriptTurn`.
+Use `AstroSpecTurn`.

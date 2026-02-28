@@ -1,17 +1,17 @@
 # Cucumber Mapper
 
-This adapter connects MindScript `@software` criteria to **Cucumber** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from MindScript. Instead, it verifies links to Cucumber `.feature` files and `Scenario`s you reference, and produces a traceability index.
+This adapter connects AstroSpec `@software` criteria to **Cucumber** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from AstroSpec. Instead, it verifies links to Cucumber `.feature` files and `Scenario`s you reference, and produces a traceability index.
 
 ## Design principles
 
-- **MindScript stays agnostic.** We only link to Cucumber; we do not copy Gherkin semantics into MindScript.
+- **AstroSpec stays agnostic.** We only link to Cucumber; we do not copy Gherkin semantics into AstroSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author features or steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., Cucumber).
 
 ## What it does
 
-- Reads an MindScript YAML that declares:
-  - `profile: https://mindscript.dev/profiles/@software`
+- Reads an AstroSpec YAML that declares:
+  - `profile: https://orionai-dev.github.io/AstroSpec/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Cucumber artifacts
 - For each criterion with `bdd_ref`:
   - Validates `bdd_ref.source` matches the Cucumber profile URL from your registry
@@ -22,19 +22,19 @@ This adapter connects MindScript `@software` criteria to **Cucumber** by **refer
 
 ## Inputs (required fields)
 
-- `criteria[].bdd_ref.source` → Cucumber profile URL  
-  Example: `https://mindscript.dev/profiles/bdd/cucumber`
+- `criteria[].bdd_ref.source` → Cucumber profile URL
+  Example: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber`
 - `criteria[].bdd_ref.path` → path/URL to the `.feature`
 - `criteria[].bdd_ref.scenario` → scenario name inside that feature
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (MindScript → Cucumber reference)
+## Minimal example (AstroSpec → Cucumber reference)
 
-MindScript input:
+AstroSpec input:
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: FEATURE-101
@@ -51,7 +51,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/cucumber
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/cucumber
           path: ./FEATURE-LOGIN.feature
           scenario: Valid credentials produce a successful session
 ```
@@ -70,7 +70,7 @@ Mapper output (traceability index):
 
 ```json
 {
-  "profile": "https://mindscript.dev/profiles/@software",
+  "profile": "https://orionai-dev.github.io/AstroSpec/profiles/@software",
   "tool": "cucumber",
   "mappings": [
     {
@@ -84,7 +84,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-MindScript → Cucumber
+AstroSpec → Cucumber
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -96,7 +96,7 @@ MindScript → Cucumber
 ## File layout
 
 **Inputs**
-- MindScript specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
+- AstroSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
 - Cucumber features: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -105,11 +105,11 @@ MindScript → Cucumber
 
 ## Validation rules applied
 
-- MindScript file must validate against `@software` schema
+- AstroSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under Cucumber in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.feature`
-- Inline step fields are ignored; MindScript does **not** define steps
+- Inline step fields are ignored; AstroSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ MindScript → Cucumber
 ## Integration tips
 
 - Place step definitions where your Cucumber implementation expects them (e.g., `features/step_definitions/` for Ruby, `features/step_definitions/*.ts` for cucumber-js)
-- Tag scenarios with MindScript IDs for easier back-references:
+- Tag scenarios with AstroSpec IDs for easier back-references:
 
 ```gherkin
-@mindscript(FEATURE-101.1.1)
+@astrospec(FEATURE-101.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -137,8 +137,8 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] MindScript YAML validates against `@software` schema  
-- [ ] `bdd-registry.yaml` includes the Cucumber profile URL  
-- [ ] External `.feature` file exists and contains the named Scenario  
-- [ ] `dist/cucumber/index.json` produced for traceability  
+- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] `bdd-registry.yaml` includes the Cucumber profile URL
+- [ ] External `.feature` file exists and contains the named Scenario
+- [ ] `dist/cucumber/index.json` produced for traceability
 - [ ] (Optional) Features copied to `dist/cucumber/features/` without modification

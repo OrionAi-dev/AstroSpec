@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/retrieval/retrieval-defs-0.1.json",
+  "title": "AstroSpec Retrieval Profile Definitions",
+  "type": "object",
+  "$defs": {
+    "techniqueId": {
+      "type": "string",
+      "enum": [
+        "keyword",
+        "vector",
+        "hybrid",
+        "pageindex",
+        "graph",
+        "graph_expand",
+        "rerank",
+        "compress",
+        "decompose",
+        "verify",
+        "multimodal",
+        "agentic"
+      ]
+    },
+    "candidateKind": {
+      "type": "string",
+      "enum": ["document", "memory", "graph-node", "graph-edge", "artifact", "table", "image"]
+    },
+    "candidateStage": {
+      "type": "string",
+      "enum": ["retrieve", "expand", "rerank", "compress", "verify"]
+    },
+    "memoryKind": {
+      "type": "string",
+      "enum": ["semantic", "episodic", "procedural"]
+    },
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applied"],
+      "properties": {
+        "applied": { "type": "boolean" },
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "retrievalPlanStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "technique"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "technique": { "$ref": "#/$defs/techniqueId" },
+        "purpose": { "type": "string" },
+        "topK": { "type": "number", "minimum": 0 },
+        "filters": { "type": "object", "additionalProperties": true },
+        "dependsOn": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "retrievalPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steps"],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "enum": ["parallel", "sequential", "adaptive"]
+        },
+        "notes": { "type": "string" },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/retrievalPlanStep" }
+        }
+      }
+    },
+    "retrievalStageTrace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage"],
+      "properties": {
+        "stage": { "$ref": "#/$defs/candidateStage" },
+        "technique": { "$ref": "#/$defs/techniqueId" },
+        "durationMs": { "type": "number", "minimum": 0 },
+        "inputCount": { "type": "number", "minimum": 0 },
+        "outputCount": { "type": "number", "minimum": 0 },
+        "notes": { "type": "string" }
+      }
+    },
+    "retrievalCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "sourceId", "ref", "kind", "stage"],
+      "properties": {
+        "candidateId": { "type": "string", "minLength": 1 },
+        "sourceId": { "type": "string", "minLength": 1 },
+        "ref": { "type": "string", "minLength": 1 },
+        "kind": { "$ref": "#/$defs/candidateKind" },
+        "title": { "type": "string" },
+        "mimeType": { "type": "string" },
+        "snippet": { "type": "string" },
+        "span": { "$ref": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/defs-0.1.json#/$defs/evidenceSpan" },
+        "score": { "type": "number" },
+        "rank": { "type": "number", "minimum": 0 },
+        "stage": { "$ref": "#/$defs/candidateStage" },
+        "metadata": { "type": "object", "additionalProperties": true },
+        "provenance": { "$ref": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/provenance-0.1.json" }
+      }
+    },
+    "retrievalCitation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["citationId", "candidateId"],
+      "properties": {
+        "citationId": { "type": "string", "minLength": 1 },
+        "candidateId": { "type": "string", "minLength": 1 },
+        "claimId": { "type": "string" },
+        "label": { "type": "string" },
+        "span": { "$ref": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/defs-0.1.json#/$defs/evidenceSpan" },
+        "quote": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "groundingAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supported"],
+      "properties": {
+        "supported": { "type": "boolean" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "missingEvidence": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "unsupportedClaims": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "retrievalError": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "message"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "AS_RETRIEVAL_INVALID_INPUT",
+            "AS_RETRIEVAL_UNSUPPORTED_TECHNIQUE",
+            "AS_RETRIEVAL_INDEX_UNAVAILABLE",
+            "AS_RETRIEVAL_MEMORY_UNAVAILABLE",
+            "AS_RETRIEVAL_NO_EVIDENCE",
+            "AS_RETRIEVAL_GROUNDING_LOW",
+            "AS_RETRIEVAL_VERIFICATION_FAILED",
+            "AS_RETRIEVAL_TIMEOUT",
+            "AS_RETRIEVAL_NOT_AUTHORIZED"
+          ]
+        },
+        "message": { "type": "string", "minLength": 1 },
+        "details": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "memoryRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namespace", "key", "kind", "content", "updatedAt"],
+      "properties": {
+        "namespace": { "type": "string", "minLength": 1 },
+        "key": { "type": "string", "minLength": 1 },
+        "kind": { "$ref": "#/$defs/memoryKind" },
+        "content": {},
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "sourceIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "knowledgeAssertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "predicate", "object", "assertedAt"],
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "predicate": { "type": "string", "minLength": 1 },
+        "object": {},
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "assertedAt": { "type": "string", "format": "date-time" },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/defs-0.1.json#/$defs/evidenceRef" }
+        }
+      }
+    }
+  }
+}

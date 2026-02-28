@@ -1,18 +1,18 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / MindScriptContextRequestEnvelope
+[@astrospec/runtime](../README.md) / AstroSpecContextRequestEnvelope
 
-# Interface: MindScriptContextRequestEnvelope\<TContext\>
+# Interface: AstroSpecContextRequestEnvelope\<TContext\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:131
+Defined in: packages/astrospec-runtime/dist/index.d.ts:152
 
 ## Type Parameters
 
 ### TContext
 
-`TContext` *extends* [`MindScriptContext`](MindScriptContext.md) = [`MindScriptContext`](MindScriptContext.md)
+`TContext` *extends* [`AstroSpecContext`](AstroSpecContext.md) = [`AstroSpecContext`](AstroSpecContext.md)
 
 ## Properties
 
@@ -20,7 +20,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:131
 
 > **context**: `TContext`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:132
+Defined in: packages/astrospec-runtime/dist/index.d.ts:153
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:132
 
 > `optional` **meta**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:134
+Defined in: packages/astrospec-runtime/dist/index.d.ts:155
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:134
 
 > `optional` **requestId**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:133
+Defined in: packages/astrospec-runtime/dist/index.d.ts:154

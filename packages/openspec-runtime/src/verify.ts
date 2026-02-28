@@ -1,7 +1,7 @@
-// MindScript verify (ES5-compatible)
+// AstroSpec verify (ES5-compatible)
 // Synchronous acceptance-criteria checking (no Promise, no Map/Set).
 
-import { AcceptanceCriterion } from '@mindscript/openspec-types';
+import { AcceptanceCriterion } from '@astrospec/openspec-types';
 
 // Result type for each verifier
 export interface VerifierResult {

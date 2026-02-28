@@ -1,14 +1,14 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / verifyOutput
+[@astrospec/openspec-types](../README.md) / verifyOutput
 
 # Function: verifyOutput()
 
 > **verifyOutput**(`input`): `Promise`\<[`VerificationReport`](../interfaces/VerificationReport.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:267
+Defined in: packages/astrospec-runtime/dist/index.d.ts:288
 
 ## Parameters
 
@@ -16,7 +16,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:267
 
 #### context?
 
-[`MindScriptContext`](../interfaces/MindScriptContext.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
+[`AstroSpecContext`](../interfaces/AstroSpecContext.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
 
 #### criteria
 
@@ -32,7 +32,7 @@ readonly [`AcceptanceCriterion`](../interfaces/AcceptanceCriterion.md)[]
 
 #### turn?
 
-[`MindScriptTurn`](../interfaces/MindScriptTurn.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
+[`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)\<`Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\<`unknown`\>\>\>
 
 ## Returns
 

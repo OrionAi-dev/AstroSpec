@@ -1,8 +1,8 @@
-[**@mindscript/schema**](../README.md)
+[**@astrospec/schema**](../README.md)
 
 ***
 
-[@mindscript/schema](../README.md) / readSchema
+[@astrospec/schema](../README.md) / readSchema
 
 # Function: readSchema()
 
@@ -22,7 +22,7 @@ Read and parse a schema JSON file from disk.
 
 ### name
 
-[`MindScriptSchemaName`](../type-aliases/MindScriptSchemaName.md)
+[`AstroSpecSchemaName`](../type-aliases/AstroSpecSchemaName.md)
 
 ## Returns
 

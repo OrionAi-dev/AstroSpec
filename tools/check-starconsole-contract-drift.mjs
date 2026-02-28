@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 
 const repoRoot = process.cwd();
-const localSchemasDir = path.join(repoRoot, 'packages', 'mindscript-agent-contracts', 'schemas');
+const localSchemasDir = path.join(repoRoot, 'packages', 'astrospec-agent-contracts', 'schemas');
 const externalSchemasDir =
   process.env.STARCONSOLE_CONTRACTS_DIR ||
   path.resolve(repoRoot, '..', 'stardrive-monorepo', 'packages', 'starconsole-contracts', 'src', 'contracts', 'schemas');
@@ -54,4 +54,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('[contracts] no drift detected between @mindscript/agent-contracts schemas and starconsole-contracts');
+console.log('[contracts] no drift detected between @astrospec/agent-contracts schemas and starconsole-contracts');

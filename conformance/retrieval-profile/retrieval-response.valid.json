@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "requestId": "req_1",
+  "techniqueUsed": ["pageindex"],
+  "results": [
+    {
+      "candidateId": "cand_1",
+      "sourceId": "src_1",
+      "ref": "astrospec://sources/src_1",
+      "kind": "document",
+      "stage": "retrieve"
+    }
+  ],
+  "citations": [
+    {
+      "citationId": "cit_1",
+      "candidateId": "cand_1"
+    }
+  ]
+}

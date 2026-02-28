@@ -1,0 +1,10 @@
+{
+  "kind": "context",
+  "id": "ctx:demo",
+  "intent": "demo",
+  "scope": { "type": "session" },
+  "lifespan": { "mode": "session" },
+  "fields": {},
+  "acceptanceCriteria": [],
+  "lockedAt": "2026-02-28T00:00:00.000Z"
+}

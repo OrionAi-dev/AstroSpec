@@ -1,0 +1,16 @@
+{
+  "name": "astrospec.retrieval.verify",
+  "arguments": {
+    "response": {
+      "ok": true,
+      "requestId": "req_1",
+      "techniqueUsed": ["pageindex"],
+      "results": [],
+      "citations": [],
+      "grounding": {
+        "supported": false,
+        "unsupportedClaims": ["claim_1"]
+      }
+    }
+  }
+}

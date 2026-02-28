@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / ValidationError
+[@astrospec/runtime](../README.md) / ValidationError
 
 # Type Alias: ValidationError
 
 > **ValidationError** = `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:142
+Defined in: packages/astrospec-runtime/dist/index.d.ts:163
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:142
 
 > `optional` **keyword**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:145
+Defined in: packages/astrospec-runtime/dist/index.d.ts:166
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:145
 
 > **message**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:144
+Defined in: packages/astrospec-runtime/dist/index.d.ts:165
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:144
 
 > `optional` **params**: `unknown`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:147
+Defined in: packages/astrospec-runtime/dist/index.d.ts:168
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:147
 
 > **path**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:143
+Defined in: packages/astrospec-runtime/dist/index.d.ts:164
 
 ***
 
@@ -48,4 +48,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:143
 
 > `optional` **schemaPath**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:146
+Defined in: packages/astrospec-runtime/dist/index.d.ts:167

@@ -1,11 +1,11 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / JsonPrimitive
+[@astrospec/runtime](../README.md) / JsonPrimitive
 
 # Type Alias: JsonPrimitive
 
 > **JsonPrimitive** = `string` \| `number` \| `boolean` \| `null`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:1
+Defined in: packages/astrospec-runtime/dist/index.d.ts:1

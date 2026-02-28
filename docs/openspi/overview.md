@@ -1,13 +1,13 @@
 # OpenSPI / OpenSpec Overview (Legacy)
 
-This page is preserved for legacy links. The canonical entry point is now the [MindScript docs index](../index.md), and the current overview lives in [MindScript overview](../mindscript/spec-overview.md).
+This page is preserved for legacy links. The canonical entry point is now the [AstroSpec docs index](../index.md), and the current overview lives in [AstroSpec overview](../astrospec/spec-overview.md).
 
 ## Where to go next
 
-- [Start here: MindScript docs index](../index.md)
-- [MindScript overview](../mindscript/spec-overview.md)
-- [Spec language](../mindscript/spec-language.md)
-- [Quickstart](../mindscript/quickstart.md)
+- [Start here: AstroSpec docs index](../index.md)
+- [AstroSpec overview](../astrospec/spec-overview.md)
+- [Spec language](../astrospec/spec-language.md)
+- [Quickstart](../astrospec/quickstart.md)
 
 ---
 

@@ -1,0 +1,8 @@
+{
+  "kind": "status-update",
+  "requestId": "req_1",
+  "status": {
+    "state": "working",
+    "timestamp": "2026-02-28T00:00:00.000Z"
+  }
+}

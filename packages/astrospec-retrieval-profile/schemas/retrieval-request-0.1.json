@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/retrieval/retrieval-request-0.1.json",
+  "title": "AstroSpec Retrieval Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["query"],
+  "properties": {
+    "requestId": { "type": "string" },
+    "query": { "type": "string", "minLength": 1 },
+    "topK": { "type": "number", "minimum": 0 },
+    "techniques": {
+      "type": "array",
+      "items": { "$ref": "./retrieval-defs-0.1.json#/$defs/techniqueId" }
+    },
+    "filters": { "type": "object", "additionalProperties": true },
+    "contextRef": { "type": "string" },
+    "memoryNamespaces": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "graphScopes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "plan": { "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalPlan" },
+    "stream": { "type": "boolean" },
+    "meta": { "type": "object", "additionalProperties": true }
+  }
+}

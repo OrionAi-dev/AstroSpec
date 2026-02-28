@@ -1,14 +1,14 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / applyPatches
+[@astrospec/openspec-types](../README.md) / applyPatches
 
 # Function: applyPatches()
 
 > **applyPatches**(`fields`, `patches`): `Record`\<`string`, [`SpecField`](../type-aliases/SpecField.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:213
+Defined in: packages/astrospec-runtime/dist/index.d.ts:234
 
 Apply RFC6902-like patches to a fields object.
 

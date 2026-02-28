@@ -2,61 +2,61 @@
  * @deprecated
  * This package exists for compatibility with earlier OpenSpec naming.
  *
- * Canonical, schema-aligned exports live in `@mindscript/runtime` and `@mindscript/schema`.
+ * Canonical, schema-aligned exports live in `@astrospec/runtime` and `@astrospec/schema`.
  */
 
-export * from "@mindscript/runtime";
+export * from "@astrospec/runtime";
 
 import type {
   JsonObject,
   JsonValue,
   ProvenanceEntry,
-  MindScriptBase,
-  MindScriptContext,
-  MindScriptTurn,
-  MindScriptRequestEnvelope,
-  MindScriptContextRequestEnvelope,
-  MindScriptTurnRequestEnvelope,
+  AstroSpecBase,
+  AstroSpecContext,
+  AstroSpecTurn,
+  AstroSpecRequestEnvelope,
+  AstroSpecContextRequestEnvelope,
+  AstroSpecTurnRequestEnvelope,
   SpecField
-} from "@mindscript/runtime";
+} from "@astrospec/runtime";
 
 /**
- * @deprecated Use `MindScriptBase`.
+ * @deprecated Use `AstroSpecBase`.
  */
-export type OpenSpecBase<F extends Record<string, SpecField> = Record<string, SpecField>> = MindScriptBase<F>;
+export type OpenSpecBase<F extends Record<string, SpecField> = Record<string, SpecField>> = AstroSpecBase<F>;
 
 /**
- * @deprecated Use `MindScriptContext`.
+ * @deprecated Use `AstroSpecContext`.
  */
-export type OpenSpecContext<F extends Record<string, SpecField> = Record<string, SpecField>> = MindScriptContext<F>;
+export type OpenSpecContext<F extends Record<string, SpecField> = Record<string, SpecField>> = AstroSpecContext<F>;
 
 /**
- * @deprecated Use `MindScriptTurn`.
+ * @deprecated Use `AstroSpecTurn`.
  */
-export type OpenSpecTurn<F extends Record<string, SpecField> = Record<string, SpecField>> = MindScriptTurn<F>;
+export type OpenSpecTurn<F extends Record<string, SpecField> = Record<string, SpecField>> = AstroSpecTurn<F>;
 
 /**
- * @deprecated Use `MindScriptRequestEnvelope`.
+ * @deprecated Use `AstroSpecRequestEnvelope`.
  */
 export type OpenSpecRequestEnvelope<
-  TContext extends MindScriptContext = MindScriptContext,
-  TTurn extends MindScriptTurn = MindScriptTurn,
+  TContext extends AstroSpecContext = AstroSpecContext,
+  TTurn extends AstroSpecTurn = AstroSpecTurn,
   TInput extends JsonObject | JsonValue = JsonObject
-> = MindScriptRequestEnvelope<TContext, TTurn, TInput>;
+> = AstroSpecRequestEnvelope<TContext, TTurn, TInput>;
 
 /**
- * @deprecated Use `MindScriptContextRequestEnvelope`.
+ * @deprecated Use `AstroSpecContextRequestEnvelope`.
  */
 export type OpenSpecContextRequestEnvelope<
-  TContext extends MindScriptContext = MindScriptContext
-> = MindScriptContextRequestEnvelope<TContext>;
+  TContext extends AstroSpecContext = AstroSpecContext
+> = AstroSpecContextRequestEnvelope<TContext>;
 
 /**
- * @deprecated Use `MindScriptTurnRequestEnvelope`.
+ * @deprecated Use `AstroSpecTurnRequestEnvelope`.
  */
 export type OpenSpecTurnRequestEnvelope<
-  TTurn extends MindScriptTurn = MindScriptTurn
-> = MindScriptTurnRequestEnvelope<TTurn>;
+  TTurn extends AstroSpecTurn = AstroSpecTurn
+> = AstroSpecTurnRequestEnvelope<TTurn>;
 
 // ---------------------------------------------------------------------------
 // Legacy extra types (not part of the canonical JSON Schemas)

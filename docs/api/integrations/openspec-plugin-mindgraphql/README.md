@@ -1,8 +1,8 @@
-**@mindscript/openspec-plugin-mindgraphql**
+**@astrospec/openspec-plugin-mindgraphql**
 
 ***
 
-# @mindscript/openspec-plugin-mindgraphql
+# @astrospec/openspec-plugin-mindgraphql
 
 ## Functions
 

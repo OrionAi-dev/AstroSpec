@@ -1,8 +1,10 @@
 # Release Policy
 
-## Required for Public Contract Releases
+## Required For Public Releases
 
-1. Passing contract tests.
-2. Drift check status documented.
-3. Changelog/changeset included.
-4. Migration notes for breaking/deprecated paths.
+1. relevant package builds pass
+2. tests pass
+3. conformance fixtures are up to date
+4. schema drift checks pass
+5. docs and examples match the shipped contract surface
+6. migration notes exist for any compatibility-impacting change

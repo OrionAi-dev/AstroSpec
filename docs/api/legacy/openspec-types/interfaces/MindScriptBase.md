@@ -1,17 +1,17 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / MindScriptBase
+[@astrospec/openspec-types](../README.md) / AstroSpecBase
 
-# Interface: MindScriptBase\<F\>
+# Interface: AstroSpecBase\<F\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:94
+Defined in: packages/astrospec-runtime/dist/index.d.ts:115
 
 ## Extended by
 
-- [`MindScriptContext`](MindScriptContext.md)
-- [`MindScriptTurn`](MindScriptTurn.md)
+- [`AstroSpecContext`](AstroSpecContext.md)
+- [`AstroSpecTurn`](AstroSpecTurn.md)
 
 ## Type Parameters
 
@@ -25,7 +25,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:94
 
 > **acceptanceCriteria**: [`AcceptanceCriteria`](../type-aliases/AcceptanceCriteria.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:99
+Defined in: packages/astrospec-runtime/dist/index.d.ts:120
 
 ***
 
@@ -33,7 +33,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:99
 
 > **fields**: `F`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:98
+Defined in: packages/astrospec-runtime/dist/index.d.ts:119
 
 ***
 
@@ -41,7 +41,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:98
 
 > **id**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:96
+Defined in: packages/astrospec-runtime/dist/index.d.ts:117
 
 ***
 
@@ -49,7 +49,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:96
 
 > **intent**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:97
+Defined in: packages/astrospec-runtime/dist/index.d.ts:118
 
 ***
 
@@ -57,7 +57,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:97
 
 > **kind**: `"context"` \| `"turn"`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:95
+Defined in: packages/astrospec-runtime/dist/index.d.ts:116
 
 ***
 
@@ -65,7 +65,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:95
 
 > **lockedAt**: [`ISODateTime`](../type-aliases/ISODateTime.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:101
+Defined in: packages/astrospec-runtime/dist/index.d.ts:122
 
 ***
 
@@ -73,7 +73,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:101
 
 > `optional` **meta**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:104
+Defined in: packages/astrospec-runtime/dist/index.d.ts:125
 
 ***
 
@@ -81,7 +81,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:104
 
 > `optional` **provenance**: [`Provenance`](../type-aliases/Provenance.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:100
+Defined in: packages/astrospec-runtime/dist/index.d.ts:121
 
 ***
 
@@ -89,7 +89,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:100
 
 > `optional` **signature**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:103
+Defined in: packages/astrospec-runtime/dist/index.d.ts:124
 
 ***
 
@@ -97,4 +97,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:103
 
 > `optional` **version**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:102
+Defined in: packages/astrospec-runtime/dist/index.d.ts:123

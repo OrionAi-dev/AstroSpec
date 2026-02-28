@@ -1,22 +1,22 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / MindScriptRequestEnvelope
+[@astrospec/openspec-types](../README.md) / AstroSpecRequestEnvelope
 
-# Interface: MindScriptRequestEnvelope\<TContext, TTurn, TInput\>
+# Interface: AstroSpecRequestEnvelope\<TContext, TTurn, TInput\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:124
+Defined in: packages/astrospec-runtime/dist/index.d.ts:145
 
 ## Type Parameters
 
 ### TContext
 
-`TContext` *extends* [`MindScriptContext`](MindScriptContext.md) = [`MindScriptContext`](MindScriptContext.md)
+`TContext` *extends* [`AstroSpecContext`](AstroSpecContext.md) = [`AstroSpecContext`](AstroSpecContext.md)
 
 ### TTurn
 
-`TTurn` *extends* [`MindScriptTurn`](MindScriptTurn.md) = [`MindScriptTurn`](MindScriptTurn.md)
+`TTurn` *extends* [`AstroSpecTurn`](AstroSpecTurn.md) = [`AstroSpecTurn`](AstroSpecTurn.md)
 
 ### TInput
 
@@ -28,7 +28,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:124
 
 > **context**: `TContext`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:125
+Defined in: packages/astrospec-runtime/dist/index.d.ts:146
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:125
 
 > `optional` **input**: `TInput`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:127
+Defined in: packages/astrospec-runtime/dist/index.d.ts:148
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:127
 
 > `optional` **meta**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:129
+Defined in: packages/astrospec-runtime/dist/index.d.ts:150
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:129
 
 > `optional` **requestId**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:128
+Defined in: packages/astrospec-runtime/dist/index.d.ts:149
 
 ***
 
@@ -60,4 +60,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:128
 
 > **turn**: `TTurn`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:126
+Defined in: packages/astrospec-runtime/dist/index.d.ts:147

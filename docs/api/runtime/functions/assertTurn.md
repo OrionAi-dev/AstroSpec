@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / assertTurn
+[@astrospec/runtime](../README.md) / assertTurn
 
 # Function: assertTurn()
 
-> **assertTurn**(`turn`): [`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+> **assertTurn**(`turn`): [`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:180
+Defined in: packages/astrospec-runtime/dist/index.d.ts:201
 
 ## Parameters
 
@@ -18,4 +18,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:180
 
 ## Returns
 
-[`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+[`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)

@@ -1,14 +1,15 @@
 # RFC Process
 
-## When RFC is Required
+## When RFC Is Required
 
-1. Schema shape changes in public contracts.
-2. MCP tool names or deterministic error-code changes.
-3. Compatibility policy or deprecation window changes.
+1. core public contract changes
+2. normative profile additions or breaking changes
+3. MCP tool/resource/error changes
+4. governance or compatibility policy changes
 
 ## Workflow
 
-1. Create `docs/governance/rfcs/RFC-<id>-<slug>.md`.
-2. Describe motivation, design, alternatives, migration, and risk.
-3. Get maintainer review and acceptance.
-4. Merge implementation with linked RFC and release notes.
+1. Create an RFC under `docs/governance/rfcs/`.
+2. Describe motivation, design, alternatives, migration, and risks.
+3. Link the target schemas, validators, examples, and conformance assets.
+4. Merge only after review against the governance charter.

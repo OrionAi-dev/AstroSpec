@@ -3,10 +3,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const repoRoot = process.cwd();
-const corePackageDirs = [
-  'packages/mindscript-agent-contracts',
-  'packages/mindscript-mcp-profile',
-  'packages/mindscript-kit',
+const publicPackageDirs = [
+  'packages/astrospec-schema',
+  'packages/astrospec-runtime',
+  'packages/astrospec-mcp-profile',
+  'packages/astrospec-retrieval-profile',
+  'packages/astrospec-kit',
+  'packages/astrospec-cli',
+  'packages/astrospec-agent-contracts',
 ];
 
 function listSourceFiles(absDir) {
@@ -38,8 +42,8 @@ function findDeepImports(filePath) {
   let m;
   while ((m = importRe.exec(text))) {
     const spec = m[2] || m[3] || m[4] || '';
-    if (!spec.startsWith('@mindscript/')) continue;
-    const afterScope = spec.replace(/^@mindscript\//, '');
+    if (!spec.startsWith('@astrospec/')) continue;
+    const afterScope = spec.replace(/^@astrospec\//, '');
     if (!afterScope.includes('/')) continue;
     out.push(spec);
   }
@@ -47,7 +51,7 @@ function findDeepImports(filePath) {
 }
 
 const failures = [];
-for (const relDir of corePackageDirs) {
+for (const relDir of publicPackageDirs) {
   const absDir = path.join(repoRoot, relDir);
   for (const filePath of listSourceFiles(absDir)) {
     for (const spec of findDeepImports(filePath)) {
@@ -61,7 +65,7 @@ if (failures.length > 0) {
   for (const failure of failures) {
     console.error(` - ${failure}`);
   }
-  console.error('Use public package roots only (for example: @mindscript/agent-contracts).');
+  console.error('Use public package roots only (for example: @astrospec/runtime).');
   process.exit(1);
 }
 

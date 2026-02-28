@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / JsonArray
+[@astrospec/openspec-types](../README.md) / JsonArray
 
 # Interface: JsonArray
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:6
+Defined in: packages/astrospec-runtime/dist/index.d.ts:6
 
 ## Extends
 

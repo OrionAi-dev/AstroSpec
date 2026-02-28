@@ -1,12 +1,12 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / VerifierResult
+[@astrospec/runtime](../README.md) / VerifierResult
 
 # Interface: VerifierResult
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:239
+Defined in: packages/astrospec-runtime/dist/index.d.ts:260
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:239
 
 > **criterionId**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:240
+Defined in: packages/astrospec-runtime/dist/index.d.ts:261
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:240
 
 > `optional` **details**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:243
+Defined in: packages/astrospec-runtime/dist/index.d.ts:264
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:243
 
 > `optional` **durationMs**: `number`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:244
+Defined in: packages/astrospec-runtime/dist/index.d.ts:265
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:244
 
 > `optional` **evidenceUsed**: [`EvidenceRef`](EvidenceRef.md)[]
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:245
+Defined in: packages/astrospec-runtime/dist/index.d.ts:266
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:245
 
 > **pass**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:242
+Defined in: packages/astrospec-runtime/dist/index.d.ts:263
 
 ***
 
@@ -54,4 +54,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:242
 
 > **verifier**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:241
+Defined in: packages/astrospec-runtime/dist/index.d.ts:262

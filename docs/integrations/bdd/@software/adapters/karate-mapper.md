@@ -1,17 +1,17 @@
 # Karate Mapper
 
-This adapter connects MindScript `@software` criteria to **Karate** by referencing external artifacts only. It does not embed or generate Karate tests from MindScript. It verifies links to Karate `.feature` files and scenarios you reference, and produces a traceability index.
+This adapter connects AstroSpec `@software` criteria to **Karate** by referencing external artifacts only. It does not embed or generate Karate tests from AstroSpec. It verifies links to Karate `.feature` files and scenarios you reference, and produces a traceability index.
 
 ## Design principles
 
-- MindScript stays agnostic. We only link to Karate, we do not copy its DSL into MindScript.
+- AstroSpec stays agnostic. We only link to Karate, we do not copy its DSL into AstroSpec.
 - References over generation. The mapper verifies and indexes your references, it does not author tests.
 - Profiles by URL. `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` for Karate.
 
 ## What it does
 
-- Reads an MindScript YAML that declares:
-  - `profile: https://mindscript.dev/profiles/@software`
+- Reads an AstroSpec YAML that declares:
+  - `profile: https://orionai-dev.github.io/AstroSpec/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Karate artifacts
 - For each criterion with `bdd_ref`:
   - Validates `bdd_ref.source` matches the Karate profile URL from your registry
@@ -22,19 +22,19 @@ This adapter connects MindScript `@software` criteria to **Karate** by referenci
 
 ## Inputs (required fields)
 
-- `criteria[].bdd_ref.source` → Karate profile URL  
-  Example: `https://mindscript.dev/profiles/bdd/karate`
+- `criteria[].bdd_ref.source` → Karate profile URL
+  Example: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/karate`
 - `criteria[].bdd_ref.path` → path or URL to the `.feature`
 - `criteria[].bdd_ref.scenario` → scenario name inside that feature
 
 Note: Inline step fields like `given`, `when`, `then` are not used. The mapper ignores them if present.
 
-## Minimal example (MindScript to Karate reference)
+## Minimal example (AstroSpec to Karate reference)
 
-MindScript input:
+AstroSpec input:
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: KARATE-701
@@ -51,7 +51,7 @@ requirements:
         type: functional
         text: Karate test executes and passes
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/karate
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/karate
           path: ./KARATE-LOGIN.feature
           scenario: Valid credentials produce a successful session
 ```
@@ -72,7 +72,7 @@ Mapper output (traceability index):
 
 ```json
 {
-  "profile": "https://mindscript.dev/profiles/@software",
+  "profile": "https://orionai-dev.github.io/AstroSpec/profiles/@software",
   "tool": "karate",
   "mappings": [
     {
@@ -86,7 +86,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference only)
 
-MindScript to Karate
+AstroSpec to Karate
 
 - `meta.id`, `meta.title` are used for discovery and file naming. No content is generated.
 - `requirements[].id`, `requirements[].statement` are used for grouping in the index.
@@ -98,7 +98,7 @@ MindScript to Karate
 ## File layout
 
 Inputs
-- MindScript specs: anywhere. Examples are under `docs/integrations/bdd/@software/examples/`.
+- AstroSpec specs: anywhere. Examples are under `docs/integrations/bdd/@software/examples/`.
 - Karate features: wherever your test suite keeps them. Examples live alongside the YAML.
 
 Outputs
@@ -107,11 +107,11 @@ Outputs
 
 ## Validation rules applied
 
-- MindScript file must validate against `@software` schema.
+- AstroSpec file must validate against `@software` schema.
 - `bdd_ref.source` must be a URL listed for Karate in `bdd-registry.yaml`.
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL).
 - `bdd_ref.scenario` must exist in the target `.feature`.
-- Inline step fields are ignored. MindScript does not define steps.
+- Inline step fields are ignored. AstroSpec does not define steps.
 
 ## Naming guidance
 
@@ -123,10 +123,10 @@ Outputs
 - Typical Karate execution:
   - Maven: `mvn -Dtest=KarateRunner test` or `mvn test -Dkarate.options="--tags @smoke"`
   - Standalone jar: `java -jar karate.jar -p 8080 -t @smoke classpath:features`
-- Tag scenarios with MindScript IDs for back references:
+- Tag scenarios with AstroSpec IDs for back references:
 
 ```gherkin
-@mindscript(KARATE-701.1.1)
+@astrospec(KARATE-701.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -140,8 +140,8 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] MindScript YAML validates against `@software` schema  
-- [ ] `bdd-registry.yaml` includes the Karate profile URL  
-- [ ] External `.feature` file exists and contains the named Scenario  
-- [ ] `dist/karate/index.json` produced for traceability  
+- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] `bdd-registry.yaml` includes the Karate profile URL
+- [ ] External `.feature` file exists and contains the named Scenario
+- [ ] `dist/karate/index.json` produced for traceability
 - [ ] Optional features copied to `dist/karate/features/` without modification

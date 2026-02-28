@@ -1,17 +1,17 @@
 # Behave Mapper
 
-This adapter connects MindScript `@software` criteria to **Behave** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from MindScript. Instead, it verifies links to Behave `.feature` files and `Scenario`s you reference, and produces a traceability index.
+This adapter connects AstroSpec `@software` criteria to **Behave** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from AstroSpec. Instead, it verifies links to Behave `.feature` files and `Scenario`s you reference, and produces a traceability index.
 
 ## Design principles
 
-- **MindScript stays agnostic.** We only link to Behave; we do not copy Gherkin semantics into MindScript.
+- **AstroSpec stays agnostic.** We only link to Behave; we do not copy Gherkin semantics into AstroSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author steps or features.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., Behave).
 
 ## What it does
 
-- Reads an MindScript YAML that declares:
-  - `profile: https://mindscript.dev/profiles/@software`
+- Reads an AstroSpec YAML that declares:
+  - `profile: https://orionai-dev.github.io/AstroSpec/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Behave artifacts
 - For each criterion with `bdd_ref`:
   - Validates `bdd_ref.source` matches the Behave profile URL in your registry
@@ -22,19 +22,19 @@ This adapter connects MindScript `@software` criteria to **Behave** by **referen
 
 ## Inputs (required fields)
 
-- `criteria[].bdd_ref.source` → Behave profile URL  
-  Example: `https://mindscript.dev/profiles/bdd/behave`
+- `criteria[].bdd_ref.source` → Behave profile URL
+  Example: `https://orionai-dev.github.io/AstroSpec/profiles/bdd/behave`
 - `criteria[].bdd_ref.path` → path/URL to the `.feature`
 - `criteria[].bdd_ref.scenario` → scenario name inside that feature
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (MindScript → Behave reference)
+## Minimal example (AstroSpec → Behave reference)
 
-MindScript input:
+AstroSpec input:
 
 ```yaml
-profile: https://mindscript.dev/profiles/@software
+profile: https://orionai-dev.github.io/AstroSpec/profiles/@software
 kind: software
 meta:
   id: BEHAVE-301
@@ -51,7 +51,7 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://mindscript.dev/profiles/bdd/behave
+          source: https://orionai-dev.github.io/AstroSpec/profiles/bdd/behave
           path: ./BEHAVE-LOGIN.feature
           scenario: Valid credentials produce a successful session
 ```
@@ -70,7 +70,7 @@ Mapper output (traceability index):
 
 ```json
 {
-  "profile": "https://mindscript.dev/profiles/@software",
+  "profile": "https://orionai-dev.github.io/AstroSpec/profiles/@software",
   "tool": "behave",
   "mappings": [
     {
@@ -84,7 +84,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-MindScript → Behave
+AstroSpec → Behave
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -96,7 +96,7 @@ MindScript → Behave
 ## File layout
 
 **Inputs**
-- MindScript specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
+- AstroSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
 - Behave features: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -105,11 +105,11 @@ MindScript → Behave
 
 ## Validation rules applied
 
-- MindScript file must validate against `@software` schema
+- AstroSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under Behave in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.feature`
-- Inline step fields are ignored; MindScript does **not** define steps
+- Inline step fields are ignored; AstroSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ MindScript → Behave
 ## Integration tips
 
 - Place your Behave step definitions under `features/steps/`
-- Tag scenarios with MindScript IDs for easier back-references:
+- Tag scenarios with AstroSpec IDs for easier back-references:
 
 ```gherkin
-@mindscript(BEHAVE-301.1.1)
+@astrospec(BEHAVE-301.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -137,8 +137,8 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] MindScript YAML validates against `@software` schema  
-- [ ] `bdd-registry.yaml` includes the Behave profile URL  
-- [ ] External `.feature` file exists and contains the named Scenario  
-- [ ] `dist/behave/index.json` produced for traceability  
+- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] `bdd-registry.yaml` includes the Behave profile URL
+- [ ] External `.feature` file exists and contains the named Scenario
+- [ ] `dist/behave/index.json` produced for traceability
 - [ ] (Optional) Features copied to `dist/behave/features/` without modification

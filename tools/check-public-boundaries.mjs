@@ -3,10 +3,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const repoRoot = process.cwd();
-const corePackages = [
-  { name: '@mindscript/agent-contracts', dir: 'packages/mindscript-agent-contracts' },
-  { name: '@mindscript/mcp-profile', dir: 'packages/mindscript-mcp-profile' },
-  { name: '@mindscript/kit', dir: 'packages/mindscript-kit' },
+const publicPackages = [
+  { name: '@astrospec/schema', dir: 'packages/astrospec-schema' },
+  { name: '@astrospec/runtime', dir: 'packages/astrospec-runtime' },
+  { name: '@astrospec/mcp-profile', dir: 'packages/astrospec-mcp-profile' },
+  { name: '@astrospec/retrieval-profile', dir: 'packages/astrospec-retrieval-profile' },
+  { name: '@astrospec/kit', dir: 'packages/astrospec-kit' },
+  { name: '@astrospec/cli', dir: 'packages/astrospec-cli' },
+  { name: '@astrospec/agent-contracts', dir: 'packages/astrospec-agent-contracts' },
 ];
 
 const forbiddenScopes = ['@orionai/', '@stardrive/', '@telescope/'];
@@ -48,7 +52,7 @@ function findForbiddenImports(filePath) {
 }
 
 const failures = [];
-for (const pkg of corePackages) {
+for (const pkg of publicPackages) {
   const absDir = path.join(repoRoot, pkg.dir);
   const files = listSourceFiles(absDir);
   for (const filePath of files) {

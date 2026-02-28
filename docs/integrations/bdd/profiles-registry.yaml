@@ -1,49 +1,49 @@
 version: 1
 profiles:
   - id: "@software"
-    url: https://mindscript.dev/profiles/@software
+    url: https://orionai-dev.github.io/AstroSpec/profiles/@software
     version: "1.0"
-    description: MindScript profile for software delivery.
+    description: AstroSpec profile for software delivery.
     owner: OrionAI / Telescope
     spec_path: ./@software/schema.yaml
     readme_path: ./@software/README.md
-    schema_url: https://mindscript.dev/schemas/@software-1.0.json
+    schema_url: https://orionai-dev.github.io/AstroSpec/schemas/@software-1.0.json
 
   - id: "@software.language.typescript"
-    url: https://mindscript.dev/profiles/@software.language.typescript
+    url: https://orionai-dev.github.io/AstroSpec/profiles/@software.language.typescript
     version: "1.0"
     description: TypeScript-specific rules and helpers
     owner: OrionAI / Telescope
     spec_path: ./@software/language/typescript/schema.yaml
     readme_path: ./@software/language/typescript/README.md
-    schema_url: https://mindscript.dev/schemas/@software.language.typescript-1.0.json
+    schema_url: https://orionai-dev.github.io/AstroSpec/schemas/@software.language.typescript-1.0.json
     parent: "@software"
 
   # Canonical (versionless) OpenAPI profile
   - id: "@software.api.openapi"
-    url: https://mindscript.dev/profiles/@software.api.openapi
+    url: https://orionai-dev.github.io/AstroSpec/profiles/@software.api.openapi
     version: "1.0"
     description: OpenAPI-based REST profile (specify version in the spec via openapi.version)
     owner: OrionAI / Telescope
     spec_path: ./@software/api/openapi/schema.yaml
     readme_path: ./@software/api/openapi/README.md
-    schema_url: https://mindscript.dev/schemas/@software.api.openapi-1.0.json
+    schema_url: https://orionai-dev.github.io/AstroSpec/schemas/@software.api.openapi-1.0.json
     parent: "@software"
 
   # Pinned, strict variant (enforces 3.1.x)
   - id: "@software.api.openapi.v3_1"
-    url: https://mindscript.dev/profiles/@software.api.openapi.v3_1
+    url: https://orionai-dev.github.io/AstroSpec/profiles/@software.api.openapi.v3_1
     version: "1.0"
     description: OpenAPI 3.1 pinned profile (strict rules)
     owner: OrionAI / Telescope
     spec_path: ./@software/api/openapi/v3_1/schema.yaml
     readme_path: ./@software/api/openapi/v3_1/README.md
-    schema_url: https://mindscript.dev/schemas/@software.api.openapi.v3_1-1.0.json
+    schema_url: https://orionai-dev.github.io/AstroSpec/schemas/@software.api.openapi.v3_1-1.0.json
     parent: "@software.api.openapi"
 
   # Human-friendly alias to the current pinned OpenAPI profile
   - id: "@software.api.rest"
-    url: https://mindscript.dev/profiles/@software.api.rest
+    url: https://orionai-dev.github.io/AstroSpec/profiles/@software.api.rest
     version: "1.0"
     description: Alias for OpenAPI (currently pinned to 3.1)
     owner: OrionAI / Telescope

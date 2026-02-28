@@ -1,14 +1,14 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / SpecDiff
+[@astrospec/runtime](../README.md) / SpecDiff
 
 # Type Alias: SpecDiff
 
 > **SpecDiff** = `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:215
+Defined in: packages/astrospec-runtime/dist/index.d.ts:236
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:215
 
 > **acceptanceCriteria**: `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:225
+Defined in: packages/astrospec-runtime/dist/index.d.ts:246
 
 #### added
 
@@ -36,7 +36,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:225
 
 > **fields**: `object`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:216
+Defined in: packages/astrospec-runtime/dist/index.d.ts:237
 
 #### added
 
@@ -56,7 +56,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:216
 
 > **metaChanged**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:234
+Defined in: packages/astrospec-runtime/dist/index.d.ts:255
 
 ***
 
@@ -64,4 +64,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:234
 
 > **provenanceChanged**: `boolean`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:235
+Defined in: packages/astrospec-runtime/dist/index.d.ts:256

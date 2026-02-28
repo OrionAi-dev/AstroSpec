@@ -1,14 +1,14 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / stableStringify
+[@astrospec/openspec-runtime](../README.md) / stableStringify
 
 # Function: stableStringify()
 
 > **stableStringify**(`v`): `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:191
+Defined in: packages/astrospec-runtime/dist/index.d.ts:212
 
 ## Parameters
 

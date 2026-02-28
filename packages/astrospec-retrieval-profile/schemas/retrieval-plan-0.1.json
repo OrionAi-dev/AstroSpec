@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/retrieval/retrieval-plan-0.1.json",
+  "title": "AstroSpec Retrieval Plan",
+  "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalPlan"
+}

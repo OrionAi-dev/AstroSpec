@@ -1,25 +1,25 @@
-[**@mindscript/runtime**](../README.md)
+[**@astrospec/runtime**](../README.md)
 
 ***
 
-[@mindscript/runtime](../README.md) / mergeContextIntoTurn
+[@astrospec/runtime](../README.md) / mergeContextIntoTurn
 
 # Function: mergeContextIntoTurn()
 
-> **mergeContextIntoTurn**(`ctx`, `turn`): [`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+> **mergeContextIntoTurn**(`ctx`, `turn`): [`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:198
+Defined in: packages/astrospec-runtime/dist/index.d.ts:219
 
 ## Parameters
 
 ### ctx
 
-[`MindScriptContext`](../interfaces/MindScriptContext.md)
+[`AstroSpecContext`](../interfaces/AstroSpecContext.md)
 
 ### turn
 
-[`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+[`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)
 
 ## Returns
 
-[`MindScriptTurn`](../interfaces/MindScriptTurn.md)
+[`AstroSpecTurn`](../interfaces/AstroSpecTurn.md)

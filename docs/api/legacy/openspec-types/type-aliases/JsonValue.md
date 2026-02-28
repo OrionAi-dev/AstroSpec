@@ -1,11 +1,11 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / JsonValue
+[@astrospec/openspec-types](../README.md) / JsonValue
 
 # Type Alias: JsonValue
 
 > **JsonValue** = [`JsonPrimitive`](JsonPrimitive.md) \| [`JsonObject`](../interfaces/JsonObject.md) \| [`JsonArray`](../interfaces/JsonArray.md)
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:2
+Defined in: packages/astrospec-runtime/dist/index.d.ts:2

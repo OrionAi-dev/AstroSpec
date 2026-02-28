@@ -1,14 +1,14 @@
-[**@mindscript/openspec-runtime**](../README.md)
+[**@astrospec/openspec-runtime**](../README.md)
 
 ***
 
-[@mindscript/openspec-runtime](../README.md) / validateContext
+[@astrospec/openspec-runtime](../README.md) / validateContext
 
 # Function: validateContext()
 
-> **validateContext**(`context`): \{ `ok`: `true`; `value`: [`MindScriptContext`](../interfaces/MindScriptContext.md); \} \| \{ `errors`: [`ValidationError`](../type-aliases/ValidationError.md)[]; `ok`: `false`; \}
+> **validateContext**(`context`): \{ `ok`: `true`; `value`: [`AstroSpecContext`](../interfaces/AstroSpecContext.md); \} \| \{ `errors`: [`ValidationError`](../type-aliases/ValidationError.md)[]; `ok`: `false`; \}
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:165
+Defined in: packages/astrospec-runtime/dist/index.d.ts:186
 
 ## Parameters
 
@@ -18,4 +18,4 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:165
 
 ## Returns
 
-\{ `ok`: `true`; `value`: [`MindScriptContext`](../interfaces/MindScriptContext.md); \} \| \{ `errors`: [`ValidationError`](../type-aliases/ValidationError.md)[]; `ok`: `false`; \}
+\{ `ok`: `true`; `value`: [`AstroSpecContext`](../interfaces/AstroSpecContext.md); \} \| \{ `errors`: [`ValidationError`](../type-aliases/ValidationError.md)[]; `ok`: `false`; \}

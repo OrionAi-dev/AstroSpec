@@ -1,8 +1,8 @@
-[**@mindscript/mindql-core**](../README.md)
+[**@astrospec/mindql-core**](../README.md)
 
 ***
 
-[@mindscript/mindql-core](../README.md) / MindQLNode
+[@astrospec/mindql-core](../README.md) / MindQLNode
 
 # Type Alias: MindQLNode
 

@@ -1,5 +1,5 @@
 {
-  "name": "openspec-plugin-mindscript",
+  "name": "openspec-plugin-astrospec",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -14,14 +14,14 @@
     }
   },
   "scripts": {
-    "pretypecheck": "pnpm -w -F @mindscript/openspec-types build",
+    "pretypecheck": "pnpm -w -F @astrospec/openspec-types build",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
     "build": "pnpm exec tsup"
   },
   "dependencies": {
-    "@mindscript/openspec-types": "workspace:*",
-    "@mindscript/openspec-runtime": "workspace:*",
-    "@mindscript/mindql-core": "workspace:*"
+    "@astrospec/openspec-types": "workspace:*",
+    "@astrospec/openspec-runtime": "workspace:*",
+    "@astrospec/mindql-core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.0.0",

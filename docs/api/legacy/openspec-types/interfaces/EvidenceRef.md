@@ -1,12 +1,12 @@
-[**@mindscript/openspec-types**](../README.md)
+[**@astrospec/openspec-types**](../README.md)
 
 ***
 
-[@mindscript/openspec-types](../README.md) / EvidenceRef
+[@astrospec/openspec-types](../README.md) / EvidenceRef
 
 # Interface: EvidenceRef
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:69
+Defined in: packages/astrospec-runtime/dist/index.d.ts:82
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:69
 
 > `optional` **checksum**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:73
+Defined in: packages/astrospec-runtime/dist/index.d.ts:86
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:73
 
 > `optional` **ext**: `Record`\<`string`, [`JsonValue`](../type-aliases/JsonValue.md)\>
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:74
+Defined in: packages/astrospec-runtime/dist/index.d.ts:90
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:74
 
 > `optional` **kind**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:71
+Defined in: packages/astrospec-runtime/dist/index.d.ts:84
 
 ***
 
@@ -38,7 +38,15 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:71
 
 > **ref**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:70
+Defined in: packages/astrospec-runtime/dist/index.d.ts:83
+
+***
+
+### retrieval?
+
+> `optional` **retrieval**: [`EvidenceRetrievalMetadata`](EvidenceRetrievalMetadata.md)
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:89
 
 ***
 
@@ -46,4 +54,20 @@ Defined in: packages/mindscript-runtime/dist/index.d.ts:70
 
 > `optional` **selector**: `string`
 
-Defined in: packages/mindscript-runtime/dist/index.d.ts:72
+Defined in: packages/astrospec-runtime/dist/index.d.ts:85
+
+***
+
+### sourceId?
+
+> `optional` **sourceId**: `string`
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:87
+
+***
+
+### span?
+
+> `optional` **span**: [`EvidenceSpan`](EvidenceSpan.md)
+
+Defined in: packages/astrospec-runtime/dist/index.d.ts:88

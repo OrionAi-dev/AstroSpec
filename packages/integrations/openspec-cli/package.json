@@ -1,5 +1,5 @@
 {
-  "name": "@mindscript/openspec-cli",
+  "name": "@astrospec/openspec-cli",
   "version": "0.1.0",
   "type": "module",
   "bin": {
@@ -13,9 +13,9 @@
     "build": "tsup src/cli.ts --format esm"
   },
   "dependencies": {
-    "@mindscript/openspec-types": "workspace:*",
-    "@mindscript/openspec-plugin-mindql": "workspace:*",
-    "@mindscript/openspec-plugin-mindgraphql": "workspace:*"
+    "@astrospec/openspec-types": "workspace:*",
+    "@astrospec/openspec-plugin-mindql": "workspace:*",
+    "@astrospec/openspec-plugin-mindgraphql": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

@@ -1,8 +1,8 @@
-**@mindscript/mindql-core**
+**@astrospec/mindql-core**
 
 ***
 
-# @mindscript/mindql-core
+# @astrospec/mindql-core
 
 ## Type Aliases
 

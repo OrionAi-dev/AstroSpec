@@ -1,12 +1,12 @@
-[**@mindscript/schema**](../README.md)
+[**@astrospec/schema**](../README.md)
 
 ***
 
-[@mindscript/schema](../README.md) / listSchemas
+[@astrospec/schema](../README.md) / listSchemas
 
 # Function: listSchemas()
 
-> **listSchemas**(): readonly [`MindScriptSchemaName`](../type-aliases/MindScriptSchemaName.md)[]
+> **listSchemas**(): readonly [`AstroSpecSchemaName`](../type-aliases/AstroSpecSchemaName.md)[]
 
 Defined in: index.d.ts:7
 
@@ -14,4 +14,4 @@ List all schema names exported by this package.
 
 ## Returns
 
-readonly [`MindScriptSchemaName`](../type-aliases/MindScriptSchemaName.md)[]
+readonly [`AstroSpecSchemaName`](../type-aliases/AstroSpecSchemaName.md)[]
