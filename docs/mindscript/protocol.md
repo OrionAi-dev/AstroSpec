@@ -1,16 +1,30 @@
-# MindScript Protocol (HTTP)
+# MindScript Protocol
 
-This document defines a minimal, HTTP-friendly protocol for creating Contexts, drafting Turns, and verifying results.
-It focuses on predictable request/response envelopes so multiple runtimes can interoperate.
+This document defines a minimal, HTTP-friendly protocol for MindScript contract creation, handoff, and verification.
+
+The important framing is that the protocol is not only for CRUD over spec documents. It is meant to support structured exchange between humans, models, agents, and runtimes.
+
+It focuses on predictable request/response envelopes so multiple implementations can interoperate.
+
+---
+
+## What the protocol is for
+
+The protocol can be used to:
+
+- create or update shared context contracts
+- draft and lock turn-level execution contracts
+- verify outputs against explicit criteria
+- support LLM-to-LLM or agent-to-agent handoff with stable envelopes
 
 ---
 
 ## Conventions
 
-* **Base URL**: implementation-defined (e.g., `https://api.example.com/mindscript`).
-* **Content-Type**: `application/json` for all requests/responses.
-* **Timestamps**: ISO-8601 strings (UTC) with milliseconds.
-* **IDs**: `ctx:<id>` for Contexts, `turn:<id>` for Turns.
+* **Base URL**: implementation-defined (for example `https://api.example.com/mindscript`)
+* **Content-Type**: `application/json` for all requests/responses
+* **Timestamps**: ISO-8601 strings (UTC) with milliseconds
+* **IDs**: `ctx:<id>` for Contexts, `turn:<id>` for Turns
 
 ---
 
@@ -77,6 +91,8 @@ Create or update a Context contract.
 ### POST `/turn`
 
 Draft or lock a Turn derived from a Context.
+
+A Turn can represent a human-authored execution contract or a machine-to-machine handoff contract.
 
 **Request**
 
@@ -163,7 +179,7 @@ Verify execution output against a locked Turn contract.
 
 ---
 
-## Error Format
+## Error format
 
 All endpoints return a consistent error payload with an HTTP status code.
 
@@ -195,17 +211,17 @@ All endpoints return a consistent error payload with an HTTP status code.
 
 ---
 
-## Authentication & Signature Guidance
+## Authentication and signature guidance
 
 Implementations can choose API keys, OAuth, or mTLS. The minimal guidance below keeps requests auditable:
 
-* **Authorization**: `Authorization: Bearer <token>` (recommended default).
+* **Authorization**: `Authorization: Bearer <token>` (recommended default)
 * **Request signing** (optional but recommended for integrity):
 
   * `X-MindScript-KeyId`: key identifier
   * `X-MindScript-Timestamp`: ISO-8601 timestamp
   * `X-MindScript-Signature`: `base64(HMAC-SHA256(secret, "<timestamp>.<raw_body>"))`
-  * Servers should reject requests with timestamps outside a short window (e.g., ±5 minutes) to prevent replay.
+  * Servers should reject requests with timestamps outside a short window (for example ±5 minutes) to prevent replay.
 
   Compatibility note: servers MAY also accept `X-OpenSpec-*` header names as legacy aliases.
 
@@ -213,32 +229,24 @@ Implementations can choose API keys, OAuth, or mTLS. The minimal guidance below 
 
 ---
 
-## Compatibility Modes
+## Compatibility modes
 
 Future protocol versions should remain backward compatible where possible.
 Clients can opt into a compatibility mode and the server must echo what it applied.
 
 **Request headers**
 
-* `X-MindScript-Version`: semantic version of the protocol (e.g., `1.0`).
-* `X-MindScript-Compat`: compatibility strategy.
+* `X-MindScript-Version`: semantic version of the protocol (for example `1.0`)
+* `X-MindScript-Compat`: compatibility strategy
 
 **Compatibility strategies**
 
-* `strict` — reject unknown fields and non-matching versions (good for compliance).
-* `tolerant` — ignore unknown fields and apply defaults (good for forward-compat).
-* `legacy:<version>` — map deprecated fields for a previous protocol version.
+* `strict` — reject unknown fields and non-matching versions
+* `tolerant` — ignore unknown fields and apply defaults
+* `legacy:<version>` — map deprecated fields for a previous protocol version
 
 **Response headers**
 
-* `X-MindScript-Compat-Applied`: the strategy actually used by the server.
+* `X-MindScript-Compat-Applied`: the strategy actually used by the server
 
 If a requested version cannot be honored, respond with `409 Conflict` and `error.code: "version_mismatch"`.
-
----
-
-## Cross-References
-
-* [spec-language.md](./spec-language.md) — contract fields and signatures
-* [context-turn.md](./context-turn.md) — Context/Turn lifecycle
-* [verification.md](./verification.md) — acceptance criteria and verifier results

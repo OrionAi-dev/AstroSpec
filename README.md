@@ -7,9 +7,16 @@
 
 ---
 
-**A unified framework for defining requirements and acceptance criteria before creation, bridging software, legal, compliance, and AI workflows with clarity first.**
+**MindScript is a vendor-neutral contract language for humans, LLMs, agents, and tools.**
 
-🔭 Clarity before creation • ✅ Acceptance criteria first • 🌐 Cross-domain  
+It is designed to make intent, constraints, acceptance criteria, and machine-readable execution contracts explicit before generation or action.
+
+MindScript can be used as:
+
+- a requirements and acceptance-criteria language
+- an LLM-to-LLM and agent-to-agent contract layer
+- a schema surface for deterministic validation and interoperability
+- a protocol layer over MCP or direct schema validation flows
 
 📄 [Read the white paper (Markdown)](./docs/mindscript/whitepaper.md)  
 ⬇️ [Get the latest release](https://github.com/OrionAi-dev/MindScript/releases/latest)
@@ -19,8 +26,8 @@
 ## Table of Contents
 - [What is MindScript](#what-is-mindscript)
 - [Core Principles](#core-principles)
-- [Benefits](#benefits)
-- [Technical Alignment](#technical-alignment)
+- [Why it matters](#why-it-matters)
+- [Technical alignment](#technical-alignment)
 - [Applications](#applications)
 - [BDD providers](#bdd-providers)
 - [Quick start](#quick-start)
@@ -33,52 +40,61 @@
 
 ## What is MindScript
 
-MindScript (formerly OpenSpec) provides a clear way to define requirements and acceptance criteria before any document, code, or policy is created.  
-It borrows proven ideas from behavior driven and requirements driven development, then applies them across domains where precision and alignment matter.
+MindScript provides a structured way to define intent, requirements, constraints, and verification criteria in forms that both humans and machines can use.
+
+That means it is not only a spec-authoring format. It is also a contract language that can sit between:
+
+- humans and AI systems
+- one model and another model
+- agents and tool runtimes
+- planning layers and execution layers
+
+The requirements-first/spec-first workflow remains an important use case, but it is no longer the only correct description of the project.
 
 ### Naming note
 
-This repository is a specification/contract framework for requirements and acceptance criteria. It is not affiliated with the separate “MindScript” programming language project (and its `msg` CLI) from Daios.
+This repository is not affiliated with the separate “MindScript” programming language project (and its `msg` CLI) from Daios.
 
 ---
 
 ## Core Principles
-- **Requirements before generation**: clarity comes first.  
-- **Acceptance criteria**: define “done” upfront.  
-- **Unified language**: applies across domains.  
-- **Transparency**: requirements are explicit and visible.  
-- **Interoperability**: connects with existing tools and workflows.  
-- **Traceability**: links intent to outputs for accountability.  
-- **Clarity before creation**: minimizes rework and confusion.  
+- **Intent before generation**: clarify what must happen before asking a model or runtime to act.
+- **Acceptance criteria first**: define “done” and “valid” up front.
+- **Machine-readable contracts**: contracts should be structured enough for deterministic validation.
+- **Interoperability**: MindScript should work across runtimes, tools, and integration styles.
+- **Traceability**: keep a clear line from intent to output to verification.
+- **Extensibility**: support new domains without breaking the public contract model.
+- **Fail-closed semantics**: validation and contract enforcement should prefer explicit failure over ambiguous interpretation.
 
 ---
 
-## Benefits
-- **Precision**: outputs consistently reflect the original intent.  
-- **Efficiency**: reduces wasted cycles by aligning teams early and cutting down on revisions.  
-- **Trust**: improves collaboration by making criteria explicit and shared.  
-- **Flexibility**: adapts across software, legal, and enterprise contexts.  
-- **Scalability**: supports both small projects and large organizations, providing a stable foundation as complexity grows.  
+## Why it matters
+- **For humans**: requirements, criteria, and expectations become explicit instead of implied.
+- **For models**: prompts can terminate in stable machine-readable envelopes rather than brittle free text.
+- **For agents**: planning, handoff, and execution can be validated and replayed more safely.
+- **For organizations**: policy, compliance, legal, and software workflows can share a common contract vocabulary.
 
 ---
 
-## Technical Alignment
-MindScript unifies and extends behavioral driven specification platforms into a cross domain framework.  
+## Technical alignment
+MindScript is a protocol and contract layer, not just a document format.
 
-- **Structured nodes**: requirements are expressed in a clear, linked format.  
-- **Interoperability**: layers on top of existing workflows.  
-- **MCP-native profile**: can run as an MCP contract layer with deterministic tool/error semantics.  
-- **Compatibility**: works with familiar formats and standards.  
-- **Extensibility**: adapts to new domains without breaking the core.  
+It currently aligns around:
+
+- **Structured nodes**: requirements, fields, criteria, references, and envelopes are explicit.
+- **MCP-native interoperability**: MCP is the default tool/profile integration path.
+- **Schema-first fallback**: direct schema validation remains supported when MCP is unavailable.
+- **Deterministic error semantics**: compatibility depends on stable validation and error behavior.
+- **Extensible profiles**: domain-specific profiles can be layered without redefining the core contract language.
 
 ---
 
 ## Applications
-- **Software engineering**: define acceptance criteria before writing features.  
-- **Legal drafting**: agree on terms and rules before redlining.  
-- **Compliance**: encode requirements for audits and governance.  
-- **Enterprise knowledge**: unify requirements across teams.  
-- **AI and automation**: guide outputs with human intent.  
+- **Software engineering**: define features and acceptance criteria before implementation.
+- **Legal drafting**: define obligations, clauses, constraints, and review expectations explicitly.
+- **Compliance and governance**: encode policy expectations and verification rules.
+- **Enterprise knowledge workflows**: make structured intent portable across teams and systems.
+- **AI and automation**: use MindScript as the contract layer between planners, executors, reviewers, and tools.
 
 ---
 
@@ -125,17 +141,14 @@ requirements:
 
 ## Quick start
 1. Read the protocol quickstart: [docs/mindscript/quickstart.md](./docs/mindscript/quickstart.md).
-2. Review public adoption charter: [docs/mindscript/adoption-charter.md](./docs/mindscript/adoption-charter.md).
-3. (Optional) Build the white paper PDF locally with Pandoc:  
+2. Review the public adoption charter: [docs/mindscript/adoption-charter.md](./docs/mindscript/adoption-charter.md).
+3. Review the protocol and spec overviews:
+   - [docs/mindscript/protocol.md](./docs/mindscript/protocol.md)
+   - [docs/mindscript/spec-overview.md](./docs/mindscript/spec-overview.md)
+4. (Optional) Build the white paper PDF locally with Pandoc:
    ```bash
    pandoc docs/mindscript/whitepaper.md -o docs/mindscript/whitepaper.pdf
-   ```  
-4. Create a release with GitHub CLI:  
-   ```bash
-   gh release create v0.1.0 docs/mindscript/whitepaper.pdf 
-     --title "MindScript v0.1.0" 
-     --notes "Initial publication of the MindScript (formerly OpenSpec) white paper."
-   ```  
+   ```
 
 ---
 
@@ -174,21 +187,28 @@ node tools/clean-doc-links.mjs --write
 The scripts write API output to `docs/api/` and normalize internal links for MkDocs.
 CI validates that `docs/` stays in sync with generated output, so ensure
 `git diff -- docs/` is clean before pushing.
+
 ## Release expectations
-- We use **SemVer + Changesets** for package versioning across the monorepo.  
-- Pre-1.0 releases treat **minor** versions as breaking changes, and **patch** as backwards-compatible fixes/features.  
-- Every release should be tagged `v<version>` and include release notes tied to the changesets.  
-- See the release guide for the full workflow: [docs/mindscript/release.md](./docs/mindscript/release.md).  
+- We use **SemVer + Changesets** for package versioning across the monorepo.
+- Pre-1.0 releases treat **minor** versions as breaking changes, and **patch** as backwards-compatible fixes/features.
+- Every release should be tagged `v<version>` and include release notes tied to the changesets.
+- See the release guide for the full workflow: [docs/mindscript/release.md](./docs/mindscript/release.md).
 
 ---
 
 ## Contributing
-Ideas, issues, and pull requests are welcome.  
-Good first contributions include example specs, validation rules for acceptance criteria, and adapters that map MindScript requirements into existing tools.
+Ideas, issues, and pull requests are welcome.
+
+Useful contributions include:
+
+- example specs and contract envelopes
+- deterministic validation and compatibility improvements
+- profile adapters and MCP integrations
+- docs that clarify how MindScript works across human and machine workflows
 
 ---
 
 ## License
-Copyright © 2025 Michael Gregory Mahoney  
+Copyright © 2025 Michael Gregory Mahoney
 
 Licensed under the [Apache License 2.0](./LICENSE).

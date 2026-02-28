@@ -1,52 +1,92 @@
-# MindScript Overview (Specification Layer)
+# MindScript Overview
 
-MindScript (formerly OpenSpec) defines requirements and acceptance criteria in a structured, machine-readable format.
-This complements the **infrastructure layer** (Context/Turn specs) by giving higher-level ways to describe goals and map them to contracts.
+MindScript is a structured contract language for intent, constraints, acceptance criteria, and verification.
+
+It can be used as both:
+
+- a specification layer for human-authored requirements
+- a machine-readable contract layer for LLM-to-LLM, agent-to-agent, and tool/runtime exchange
+
+That dual role is the important framing.
+
+MindScript is not just a prettier spec document format, and it is not only a transport protocol. It is the shared contract surface between planning, execution, review, and verification.
 
 ---
 
-## Core Structure
+## Core concepts
 
-* **Spec Node**: smallest unit of intent (maps to a requirement or field).
-* **Requirement**: a condition that must be satisfied (maps to `fields` in a Context/Turn).
-* **Acceptance Criteria**: measurable/testable checks (maps to `acceptanceCriteria[]`).
-* **Reference**: link to another spec node, BDD scenario, or external artifact.
+### 1. Spec nodes
+
+A spec node is the smallest explicit unit of intent.
+
+It can represent:
+
+- a requirement
+- a field
+- a constraint
+- an acceptance criterion
+- a reference to another contract, scenario, or artifact
+
+### 2. Contracts
+
+MindScript contracts make expectations explicit in forms a runtime or verifier can inspect.
+
+That includes:
+
+- required fields
+- acceptance criteria
+- references to external artifacts or scenarios
+- compatibility expectations
+- verifiable output conditions
+
+### 3. Handoffs
+
+MindScript can sit between components, not just before them.
+
+Examples:
+
+- one model drafts a contract another model must satisfy
+- a planner emits a structured request for an executor
+- an agent emits a result envelope that a verifier must validate
+- a human defines acceptance criteria before an AI drafting step begins
+
+### 4. Verification
+
+Acceptance criteria are meant to be testable, reviewable, or automatically checkable.
+
+That is why MindScript emphasizes deterministic schemas, validation, and error behavior rather than vague “best effort” interpretation.
 
 ---
 
 ## Conventions
 
-* Specs can be written directly in JSON/TypeScript contracts.
-* YAML/Markdown frontmatter remains supported for human-readable domains (e.g., BDD or policy).
-* Each requirement or field has a unique identifier.
-* Acceptance criteria reference verifiers that can be executed automatically.
+- JSON and TypeScript contracts are first-class
+- YAML and Markdown-frontmatter remain useful for human-authored domains
+- each requirement, field, or criterion should have a stable identifier
+- verifiers and tool integrations should be machine-checkable where possible
+- compatibility behavior should be explicit, not implicit
 
 ---
 
-## Example (Requirement → Turn)
+## Why this matters
 
-```yaml
-id: FEATURE-101
-title: User Login
-type: requirement
-acceptanceCriteria:
-  - id: FEATURE-101.1
-    description: User can log in with valid credentials
-    verifier: tool_success
-  - id: FEATURE-101.2
-    description: Invalid credentials are rejected
-    verifier: response_shape
-```
+Without a contract layer, systems fall back to prompt text, hidden assumptions, and brittle adapters.
 
-This requirement maps to a MindScript Turn contract with `fields` (`username`, `password`) and `acceptanceCriteria` that are verified after execution.
+MindScript exists to make the contract explicit.
+
+That helps:
+
+- humans reason about intent and acceptance criteria
+- models consume and emit structured envelopes
+- runtimes validate expectations deterministically
+- teams move across domains without redefining the whole contract model each time
 
 ---
 
-## Cross-References
+## Cross-references
 
-* [context-turn.md](./context-turn.md) → Context vs Turn model
-* [verification.md](./verification.md) → how acceptance criteria are validated
-* [mcp-profile.md](./mcp-profile.md) → normative MCP coupling profile
-* [adoption-charter.md](./adoption-charter.md) → public adoption boundaries and compatibility promises
-* [extension-registry.md](./extension-registry.md) → public/private extension rules
-* [spec-bdd-context-turn.md](./context-turn.md) → portable BDD profile for non-software domains
+- [context-turn.md](./context-turn.md) → Context vs Turn model
+- [verification.md](./verification.md) → how acceptance criteria are validated
+- [mcp-profile.md](./mcp-profile.md) → normative MCP coupling profile
+- [adoption-charter.md](./adoption-charter.md) → public adoption boundaries and compatibility promises
+- [extension-registry.md](./extension-registry.md) → public/private extension rules
