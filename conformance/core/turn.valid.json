@@ -1,9 +1,0 @@
-{
-  "kind": "turn",
-  "id": "turn:demo",
-  "intent": "demo_turn",
-  "inheritsFrom": "ctx:demo",
-  "fields": {},
-  "acceptanceCriteria": [],
-  "lockedAt": "2026-02-28T00:00:00.000Z"
-}

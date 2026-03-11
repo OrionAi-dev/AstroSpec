@@ -1,6 +1,0 @@
-{
-  "descriptorId": "descriptor_invalid",
-  "name": "Invalid Descriptor",
-  "interfaceKind": "scheduler-engine",
-  "version": "0.1.0"
-}

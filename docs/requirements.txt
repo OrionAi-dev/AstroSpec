@@ -1,4 +1,0 @@
-mkdocs-material==9.5.39
-pymdown-extensions==10.10
-mkdocs-redirects==1.2.1
-mkdocs-git-revision-date-localized-plugin==1.2.4
