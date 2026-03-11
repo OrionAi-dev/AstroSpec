@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Simple DX surface for AstroSpec contract validation and MCP tool calls.",
+  "description": "Compatibility wrapper for @mcp-secure-context/sdk-typescript.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,9 +24,7 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/agent-contracts": "workspace:*",
-    "@astrospec/mcp-profile": "workspace:*",
-    "@astrospec/retrieval-profile": "workspace:*"
+    "@mcp-secure-context/sdk-typescript": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",

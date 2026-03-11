@@ -1,5 +1,5 @@
 {
-  "name": "astrospec",
+  "name": "mcp-secure-context-sharing",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.13.1",

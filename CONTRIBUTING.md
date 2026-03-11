@@ -1,11 +1,11 @@
-# Contributing to AstroSpec
+# Contributing to MCP Secure Context Sharing
 
 Thank you for your interest in contributing!
 
 ## How to Contribute
 - Open issues for bugs or feature requests
 - Submit pull requests for improvements
-- Share examples of AstroSpec in practice
+- Share examples of MCP Secure Context Sharing in practice
 
 ## Development Setup
 ### Prerequisites
@@ -18,7 +18,7 @@ Thank you for your interest in contributing!
    ```bash
    pnpm install --frozen-lockfile
    ```
-3. Create or edit specs in `docs/astrospec/`.
+3. Create or edit framework docs in `docs/`.
 4. Follow the guidelines in the white paper.
 
 ### Common commands

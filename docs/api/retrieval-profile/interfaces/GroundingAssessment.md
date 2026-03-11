@@ -6,7 +6,7 @@
 
 # Interface: GroundingAssessment
 
-Defined in: [src/index.ts:119](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L119)
+Defined in: [src/index.ts:119](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L119)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [src/index.ts:119](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **confidence**: `number`
 
-Defined in: [src/index.ts:121](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L121)
+Defined in: [src/index.ts:121](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L121)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [src/index.ts:121](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **missingEvidence**: `string`[]
 
-Defined in: [src/index.ts:122](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L122)
+Defined in: [src/index.ts:122](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L122)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/index.ts:122](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **supported**: `boolean`
 
-Defined in: [src/index.ts:120](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L120)
+Defined in: [src/index.ts:120](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L120)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [src/index.ts:120](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **unsupportedClaims**: `string`[]
 
-Defined in: [src/index.ts:123](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L123)
+Defined in: [src/index.ts:123](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L123)

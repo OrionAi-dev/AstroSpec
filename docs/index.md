@@ -1,69 +1,28 @@
-# AstroSpec Docs
+# MCP Secure Context Sharing Docs
 
-AstroSpec is a vendor-neutral contract standard for humans, LLMs, agents, tools, and runtimes.
+MCP Secure Context Sharing is an MCP-compatible framework for portable, policy-aware, and verifiable context exchange.
 
-It should be understood as:
+Use it when you need to share bounded context between agents, tools, and systems without turning context exchange into unrestricted memory dumping.
 
-- a contract language
-- a schema and validation layer
-- a protocol and interoperability layer
-- a profile registry for domain-specific contracts
-- a neutral standard surface for retrieval and evidence exchange
+## Start here
 
-## Start Here
+1. [Overview](overview.md)
+2. [Context Containers](context-containers.md)
+3. [OpenSpec](openspec.md)
+4. [MCP Integration](mcp-integration.md)
+5. [Legacy AstroSpec migration](migrations/legacy-astrospec/README.md)
 
-If you are new to AstroSpec, read in this order:
+## Package roles
 
-1. [Overview](astrospec/spec-overview.md)
-2. [Protocol](astrospec/protocol.md)
-3. [Retrieval Profile](astrospec/retrieval-profile.md)
-4. [Reasoning Profile](astrospec/reasoning-profile.md)
-5. [Graph Memory Profile](astrospec/graph-memory-profile.md)
-6. [Starburst Profile](astrospec/starburst-profile.md)
-7. [Runtime Interfaces](astrospec/runtime-interfaces.md)
-8. [Evidence and Provenance](astrospec/evidence-provenance.md)
-9. [MCP Profile](astrospec/mcp-profile.md)
-10. [Governance Charter](governance/charter.md)
+- `@mcp-secure-context/core`: container types and schema access
+- `@mcp-secure-context/openspec`: validation, provenance, verification, and policy helpers
+- `@mcp-secure-context/mcp-adapter`: MCP resource and tool helpers
+- `@mcp-secure-context/sdk-typescript`: TypeScript DX surface
+- `@mcp-secure-context/cli`: CLI workflows
 
-## Documentation Map
+## Secondary extensions
 
-- **Overview**: [spec-overview](astrospec/spec-overview.md)
-- **Protocol**: [protocol](astrospec/protocol.md)
-- **Core API**: [api](astrospec/api.md), [typescript](astrospec/typescript.md), [verification](astrospec/verification.md)
-- **Retrieval profile**: [retrieval-profile](astrospec/retrieval-profile.md), [retrieval examples](astrospec/retrieval-examples.md)
-- **Reasoning profiles**: [reasoning-profile](astrospec/reasoning-profile.md), [graph-memory-profile](astrospec/graph-memory-profile.md), [starburst-profile](astrospec/starburst-profile.md), [runtime-interfaces](astrospec/runtime-interfaces.md), [discovery-bundle](astrospec/discovery-bundle.md), [discovery-examples](astrospec/discovery-examples.md), [discovery-conformance](astrospec/discovery-conformance.md)
-- **Interop**: [mcp-profile](astrospec/mcp-profile.md)
-- **Governance**: [charter](governance/charter.md), [compatibility-policy](governance/compatibility-policy.md), [profile-registry-policy](governance/profile-registry-policy.md), [change-control](governance/change-control.md), [release-policy](governance/release-policy.md)
-- **Release**: [release guide](astrospec/release.md)
-- **Migrations**: [OpenSpec to AstroSpec](migrations/openspec-to-astrospec.md), [MindScript to AstroSpec](migrations/mindscript-to-astrospec.md), [OrionAI scope to AstroSpec](astrospec/migration-orionai-to-astrospec-scope.md)
-- **Integrations**: [BDD adapters](integrations/bdd/@software/README.md)
-- **API reference**: generated under `docs/api/`
+The repo still publishes retrieval, reasoning, graph-memory, and discovery-oriented packages for compatibility and advanced use cases, but those are no longer the primary onboarding path.
 
-## Package Roles
-
-- `@astrospec/schema`: canonical core schemas
-- `@astrospec/runtime`: validation, locking, diffing, verification
-- `@astrospec/mcp-profile`: canonical MCP mapping
-- `@astrospec/retrieval-profile`: retrieval and evidence profile contracts
-- `@astrospec/reasoning`: portable reasoning task and workflow contracts
-- `@astrospec/graph-memory`: portable discovery memory and structural retrieval contracts
-- `@astrospec/starburst-profile`: portable discovery profile contracts
-- `@astrospec/runtime-interfaces`: neutral runtime adapter interfaces
-- `@astrospec/kit`: small DX layer
-- `@astrospec/cli`: contract tooling
-- `@astrospec/discovery-bundle`: high-level discovery bundle
-- `@astrospec/agent-contracts`: specialized downstream bundle
-
-## How to Adopt
-
-Use AstroSpec in layers:
-
-1. start with core schemas and runtime validation
-2. add the retrieval profile if the system exchanges evidence, citations, memory, or graph assertions
-3. add the reasoning and discovery profiles if the system exchanges structured reasoning tasks, structural memory, or analogical discovery outputs
-4. add runtime interfaces or MCP mappings only when tool/runtime transport interoperability is needed
-5. keep product-specific semantics in downstream extensions rather than extending AstroSpec core casually
-
-## Legacy Surface
-
-Historical naming should only appear in migration material, changelog history, or archived notes.
+- [Extensions overview](extensions/retrieval.md)
+- [Legacy AstroSpec docs](migrations/legacy-astrospec/README.md)

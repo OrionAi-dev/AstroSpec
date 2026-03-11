@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Command-line tooling for AstroSpec core and retrieval profile validation workflows.",
+  "description": "Compatibility wrapper for @mcp-secure-context/cli.",
   "bin": {
     "astrospec": "dist/cli.js"
   },
@@ -17,9 +17,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@astrospec/kit": "workspace:*",
-    "@astrospec/retrieval-profile": "workspace:*",
-    "@astrospec/runtime": "workspace:*",
+    "@mcp-secure-context/cli": "workspace:*",
     "yaml": "^2.8.1"
   },
   "devDependencies": {

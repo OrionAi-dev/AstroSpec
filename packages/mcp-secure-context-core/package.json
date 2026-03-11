@@ -1,0 +1,32 @@
+{
+  "name": "@mcp-secure-context/core",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Core context container types and schema access for MCP Secure Context Sharing.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "schemas"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --shims",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -4,6 +4,11 @@ import path from 'node:path';
 
 const repoRoot = process.cwd();
 const publicPackageDirs = [
+  'packages/mcp-secure-context-core',
+  'packages/mcp-secure-context-openspec',
+  'packages/mcp-secure-context-mcp-adapter',
+  'packages/mcp-secure-context-sdk-typescript',
+  'packages/mcp-secure-context-cli',
   'packages/astrospec-schema',
   'packages/astrospec-runtime',
   'packages/astrospec-mcp-profile',
@@ -42,8 +47,10 @@ function findDeepImports(filePath) {
   let m;
   while ((m = importRe.exec(text))) {
     const spec = m[2] || m[3] || m[4] || '';
-    if (!spec.startsWith('@astrospec/')) continue;
-    const afterScope = spec.replace(/^@astrospec\//, '');
+    if (!spec.startsWith('@astrospec/') && !spec.startsWith('@mcp-secure-context/')) continue;
+    const afterScope = spec.startsWith('@astrospec/')
+      ? spec.replace(/^@astrospec\//, '')
+      : spec.replace(/^@mcp-secure-context\//, '');
     if (!afterScope.includes('/')) continue;
     out.push(spec);
   }

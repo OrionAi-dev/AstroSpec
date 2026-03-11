@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/turn-0.1.json",
+  "title": "AstroSpec Turn",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "id",
+    "intent",
+    "inheritsFrom",
+    "fields",
+    "acceptanceCriteria",
+    "lockedAt"
+  ],
+  "properties": {
+    "kind": { "const": "turn" },
+    "id": { "type": "string", "minLength": 1 },
+    "intent": { "type": "string", "minLength": 1 },
+    "inheritsFrom": { "type": "string", "minLength": 1 },
+    "fields": {
+      "type": "object",
+      "additionalProperties": { "$ref": "./defs-0.1.json#/$defs/specField" }
+    },
+    "acceptanceCriteria": { "$ref": "./acceptance-criteria-0.1.json" },
+    "provenance": { "$ref": "./provenance-0.1.json" },
+    "lockedAt": { "type": "string", "format": "date-time" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$"
+    },
+    "signature": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
+

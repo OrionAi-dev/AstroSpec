@@ -1,5 +1,5 @@
-**@astrospec/cli**
+**@mcp-secure-context/cli**
 
 ***
 
-# @astrospec/cli
+# @mcp-secure-context/cli

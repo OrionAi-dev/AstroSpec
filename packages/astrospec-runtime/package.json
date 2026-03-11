@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "AstroSpec runtime validators, locking, and verification engine.",
+  "description": "Compatibility wrapper for @mcp-secure-context/openspec.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,9 +17,9 @@
   },
   "keywords": [
     "astrospec",
-    "runtime",
-    "contracts",
-    "verification"
+    "compatibility",
+    "openspec",
+    "context-sharing"
   ],
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs",
@@ -27,9 +27,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@astrospec/schema": "workspace:*",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "@mcp-secure-context/openspec": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

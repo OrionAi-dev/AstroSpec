@@ -1,5 +1,5 @@
-site_name: AstroSpec
-site_description: AstroSpec — specs, runtime, and integrations
+site_name: MCP Secure Context Sharing
+site_description: Portable context containers, OpenSpec verification, and MCP-compatible adapters
 site_url: https://orionai-dev.github.io/AstroSpec
 
 repo_url: https://github.com/OrionAi-dev/AstroSpec
@@ -25,11 +25,11 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        "api/schema/modules.md": "api/schema/README.md"
-        "api/runtime/modules.md": "api/runtime/README.md"
+        "api/schema/modules.md": "api/core/README.md"
+        "api/runtime/modules.md": "api/openspec/README.md"
         "api/cli/modules.md": "api/cli/README.md"
-        "api/mcp-profile/modules.md": "api/mcp-profile/README.md"
-        "api/kit/modules.md": "api/kit/README.md"
+        "api/mcp-profile/modules.md": "api/mcp-adapter/README.md"
+        "api/kit/modules.md": "api/sdk-typescript/README.md"
         "api/retrieval-profile/modules.md": "api/retrieval-profile/README.md"
         "api/integrations/mindql-core/modules.md": "api/integrations/mindql-core/README.md"
         "api/integrations/mindgraphql-core/modules.md": "api/integrations/mindgraphql-core/README.md"
@@ -44,6 +44,12 @@ plugins:
       fallback_to_build_date: true
       exclude:
         - api/**
+        - overview.md
+        - context-containers.md
+        - openspec.md
+        - mcp-integration.md
+        - extensions/**
+        - migrations/legacy-astrospec/**
 
 markdown_extensions:
   - admonition
@@ -63,26 +69,17 @@ markdown_extensions:
 nav:
   - Start here: index.md
 
-  - AstroSpec Spec:
-      - Overview: astrospec/spec-overview.md
-      - Adoption Charter: astrospec/adoption-charter.md
-      - Language: astrospec/spec-language.md
-      - Schema: astrospec/spec-schema.md
-      - Validation: astrospec/spec-validation.md
-      - API: astrospec/api.md
-      - Context Turn: astrospec/context-turn.md
-      - Protocol: astrospec/protocol.md
-      - Templates: astrospec/templates.md
-      - TypeScript: astrospec/typescript.md
-      - Verification: astrospec/verification.md
-      - Examples: astrospec/spec-examples.md
-      - Quickstart: astrospec/quickstart.md
-      - Consumer Quickstart (Schema): astrospec/consumer-quickstart-schema.md
-      - Consumer Quickstart (MCP): astrospec/consumer-quickstart-mcp.md
-      - Scope Migration: astrospec/migration-orionai-to-astrospec-scope.md
-      - Extension Registry: astrospec/extension-registry.md
-      - Roadmap: astrospec/roadmap.md
-      - Whitepaper: astrospec/whitepaper.md
+  - Framework:
+      - Overview: overview.md
+      - Context Containers: context-containers.md
+      - OpenSpec: openspec.md
+      - MCP Integration: mcp-integration.md
+
+  - Extensions:
+      - Overview: extensions/retrieval.md
+      - Reasoning: extensions/reasoning.md
+      - Graph Memory: extensions/graph-memory.md
+      - Discovery: extensions/discovery.md
 
   - Governance:
       - RFC Process: governance/rfc-process.md
@@ -111,15 +108,17 @@ nav:
 
   - API Reference:
       - Core:
-          - schema: api/schema/README.md
-          - runtime: api/runtime/README.md
+          - core: api/core/README.md
+          - openspec: api/openspec/README.md
           - cli: api/cli/README.md
-          - mcp-profile: api/mcp-profile/README.md
-          - kit: api/kit/README.md
+          - mcp-adapter: api/mcp-adapter/README.md
+          - sdk-typescript: api/sdk-typescript/README.md
           - retrieval-profile: api/retrieval-profile/README.md
       - Integrations:
           - mindql-core: api/integrations/mindql-core/README.md
           - mindgraphql-core: api/integrations/mindgraphql-core/README.md
 
   - Legacy:
+      - AstroSpec Migration: migrations/legacy-astrospec/README.md
+      - AstroSpec Overview: astrospec/spec-overview.md
       - Historical BDD Core Alias: spec-bdd-astrospec-core.md

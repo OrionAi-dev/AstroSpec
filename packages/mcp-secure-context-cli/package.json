@@ -1,0 +1,32 @@
+{
+  "name": "@mcp-secure-context/cli",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "CLI tooling for MCP Secure Context Sharing and OpenSpec validation workflows.",
+  "bin": {
+    "mcp-secure-context": "dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/cli.ts --dts --format esm",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@astrospec/retrieval-profile": "workspace:*",
+    "@mcp-secure-context/sdk-typescript": "workspace:*",
+    "@mcp-secure-context/openspec": "workspace:*",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

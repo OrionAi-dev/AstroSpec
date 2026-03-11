@@ -27,7 +27,7 @@ function request(url, headers = {}) {
 function readPublicPackageManifests() {
   return fs
     .readdirSync(packagesDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && entry.name.startsWith('astrospec-'))
+    .filter((entry) => entry.isDirectory() && (entry.name.startsWith('astrospec-') || entry.name.startsWith('mcp-secure-context-')))
     .map((entry) => path.join(packagesDir, entry.name, 'package.json'))
     .map((file) => JSON.parse(fs.readFileSync(file, 'utf8')))
     .filter((pkg) => pkg.private !== true)
@@ -41,8 +41,8 @@ function readPublicPackageManifests() {
 const publicPackages = readPublicPackageManifests();
 
 for (const pkg of publicPackages) {
-  if (!pkg.name?.startsWith('@astrospec/')) {
-    console.error(`[release] package ${pkg.name ?? '<unknown>'} is outside the canonical @astrospec scope`);
+  if (!pkg.name?.startsWith('@astrospec/') && !pkg.name?.startsWith('@mcp-secure-context/')) {
+    console.error(`[release] package ${pkg.name ?? '<unknown>'} is outside the allowed public scopes`);
     process.exit(1);
   }
   if (pkg.access !== 'public') {

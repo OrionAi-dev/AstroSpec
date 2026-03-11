@@ -6,7 +6,7 @@
 
 # Interface: RetrievalCitation
 
-Defined in: [src/index.ts:109](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L109)
+Defined in: [src/index.ts:109](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L109)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [src/index.ts:109](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **candidateId**: `string`
 
-Defined in: [src/index.ts:111](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L111)
+Defined in: [src/index.ts:111](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L111)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [src/index.ts:111](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **citationId**: `string`
 
-Defined in: [src/index.ts:110](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L110)
+Defined in: [src/index.ts:110](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L110)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/index.ts:110](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **claimId**: `string`
 
-Defined in: [src/index.ts:112](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L112)
+Defined in: [src/index.ts:112](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L112)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [src/index.ts:112](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **confidence**: `number`
 
-Defined in: [src/index.ts:116](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L116)
+Defined in: [src/index.ts:116](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L116)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [src/index.ts:116](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **label**: `string`
 
-Defined in: [src/index.ts:113](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L113)
+Defined in: [src/index.ts:113](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L113)
 
 ***
 
@@ -54,7 +54,7 @@ Defined in: [src/index.ts:113](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **quote**: `string`
 
-Defined in: [src/index.ts:115](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L115)
+Defined in: [src/index.ts:115](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L115)
 
 ***
 
@@ -62,4 +62,4 @@ Defined in: [src/index.ts:115](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **span**: `EvidenceSpan`
 
-Defined in: [src/index.ts:114](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L114)
+Defined in: [src/index.ts:114](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L114)

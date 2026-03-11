@@ -1,0 +1,45 @@
+{
+  "name": "@mcp-secure-context/mcp-adapter",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "MCP-compatible adapters and resource helpers for secure context sharing.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "mcp-secure-context",
+    "mcp",
+    "context-sharing",
+    "openspec"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --shims",
+    "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx tests/*.test.ts"
+  },
+  "dependencies": {
+    "@mcp-secure-context/openspec": "workspace:*",
+    "@astrospec/agent-contracts": "workspace:*",
+    "@astrospec/retrieval-profile": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -13,13 +13,13 @@ gen() {
 }
 
 # Core (canonical)
-gen astrospec-schema schema
-gen astrospec-runtime runtime
-gen astrospec-cli cli
+gen mcp-secure-context-core core
+gen mcp-secure-context-openspec openspec
+gen mcp-secure-context-cli cli
 
 # Public interop and profiles
-gen astrospec-mcp-profile mcp-profile
-gen astrospec-kit kit
+gen mcp-secure-context-mcp-adapter mcp-adapter
+gen mcp-secure-context-sdk-typescript sdk-typescript
 gen astrospec-retrieval-profile retrieval-profile
 
 # Integrations / generators (optional)

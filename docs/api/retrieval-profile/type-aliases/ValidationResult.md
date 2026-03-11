@@ -8,7 +8,7 @@
 
 > **ValidationResult**\<`T`\> = `object`
 
-Defined in: [src/index.ts:228](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L228)
+Defined in: [src/index.ts:228](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L228)
 
 ## Type Parameters
 
@@ -22,7 +22,7 @@ Defined in: [src/index.ts:228](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **errors**: `string`[]
 
-Defined in: [src/index.ts:230](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L230)
+Defined in: [src/index.ts:230](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L230)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/index.ts:230](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **issues**: [`ValidationIssue`](ValidationIssue.md)[]
 
-Defined in: [src/index.ts:231](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L231)
+Defined in: [src/index.ts:231](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L231)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [src/index.ts:231](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > **ok**: `boolean`
 
-Defined in: [src/index.ts:229](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L229)
+Defined in: [src/index.ts:229](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L229)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [src/index.ts:229](https://github.com/OrionAi-dev/AstroSpec/blob/2f5
 
 > `optional` **value**: `T`
 
-Defined in: [src/index.ts:232](https://github.com/OrionAi-dev/AstroSpec/blob/2f5aa7cd50afa970b2003398852c244f8050f71c/packages/astrospec-retrieval-profile/src/index.ts#L232)
+Defined in: [src/index.ts:232](https://github.com/OrionAi-dev/AstroSpec/blob/63fea25cdc4d27a3819ece733486fa450f319b71/packages/astrospec-retrieval-profile/src/index.ts#L232)

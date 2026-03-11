@@ -1,243 +1,144 @@
-# AstroSpec
+# MCP Secure Context Sharing
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
-[![Release](https://img.shields.io/github/v/release/OrionAi-dev/AstroSpec)](https://github.com/OrionAi-dev/AstroSpec/releases/latest)
-[![Docs](https://img.shields.io/badge/docs-spec-success)](./docs/index.md)
+[![Docs](https://img.shields.io/badge/docs-framework-success)](./docs/index.md)
 
-**AstroSpec is a vendor-neutral contract standard for humans, LLMs, agents, tools, and runtimes.**
+**MCP Secure Context Sharing is an open-source framework for securely sharing user context, task state, and knowledge between MCP-compatible agents and tools using portable context containers and a built-in trust layer.**
 
-It exists to make intent, constraints, evidence, citations, grounding, and verification explicit in stable machine-readable contracts.
+It is not a replacement for MCP.
 
-AstroSpec is designed to be infrastructure:
+It is an MCP-compatible extension framework for:
 
-- a contract language
-- a schema and validation layer
-- a protocol and interoperability layer
-- a profile registry for domain-specific contracts
-- a neutral standard surface for retrieval and evidence exchange
+- portable context containers
+- scoped context sharing
+- provenance and verification
+- permissions and expiration controls
+- policy-aware agent and tool handoffs
 
-## What AstroSpec Is
+## Architecture
 
-AstroSpec is not just a spec-authoring format and it is not just a prompt wrapper.
+### MCP Secure Context Sharing
 
-It can sit between:
+The umbrella project and public framework.
 
-- humans and AI systems
-- one model and another model
-- agents and tool runtimes
-- retrieval systems and consuming applications
-- governance layers and execution layers
+### Context Containers
 
-Its first serious adoption wedge is **RAG interoperability**:
+Portable structured objects for sharing:
 
-- retrieval requests and results
-- citations and evidence
-- memory records
-- graph knowledge assertions
-- grounding and verification
+- user context
+- task state
+- knowledge objects
+- memory references
 
-AstroSpec also supports a portable discovery stack for structured reasoning:
+### OpenSpec
 
-- reasoning workflow contracts
-- graph-memory contracts
-- discovery and analogical-mapping outputs
-- neutral runtime interoperability interfaces
-- high-level discovery bundle re-exports
+The verification and policy layer for:
 
-## Why It Matters
+- provenance
+- validation
+- permissions
+- TTL and expiration
+- sensitivity labels
+- optional signing
 
-Without a contract layer, systems fall back to prompt text, hidden assumptions, brittle JSON, and adapter sprawl.
+### MCP Integration
 
-AstroSpec makes the exchange explicit so systems can:
+Adapters, resource helpers, server patterns, and reference implementations for MCP-compatible systems.
 
-- validate before acting
-- verify after acting
-- cite evidence deterministically
-- attribute provenance clearly
-- interoperate across tools and vendors
-- keep product-specific behavior out of the standard surface
+## Package Map
 
-## Public Package Map
+### Canonical packages
 
-### Core
+- `@mcp-secure-context/core`
+- `@mcp-secure-context/openspec`
+- `@mcp-secure-context/mcp-adapter`
+- `@mcp-secure-context/sdk-typescript`
+- `@mcp-secure-context/cli`
+
+### Compatibility packages
 
 - `@astrospec/schema`
 - `@astrospec/runtime`
-
-### Interop
-
 - `@astrospec/mcp-profile`
+- `@astrospec/kit`
+- `@astrospec/cli`
 
-### Profiles
+These compatibility packages remain available for one transition cycle and re-export the new canonical packages.
+
+### Secondary extension packages
+
+These remain available but are no longer the primary public identity of the repo:
 
 - `@astrospec/retrieval-profile`
 - `@astrospec/reasoning`
 - `@astrospec/graph-memory`
 - `@astrospec/starburst-profile`
-
-### Runtime interoperability
-
 - `@astrospec/runtime-interfaces`
-
-### DX
-
-- `@astrospec/kit`
-- `@astrospec/cli`
 - `@astrospec/discovery-bundle`
-
-### Specialized downstream bundles
-
 - `@astrospec/agent-contracts`
-
-## Implementation Layers
-
-1. **Language layer**: human- and machine-readable contract concepts such as Context, Turn, evidence, provenance, and verification.
-2. **Schema layer**: canonical JSON Schemas published by `@astrospec/schema`.
-3. **Runtime validation and verification layer**: deterministic validation, locking, merging, diffing, and verifier execution in `@astrospec/runtime`.
-4. **MCP interoperability layer**: canonical MCP tool names, resource URIs, and deterministic error semantics in `@astrospec/mcp-profile`.
-5. **Retrieval profile layer**: portable RAG contracts in `@astrospec/retrieval-profile`.
-6. **Reasoning and discovery profile layer**: portable reasoning, graph-memory, and discovery contracts in `@astrospec/reasoning`, `@astrospec/graph-memory`, and `@astrospec/starburst-profile`.
-7. **Runtime interoperability layer**: neutral runtime interfaces in `@astrospec/runtime-interfaces`.
-8. **Integrations and downstream bundles**: BDD mappings, generators, vendor adapters, and specialized orchestration bundles.
-
-## Core vs Profiles vs Integrations
-
-### Core
-
-Core stays small and conservative.
-
-Core covers:
-
-- Context and Turn contracts
-- evidence and provenance
-- validation and verification
-- compatibility semantics
-
-### Profiles
-
-Profiles standardize domain-specific contract families without bloating core.
-
-The first normative profile is the retrieval profile.
-
-The reasoning/discovery family adds:
-
-- `@astrospec/reasoning`
-- `@astrospec/graph-memory`
-- `@astrospec/starburst-profile`
-
-These remain portable contracts and do not embed a single orchestrator runtime.
-
-### Integrations
-
-Integrations adapt AstroSpec to specific ecosystems such as:
-
-- MCP tools and resources
-- BDD frameworks
-- generators and DSLs
-- product-specific runtimes
-
-BDD remains supported, but it is an integration family, not the top-level identity of AstroSpec.
-
-## Retrieval Profile
-
-`@astrospec/retrieval-profile` defines portable envelopes for:
-
-- `RetrievalRequest`
-- `RetrievalResponse`
-- `RetrievalPlan`
-- `MemoryRecord`
-- `KnowledgeAssertion`
-- `RetrievalStreamEvent`
-
-This is a contract surface for retrieval interoperability. It does not implement a retrieval engine.
-
-## MCP Interoperability
-
-AstroSpec is transport-agnostic, but MCP is the default interop path.
-
-The MCP profile standardizes:
-
-- tool names
-- resource URI shapes
-- deterministic error codes
-- retrieval, memory, and graph tool surfaces
 
 ## Quickstart
 
-1. Read the docs index: [docs/index.md](./docs/index.md)
-2. Read the overview: [docs/astrospec/spec-overview.md](./docs/astrospec/spec-overview.md)
-3. Read the protocol: [docs/astrospec/protocol.md](./docs/astrospec/protocol.md)
-4. Read the retrieval profile: [docs/astrospec/retrieval-profile.md](./docs/astrospec/retrieval-profile.md)
-5. Read the reasoning profile: [docs/astrospec/reasoning-profile.md](./docs/astrospec/reasoning-profile.md)
-6. Read the graph-memory profile: [docs/astrospec/graph-memory-profile.md](./docs/astrospec/graph-memory-profile.md)
-7. Read the Starburst profile: [docs/astrospec/starburst-profile.md](./docs/astrospec/starburst-profile.md)
-8. Read the runtime interfaces: [docs/astrospec/runtime-interfaces.md](./docs/astrospec/runtime-interfaces.md)
-9. Start with MCP: [docs/astrospec/consumer-quickstart-mcp.md](./docs/astrospec/consumer-quickstart-mcp.md)
-10. Use schema-first fallback when needed: [docs/astrospec/consumer-quickstart-schema.md](./docs/astrospec/consumer-quickstart-schema.md)
+### TypeScript
 
-## Adoption Path
+```ts
+import { createContextContainer, validateContainer } from "@mcp-secure-context/sdk-typescript";
 
-A typical adopter should integrate in this order:
+const container = createContextContainer({
+  containerType: "task_state",
+  id: "task-123",
+  payload: {
+    taskId: "task-123",
+    goal: "Summarize this ticket for the next agent",
+    status: "in_progress",
+  },
+  policy: {
+    audience: ["agent", "tool"],
+    allowedActions: ["read"],
+    purpose: "handoff",
+    sensitivity: "internal",
+  },
+  provenance: {
+    createdAt: new Date().toISOString(),
+    createdBy: "agent://planner",
+  },
+});
 
-1. validate core payloads with `@astrospec/runtime`
-2. adopt the retrieval profile if the system exchanges retrieval evidence or grounding data
-3. adopt the reasoning/discovery profiles if the system exchanges reasoning tasks, graph-memory artifacts, or discovery outputs
-4. expose runtime interfaces or MCP mappings only if tool/runtime interoperability is needed
-5. add product-specific behavior in downstream packages or vendor-namespaced extensions, not in AstroSpec core
+const result = validateContainer(container);
+```
 
-## Governance and Compatibility
+### CLI
 
-AstroSpec is being positioned as a neutral standard surface.
+```bash
+pnpm -F @mcp-secure-context/cli build
+pnpm exec mcp-secure-context validate-container container.json
+```
 
-Start here:
+## Why this exists
 
-- [Governance Charter](./docs/governance/charter.md)
-- [Compatibility Policy](./docs/governance/compatibility-policy.md)
-- [Profile Registry Policy](./docs/governance/profile-registry-policy.md)
-- [Change Control](./docs/governance/change-control.md)
-- [Release Guide](./docs/astrospec/release.md)
+MCP standardizes tool and data interoperability. It does not yet standardize a portable, bounded, policy-aware way to hand context between agents, tools, and systems.
 
-## Conformance
+MCP Secure Context Sharing fills that gap with:
 
-Normative additions are expected to ship with:
+- least-privilege sharing
+- explicit scope and audience
+- portable container formats
+- provenance and verification metadata
+- optional trust hardening through OpenSpec
 
-- schema
-- validator
-- docs
-- example
-- conformance fixture
+## Docs
 
-See:
+- [Docs index](./docs/index.md)
+- [Overview](./docs/overview.md)
+- [Context Containers](./docs/context-containers.md)
+- [OpenSpec](./docs/openspec.md)
+- [MCP Integration](./docs/mcp-integration.md)
 
-- [conformance/core](./conformance/core)
-- [conformance/retrieval-profile](./conformance/retrieval-profile)
-- [conformance/reasoning](./conformance/reasoning)
-- [conformance/graph-memory](./conformance/graph-memory)
-- [conformance/starburst-profile](./conformance/starburst-profile)
-- [conformance/runtime-interfaces](./conformance/runtime-interfaces)
-- [conformance/mcp-profile](./conformance/mcp-profile)
+## Legacy migration
 
-## Legacy and History
+This repo was previously published as AstroSpec. AstroSpec naming is retained only for compatibility packages, historical references, and migration documentation.
 
-Older naming is kept only in migration documentation and changelog history.
-
-New integrations, examples, public references, and package imports should use AstroSpec only.
-
-## Integrations
-
-AstroSpec supports integrations for MCP, BDD, generators, and other ecosystems.
-
-BDD references and adapters live under [docs/integrations/bdd](./docs/integrations/bdd/).
-
-## Contributing
-
-Useful contributions include:
-
-- new examples and conformance fixtures
-- compatibility and validation improvements
-- new profile proposals
-- alternate implementations that prove interoperability
-- documentation that clarifies the standard surface
+- [Legacy AstroSpec migration notes](./docs/migrations/legacy-astrospec/README.md)
 
 ## License
 

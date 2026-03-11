@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/astrospec/verification-report-0.1.json",
+  "title": "AstroSpec Verification Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["overall", "results", "at"],
+  "properties": {
+    "contextId": { "type": "string" },
+    "turnId": { "type": "string" },
+    "overall": { "type": "boolean" },
+    "at": { "type": "string", "format": "date-time" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterionId", "verifier", "pass"],
+        "properties": {
+          "criterionId": { "type": "string" },
+          "verifier": { "type": "string" },
+          "pass": { "type": "boolean" },
+          "details": { "type": "string" },
+          "durationMs": { "type": "number", "minimum": 0 },
+          "evidenceUsed": {
+            "type": "array",
+            "items": { "$ref": "./defs-0.1.json#/$defs/evidenceRef" }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
+

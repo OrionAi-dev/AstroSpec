@@ -1,0 +1,133 @@
+{
+  "$id": "https://orionai-dev.github.io/AstroSpec/schemas/mcp-secure-context/container-defs-0.1.json",
+  "title": "MCP Secure Context Sharing Container Definitions",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$defs": {
+    "policyMetadata": {
+      "type": "object",
+      "properties": {
+        "audience": { "type": "array", "items": { "type": "string" } },
+        "allowedActions": { "type": "array", "items": { "type": "string" } },
+        "purpose": { "type": "string" },
+        "sensitivity": { "enum": ["public", "internal", "confidential", "restricted"] },
+        "expiresAt": { "type": "string", "format": "date-time" },
+        "ttlSeconds": { "type": "integer", "minimum": 0 },
+        "reshareAllowed": { "type": "boolean" },
+        "redactionRequirements": { "type": "array", "items": { "type": "string" } },
+        "leastPrivilegeScope": { "type": "string" },
+        "ext": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "provenanceEnvelope": {
+      "type": "object",
+      "required": ["createdAt", "createdBy"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "createdBy": { "type": "string" },
+        "sourceLineage": { "type": "array", "items": { "type": "string" } },
+        "sourceRefs": { "type": "array", "items": { "type": "string" } },
+        "derivation": { "type": "string" },
+        "ext": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "verificationEnvelope": {
+      "type": "object",
+      "required": ["digest", "status"],
+      "properties": {
+        "digest": { "type": "string" },
+        "status": { "enum": ["unverified", "validated", "signed", "rejected"] },
+        "signatures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "metadata"],
+            "properties": {
+              "value": { "type": "string" },
+              "metadata": {
+                "type": "object",
+                "required": ["algorithm"],
+                "properties": {
+                  "algorithm": { "type": "string" },
+                  "keyId": { "type": "string" },
+                  "issuedAt": { "type": "string", "format": "date-time" },
+                  "expiresAt": { "type": "string", "format": "date-time" }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "issuer": { "type": "string" },
+        "verifier": { "type": "string" },
+        "expiresAt": { "type": "string", "format": "date-time" },
+        "revokedAt": { "type": "string", "format": "date-time" },
+        "ext": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "userContext": {
+      "type": "object",
+      "required": ["userId"],
+      "properties": {
+        "userId": { "type": "string" },
+        "role": { "type": "string" },
+        "persona": { "type": "string" },
+        "preferences": { "type": "object", "additionalProperties": true },
+        "sessionAttributes": { "type": "object", "additionalProperties": true },
+        "consentRefs": { "type": "array", "items": { "type": "string" } },
+        "capabilityHints": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "taskState": {
+      "type": "object",
+      "required": ["taskId", "goal", "status"],
+      "properties": {
+        "taskId": { "type": "string" },
+        "goal": { "type": "string" },
+        "status": { "enum": ["pending", "in_progress", "blocked", "completed"] },
+        "currentStep": { "type": "string" },
+        "constraints": { "type": "array", "items": { "type": "string" } },
+        "handoffNotes": { "type": "string" },
+        "inputRefs": { "type": "array", "items": { "type": "string" } },
+        "outputRefs": { "type": "array", "items": { "type": "string" } },
+        "summary": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "knowledgeObject": {
+      "type": "object",
+      "required": ["objectId", "kind"],
+      "properties": {
+        "objectId": { "type": "string" },
+        "kind": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "claims": { "type": "array", "items": { "type": "string" } },
+        "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+        "sourceRefs": { "type": "array", "items": { "type": "string" } },
+        "version": { "type": "string" },
+        "freshness": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "memoryReference": {
+      "type": "object",
+      "required": ["namespace", "key", "accessMode"],
+      "properties": {
+        "namespace": { "type": "string" },
+        "key": { "type": "string" },
+        "dereferenceHint": { "type": "string" },
+        "retrievalMetadata": { "type": "object", "additionalProperties": true },
+        "leaseExpiresAt": { "type": "string", "format": "date-time" },
+        "accessMode": { "enum": ["reference-only", "slice-allowed", "inline-allowed"] }
+      },
+      "additionalProperties": false
+    }
+  }
+}

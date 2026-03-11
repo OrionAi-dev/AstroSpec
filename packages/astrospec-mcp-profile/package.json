@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "AstroSpec MCP interoperability profile with deterministic tool, resource, and error semantics.",
+  "description": "Compatibility wrapper for @mcp-secure-context/mcp-adapter.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
   "keywords": [
     "astrospec",
     "mcp",
-    "contracts",
-    "llm"
+    "compatibility",
+    "context-sharing"
   ],
   "files": [
     "dist"
@@ -30,9 +30,7 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/agent-contracts": "workspace:*",
-    "@astrospec/retrieval-profile": "workspace:*"
+    "@mcp-secure-context/mcp-adapter": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",

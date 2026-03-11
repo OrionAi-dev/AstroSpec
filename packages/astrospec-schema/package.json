@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Canonical AstroSpec JSON Schemas for core public contracts.",
+  "description": "Compatibility wrapper for @mcp-secure-context/core.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,12 +15,14 @@
     }
   },
   "files": [
-    "dist",
-    "schemas"
+    "dist"
   ],
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs --shims",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mcp-secure-context/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",
