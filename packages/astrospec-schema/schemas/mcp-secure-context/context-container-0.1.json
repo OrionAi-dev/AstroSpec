@@ -1,0 +1,28 @@
+{
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/mcp-secure-context/context-container-0.1.json",
+  "title": "MCP Secure Context Sharing Context Container",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "containerType", "id", "version", "payload", "policy", "provenance"],
+  "properties": {
+    "schema": { "const": "mcp-secure-context.container.v0.1" },
+    "containerType": {
+      "enum": ["user_context", "task_state", "knowledge_object", "memory_reference"]
+    },
+    "id": { "type": "string" },
+    "version": { "type": "string" },
+    "payload": {
+      "oneOf": [
+        { "$ref": "container-defs-0.1.json#/$defs/userContext" },
+        { "$ref": "container-defs-0.1.json#/$defs/taskState" },
+        { "$ref": "container-defs-0.1.json#/$defs/knowledgeObject" },
+        { "$ref": "container-defs-0.1.json#/$defs/memoryReference" }
+      ]
+    },
+    "policy": { "$ref": "container-defs-0.1.json#/$defs/policyMetadata" },
+    "provenance": { "$ref": "container-defs-0.1.json#/$defs/provenanceEnvelope" },
+    "verification": { "$ref": "container-defs-0.1.json#/$defs/verificationEnvelope" },
+    "ext": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": false
+}

@@ -388,12 +388,9 @@ importers:
 
   packages/mcp-secure-context-mcp-adapter:
     dependencies:
-      '@astrospec/agent-contracts':
+      '@mcp-secure-context/core':
         specifier: workspace:*
-        version: link:../astrospec-agent-contracts
-      '@astrospec/retrieval-profile':
-        specifier: workspace:*
-        version: link:../astrospec-retrieval-profile
+        version: link:../mcp-secure-context-core
       '@mcp-secure-context/openspec':
         specifier: workspace:*
         version: link:../mcp-secure-context-openspec

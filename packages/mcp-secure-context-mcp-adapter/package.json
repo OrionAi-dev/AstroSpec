@@ -30,9 +30,8 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@mcp-secure-context/openspec": "workspace:*",
-    "@astrospec/agent-contracts": "workspace:*",
-    "@astrospec/retrieval-profile": "workspace:*"
+    "@mcp-secure-context/core": "workspace:*",
+    "@mcp-secure-context/openspec": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",
