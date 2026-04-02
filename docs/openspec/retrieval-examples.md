@@ -1,6 +1,6 @@
 # Retrieval Examples
 
-Reference examples live in `packages/astrospec-retrieval-profile/examples/`.
+Reference examples live in `packages/openspec-retrieval-profile/examples/`.
 
 Included examples:
 
@@ -19,6 +19,6 @@ Examples are backed by schema validators and conformance fixtures.
 Typical checks:
 
 ```bash
-pnpm -F @astrospec/retrieval-profile test
+pnpm -F @openspec/retrieval-profile test
 pnpm check:retrieval-profile
 ```

@@ -82,8 +82,8 @@ To rebuild the API docs and MkDocs site locally:
 CI runs a doc-drift check after generation. If it fails, rerun the steps above
 and ensure `git diff -- docs/` is clean before pushing.
 ## Generated Artifacts
-- Package builds output to each package's `dist/` directory (for example `packages/astrospec-runtime/dist/`).
-- AstroSpec CLI runs (see `tools/verify-monorepo.sh`) emit artifacts under `generated/`, including:
+- Package builds output to each package's `dist/` directory (for example `packages/openspec-runtime/dist/`).
+- OpenSpec CLI runs (see `tools/verify-monorepo.sh`) emit artifacts under `generated/`, including:
   - `generated/mindql/ast.json`
   - `generated/graphql/schema.graphql`
 

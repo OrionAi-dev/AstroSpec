@@ -1,6 +1,6 @@
 # Extension Registry
 
-AstroSpec distinguishes between core, profiles, integrations, and vendor extensions.
+OpenSpec distinguishes between core, profiles, integrations, and vendor extensions.
 
 ## Core
 
@@ -22,22 +22,22 @@ The first normative profile is the retrieval profile.
 
 The public discovery profile family currently includes:
 
-- `@astrospec/reasoning`
-- `@astrospec/graph-memory`
-- `@astrospec/starburst-profile`
-- `@astrospec/runtime-interfaces`
+- `@openspec/reasoning`
+- `@openspec/graph-memory`
+- `@openspec/starburst-profile`
+- `@openspec/runtime-interfaces`
 
 These define contracts and interfaces, not an orchestrator implementation.
 
 ## Integrations
 
-Integrations map AstroSpec contracts into other ecosystems such as:
+Integrations map OpenSpec contracts into other ecosystems such as:
 
 - MCP
 - BDD systems
 - product-specific runtimes
 
-High-level public bundles such as `@astrospec/discovery-bundle` may re-export normative packages for convenience, but they do not become core by doing so.
+High-level public bundles such as `@openspec/discovery-bundle` may re-export normative packages for convenience, but they do not become core by doing so.
 
 ## Vendor Extensions
 

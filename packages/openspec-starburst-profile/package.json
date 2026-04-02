@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/starburst-profile",
+  "name": "@openspec/starburst-profile",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Portable AstroSpec discovery and Starburst reasoning profile.",
+  "description": "Portable OpenSpec discovery and Starburst reasoning profile.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,9 +26,9 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/reasoning": "workspace:*",
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/schema": "workspace:*",
+    "@openspec/reasoning": "workspace:*",
+    "@openspec/runtime": "workspace:*",
+    "@openspec/schema": "workspace:*",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },

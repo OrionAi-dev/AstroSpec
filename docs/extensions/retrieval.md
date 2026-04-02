@@ -1,8 +1,6 @@
 # Extensions
 
-This repo still includes advanced extension packages for retrieval, reasoning, graph memory, and discovery-oriented use cases.
-
-These packages remain available for compatibility and advanced adopters, but they are no longer the primary public identity of the project.
+This repo includes advanced OpenSpec packages for retrieval, reasoning, graph memory, and discovery-oriented use cases.
 
 Use the canonical MCP Secure Context Sharing surface first:
 
@@ -11,6 +9,6 @@ Use the canonical MCP Secure Context Sharing surface first:
 - `@mcp-secure-context/mcp-adapter`
 - `@mcp-secure-context/sdk-typescript`
 
-If you need the historical AstroSpec validation helpers on top of the base SDK, use:
+If you need the optional validation helpers on top of the base SDK, use:
 
-- `@mcp-secure-context/extensions-astrospec`
+- `@mcp-secure-context/extensions-openspec`

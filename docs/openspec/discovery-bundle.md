@@ -1,13 +1,13 @@
 # Discovery Bundle
 
-`@astrospec/discovery-bundle` is the high-level public integration bundle for AstroSpec discovery work.
+`@openspec/discovery-bundle` is the high-level public integration bundle for OpenSpec discovery work.
 
 ## Includes
 
-- `@astrospec/reasoning`
-- `@astrospec/graph-memory`
-- `@astrospec/starburst-profile`
-- `@astrospec/runtime-interfaces`
+- `@openspec/reasoning`
+- `@openspec/graph-memory`
+- `@openspec/starburst-profile`
+- `@openspec/runtime-interfaces`
 
 ## Provides
 
@@ -24,7 +24,7 @@ import {
   buildStructuralGraphQuery,
   createLegalEvidenceOrganizationExampleTask,
   validateDiscoveryContract,
-} from '@astrospec/discovery-bundle';
+} from '@openspec/discovery-bundle';
 
 const task = createLegalEvidenceOrganizationExampleTask();
 const query = buildStructuralGraphQuery({

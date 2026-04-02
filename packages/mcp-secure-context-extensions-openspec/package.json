@@ -1,9 +1,9 @@
 {
-  "name": "@mcp-secure-context/extensions-astrospec",
+  "name": "@mcp-secure-context/extensions-openspec",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "AstroSpec-compatible validation helpers for MCP Secure Context Sharing.",
+  "description": "OpenSpec-compatible validation helpers for MCP Secure Context Sharing.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,8 +24,8 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/agent-contracts": "workspace:*",
-    "@astrospec/retrieval-profile": "workspace:*"
+    "@openspec/agent-contracts": "workspace:*",
+    "@openspec/retrieval-profile": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",

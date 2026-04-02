@@ -5,6 +5,7 @@ import https from 'node:https';
 
 const repoRoot = process.cwd();
 const packagesDir = path.join(repoRoot, 'packages');
+const integrationsDir = path.join(packagesDir, 'integrations');
 const token = process.env.NPM_TOKEN?.trim();
 
 function request(url, headers = {}) {
@@ -25,10 +26,19 @@ function request(url, headers = {}) {
 }
 
 function readPublicPackageManifests() {
-  return fs
+  const rootPackageManifests = fs
     .readdirSync(packagesDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && (entry.name.startsWith('astrospec-') || entry.name.startsWith('mcp-secure-context-')))
-    .map((entry) => path.join(packagesDir, entry.name, 'package.json'))
+    .filter((entry) => entry.isDirectory() && (entry.name.startsWith('openspec-') || entry.name.startsWith('mcp-secure-context-')))
+    .map((entry) => path.join(packagesDir, entry.name, 'package.json'));
+
+  const integrationPackageManifests = fs.existsSync(integrationsDir)
+    ? fs
+        .readdirSync(integrationsDir, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory())
+        .map((entry) => path.join(integrationsDir, entry.name, 'package.json'))
+    : [];
+
+  return [...rootPackageManifests, ...integrationPackageManifests]
     .map((file) => JSON.parse(fs.readFileSync(file, 'utf8')))
     .filter((pkg) => pkg.private !== true)
     .map((pkg) => ({
@@ -41,7 +51,7 @@ function readPublicPackageManifests() {
 const publicPackages = readPublicPackageManifests();
 
 for (const pkg of publicPackages) {
-  if (!pkg.name?.startsWith('@astrospec/') && !pkg.name?.startsWith('@mcp-secure-context/')) {
+  if (!pkg.name?.startsWith('@openspec/') && !pkg.name?.startsWith('@mcp-secure-context/')) {
     console.error(`[release] package ${pkg.name ?? '<unknown>'} is outside the allowed public scopes`);
     process.exit(1);
   }

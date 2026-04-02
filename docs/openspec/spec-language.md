@@ -1,6 +1,6 @@
-# AstroSpec: Spec Language
+# OpenSpec: Spec Language
 
-AstroSpec defines a consistent contract language for AI interactions.
+OpenSpec defines a consistent contract language for AI interactions.
 The infrastructure layer provides the primitives: Contexts, Turns, Fields, and Contracts.
 
 ---
@@ -95,10 +95,10 @@ Standardized issue codes:
 
 ## Format
 
-AstroSpec supports multiple representations:
+OpenSpec supports multiple representations:
 
 * **JSON Schema**: canonical contract model (draft 2020-12).
-* **TypeScript**: bindings + runtime utilities (`@astrospec/runtime`) aligned to the schemas.
+* **TypeScript**: bindings + runtime utilities (`@openspec/runtime`) aligned to the schemas.
 * **JSON**: preferred wire format for APIs and automation.
 * **YAML**: human-readable format, often used in BDD, legal, and compliance contexts.
 

@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/discovery-bundle",
+  "name": "@openspec/discovery-bundle",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "High-level AstroSpec discovery bundle for reasoning, graph memory, Starburst profile, and runtime interfaces.",
+  "description": "High-level OpenSpec discovery bundle for reasoning, graph memory, Starburst profile, and runtime interfaces.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,10 +25,10 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/graph-memory": "workspace:*",
-    "@astrospec/reasoning": "workspace:*",
-    "@astrospec/runtime-interfaces": "workspace:*",
-    "@astrospec/starburst-profile": "workspace:*"
+    "@openspec/graph-memory": "workspace:*",
+    "@openspec/reasoning": "workspace:*",
+    "@openspec/runtime-interfaces": "workspace:*",
+    "@openspec/starburst-profile": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",

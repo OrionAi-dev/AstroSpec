@@ -1,4 +1,4 @@
-import type { AcceptanceCriterion, AstroSpecBase, ProvenanceEntry } from "./types";
+import type { AcceptanceCriterion, OpenSpecBase, ProvenanceEntry } from "./types";
 
 function isPlainObject(v: unknown): v is Record<string, unknown> {
   return !!v && typeof v === "object" && !Array.isArray(v);
@@ -37,13 +37,13 @@ export function canonicalizeValue(v: unknown): unknown {
 }
 
 /**
- * Canonicalize a AstroSpec spec for deterministic hashing:
+ * Canonicalize a OpenSpec spec for deterministic hashing:
  * - sort object keys recursively
  * - sort `fields` keys
  * - sort `acceptanceCriteria` by criterion id
  * - sort `provenance` by (at, field, source)
  */
-export function canonicalizeSpec<T extends AstroSpecBase>(spec: T): T {
+export function canonicalizeSpec<T extends OpenSpecBase>(spec: T): T {
   const out: any = canonicalizeValue(spec);
 
   if (out && typeof out === "object") {

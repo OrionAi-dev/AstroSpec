@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/runtime-interfaces",
+  "name": "@openspec/runtime-interfaces",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Neutral AstroSpec runtime and interoperability interfaces.",
+  "description": "Neutral OpenSpec runtime and interoperability interfaces.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,11 +26,11 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/graph-memory": "workspace:*",
-    "@astrospec/reasoning": "workspace:*",
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/schema": "workspace:*",
-    "@astrospec/starburst-profile": "workspace:*",
+    "@openspec/graph-memory": "workspace:*",
+    "@openspec/reasoning": "workspace:*",
+    "@openspec/runtime": "workspace:*",
+    "@openspec/schema": "workspace:*",
+    "@openspec/starburst-profile": "workspace:*",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },

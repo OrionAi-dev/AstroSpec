@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/provenance-0.1.json",
-  "title": "AstroSpec Provenance",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/provenance-0.1.json",
+  "title": "OpenSpec Provenance",
   "description": "Audit trail entries that describe how contract data was produced.",
   "type": "array",
   "items": {

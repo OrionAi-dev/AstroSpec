@@ -1,2 +1,2 @@
 export * from "@mcp-secure-context/sdk-typescript";
-export * from "@mcp-secure-context/extensions-astrospec";
+export * from "@mcp-secure-context/extensions-openspec";

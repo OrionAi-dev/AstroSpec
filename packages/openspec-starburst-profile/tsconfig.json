@@ -4,7 +4,7 @@
     "composite": false,
     "baseUrl": ".",
     "paths": {
-      "@astrospec/reasoning": ["../astrospec-reasoning/src/index.ts"]
+      "@openspec/reasoning": ["../openspec-reasoning/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"]

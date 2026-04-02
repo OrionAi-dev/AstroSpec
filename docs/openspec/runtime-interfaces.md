@@ -1,6 +1,6 @@
 # Runtime Interfaces
 
-`@astrospec/runtime-interfaces` defines neutral interfaces for runtimes that consume AstroSpec discovery contracts.
+`@openspec/runtime-interfaces` defines neutral interfaces for runtimes that consume OpenSpec discovery contracts.
 
 ## Interfaces
 
@@ -12,7 +12,7 @@
 
 ## Purpose
 
-This package exists so AstroSpec can publish interface shapes without embedding a scheduler, engine, or storage runtime into the public standard.
+This package exists so OpenSpec can publish interface shapes without embedding a scheduler, engine, or storage runtime into the public standard.
 
 ## What It Does Not Do
 
@@ -23,4 +23,4 @@ It does not ship:
 - graph-memory promotion heuristics
 - scheduler internals
 
-Those remain runtime concerns outside AstroSpec.
+Those remain runtime concerns outside OpenSpec.

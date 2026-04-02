@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/retrieval/memory-record-0.1.json",
-  "title": "AstroSpec Memory Record",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/retrieval/memory-record-0.1.json",
+  "title": "OpenSpec Memory Record",
   "$ref": "./retrieval-defs-0.1.json#/$defs/memoryRecord"
 }

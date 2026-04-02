@@ -1,6 +1,6 @@
-# @astrospec/retrieval-profile
+# @openspec/retrieval-profile
 
-Portable retrieval, citation, memory, graph, and grounding contracts for AstroSpec.
+Portable retrieval, citation, memory, graph, and grounding contracts for OpenSpec.
 
 ## What It Provides
 
@@ -17,7 +17,7 @@ Portable retrieval, citation, memory, graph, and grounding contracts for AstroSp
 
 ## Scope
 
-This package is the first normative AstroSpec profile.
+This package is the first normative OpenSpec profile.
 
 It standardizes:
 
@@ -33,7 +33,7 @@ It does not implement ranking, indexing, graph storage, or generation.
 ## Commands
 
 ```bash
-pnpm -F @astrospec/retrieval-profile typecheck
-pnpm -F @astrospec/retrieval-profile test
-pnpm -F @astrospec/retrieval-profile build
+pnpm -F @openspec/retrieval-profile typecheck
+pnpm -F @openspec/retrieval-profile test
+pnpm -F @openspec/retrieval-profile build
 ```

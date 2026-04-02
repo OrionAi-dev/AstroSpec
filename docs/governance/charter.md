@@ -1,6 +1,6 @@
 # Governance Charter
 
-AstroSpec is being developed as a neutral contract standard, not as a product-specific wrapper.
+OpenSpec is being developed as a neutral contract standard, not as a product-specific wrapper.
 
 ## Goals
 
@@ -12,13 +12,13 @@ AstroSpec is being developed as a neutral contract standard, not as a product-sp
 
 ## Scope Boundaries
 
-AstroSpec standardizes contracts, schemas, validators, profiles, and interop mappings.
+OpenSpec standardizes contracts, schemas, validators, profiles, and interop mappings.
 
 It does not standardize product internals such as ranking engines, vector stores, or proprietary orchestration logic.
 
 ## Neutrality Rule
 
-Vendor-specific behavior may exist in downstream packages and extensions, but it must not masquerade as AstroSpec core or as a normative profile.
+Vendor-specific behavior may exist in downstream packages and extensions, but it must not masquerade as OpenSpec core or as a normative profile.
 
 ## Decision Rule
 

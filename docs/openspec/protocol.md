@@ -1,6 +1,6 @@
-# AstroSpec Protocol
+# OpenSpec Protocol
 
-AstroSpec is transport-agnostic. This document defines the baseline protocol shape for contract exchange and explains how profiles extend it.
+OpenSpec is transport-agnostic. This document defines the baseline protocol shape for contract exchange and explains how profiles extend it.
 
 ## Core Protocol Scope
 
@@ -19,7 +19,7 @@ A minimal HTTP-friendly implementation can expose:
 - `POST /turn`
 - `POST /verify`
 
-These remain baseline operations for a core AstroSpec implementation. AstroSpec does not require HTTP specifically; these operations describe the contract boundaries, not the transport mandate.
+These remain baseline operations for a core OpenSpec implementation. OpenSpec does not require HTTP specifically; these operations describe the contract boundaries, not the transport mandate.
 
 ## Envelope Expectations
 
@@ -54,13 +54,13 @@ Implementations may expose these through HTTP, MCP, queues, sockets, or other tr
 
 ## MCP Mapping
 
-AstroSpec is schema-first, but MCP is the default interoperability profile.
+OpenSpec is schema-first, but MCP is the default interoperability profile.
 
-That means an AstroSpec implementation can:
+That means an OpenSpec implementation can:
 
 - keep schemas as the source of truth
 - expose MCP tool names and resource URIs for runtime integration
-- preserve deterministic AstroSpec validation semantics even when the transport is MCP
+- preserve deterministic OpenSpec validation semantics even when the transport is MCP
 
 ## Compatibility
 
@@ -71,4 +71,4 @@ Servers and clients should be explicit about:
 - compatibility mode
 - deterministic error behavior
 
-A consumer should never need to guess whether a payload is core AstroSpec, a normative profile, or a private extension.
+A consumer should never need to guess whether a payload is core OpenSpec, a normative profile, or a private extension.

@@ -39,256 +39,11 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
 
-  packages/astrospec-agent-contracts:
-    dependencies:
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-cli:
-    dependencies:
-      '@mcp-secure-context/cli':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-cli
-      yaml:
-        specifier: ^2.8.1
-        version: 2.8.2
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-discovery-bundle:
-    dependencies:
-      '@astrospec/graph-memory':
-        specifier: workspace:*
-        version: link:../astrospec-graph-memory
-      '@astrospec/reasoning':
-        specifier: workspace:*
-        version: link:../astrospec-reasoning
-      '@astrospec/runtime-interfaces':
-        specifier: workspace:*
-        version: link:../astrospec-runtime-interfaces
-      '@astrospec/starburst-profile':
-        specifier: workspace:*
-        version: link:../astrospec-starburst-profile
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-graph-memory:
-    dependencies:
-      '@astrospec/retrieval-profile':
-        specifier: workspace:*
-        version: link:../astrospec-retrieval-profile
-      '@astrospec/runtime':
-        specifier: workspace:*
-        version: link:../astrospec-runtime
-      '@astrospec/schema':
-        specifier: workspace:*
-        version: link:../astrospec-schema
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-kit:
-    dependencies:
-      '@mcp-secure-context/extensions-astrospec':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-extensions-astrospec
-      '@mcp-secure-context/sdk-typescript':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-sdk-typescript
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-reasoning:
-    dependencies:
-      '@astrospec/runtime':
-        specifier: workspace:*
-        version: link:../astrospec-runtime
-      '@astrospec/schema':
-        specifier: workspace:*
-        version: link:../astrospec-schema
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-retrieval-profile:
-    dependencies:
-      '@astrospec/runtime':
-        specifier: workspace:*
-        version: link:../astrospec-runtime
-      '@astrospec/schema':
-        specifier: workspace:*
-        version: link:../astrospec-schema
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-runtime:
-    dependencies:
-      '@mcp-secure-context/openspec':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-openspec
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-runtime-interfaces:
-    dependencies:
-      '@astrospec/graph-memory':
-        specifier: workspace:*
-        version: link:../astrospec-graph-memory
-      '@astrospec/reasoning':
-        specifier: workspace:*
-        version: link:../astrospec-reasoning
-      '@astrospec/runtime':
-        specifier: workspace:*
-        version: link:../astrospec-runtime
-      '@astrospec/schema':
-        specifier: workspace:*
-        version: link:../astrospec-schema
-      '@astrospec/starburst-profile':
-        specifier: workspace:*
-        version: link:../astrospec-starburst-profile
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-schema:
-    dependencies:
-      '@mcp-secure-context/core':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-core
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
-  packages/astrospec-starburst-profile:
-    dependencies:
-      '@astrospec/reasoning':
-        specifier: workspace:*
-        version: link:../astrospec-reasoning
-      '@astrospec/runtime':
-        specifier: workspace:*
-        version: link:../astrospec-runtime
-      '@astrospec/schema':
-        specifier: workspace:*
-        version: link:../astrospec-schema
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
-    devDependencies:
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
-      tsx:
-        specifier: ^4.20.4
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
-
   packages/integrations/audio-openai:
     dependencies:
-      '@astrospec/runtime':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../../astrospec-runtime
+        version: link:../../openspec-runtime
       openai:
         specifier: ^6.15.0
         version: 6.15.0(zod@3.25.76)
@@ -302,9 +57,9 @@ importers:
 
   packages/integrations/events:
     dependencies:
-      '@astrospec/runtime':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../../astrospec-runtime
+        version: link:../../openspec-runtime
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -315,12 +70,12 @@ importers:
 
   packages/integrations/examples-derivedspec:
     dependencies:
-      '@astrospec/mindql-core':
+      '@openspec/mindql-core':
         specifier: workspace:*
         version: link:../mindql-core
-      '@astrospec/runtime':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../../astrospec-runtime
+        version: link:../../openspec-runtime
     devDependencies:
       tsup:
         specifier: ^8.0.0
@@ -331,9 +86,9 @@ importers:
 
   packages/integrations/mindgraphql-core:
     dependencies:
-      '@astrospec/runtime':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../../astrospec-runtime
+        version: link:../../openspec-runtime
       graphql:
         specifier: ^16.11.0
         version: 16.12.0
@@ -347,9 +102,9 @@ importers:
 
   packages/integrations/mindql-core:
     dependencies:
-      '@astrospec/runtime':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../../astrospec-runtime
+        version: link:../../openspec-runtime
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -360,15 +115,15 @@ importers:
 
   packages/mcp-secure-context-cli:
     dependencies:
-      '@astrospec/retrieval-profile':
+      '@mcp-secure-context/extensions-openspec':
         specifier: workspace:*
-        version: link:../astrospec-retrieval-profile
-      '@mcp-secure-context/extensions-astrospec':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-extensions-astrospec
+        version: link:../mcp-secure-context-extensions-openspec
       '@mcp-secure-context/openspec':
         specifier: workspace:*
         version: link:../mcp-secure-context-openspec
+      '@openspec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../openspec-retrieval-profile
       yaml:
         specifier: ^2.8.1
         version: 2.8.2
@@ -389,14 +144,14 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
 
-  packages/mcp-secure-context-extensions-astrospec:
+  packages/mcp-secure-context-extensions-openspec:
     dependencies:
-      '@astrospec/agent-contracts':
+      '@openspec/agent-contracts':
         specifier: workspace:*
-        version: link:../astrospec-agent-contracts
-      '@astrospec/retrieval-profile':
+        version: link:../openspec-agent-contracts
+      '@openspec/retrieval-profile':
         specifier: workspace:*
-        version: link:../astrospec-retrieval-profile
+        version: link:../openspec-retrieval-profile
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -429,15 +184,12 @@ importers:
 
   packages/mcp-secure-context-openspec:
     dependencies:
-      '@mcp-secure-context/core':
+      '@openspec/runtime':
         specifier: workspace:*
-        version: link:../mcp-secure-context-core
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -457,6 +209,257 @@ importers:
       '@mcp-secure-context/openspec':
         specifier: workspace:*
         version: link:../mcp-secure-context-openspec
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-agent-contracts:
+    dependencies:
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-cli:
+    dependencies:
+      '@mcp-secure-context/cli':
+        specifier: workspace:*
+        version: link:../mcp-secure-context-cli
+      yaml:
+        specifier: ^2.8.1
+        version: 2.8.2
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-discovery-bundle:
+    dependencies:
+      '@openspec/graph-memory':
+        specifier: workspace:*
+        version: link:../openspec-graph-memory
+      '@openspec/reasoning':
+        specifier: workspace:*
+        version: link:../openspec-reasoning
+      '@openspec/runtime-interfaces':
+        specifier: workspace:*
+        version: link:../openspec-runtime-interfaces
+      '@openspec/starburst-profile':
+        specifier: workspace:*
+        version: link:../openspec-starburst-profile
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-graph-memory:
+    dependencies:
+      '@openspec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../openspec-retrieval-profile
+      '@openspec/runtime':
+        specifier: workspace:*
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-kit:
+    dependencies:
+      '@mcp-secure-context/extensions-openspec':
+        specifier: workspace:*
+        version: link:../mcp-secure-context-extensions-openspec
+      '@mcp-secure-context/sdk-typescript':
+        specifier: workspace:*
+        version: link:../mcp-secure-context-sdk-typescript
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-reasoning:
+    dependencies:
+      '@openspec/runtime':
+        specifier: workspace:*
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-retrieval-profile:
+    dependencies:
+      '@openspec/runtime':
+        specifier: workspace:*
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-runtime:
+    dependencies:
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-runtime-interfaces:
+    dependencies:
+      '@openspec/graph-memory':
+        specifier: workspace:*
+        version: link:../openspec-graph-memory
+      '@openspec/reasoning':
+        specifier: workspace:*
+        version: link:../openspec-reasoning
+      '@openspec/runtime':
+        specifier: workspace:*
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      '@openspec/starburst-profile':
+        specifier: workspace:*
+        version: link:../openspec-starburst-profile
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-schema:
+    dependencies:
+      '@mcp-secure-context/core':
+        specifier: workspace:*
+        version: link:../mcp-secure-context-core
+    devDependencies:
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+
+  packages/openspec-starburst-profile:
+    dependencies:
+      '@openspec/reasoning':
+        specifier: workspace:*
+        version: link:../openspec-reasoning
+      '@openspec/runtime':
+        specifier: workspace:*
+        version: link:../openspec-runtime
+      '@openspec/schema':
+        specifier: workspace:*
+        version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
     devDependencies:
       tsup:
         specifier: ^8.5.0

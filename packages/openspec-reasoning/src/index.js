@@ -1,6 +1,6 @@
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
-import { listSchemas, readSchema } from '@astrospec/schema';
+import { listSchemas, readSchema } from '@openspec/schema';
 import reasoningDefsSchema from '../schemas/reasoning-defs-0.1.json' with { type: 'json' };
 import reasoningTaskSchema from '../schemas/reasoning-task-0.1.json' with { type: 'json' };
 import reasoningRoleSchema from '../schemas/reasoning-role-0.1.json' with { type: 'json' };
@@ -9,7 +9,7 @@ import reasoningEvidenceSchema from '../schemas/reasoning-evidence-0.1.json' wit
 import reasoningResultSchema from '../schemas/reasoning-result-0.1.json' with { type: 'json' };
 import reasoningWorkflowContractSchema from '../schemas/reasoning-workflow-contract-0.1.json' with { type: 'json' };
 export { reasoningDefsSchema, reasoningTaskSchema, reasoningRoleSchema, reasoningGraphSchema, reasoningEvidenceSchema, reasoningResultSchema, reasoningWorkflowContractSchema, };
-export const ASTROSPEC_REASONING_CONTRACT_KINDS = [
+export const OPENSPEC_REASONING_CONTRACT_KINDS = [
     'reasoning-task',
     'reasoning-role',
     'reasoning-graph',
@@ -87,7 +87,7 @@ function makeIssue(path, message) {
         path,
         message,
         keyword: 'semantic',
-        schemaPath: 'astrospec.reasoning.semantic',
+        schemaPath: 'openspec.reasoning.semantic',
     };
 }
 function validateRoleGraph(graph) {

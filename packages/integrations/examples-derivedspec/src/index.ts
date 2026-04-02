@@ -1,12 +1,12 @@
-import type { DerivedSpec } from "@astrospec/runtime";
+import type { DerivedSpec } from "@openspec/runtime";
 
 export const astrospecDerivedSpec: DerivedSpec = {
   // which base spec we are deriving from
-  baseId: "astrospec",
+  baseId: "openspec",
 
   // JSON-Patch operations (as before)
   patches: [
-    { op: "add", path: "/fields/astrospec", value: { type: "string", required: false } }
+    { op: "add", path: "/fields/openspec", value: { type: "string", required: false } }
   ],
 
   // keep runtime validators happy (they expect provenance to exist for DerivedSpec)

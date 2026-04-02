@@ -1,6 +1,6 @@
-# @astrospec/reasoning
+# @openspec/reasoning
 
-Portable reasoning workflow contracts for AstroSpec.
+Portable reasoning workflow contracts for OpenSpec.
 
 ## What It Provides
 
@@ -30,7 +30,7 @@ It does not implement orchestration, scheduling, ranking, or proprietary runtime
 ## Commands
 
 ```bash
-pnpm -F @astrospec/reasoning typecheck
-pnpm -F @astrospec/reasoning test
-pnpm -F @astrospec/reasoning build
+pnpm -F @openspec/reasoning typecheck
+pnpm -F @openspec/reasoning test
+pnpm -F @openspec/reasoning build
 ```

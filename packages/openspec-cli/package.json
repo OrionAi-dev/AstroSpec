@@ -1,11 +1,11 @@
 {
-  "name": "@astrospec/cli",
+  "name": "@openspec/cli",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Compatibility wrapper for @mcp-secure-context/cli.",
+  "description": "OpenSpec CLI entrypoint for validation, verification, and MCP Secure Context Sharing workflows.",
   "bin": {
-    "astrospec": "dist/cli.js"
+    "openspec": "dist/cli.js"
   },
   "main": "dist/cli.js",
   "files": [

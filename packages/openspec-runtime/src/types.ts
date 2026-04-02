@@ -1,4 +1,4 @@
-// Core AstroSpec types aligned with @astrospec/schema (canonical JSON Schema).
+// Core OpenSpec types aligned with @openspec/schema (canonical JSON Schema).
 
 export type JsonPrimitive = string | number | boolean | null;
 export type JsonValue = JsonPrimitive | JsonObject | JsonArray;
@@ -100,7 +100,7 @@ export interface ProvenanceEntry {
 
 export type Provenance = ReadonlyArray<ProvenanceEntry>;
 
-export interface AstroSpecBase<F extends Record<string, SpecField> = Record<string, SpecField>> {
+export interface OpenSpecBase<F extends Record<string, SpecField> = Record<string, SpecField>> {
   kind: 'context' | 'turn';
   id: string;
   intent: string;
@@ -113,25 +113,25 @@ export interface AstroSpecBase<F extends Record<string, SpecField> = Record<stri
   meta?: Record<string, JsonValue>;
 }
 
-export interface AstroSpecContext<F extends Record<string, SpecField> = Record<string, SpecField>>
-  extends AstroSpecBase<F> {
+export interface OpenSpecContext<F extends Record<string, SpecField> = Record<string, SpecField>>
+  extends OpenSpecBase<F> {
   kind: 'context';
   scope: { type: 'session' | 'project' | 'workspace' | 'global'; id?: string };
   lifespan: { mode: 'session' | 'rolling' | 'pinned'; ttlDays?: number; maxUses?: number };
 }
 
-export interface AstroSpecTurn<F extends Record<string, SpecField> = Record<string, SpecField>>
-  extends AstroSpecBase<F> {
+export interface OpenSpecTurn<F extends Record<string, SpecField> = Record<string, SpecField>>
+  extends OpenSpecBase<F> {
   kind: 'turn';
   inheritsFrom: string;
 }
 
-export type Context<F extends Record<string, SpecField> = Record<string, SpecField>> = AstroSpecContext<F>;
-export type Turn<F extends Record<string, SpecField> = Record<string, SpecField>> = AstroSpecTurn<F>;
+export type Context<F extends Record<string, SpecField> = Record<string, SpecField>> = OpenSpecContext<F>;
+export type Turn<F extends Record<string, SpecField> = Record<string, SpecField>> = OpenSpecTurn<F>;
 
-export interface AstroSpecRequestEnvelope<
-  TContext extends AstroSpecContext = AstroSpecContext,
-  TTurn extends AstroSpecTurn = AstroSpecTurn,
+export interface OpenSpecRequestEnvelope<
+  TContext extends OpenSpecContext = OpenSpecContext,
+  TTurn extends OpenSpecTurn = OpenSpecTurn,
   TInput extends JsonObject | JsonValue = JsonObject
 > {
   context: TContext;
@@ -141,13 +141,13 @@ export interface AstroSpecRequestEnvelope<
   meta?: Record<string, JsonValue>;
 }
 
-export interface AstroSpecContextRequestEnvelope<TContext extends AstroSpecContext = AstroSpecContext> {
+export interface OpenSpecContextRequestEnvelope<TContext extends OpenSpecContext = OpenSpecContext> {
   context: TContext;
   requestId?: string;
   meta?: Record<string, JsonValue>;
 }
 
-export interface AstroSpecTurnRequestEnvelope<TTurn extends AstroSpecTurn = AstroSpecTurn> {
+export interface OpenSpecTurnRequestEnvelope<TTurn extends OpenSpecTurn = OpenSpecTurn> {
   turn: TTurn;
   requestId?: string;
   meta?: Record<string, JsonValue>;

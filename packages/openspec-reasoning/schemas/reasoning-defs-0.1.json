@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/reasoning/reasoning-defs-0.1.json",
-  "title": "AstroSpec Reasoning Definitions v0.1",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/reasoning/reasoning-defs-0.1.json",
+  "title": "OpenSpec Reasoning Definitions v0.1",
   "type": "object",
   "$defs": {
     "interactionPattern": {
@@ -59,7 +59,7 @@
         "ref": { "type": "string", "minLength": 1 },
         "sourceId": { "type": "string" },
         "span": {
-          "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/defs-0.1.json#/$defs/evidenceSpan"
+          "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/defs-0.1.json#/$defs/evidenceSpan"
         },
         "relevance": { "type": "number", "minimum": 0, "maximum": 1 },
         "note": { "type": "string" },

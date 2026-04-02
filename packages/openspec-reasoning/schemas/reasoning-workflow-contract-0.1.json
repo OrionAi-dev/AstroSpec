@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/reasoning/reasoning-workflow-contract-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/reasoning/reasoning-workflow-contract-0.1.json",
   "title": "ReasoningWorkflowContract",
   "type": "object",
   "additionalProperties": false,

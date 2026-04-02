@@ -1,7 +1,7 @@
-import type { JsonObject, JsonValue, ISODateTime } from "@astrospec/runtime";
+import type { JsonObject, JsonValue, ISODateTime } from "@openspec/runtime";
 
 /**
- * AstroSpec Events (public, stable, boring)
+ * OpenSpec Events (public, stable, boring)
  * ------------------------------------------------------------
  * This package defines an extremely flexible, vendor-neutral event contract.
  * It intentionally avoids proprietary source enums and domain-specific logic.

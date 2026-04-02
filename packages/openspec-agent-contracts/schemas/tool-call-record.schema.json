@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.orionai.dev/astrospec/tool-call-record.schema.json",
+  "$id": "https://schemas.orionai.dev/openspec/tool-call-record.schema.json",
   "title": "ToolCallRecord",
   "type": "object",
   "additionalProperties": false,

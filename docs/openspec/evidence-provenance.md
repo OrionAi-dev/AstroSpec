@@ -1,6 +1,6 @@
 # Evidence and Provenance
 
-AstroSpec treats evidence and provenance as first-class contract concerns.
+OpenSpec treats evidence and provenance as first-class contract concerns.
 
 ## Evidence
 
@@ -44,4 +44,4 @@ The retrieval profile builds on these core fields rather than inventing a separa
 
 ## Practical Rule
 
-If a system needs to justify an answer, trace a memory write, or explain a graph assertion, AstroSpec should carry that through evidence and provenance rather than hidden logs or prompt text.
+If a system needs to justify an answer, trace a memory write, or explain a graph assertion, OpenSpec should carry that through evidence and provenance rather than hidden logs or prompt text.

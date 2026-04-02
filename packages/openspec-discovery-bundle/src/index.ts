@@ -1,4 +1,4 @@
-export * from '@astrospec/reasoning';
+export * from '@openspec/reasoning';
 export {
   STARBURST_GRAPH_NODE_TYPES,
   STARBURST_GRAPH_RELATIONSHIPS,
@@ -11,7 +11,7 @@ export {
   validateMemoryPromotionEnvelope,
   validateStructuralGraphMatch,
   validateStructuralGraphQuery,
-} from '@astrospec/graph-memory';
+} from '@openspec/graph-memory';
 export type {
   AbstractionNode,
   CandidateArchitectureNode,
@@ -30,9 +30,9 @@ export type {
   StarburstGraphRelationship,
   StructuralGraphMatch,
   StructuralGraphQuery,
-} from '@astrospec/graph-memory';
+} from '@openspec/graph-memory';
 export {
-  ASTROSPEC_STARBURST_CONTRACT_KINDS,
+  OPENSPEC_STARBURST_CONTRACT_KINDS,
   abstractionOutputSchema,
   analogicalMappingSchema,
   domainPatternSchema,
@@ -53,11 +53,11 @@ export {
   validateRefinementHistory,
   validateStarburstContract,
   validateSynthesisOutput,
-} from '@astrospec/starburst-profile';
+} from '@openspec/starburst-profile';
 export type {
   AbstractionOutput,
   AnalogicalMapping,
-  AstroSpecStarburstContractKind,
+  OpenSpecStarburstContractKind,
   DomainPattern,
   EvaluationRound,
   EvaluationScore,
@@ -66,11 +66,11 @@ export type {
   MutationLineage,
   RefinementHistory,
   SynthesisOutput,
-} from '@astrospec/starburst-profile';
+} from '@openspec/starburst-profile';
 export {
   runtimeInterfaceDescriptorSchema,
   validateRuntimeInterfaceDescriptor,
-} from '@astrospec/runtime-interfaces';
+} from '@openspec/runtime-interfaces';
 export type {
   ConstellationExecutor,
   ContractExecutionContext,
@@ -79,16 +79,16 @@ export type {
   GraphMemoryProvider,
   ReasoningRuntimeAdapter,
   RuntimeInterfaceDescriptor,
-} from '@astrospec/runtime-interfaces';
+} from '@openspec/runtime-interfaces';
 
-import type { ReasoningTask } from '@astrospec/reasoning';
-import { validateReasoningTask } from '@astrospec/reasoning';
-import type { StructuralGraphQuery } from '@astrospec/graph-memory';
-import { validateStructuralGraphQuery } from '@astrospec/graph-memory';
-import type { EvaluationScore } from '@astrospec/starburst-profile';
-import { validateEvaluationScore } from '@astrospec/starburst-profile';
-import type { RuntimeInterfaceDescriptor } from '@astrospec/runtime-interfaces';
-import { validateRuntimeInterfaceDescriptor } from '@astrospec/runtime-interfaces';
+import type { ReasoningTask } from '@openspec/reasoning';
+import { validateReasoningTask } from '@openspec/reasoning';
+import type { StructuralGraphQuery } from '@openspec/graph-memory';
+import { validateStructuralGraphQuery } from '@openspec/graph-memory';
+import type { EvaluationScore } from '@openspec/starburst-profile';
+import { validateEvaluationScore } from '@openspec/starburst-profile';
+import type { RuntimeInterfaceDescriptor } from '@openspec/runtime-interfaces';
+import { validateRuntimeInterfaceDescriptor } from '@openspec/runtime-interfaces';
 
 export type DiscoveryBundleContractKind =
   | 'reasoning-task'

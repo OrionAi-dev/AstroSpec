@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/graph-memory/graph-memory-node-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/graph-memory/graph-memory-node-0.1.json",
   "title": "GraphMemoryNode",
   "$ref": "./graph-memory-defs-0.1.json#/$defs/graphMemoryNode"
 }

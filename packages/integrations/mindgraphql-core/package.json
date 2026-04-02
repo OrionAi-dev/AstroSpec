@@ -1,5 +1,5 @@
 {
-  "name": "@astrospec/mindgraphql-core",
+  "name": "@openspec/mindgraphql-core",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "graphql": "^16.11.0",
-    "@astrospec/runtime": "workspace:*"
+    "@openspec/runtime": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

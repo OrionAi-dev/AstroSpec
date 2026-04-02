@@ -18,7 +18,7 @@ It provides:
 
 - container resource serialization
 - secure-context MCP tool names
-- compatibility exports for older AstroSpec MCP profiles
+- compatibility exports for older OpenSpec MCP profiles
 
 ## Resource pattern
 

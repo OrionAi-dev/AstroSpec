@@ -1,4 +1,4 @@
-import type { EvidenceSpan, JsonValue } from '@astrospec/runtime';
+import type { EvidenceSpan, JsonValue } from '@openspec/runtime';
 import reasoningDefsSchema from '../schemas/reasoning-defs-0.1.json';
 import reasoningTaskSchema from '../schemas/reasoning-task-0.1.json';
 import reasoningRoleSchema from '../schemas/reasoning-role-0.1.json';
@@ -7,8 +7,8 @@ import reasoningEvidenceSchema from '../schemas/reasoning-evidence-0.1.json';
 import reasoningResultSchema from '../schemas/reasoning-result-0.1.json';
 import reasoningWorkflowContractSchema from '../schemas/reasoning-workflow-contract-0.1.json';
 export { reasoningDefsSchema, reasoningTaskSchema, reasoningRoleSchema, reasoningGraphSchema, reasoningEvidenceSchema, reasoningResultSchema, reasoningWorkflowContractSchema, };
-export declare const ASTROSPEC_REASONING_CONTRACT_KINDS: readonly ["reasoning-task", "reasoning-role", "reasoning-graph", "reasoning-evidence", "reasoning-result", "reasoning-workflow-contract"];
-export type AstroSpecReasoningContractKind = (typeof ASTROSPEC_REASONING_CONTRACT_KINDS)[number];
+export declare const OPENSPEC_REASONING_CONTRACT_KINDS: readonly ["reasoning-task", "reasoning-role", "reasoning-graph", "reasoning-evidence", "reasoning-result", "reasoning-workflow-contract"];
+export type OpenSpecReasoningContractKind = (typeof OPENSPEC_REASONING_CONTRACT_KINDS)[number];
 export type ReasoningInteractionPattern = 'sequential' | 'parallel' | 'fanout' | 'review' | 'collapse' | 'optional';
 export type ReasoningStatus = 'proposed' | 'running' | 'completed' | 'partial' | 'failed';
 export type ReasoningMode = 'default' | 'supernova' | 'redshift' | 'event-horizon';
@@ -109,5 +109,5 @@ export declare function validateReasoningGraph(value: unknown): ValidationResult
 export declare function validateReasoningEvidence(value: unknown): ValidationResult<ReasoningEvidence>;
 export declare function validateReasoningResult(value: unknown): ValidationResult<ReasoningResult>;
 export declare function validateReasoningWorkflowContract(value: unknown): ValidationResult<ReasoningWorkflowContract>;
-export declare function validateReasoningContract(kind: AstroSpecReasoningContractKind, value: unknown): ValidationResult<ReasoningTask | ReasoningRole | ReasoningGraph | ReasoningEvidence | ReasoningResult | ReasoningWorkflowContract>;
+export declare function validateReasoningContract(kind: OpenSpecReasoningContractKind, value: unknown): ValidationResult<ReasoningTask | ReasoningRole | ReasoningGraph | ReasoningEvidence | ReasoningResult | ReasoningWorkflowContract>;
 //# sourceMappingURL=index.d.ts.map

@@ -1,5 +1,5 @@
 {
-  "name": "@astrospec/mindql-core",
+  "name": "@openspec/mindql-core",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -22,6 +22,6 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*"
+    "@openspec/runtime": "workspace:*"
   }
 }

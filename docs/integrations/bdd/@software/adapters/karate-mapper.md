@@ -1,16 +1,16 @@
 # Karate Mapper
 
-This adapter connects AstroSpec `@software` criteria to **Karate** by referencing external artifacts only. It does not embed or generate Karate tests from AstroSpec. It verifies links to Karate `.feature` files and scenarios you reference, and produces a traceability index.
+This adapter connects OpenSpec `@software` criteria to **Karate** by referencing external artifacts only. It does not embed or generate Karate tests from OpenSpec. It verifies links to Karate `.feature` files and scenarios you reference, and produces a traceability index.
 
 ## Design principles
 
-- AstroSpec stays agnostic. We only link to Karate, we do not copy its DSL into AstroSpec.
+- OpenSpec stays agnostic. We only link to Karate, we do not copy its DSL into OpenSpec.
 - References over generation. The mapper verifies and indexes your references, it does not author tests.
 - Profiles by URL. `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` for Karate.
 
 ## What it does
 
-- Reads an AstroSpec YAML that declares:
+- Reads an OpenSpec YAML that declares:
   - `profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Karate artifacts
 - For each criterion with `bdd_ref`:
@@ -29,9 +29,9 @@ This adapter connects AstroSpec `@software` criteria to **Karate** by referencin
 
 Note: Inline step fields like `given`, `when`, `then` are not used. The mapper ignores them if present.
 
-## Minimal example (AstroSpec to Karate reference)
+## Minimal example (OpenSpec to Karate reference)
 
-AstroSpec input:
+OpenSpec input:
 
 ```yaml
 profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software
@@ -86,7 +86,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference only)
 
-AstroSpec to Karate
+OpenSpec to Karate
 
 - `meta.id`, `meta.title` are used for discovery and file naming. No content is generated.
 - `requirements[].id`, `requirements[].statement` are used for grouping in the index.
@@ -98,7 +98,7 @@ AstroSpec to Karate
 ## File layout
 
 Inputs
-- AstroSpec specs: anywhere. Examples are under `docs/integrations/bdd/@software/examples/`.
+- OpenSpec specs: anywhere. Examples are under `docs/integrations/bdd/@software/examples/`.
 - Karate features: wherever your test suite keeps them. Examples live alongside the YAML.
 
 Outputs
@@ -107,11 +107,11 @@ Outputs
 
 ## Validation rules applied
 
-- AstroSpec file must validate against `@software` schema.
+- OpenSpec file must validate against `@software` schema.
 - `bdd_ref.source` must be a URL listed for Karate in `bdd-registry.yaml`.
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL).
 - `bdd_ref.scenario` must exist in the target `.feature`.
-- Inline step fields are ignored. AstroSpec does not define steps.
+- Inline step fields are ignored. OpenSpec does not define steps.
 
 ## Naming guidance
 
@@ -123,10 +123,10 @@ Outputs
 - Typical Karate execution:
   - Maven: `mvn -Dtest=KarateRunner test` or `mvn test -Dkarate.options="--tags @smoke"`
   - Standalone jar: `java -jar karate.jar -p 8080 -t @smoke classpath:features`
-- Tag scenarios with AstroSpec IDs for back references:
+- Tag scenarios with OpenSpec IDs for back references:
 
 ```gherkin
-@astrospec(KARATE-701.1.1)
+@openspec(KARATE-701.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -140,7 +140,7 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] OpenSpec YAML validates against `@software` schema
 - [ ] `bdd-registry.yaml` includes the Karate profile URL
 - [ ] External `.feature` file exists and contains the named Scenario
 - [ ] `dist/karate/index.json` produced for traceability

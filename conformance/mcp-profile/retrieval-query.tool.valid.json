@@ -1,5 +1,5 @@
 {
-  "name": "astrospec.retrieval.query",
+  "name": "openspec.retrieval.query",
   "arguments": {
     "request": {
       "requestId": "req_1",

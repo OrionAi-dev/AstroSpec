@@ -1,11 +1,11 @@
-# AstroSpec BDD: `astrospec.core`
+# OpenSpec BDD: `openspec.core`
 
 **What it is:** a minimal, portable BDD scenario format in YAML.
-**How it is used:** like any other BDD provider. Your AstroSpec specs point to it with `bdd_ref.source` and `bdd_ref.path`.
+**How it is used:** like any other BDD provider. Your OpenSpec specs point to it with `bdd_ref.source` and `bdd_ref.path`.
 
 ---
 
-## Why use `astrospec.core`?
+## Why use `openspec.core`?
 
 - You want human-readable scenarios but do not want to lock into Cucumber, Behave, or Behat yet.
 - You need a source file that can generate multiple BDD stacks later.
@@ -21,7 +21,7 @@ If you already have a mature BDD toolchain, prefer that and just reference it.
 docs/
   integrations/
     bdd/
-      astrospec.core/
+      openspec.core/
         profile.yaml
         schema.yaml
         README.md
@@ -34,7 +34,7 @@ docs/
 ## Minimal scenario file
 
 ```yaml
-profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
+profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
 kind: bdd-core
 meta:
   id: AUTH-101.core
@@ -53,7 +53,7 @@ scenarios:
 ```
 
 Key fields:
-- `profile` must be `https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core`
+- `profile` must be `https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core`
 - `kind` is `bdd-core`
 - Steps use `keyword` in `Given`, `When`, `Then`, `And`, `But`
 
@@ -61,7 +61,7 @@ Key fields:
 
 ## Referencing from `@software`
 
-Point a criterion to an `astrospec.core` scenario the same way you would point to Cucumber.
+Point a criterion to an `openspec.core` scenario the same way you would point to Cucumber.
 
 ```yaml
 # docs/integrations/bdd/@software/examples/AUTH-101.context-turn.yaml
@@ -77,12 +77,12 @@ requirements:
         type: functional
         text: Valid credentials produce a successful session
         bdd_ref:
-          source: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
-          path: ../../bdd/astrospec.core/examples/AUTH-101.core.yaml
+          source: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
+          path: ../../bdd/openspec.core/examples/AUTH-101.core.yaml
           scenario: auth-login-success
 ```
 
-Add `astrospec.core` to the `@software` BDD registry:
+Add `openspec.core` to the `@software` BDD registry:
 
 ```yaml
 # docs/integrations/bdd/@software/bdd-registry.yaml
@@ -102,8 +102,8 @@ supported:
     url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/robot
   - id: specflow
     url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/specflow
-  - id: astrospec.core
-    url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
+  - id: openspec.core
+    url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
 ```
 
 ---
@@ -112,8 +112,8 @@ supported:
 
 ```bash
 ajv validate
-  -s <(yq -o=json docs/integrations/bdd/astrospec.core/schema.yaml)
-  -d <(yq -o=json docs/integrations/bdd/astrospec.core/examples/AUTH-101.core.yaml)
+  -s <(yq -o=json docs/integrations/bdd/openspec.core/schema.yaml)
+  -d <(yq -o=json docs/integrations/bdd/openspec.core/examples/AUTH-101.core.yaml)
 ```
 
 ---
@@ -128,8 +128,8 @@ ajv validate
 
 ## Versioning
 
-- Profile URL: `https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core`
-- Schema URL: `https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/bdd/astrospec.core-1.0.json`
+- Profile URL: `https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core`
+- Schema URL: `https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/bdd/openspec.core-1.0.json`
 - Use SemVer for schema changes.
 
 ---
@@ -142,6 +142,6 @@ This repository uses **Apache-2.0**. See `LICENSE`.
 
 ## Contributing
 
-- Keep `astrospec.core` small and stable.
+- Keep `openspec.core` small and stable.
 - Changes should be backward compatible when possible.
 - Add examples and update docs under `docs/integrations/bdd/`.

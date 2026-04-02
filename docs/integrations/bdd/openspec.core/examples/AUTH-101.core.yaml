@@ -1,4 +1,4 @@
-profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
+profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
 kind: bdd-core
 meta:
   id: AUTH-101.core

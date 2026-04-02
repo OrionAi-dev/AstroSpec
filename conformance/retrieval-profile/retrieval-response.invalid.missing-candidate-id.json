@@ -6,7 +6,7 @@
     {
       "candidateId": "cand_1",
       "sourceId": "src_1",
-      "ref": "astrospec://sources/src_1",
+      "ref": "openspec://sources/src_1",
       "kind": "document",
       "stage": "retrieve"
     }

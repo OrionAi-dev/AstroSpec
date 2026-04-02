@@ -1,5 +1,5 @@
 {
-  "name": "@astrospec/integration-audio-openai",
+  "name": "@openspec/integration-audio-openai",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -28,7 +28,7 @@
     "smoke:import": "node scripts/smoke-import.mjs"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*",
+    "@openspec/runtime": "workspace:*",
     "openai": "^6.15.0"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@
     {
       "candidateId": "cand_1",
       "sourceId": "src_policy_v2",
-      "ref": "astrospec://sources/src_policy_v2",
+      "ref": "openspec://sources/src_policy_v2",
       "kind": "document",
       "title": "Records Retention Policy",
       "snippet": "Records must be retained for seven years.",

@@ -1,4 +1,4 @@
-# AstroSpec Roadmap
+# OpenSpec Roadmap
 
 ## v0.1.x
 
@@ -34,7 +34,7 @@
 
 ## v1.0.0 criteria
 
-AstroSpec should not be presented as standard-ready until it has:
+OpenSpec should not be presented as standard-ready until it has:
 
 - stable core schemas
 - stable profile registry rules

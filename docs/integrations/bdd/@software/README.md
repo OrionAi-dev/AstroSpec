@@ -1,6 +1,6 @@
-# AstroSpec Implementation: @software
+# OpenSpec Implementation: @software
 
-This profile applies AstroSpec to software delivery. It defines the field set, acceptance criteria shape, and adapters that map specs to tests and pipelines.
+This profile applies OpenSpec to software delivery. It defines the field set, acceptance criteria shape, and adapters that map specs to tests and pipelines.
 
 ## Scope
 - Features, bugs, and technical tasks
@@ -12,11 +12,11 @@ YAML with a top-level `kind` and a `meta` block, plus `requirements` and `criter
 External BDD specifications can also be referenced via the `bdd` and `bdd_ref` fields (see `schema.yaml`).
 
 ## Validation
-- All files must pass the core AstroSpec rules and the @software schema in `schema.yaml`.
+- All files must pass the core OpenSpec rules and the @software schema in `schema.yaml`.
 - The GitHub Actions workflow in `ci/validate.yml` runs schema validation and checks that all referenced BDD files exist.
 
 ## Adapters
-Adapters translate AstroSpec criteria into test artifacts for different ecosystems:
+Adapters translate OpenSpec criteria into test artifacts for different ecosystems:
 
 - Jest mapper: generates Jest test skeletons
 - Cucumber mapper: converts criteria into Gherkin `.feature` files

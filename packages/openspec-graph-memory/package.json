@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/graph-memory",
+  "name": "@openspec/graph-memory",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Portable AstroSpec graph-memory and structural retrieval contracts.",
+  "description": "Portable OpenSpec graph-memory and structural retrieval contracts.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,9 +26,9 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/retrieval-profile": "workspace:*",
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/schema": "workspace:*",
+    "@openspec/retrieval-profile": "workspace:*",
+    "@openspec/runtime": "workspace:*",
+    "@openspec/schema": "workspace:*",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },

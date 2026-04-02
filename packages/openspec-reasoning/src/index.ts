@@ -2,8 +2,8 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
 
-import { listSchemas, readSchema } from '@astrospec/schema';
-import type { EvidenceSpan, JsonValue } from '@astrospec/runtime';
+import { listSchemas, readSchema } from '@openspec/schema';
+import type { EvidenceSpan, JsonValue } from '@openspec/runtime';
 
 import reasoningDefsSchema from '../schemas/reasoning-defs-0.1.json' with { type: 'json' };
 import reasoningTaskSchema from '../schemas/reasoning-task-0.1.json' with { type: 'json' };
@@ -23,7 +23,7 @@ export {
   reasoningWorkflowContractSchema,
 };
 
-export const ASTROSPEC_REASONING_CONTRACT_KINDS = [
+export const OPENSPEC_REASONING_CONTRACT_KINDS = [
   'reasoning-task',
   'reasoning-role',
   'reasoning-graph',
@@ -32,7 +32,7 @@ export const ASTROSPEC_REASONING_CONTRACT_KINDS = [
   'reasoning-workflow-contract',
 ] as const;
 
-export type AstroSpecReasoningContractKind = (typeof ASTROSPEC_REASONING_CONTRACT_KINDS)[number];
+export type OpenSpecReasoningContractKind = (typeof OPENSPEC_REASONING_CONTRACT_KINDS)[number];
 
 export type ReasoningInteractionPattern =
   | 'sequential'
@@ -233,7 +233,7 @@ function makeIssue(path: string, message: string): ValidationIssue {
     path,
     message,
     keyword: 'semantic',
-    schemaPath: 'astrospec.reasoning.semantic',
+    schemaPath: 'openspec.reasoning.semantic',
   };
 }
 
@@ -315,7 +315,7 @@ export function validateReasoningWorkflowContract(value: unknown): ValidationRes
 }
 
 export function validateReasoningContract(
-  kind: AstroSpecReasoningContractKind,
+  kind: OpenSpecReasoningContractKind,
   value: unknown,
 ): ValidationResult<
   ReasoningTask | ReasoningRole | ReasoningGraph | ReasoningEvidence | ReasoningResult | ReasoningWorkflowContract

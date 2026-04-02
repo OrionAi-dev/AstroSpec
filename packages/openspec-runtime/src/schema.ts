@@ -1,7 +1,7 @@
 import Ajv2020 from "ajv/dist/2020.js";
 import type { ErrorObject, ValidateFunction } from "ajv";
 import addFormats from "ajv-formats";
-import { readSchema } from "@astrospec/schema";
+import { readSchema } from "@openspec/schema";
 
 export type ValidationError = {
   path: string;
@@ -28,7 +28,7 @@ const ajv = new Ajv2020({
 });
 addFormats(ajv);
 
-// Add canonical AstroSpec schemas (by $id) so relative $refs resolve correctly.
+// Add canonical OpenSpec schemas (by $id) so relative $refs resolve correctly.
 const SCHEMA_NAMES = [
   "defs-0.1",
   "acceptance-criteria-0.1",
@@ -51,12 +51,12 @@ function getValidator(schemaId: string): ValidateFunction {
 }
 
 export const SCHEMA_IDS = {
-  defs: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/defs-0.1.json",
-  acceptanceCriteria: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/acceptance-criteria-0.1.json",
-  provenance: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/provenance-0.1.json",
-  context: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/context-0.1.json",
-  turn: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/turn-0.1.json",
-  verificationReport: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/verification-report-0.1.json"
+  defs: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/defs-0.1.json",
+  acceptanceCriteria: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/acceptance-criteria-0.1.json",
+  provenance: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/provenance-0.1.json",
+  context: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/context-0.1.json",
+  turn: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/turn-0.1.json",
+  verificationReport: "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/verification-report-0.1.json"
 } as const;
 
 export function validateWithSchema<T>(

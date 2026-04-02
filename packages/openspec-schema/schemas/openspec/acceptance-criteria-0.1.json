@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/acceptance-criteria-0.1.json",
-  "title": "AstroSpec Acceptance Criteria",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/acceptance-criteria-0.1.json",
+  "title": "OpenSpec Acceptance Criteria",
   "description": "Structured, verifiable conditions attached to a Context or Turn.",
   "type": "array",
   "items": {

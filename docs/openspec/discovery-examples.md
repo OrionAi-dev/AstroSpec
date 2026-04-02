@@ -1,6 +1,6 @@
 # Discovery Examples
 
-AstroSpec discovery packages ship example tasks and outputs for three reference prompts.
+OpenSpec discovery packages ship example tasks and outputs for three reference prompts.
 
 ## Quantum Cryptography
 
@@ -43,6 +43,6 @@ Portable outputs include:
 
 ## Public/Private Boundary
 
-AstroSpec examples standardize portable observations and result shapes.
+OpenSpec examples standardize portable observations and result shapes.
 
-Product-specific interpretation logic, ranking, and worldview-specific behavior remain outside AstroSpec in runtime implementations.
+Product-specific interpretation logic, ranking, and worldview-specific behavior remain outside OpenSpec in runtime implementations.

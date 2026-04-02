@@ -1,6 +1,6 @@
-# AstroSpec Overview
+# OpenSpec Overview
 
-AstroSpec is a structured contract standard for intent, constraints, acceptance criteria, evidence, provenance, and verification.
+OpenSpec is a structured contract standard for intent, constraints, acceptance criteria, evidence, provenance, and verification.
 
 It has two layers of value:
 
@@ -9,18 +9,18 @@ It has two layers of value:
 
 The first normative profile is the retrieval profile for RAG interoperability.
 
-AstroSpec also publishes a portable reasoning and discovery family:
+OpenSpec also publishes a portable reasoning and discovery family:
 
-- `@astrospec/reasoning`
-- `@astrospec/graph-memory`
-- `@astrospec/starburst-profile`
-- `@astrospec/runtime-interfaces`
+- `@openspec/reasoning`
+- `@openspec/graph-memory`
+- `@openspec/starburst-profile`
+- `@openspec/runtime-interfaces`
 
 ## Core Concepts
 
 ### 1. Context and Turn
 
-Core AstroSpec distinguishes between:
+Core OpenSpec distinguishes between:
 
 - **Context**: a long-lived shared contract
 - **Turn**: a scoped execution or handoff contract
@@ -29,7 +29,7 @@ These keep durable assumptions separate from one-shot actions or responses.
 
 ### 2. Evidence and Provenance
 
-AstroSpec treats evidence and provenance as first-class contract fields.
+OpenSpec treats evidence and provenance as first-class contract fields.
 
 That means systems can exchange:
 
@@ -40,7 +40,7 @@ That means systems can exchange:
 
 ### 3. Verification
 
-AstroSpec emphasizes deterministic validation and verification rather than best-effort interpretation.
+OpenSpec emphasizes deterministic validation and verification rather than best-effort interpretation.
 
 ### 4. Profiles
 
@@ -65,7 +65,7 @@ The discovery profile family covers:
 
 ## Adoption Wedge
 
-AstroSpec is intended to become infrastructure.
+OpenSpec is intended to become infrastructure.
 
 The practical adoption wedge is retrieval interoperability because multiple systems already need a portable way to exchange:
 
@@ -75,9 +75,9 @@ The practical adoption wedge is retrieval interoperability because multiple syst
 - what memory or graph data was used
 - what grounding or verification outcome was reached
 
-## What AstroSpec Is Not
+## What OpenSpec Is Not
 
-AstroSpec is not:
+OpenSpec is not:
 
 - a retrieval engine
 - a vector store abstraction
@@ -89,7 +89,7 @@ AstroSpec is not:
 
 ## Why This Matters
 
-A small core plus explicit profiles makes AstroSpec more adoptable as infrastructure:
+A small core plus explicit profiles makes OpenSpec more adoptable as infrastructure:
 
 - the core stays stable
 - profiles can move faster

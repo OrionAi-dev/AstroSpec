@@ -5,8 +5,8 @@ import path from "node:path";
 const WRITE = process.argv.includes("--write");
 const repoRoot = process.cwd();
 
-const canonicalDir = path.join(repoRoot, "packages", "astrospec-schema", "schemas", "astrospec");
-const docsDir = path.join(repoRoot, "docs", "astrospec", "schemas");
+const canonicalDir = path.join(repoRoot, "packages", "openspec-schema", "schemas", "openspec");
+const docsDir = path.join(repoRoot, "docs", "openspec", "schemas");
 
 async function listJson(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -35,13 +35,13 @@ async function main() {
   if (missingInDocs.length) {
     ok = false;
     console.error("Missing docs schema copies:");
-    for (const f of missingInDocs) console.error(`- ${path.join("docs/astrospec/schemas", f)}`);
+    for (const f of missingInDocs) console.error(`- ${path.join("docs/openspec/schemas", f)}`);
   }
 
   if (extraInDocs.length) {
     ok = false;
     console.error("Extra docs schema files not present in canonical package:");
-    for (const f of extraInDocs) console.error(`- ${path.join("docs/astrospec/schemas", f)}`);
+    for (const f of extraInDocs) console.error(`- ${path.join("docs/openspec/schemas", f)}`);
   }
 
   for (const f of canonicalFiles) {

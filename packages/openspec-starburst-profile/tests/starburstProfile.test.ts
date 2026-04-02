@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  ASTROSPEC_STARBURST_CONTRACT_KINDS,
+  OPENSPEC_STARBURST_CONTRACT_KINDS,
   validateEvaluationRound,
   validateStarburstContract,
   validateSynthesisOutput,
@@ -15,8 +15,8 @@ const synthesis = {
 };
 
 test('exports deterministic starburst contract kinds', () => {
-  assert.ok(ASTROSPEC_STARBURST_CONTRACT_KINDS.includes('synthesis-output'));
-  assert.ok(ASTROSPEC_STARBURST_CONTRACT_KINDS.includes('evaluation-round'));
+  assert.ok(OPENSPEC_STARBURST_CONTRACT_KINDS.includes('synthesis-output'));
+  assert.ok(OPENSPEC_STARBURST_CONTRACT_KINDS.includes('evaluation-round'));
 });
 
 test('valid synthesis output and contract switch pass', () => {

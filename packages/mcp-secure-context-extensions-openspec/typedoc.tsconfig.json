@@ -2,11 +2,11 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@astrospec/agent-contracts": [
-        "../astrospec-agent-contracts/dist/index.d.ts"
+      "@openspec/agent-contracts": [
+        "../openspec-agent-contracts/dist/index.d.ts"
       ],
-      "@astrospec/retrieval-profile": [
-        "../astrospec-retrieval-profile/dist/index.d.ts"
+      "@openspec/retrieval-profile": [
+        "../openspec-retrieval-profile/dist/index.d.ts"
       ]
     }
   },

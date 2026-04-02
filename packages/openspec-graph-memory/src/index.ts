@@ -2,13 +2,13 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
 
-import { listSchemas, readSchema } from '@astrospec/schema';
+import { listSchemas, readSchema } from '@openspec/schema';
 import {
   knowledgeAssertionSchema,
   memoryRecordSchema,
   retrievalDefsSchema,
-} from '@astrospec/retrieval-profile';
-import type { KnowledgeAssertion, MemoryRecord } from '@astrospec/retrieval-profile';
+} from '@openspec/retrieval-profile';
+import type { KnowledgeAssertion, MemoryRecord } from '@openspec/retrieval-profile';
 
 import graphMemoryDefsSchema from '../schemas/graph-memory-defs-0.1.json' with { type: 'json' };
 import graphMemoryNodeSchema from '../schemas/graph-memory-node-0.1.json' with { type: 'json' };
@@ -252,7 +252,7 @@ function makeIssue(path: string, message: string): ValidationIssue {
     path,
     message,
     keyword: 'semantic',
-    schemaPath: 'astrospec.graph_memory.semantic',
+    schemaPath: 'openspec.graph_memory.semantic',
   };
 }
 

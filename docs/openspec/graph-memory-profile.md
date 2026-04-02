@@ -1,6 +1,6 @@
 # Graph Memory Profile
 
-`@astrospec/graph-memory` defines portable structures for reusable discovery artifacts and structural retrieval.
+`@openspec/graph-memory` defines portable structures for reusable discovery artifacts and structural retrieval.
 
 ## Node Set
 
@@ -50,4 +50,4 @@ That keeps memory and assertion envelopes canonical instead of duplicating them 
 
 Legal and symbolic domains may use this profile to store portable artifact shapes such as claim linkage, procedural dependencies, chart entities, or transit windows.
 
-Jurisdiction-specific legal logic and worldview-specific symbolic interpretation remain outside AstroSpec core and public profile semantics.
+Jurisdiction-specific legal logic and worldview-specific symbolic interpretation remain outside OpenSpec core and public profile semantics.

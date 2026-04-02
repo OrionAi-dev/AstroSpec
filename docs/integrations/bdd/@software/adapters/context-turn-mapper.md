@@ -1,14 +1,14 @@
-# AstroSpec Adapter: Context/Turn → BDD Core
+# OpenSpec Adapter: Context/Turn → BDD Core
 
-This adapter maps AstroSpec **Context** and **Turn** contracts into a portable BDD representation.
+This adapter maps OpenSpec **Context** and **Turn** contracts into a portable BDD representation.
 It enables teams to express acceptance criteria in human-readable scenarios while retaining machine-verifiable contracts.
 
 ---
 
 ## Purpose
 
-* Bridge **AstroSpec contracts** (Context/Turn with fields + acceptanceCriteria) into BDD scenarios.
-* Allow round-tripping between **YAML-based BDD files** and **typed AstroSpec contracts**.
+* Bridge **OpenSpec contracts** (Context/Turn with fields + acceptanceCriteria) into BDD scenarios.
+* Allow round-tripping between **YAML-based BDD files** and **typed OpenSpec contracts**.
 * Provide a lightweight path for domains that don’t yet have a native BDD stack.
 
 ---
@@ -32,7 +32,7 @@ It enables teams to express acceptance criteria in human-readable scenarios whil
 
 ## Example
 
-**Turn Contract (AstroSpec)**
+**Turn Contract (OpenSpec)**
 
 ```json
 {
@@ -52,10 +52,10 @@ It enables teams to express acceptance criteria in human-readable scenarios whil
 }
 ```
 
-**Mapped BDD (astrospec.core YAML)**
+**Mapped BDD (openspec.core YAML)**
 
 ```yaml
-profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
+profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
 kind: bdd-core
 meta:
   id: AUTH-101.core
@@ -75,11 +75,11 @@ scenarios:
 1. Draft Context/Turn spec → lock contract.
 2. Adapter maps Turn → BDD scenario.
 3. Execute in native BDD tool (Cucumber, Behave, etc.).
-4. Results mapped back to AstroSpec verifier results.
+4. Results mapped back to OpenSpec verifier results.
 
 ---
 
 ## Cross-References
 
-* [context-turn.md](../../../../astrospec/context-turn.md) → Context/Turn model
-* [verification.md](../../../../astrospec/verification.md) → how verifiers validate acceptance criteria
+* [context-turn.md](../../../../openspec/context-turn.md) → Context/Turn model
+* [verification.md](../../../../openspec/verification.md) → how verifiers validate acceptance criteria

@@ -1,6 +1,6 @@
 # Profile Registry Policy
 
-Profiles are how AstroSpec adds portable domain contracts without bloating core.
+Profiles are how OpenSpec adds portable domain contracts without bloating core.
 
 ## Rules
 
@@ -9,7 +9,7 @@ Profiles are how AstroSpec adds portable domain contracts without bloating core.
 3. Profiles may evolve faster than core, but must publish compatibility expectations.
 4. Vendor-specific extensions must not present themselves as normative profiles.
 5. Cross-profile reuse is preferred to duplication when a portable primitive already exists.
-6. Runtime behavior, ranking, scheduling, and other flagship implementation details stay outside public AstroSpec profiles.
+6. Runtime behavior, ranking, scheduling, and other flagship implementation details stay outside public OpenSpec profiles.
 
 ## Required Assets
 

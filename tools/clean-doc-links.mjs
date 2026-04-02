@@ -23,7 +23,7 @@ function rel(fromAbs, toAbs) {
 }
 
 const target = {
-  contextTurn: path.join(docsDir, 'astrospec', 'context-turn.md'),
+  contextTurn: path.join(docsDir, 'openspec', 'context-turn.md'),
 };
 
 function rewrite(fileAbs, content) {

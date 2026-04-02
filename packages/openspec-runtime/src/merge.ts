@@ -1,4 +1,4 @@
-import type { AstroSpecContext, AstroSpecTurn, SpecField, FieldSource, JsonPatch } from "./types";
+import type { OpenSpecContext, OpenSpecTurn, SpecField, FieldSource, JsonPatch } from "./types";
 
 const PRECEDENCE_SCORE: Record<string, number> = {
   system: 7,
@@ -118,7 +118,7 @@ function mergeField(a?: SpecField, b?: SpecField): SpecField | undefined {
   return winner;
 }
 
-export function mergeContextIntoTurn(ctx: AstroSpecContext, turn: AstroSpecTurn): AstroSpecTurn {
+export function mergeContextIntoTurn(ctx: OpenSpecContext, turn: OpenSpecTurn): OpenSpecTurn {
   const merged: Record<string, SpecField> = {};
   const keys = new Set([...Object.keys(ctx.fields), ...Object.keys(turn.fields)]);
   for (const k of keys) {

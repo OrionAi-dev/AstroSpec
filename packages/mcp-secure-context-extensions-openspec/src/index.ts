@@ -8,14 +8,14 @@ import {
   validateToolCallRecord,
   validateToolPolicySpec,
   type ValidationResult,
-} from '@astrospec/agent-contracts';
+} from '@openspec/agent-contracts';
 import {
   validateRetrievalContract,
-  type AstroSpecRetrievalContractKind,
+  type OpenSpecRetrievalContractKind,
   type ValidationResult as RetrievalValidationResult,
-} from '@astrospec/retrieval-profile';
+} from '@openspec/retrieval-profile';
 
-export type AstroSpecAgentContractKind =
+export type OpenSpecAgentContractKind =
   | 'plan-turn'
   | 'exec-turn'
   | 'tool-policy-spec'
@@ -25,13 +25,13 @@ export type AstroSpecAgentContractKind =
   | 'chat-orchestration-audit'
   | 'git-history-summary';
 
-export type AstroSpecKitKind = AstroSpecAgentContractKind | AstroSpecRetrievalContractKind;
+export type OpenSpecKitKind = OpenSpecAgentContractKind | OpenSpecRetrievalContractKind;
 
-export type AstroSpecKitValidationResult = (ValidationResult | RetrievalValidationResult) & {
+export type OpenSpecKitValidationResult = (ValidationResult | RetrievalValidationResult) & {
   nextHint?: string;
 };
 
-function nextHintFor(kind: AstroSpecKitKind, result: ValidationResult | RetrievalValidationResult): string | undefined {
+function nextHintFor(kind: OpenSpecKitKind, result: ValidationResult | RetrievalValidationResult): string | undefined {
   if (result.ok) return undefined;
   const first = result.errors[0] ?? 'payload is invalid';
   switch (kind) {
@@ -66,7 +66,7 @@ function nextHintFor(kind: AstroSpecKitKind, result: ValidationResult | Retrieva
   }
 }
 
-export function validate(kind: AstroSpecKitKind, payload: unknown): AstroSpecKitValidationResult {
+export function validate(kind: OpenSpecKitKind, payload: unknown): OpenSpecKitValidationResult {
   const result =
     kind === 'plan-turn'
       ? validatePlanTurn(payload)
@@ -84,7 +84,7 @@ export function validate(kind: AstroSpecKitKind, payload: unknown): AstroSpecKit
                   ? validateChatOrchestrationAudit(payload)
                   : kind === 'git-history-summary'
                     ? validateGitHistorySummary(payload)
-                    : validateRetrievalContract(kind as AstroSpecRetrievalContractKind, payload);
+                    : validateRetrievalContract(kind as OpenSpecRetrievalContractKind, payload);
 
   return {
     ...result,
@@ -92,7 +92,7 @@ export function validate(kind: AstroSpecKitKind, payload: unknown): AstroSpecKit
   };
 }
 
-export function validateRetrieval(kind: AstroSpecRetrievalContractKind, payload: unknown): AstroSpecKitValidationResult {
+export function validateRetrieval(kind: OpenSpecRetrievalContractKind, payload: unknown): OpenSpecKitValidationResult {
   const result = validateRetrievalContract(kind, payload);
   return {
     ...result,

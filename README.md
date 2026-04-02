@@ -47,7 +47,7 @@ Adapters, resource helpers, server patterns, and reference implementations for M
 
 ## Package Map
 
-### Canonical packages
+### Umbrella framework packages
 
 - `@mcp-secure-context/core`
 - `@mcp-secure-context/openspec`
@@ -55,26 +55,23 @@ Adapters, resource helpers, server patterns, and reference implementations for M
 - `@mcp-secure-context/sdk-typescript`
 - `@mcp-secure-context/cli`
 
-### Compatibility packages
+### Canonical standard packages
 
-- `@astrospec/schema`
-- `@astrospec/runtime`
-- `@astrospec/kit`
-- `@astrospec/cli`
-
-These compatibility packages remain available for one transition cycle and re-export the new canonical packages.
-
-### Secondary extension packages
-
-These remain available but are no longer the primary public identity of the repo:
-
-- `@astrospec/retrieval-profile`
-- `@astrospec/reasoning`
-- `@astrospec/graph-memory`
-- `@astrospec/starburst-profile`
-- `@astrospec/runtime-interfaces`
-- `@astrospec/discovery-bundle`
-- `@astrospec/agent-contracts`
+- `@openspec/schema`
+- `@openspec/runtime`
+- `@openspec/kit`
+- `@openspec/cli`
+- `@openspec/retrieval-profile`
+- `@openspec/reasoning`
+- `@openspec/graph-memory`
+- `@openspec/starburst-profile`
+- `@openspec/runtime-interfaces`
+- `@openspec/discovery-bundle`
+- `@openspec/agent-contracts`
+- `@openspec/mindql-core`
+- `@openspec/mindgraphql-core`
+- `@openspec/integration-audio-openai`
+- `@openspec/integration-events`
 
 ## Quickstart
 
@@ -135,7 +132,7 @@ MCP Secure Context Sharing fills that gap with:
 
 ## Legacy migration
 
-This repo was previously published as AstroSpec. AstroSpec naming is retained only for compatibility packages, historical references, and migration documentation.
+This repo previously used AstroSpec naming. AstroSpec references are now retained only in explicitly legacy migration documentation.
 
 - [Legacy AstroSpec migration notes](./docs/migrations/legacy-astrospec/README.md)
 

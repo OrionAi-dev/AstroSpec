@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/runtime",
+  "name": "@openspec/runtime",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Compatibility wrapper for @mcp-secure-context/openspec.",
+  "description": "Canonical OpenSpec runtime validators, canonicalization helpers, and verification utilities.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,9 +16,9 @@
     }
   },
   "keywords": [
-    "astrospec",
-    "compatibility",
     "openspec",
+    "runtime",
+    "verification",
     "context-sharing"
   ],
   "scripts": {
@@ -27,7 +27,9 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@mcp-secure-context/openspec": "workspace:*"
+    "@openspec/schema": "workspace:*",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

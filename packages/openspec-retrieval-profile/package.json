@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/retrieval-profile",
+  "name": "@openspec/retrieval-profile",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "AstroSpec retrieval interoperability profile with portable RAG, citation, memory, and graph contracts.",
+  "description": "OpenSpec retrieval interoperability profile with portable RAG, citation, memory, and graph contracts.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,8 +26,8 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/schema": "workspace:*",
+    "@openspec/runtime": "workspace:*",
+    "@openspec/schema": "workspace:*",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"
   },

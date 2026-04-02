@@ -1,12 +1,12 @@
-# AstroSpec White Paper
+# OpenSpec White Paper
 
-AstroSpec is a universal specification layer for human–AI interaction. It ensures clarity, auditability, and determinism by replacing assumptions with explicit contracts.
+OpenSpec is a universal specification layer for human–AI interaction. It ensures clarity, auditability, and determinism by replacing assumptions with explicit contracts.
 
 ---
 
 ## Motivation
 
-Today’s AI systems often assume context, preferences, or intent without asking. This creates frustration, ambiguity, and inconsistency. AstroSpec solves this by requiring **contracts**:
+Today’s AI systems often assume context, preferences, or intent without asking. This creates frustration, ambiguity, and inconsistency. OpenSpec solves this by requiring **contracts**:
 
 * **Context**: long-lived environment specs (tone, locale, privacy, overlays, etc.)
 * **Turn**: ephemeral, per-request specs inheriting from Context
@@ -61,7 +61,7 @@ Today’s AI systems often assume context, preferences, or intent without asking
 
 * v0.1.0 – White paper release
 * v0.2.0 – Examples & validation rules
-* v0.3.0 – AstroSpec Infra (Context/Turn, TS bindings)
+* v0.3.0 – OpenSpec Infra (Context/Turn, TS bindings)
 * v0.4.0 – CLI, JSON Schema, golden tests, template promotion
 * v1.0.0 – Unified stable spec & reference implementations
 
@@ -69,4 +69,4 @@ Today’s AI systems often assume context, preferences, or intent without asking
 
 ## Vision
 
-AstroSpec aims to be the **specification backbone** for AI workflows. By treating every request as a contract, it transforms AI from a guesser into a reliable collaborator—bridging human intent, machine execution, and verifiable outcomes.
+OpenSpec aims to be the **specification backbone** for AI workflows. By treating every request as a contract, it transforms AI from a guesser into a reliable collaborator—bridging human intent, machine execution, and verifiable outcomes.

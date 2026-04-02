@@ -1,8 +1,8 @@
-# AstroSpec Adoption Charter
+# OpenSpec Adoption Charter
 
 ## Purpose
 
-AstroSpec is being developed as a neutral contract standard for:
+OpenSpec is being developed as a neutral contract standard for:
 
 1. human-to-LLM workflows
 2. LLM-to-LLM workflows
@@ -14,25 +14,25 @@ AstroSpec is being developed as a neutral contract standard for:
 
 ### Core
 
-- `@astrospec/schema`
-- `@astrospec/runtime`
+- `@openspec/schema`
+- `@openspec/runtime`
 
 ### Interop
 
-- `@astrospec/mcp-profile`
+- `@openspec/mcp-profile`
 
 ### Profiles
 
-- `@astrospec/retrieval-profile`
+- `@openspec/retrieval-profile`
 
 ### DX
 
-- `@astrospec/kit`
-- `@astrospec/cli`
+- `@openspec/kit`
+- `@openspec/cli`
 
 ### Specialized downstream bundles
 
-- `@astrospec/agent-contracts`
+- `@openspec/agent-contracts`
 
 ## Protocol-First Principle
 
@@ -56,4 +56,4 @@ Public interoperability is defined by:
 1. Core is conservative and additive-first.
 2. Profiles version independently.
 3. Breaking compatibility changes require RFC and migration guidance.
-4. Public docs should describe AstroSpec as infrastructure, not as a product wrapper.
+4. Public docs should describe OpenSpec as infrastructure, not as a product wrapper.

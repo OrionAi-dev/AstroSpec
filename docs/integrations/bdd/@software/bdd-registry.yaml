@@ -1,7 +1,7 @@
 version: 1
 supported:
-  - id: astrospec.core
-    url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/astrospec.core
+  - id: openspec.core
+    url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/openspec.core
   - id: behave
     url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/bdd/behave
   - id: cucumber

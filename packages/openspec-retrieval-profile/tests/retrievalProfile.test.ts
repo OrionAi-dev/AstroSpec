@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  ASTROSPEC_RETRIEVAL_ERROR_CODES,
+  OPENSPEC_RETRIEVAL_ERROR_CODES,
   validateKnowledgeAssertion,
   validateMemoryRecord,
   validateRetrievalContract,
@@ -36,7 +36,7 @@ const response = {
     {
       candidateId: 'cand_1',
       sourceId: 'src_policy_v2',
-      ref: 'astrospec://sources/src_policy_v2',
+      ref: 'openspec://sources/src_policy_v2',
       kind: 'document',
       snippet: 'Records must be retained for seven years.',
       span: { page: 12, start: 0, end: 41 },
@@ -66,8 +66,8 @@ const response = {
 };
 
 test('exports deterministic retrieval error codes', () => {
-  assert.ok(ASTROSPEC_RETRIEVAL_ERROR_CODES.includes('AS_RETRIEVAL_TIMEOUT'));
-  assert.ok(ASTROSPEC_RETRIEVAL_ERROR_CODES.includes('AS_RETRIEVAL_GROUNDING_LOW'));
+  assert.ok(OPENSPEC_RETRIEVAL_ERROR_CODES.includes('AS_RETRIEVAL_TIMEOUT'));
+  assert.ok(OPENSPEC_RETRIEVAL_ERROR_CODES.includes('AS_RETRIEVAL_GROUNDING_LOW'));
 });
 
 test('valid retrieval request and response pass', () => {
@@ -93,7 +93,7 @@ test('memory record and knowledge assertion validate', () => {
     assertedAt: '2026-02-28T00:00:00.000Z',
     evidence: [
       {
-        ref: 'astrospec://sources/src_policy_v2',
+        ref: 'openspec://sources/src_policy_v2',
         sourceId: 'src_policy_v2',
         span: { page: 12, start: 0, end: 41 },
       },

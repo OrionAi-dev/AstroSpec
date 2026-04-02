@@ -1,6 +1,6 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": { "composite": true },
-  "references": [{ "path": "../../astrospec-runtime" }],
+  "references": [{ "path": "../../openspec-runtime" }],
   "include": ["src"]
 }

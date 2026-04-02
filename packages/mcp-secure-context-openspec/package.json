@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "OpenSpec verification, validation, provenance, and policy helpers for MCP Secure Context Sharing.",
+  "description": "Secure Context Sharing facade for the canonical OpenSpec schema and runtime packages.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     }
   },
   "keywords": [
-    "astrospec",
+    "openspec",
     "runtime",
     "contracts",
     "verification"
@@ -27,9 +27,8 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@mcp-secure-context/core": "workspace:*",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "@openspec/runtime": "workspace:*",
+    "@openspec/schema": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

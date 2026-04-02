@@ -1,6 +1,6 @@
-# @astrospec/graph-memory
+# @openspec/graph-memory
 
-Portable graph-memory and structural retrieval contracts for AstroSpec.
+Portable graph-memory and structural retrieval contracts for OpenSpec.
 
 ## What It Provides
 
@@ -23,7 +23,7 @@ It does not implement graph persistence, ranking, promotion policy, or retrieval
 ## Commands
 
 ```bash
-pnpm -F @astrospec/graph-memory typecheck
-pnpm -F @astrospec/graph-memory test
-pnpm -F @astrospec/graph-memory build
+pnpm -F @openspec/graph-memory typecheck
+pnpm -F @openspec/graph-memory test
+pnpm -F @openspec/graph-memory build
 ```

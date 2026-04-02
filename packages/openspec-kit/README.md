@@ -1,5 +1,5 @@
-# @astrospec/kit
+# @openspec/kit
 
-Compatibility wrapper for `@mcp-secure-context/sdk-typescript` and `@mcp-secure-context/extensions-astrospec`.
+Convenience helpers for OpenSpec adopters who want a compact integration surface.
 
-New adopters should use `@mcp-secure-context/sdk-typescript` for the base secure-context SDK and `@mcp-secure-context/extensions-astrospec` only when they need the historical AstroSpec contract helpers.
+It layers the base Secure Context Sharing SDK together with the optional OpenSpec validation helpers exposed by `@mcp-secure-context/extensions-openspec`.

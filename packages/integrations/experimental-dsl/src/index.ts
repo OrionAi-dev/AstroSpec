@@ -1,13 +1,13 @@
-// AstroSpec core parser + AST
+// OpenSpec core parser + AST
 // File extension: .ms
 
-export type AstroSpecDocument = {
-  kind: "AstroSpecDocument";
+export type OpenSpecDocument = {
+  kind: "OpenSpecDocument";
   version: string;
-  blocks: AstroSpecBlock[];
+  blocks: OpenSpecBlock[];
 };
 
-export type AstroSpecBlock =
+export type OpenSpecBlock =
   | SourceBlock
   | EntityBlock
   | MappingBlock
@@ -53,19 +53,19 @@ export type ParseOptions = {
 };
 
 /**
- * Parse a .ms AstroSpec file into an AST.
+ * Parse a .ms OpenSpec file into an AST.
  * This parser is intentionally forgiving.
  */
-export function parseAstroSpec(
+export function parseOpenSpec(
   source: string,
   _options: ParseOptions = {}
-): AstroSpecDocument {
+): OpenSpecDocument {
   const lines = source
     .split(/\r?\n/)
     .map(l => l.trim())
     .filter(l => l.length > 0 && !l.startsWith("#"));
 
-  const blocks: AstroSpecBlock[] = [];
+  const blocks: OpenSpecBlock[] = [];
   let i = 0;
 
   function peek() {
@@ -167,7 +167,7 @@ export function parseAstroSpec(
   }
 
   return {
-    kind: "AstroSpecDocument",
+    kind: "OpenSpecDocument",
     version: "0.1",
     blocks
   };

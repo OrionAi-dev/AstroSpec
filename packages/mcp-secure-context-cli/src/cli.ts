@@ -21,9 +21,9 @@ import {
   validateRetrievalRequest,
   validateRetrievalResponse,
   validateRetrievalStreamEvent,
-} from '@astrospec/retrieval-profile';
-import { validate as validateContract } from '@mcp-secure-context/extensions-astrospec';
-import type { AstroSpecKitKind } from '@mcp-secure-context/extensions-astrospec';
+} from '@openspec/retrieval-profile';
+import { validate as validateContract } from '@mcp-secure-context/extensions-openspec';
+import type { OpenSpecKitKind } from '@mcp-secure-context/extensions-openspec';
 
 type Format = 'json' | 'yaml' | 'text';
 
@@ -286,7 +286,7 @@ async function cmdValidateContract(args: string[]) {
   const file = args.find((arg) => !arg.startsWith('-') && arg !== kindRaw) || takeOpt(args, '--file');
   if (!kindRaw || !file) usage();
 
-  const validKinds = new Set<AstroSpecKitKind>([
+  const validKinds = new Set<OpenSpecKitKind>([
     'plan-turn',
     'exec-turn',
     'tool-policy-spec',
@@ -303,13 +303,13 @@ async function cmdValidateContract(args: string[]) {
     'retrieval-stream-event',
   ]);
 
-  if (!validKinds.has(kindRaw as AstroSpecKitKind)) {
+  if (!validKinds.has(kindRaw as OpenSpecKitKind)) {
     console.error(`Unsupported kind: ${kindRaw}`);
     process.exit(1);
   }
 
   const payload = readFileAny(file).value;
-  const out = validateContract(kindRaw as AstroSpecKitKind, payload);
+  const out = validateContract(kindRaw as OpenSpecKitKind, payload);
 
   if (out.ok) {
     process.exit(0);
@@ -332,10 +332,10 @@ async function cmdDoctor() {
     packageMap: {
       core: ['@mcp-secure-context/core', '@mcp-secure-context/openspec'],
       interop: ['@mcp-secure-context/mcp-adapter'],
-      profiles: ['@astrospec/retrieval-profile'],
+      profiles: ['@openspec/retrieval-profile'],
       dx: ['@mcp-secure-context/sdk-typescript', '@mcp-secure-context/cli'],
-      extensions: ['@mcp-secure-context/extensions-astrospec'],
-      specialized: ['@astrospec/agent-contracts'],
+      extensions: ['@mcp-secure-context/extensions-openspec'],
+      specialized: ['@openspec/agent-contracts'],
     },
   };
   process.stdout.write(JSON.stringify(report, null, 2) + '\n');

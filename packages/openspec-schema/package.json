@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/schema",
+  "name": "@openspec/schema",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Compatibility wrapper for @mcp-secure-context/core.",
+  "description": "Canonical OpenSpec schema bundle and schema-loading helpers.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

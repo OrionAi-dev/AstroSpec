@@ -1,7 +1,7 @@
 * @OrionAi-dev
 
 # Public adoption contract surfaces
-/packages/astrospec-agent-contracts/** @OrionAi-dev
-/packages/astrospec-kit/** @OrionAi-dev
-/docs/astrospec/adoption-charter.md @OrionAi-dev
+/packages/openspec-agent-contracts/** @OrionAi-dev
+/packages/openspec-kit/** @OrionAi-dev
+/docs/openspec/adoption-charter.md @OrionAi-dev
 /docs/governance/** @OrionAi-dev

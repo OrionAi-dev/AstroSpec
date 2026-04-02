@@ -3,13 +3,13 @@
 ## Install
 
 ```bash
-npm i @astrospec/runtime @astrospec/retrieval-profile
+npm i @openspec/runtime @openspec/retrieval-profile
 ```
 
 ## Validate a Retrieval Request
 
 ```ts
-import { validateRetrievalRequest } from '@astrospec/retrieval-profile';
+import { validateRetrievalRequest } from '@openspec/retrieval-profile';
 
 const out = validateRetrievalRequest({
   query: 'Find the retention policy',

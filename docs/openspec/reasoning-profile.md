@@ -1,6 +1,6 @@
 # Reasoning Profile
 
-`@astrospec/reasoning` defines portable contracts for structured reasoning workflows.
+`@openspec/reasoning` defines portable contracts for structured reasoning workflows.
 
 ## Contracts
 
@@ -30,7 +30,7 @@ It does not standardize:
 
 ## Boundary Rule
 
-AstroSpec defines the contracts.
+OpenSpec defines the contracts.
 
 Runtimes such as Orion execute the contracts.
 

@@ -1,6 +1,6 @@
-# @astrospec/runtime-interfaces
+# @openspec/runtime-interfaces
 
-Neutral runtime and interoperability interfaces for AstroSpec.
+Neutral runtime and interoperability interfaces for OpenSpec.
 
 ## What It Provides
 
@@ -15,7 +15,7 @@ This package defines interface boundaries. It does not ship a scheduler, graph e
 ## Commands
 
 ```bash
-pnpm -F @astrospec/runtime-interfaces typecheck
-pnpm -F @astrospec/runtime-interfaces test
-pnpm -F @astrospec/runtime-interfaces build
+pnpm -F @openspec/runtime-interfaces typecheck
+pnpm -F @openspec/runtime-interfaces test
+pnpm -F @openspec/runtime-interfaces build
 ```

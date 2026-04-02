@@ -1,6 +1,6 @@
 # Retrieval Profile
 
-The AstroSpec retrieval profile is the first normative profile for external adoption.
+The OpenSpec retrieval profile is the first normative profile for external adoption.
 
 It standardizes the contract surface for RAG interoperability without standardizing any particular retrieval engine.
 
@@ -49,7 +49,7 @@ The profile makes a few semantic rules explicit:
 1. citations must point at candidates actually present in the response
 2. memory records must declare a supported memory kind
 3. stream `final` events must carry a full terminal response envelope
-4. unsupported techniques should fail with deterministic AstroSpec reason codes
+4. unsupported techniques should fail with deterministic OpenSpec reason codes
 
 ## Relationship to Discovery Profiles
 
@@ -59,7 +59,7 @@ The retrieval profile remains the shared source for:
 - `KnowledgeAssertion`
 - evidence spans and references
 
-New discovery packages such as `@astrospec/graph-memory` reuse those primitives instead of redefining them. Retrieval remains the canonical memory/assertion envelope layer, while reasoning and discovery profiles add higher-level workflow and graph semantics.
+New discovery packages such as `@openspec/graph-memory` reuse those primitives instead of redefining them. Retrieval remains the canonical memory/assertion envelope layer, while reasoning and discovery profiles add higher-level workflow and graph semantics.
 
 ## Reason Codes
 
@@ -89,4 +89,4 @@ It does not standardize:
 
 Retrieval systems, app surfaces, agent runtimes, and governance layers all need a stable way to exchange grounded evidence.
 
-That makes retrieval the highest-leverage first profile for AstroSpec standardization.
+That makes retrieval the highest-leverage first profile for OpenSpec standardization.

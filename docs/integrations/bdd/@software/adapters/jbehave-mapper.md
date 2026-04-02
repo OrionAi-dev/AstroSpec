@@ -1,16 +1,16 @@
 # JBehave Mapper
 
-This adapter connects AstroSpec `@software` criteria to **JBehave** by **referencing external artifacts only**. It does **not** embed or generate `.story` content from AstroSpec. Instead, it verifies links to JBehave `.story` files and `Scenario`s you reference, and produces a traceability index.
+This adapter connects OpenSpec `@software` criteria to **JBehave** by **referencing external artifacts only**. It does **not** embed or generate `.story` content from OpenSpec. Instead, it verifies links to JBehave `.story` files and `Scenario`s you reference, and produces a traceability index.
 
 ## Design principles
 
-- **AstroSpec stays agnostic.** We only link to JBehave; we do not copy JBehave semantics into AstroSpec.
+- **OpenSpec stays agnostic.** We only link to JBehave; we do not copy JBehave semantics into OpenSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author stories or Java steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., JBehave).
 
 ## What it does
 
-- Reads an AstroSpec YAML that declares:
+- Reads an OpenSpec YAML that declares:
   - `profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to JBehave artifacts
 - For each criterion with `bdd_ref`:
@@ -29,9 +29,9 @@ This adapter connects AstroSpec `@software` criteria to **JBehave** by **referen
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (AstroSpec → JBehave reference)
+## Minimal example (OpenSpec → JBehave reference)
 
-AstroSpec input:
+OpenSpec input:
 
 ```yaml
 profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software
@@ -83,7 +83,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-AstroSpec → JBehave
+OpenSpec → JBehave
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -95,7 +95,7 @@ AstroSpec → JBehave
 ## File layout
 
 **Inputs**
-- AstroSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
+- OpenSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
 - JBehave stories: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -104,11 +104,11 @@ AstroSpec → JBehave
 
 ## Validation rules applied
 
-- AstroSpec file must validate against `@software` schema
+- OpenSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under JBehave in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.story` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.story`
-- Inline step fields are ignored; AstroSpec does **not** define steps
+- Inline step fields are ignored; OpenSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ AstroSpec → JBehave
 
 - Keep JBehave step classes in your Java test sources (e.g., `src/test/java/...`)
 - Typical execution via Maven Surefire or JUnit runners
-- Tag scenarios with AstroSpec IDs in comments if you want back-references:
+- Tag scenarios with OpenSpec IDs in comments if you want back-references:
 
 ```
-!-- @astrospec(JBEHAVE-401.1.1)
+!-- @openspec(JBEHAVE-401.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -136,7 +136,7 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] OpenSpec YAML validates against `@software` schema
 - [ ] `bdd-registry.yaml` includes the JBehave profile URL
 - [ ] External `.story` file exists and contains the named Scenario
 - [ ] `dist/jbehave/index.json` produced for traceability

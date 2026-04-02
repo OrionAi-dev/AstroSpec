@@ -1,8 +1,8 @@
 import { createHash } from "node:crypto";
-import type { AstroSpecBase } from "./types";
+import type { OpenSpecBase } from "./types";
 import { canonicalizeSpec, stableStringify } from "./canonicalize";
 
-export function signSpec(spec: AstroSpecBase): string {
+export function signSpec(spec: OpenSpecBase): string {
   // Exclude existing signature field from the hash input.
   const { signature: _sig, ...rest } = spec as any;
   const canonical = canonicalizeSpec(rest as any);
@@ -11,7 +11,7 @@ export function signSpec(spec: AstroSpecBase): string {
   return `sha256:${hex}`;
 }
 
-export function lockSpec<T extends AstroSpecBase>(
+export function lockSpec<T extends OpenSpecBase>(
   spec: T,
   opts: { now?: () => Date } = {}
 ): T {

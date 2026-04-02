@@ -15,7 +15,7 @@
 
 ## Standard-Ready Claim
 
-An AstroSpec surface should not be described as standard-ready unless it has:
+An OpenSpec surface should not be described as standard-ready unless it has:
 
 - schema
 - validator

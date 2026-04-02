@@ -3,7 +3,7 @@ profiles:
   - id: "@software"
     url: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software
     version: "1.0"
-    description: AstroSpec profile for software delivery.
+    description: OpenSpec profile for software delivery.
     owner: OrionAI / Telescope
     spec_path: ./@software/schema.yaml
     readme_path: ./@software/README.md

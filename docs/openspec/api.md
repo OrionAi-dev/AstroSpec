@@ -1,6 +1,6 @@
-# AstroSpec API
+# OpenSpec API
 
-AstroSpec defines a compact contract surface for exchanging core and profile payloads between systems.
+OpenSpec defines a compact contract surface for exchanging core and profile payloads between systems.
 
 ## Core Contracts
 
@@ -12,7 +12,7 @@ Core contracts remain:
 - `Provenance`
 - `VerificationReport`
 
-These are published from `@astrospec/schema` and implemented in `@astrospec/runtime`.
+These are published from `@openspec/schema` and implemented in `@openspec/runtime`.
 
 ## Additive Core Refinements
 
@@ -47,7 +47,7 @@ The retrieval profile adds:
 - `KnowledgeAssertion`
 - `RetrievalStreamEvent`
 
-These are published from `@astrospec/retrieval-profile`.
+These are published from `@openspec/retrieval-profile`.
 
 ## Versioning Rule
 

@@ -1,9 +1,9 @@
 {
-  "name": "@astrospec/agent-contracts",
+  "name": "@openspec/agent-contracts",
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "AstroSpec public contract bundle with schemas and deterministic validators.",
+  "description": "OpenSpec public contract bundle with schemas and deterministic validators.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     }
   },
   "keywords": [
-    "astrospec",
+    "openspec",
     "contracts",
     "schema",
     "mcp",

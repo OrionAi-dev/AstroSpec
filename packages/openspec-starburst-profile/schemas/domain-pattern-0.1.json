@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/starburst/domain-pattern-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/starburst/domain-pattern-0.1.json",
   "title": "DomainPattern",
   "type": "object",
   "additionalProperties": false,
@@ -14,7 +14,7 @@
     "supportingEvidence": {
       "type": "array",
       "items": {
-        "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/reasoning/reasoning-evidence-0.1.json"
+        "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/reasoning/reasoning-evidence-0.1.json"
       }
     },
     "ext": { "type": "object", "additionalProperties": true }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/reasoning/reasoning-role-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/reasoning/reasoning-role-0.1.json",
   "title": "ReasoningRole",
   "$ref": "./reasoning-defs-0.1.json#/$defs/reasoningRole"
 }

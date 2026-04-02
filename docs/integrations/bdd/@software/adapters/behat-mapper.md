@@ -1,16 +1,16 @@
 # Behat Mapper
 
-This adapter connects AstroSpec `@software` criteria to **Behat** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from AstroSpec. Instead, it looks up the Behat `.feature` file and `Scenario` you reference and produces a traceability index.
+This adapter connects OpenSpec `@software` criteria to **Behat** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from OpenSpec. Instead, it looks up the Behat `.feature` file and `Scenario` you reference and produces a traceability index.
 
 ## Design principles
 
-- **AstroSpec stays agnostic.** We only link to Behat; we do not copy Gherkin semantics into AstroSpec.
+- **OpenSpec stays agnostic.** We only link to Behat; we do not copy Gherkin semantics into OpenSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., Behat).
 
 ## What it does
 
-- Reads an AstroSpec YAML that declares:
+- Reads an OpenSpec YAML that declares:
   - `profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Behat artifacts
 - For each criterion with `bdd_ref`:
@@ -29,9 +29,9 @@ This adapter connects AstroSpec `@software` criteria to **Behat** by **referenci
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (AstroSpec → Behat reference)
+## Minimal example (OpenSpec → Behat reference)
 
-AstroSpec input:
+OpenSpec input:
 
 ```yaml
 profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software
@@ -84,7 +84,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-AstroSpec → Behat
+OpenSpec → Behat
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -96,7 +96,7 @@ AstroSpec → Behat
 ## File layout
 
 **Inputs**
-- AstroSpec specs: anywhere (examples live under `docs/integrations/bdd/@software/examples/`)
+- OpenSpec specs: anywhere (examples live under `docs/integrations/bdd/@software/examples/`)
 - Behat features: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -105,11 +105,11 @@ AstroSpec → Behat
 
 ## Validation rules applied
 
-- AstroSpec file must validate against `@software` schema
+- OpenSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under Behat in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.feature`
-- Inline step fields are ignored; AstroSpec does **not** define steps
+- Inline step fields are ignored; OpenSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ AstroSpec → Behat
 ## Integration tips
 
 - Keep your Behat context classes under `tests/Behat/Context/`
-- Tag scenarios with AstroSpec IDs for easier back-references:
+- Tag scenarios with OpenSpec IDs for easier back-references:
 
 ```gherkin
-@astrospec(BEHAT-501.1.1)
+@openspec(BEHAT-501.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -136,7 +136,7 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] OpenSpec YAML validates against `@software` schema
 - [ ] `bdd-registry.yaml` includes the Behat profile URL
 - [ ] External `.feature` file exists and contains the named Scenario
 - [ ] `dist/behat/index.json` produced for traceability

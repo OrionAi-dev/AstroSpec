@@ -1,5 +1,5 @@
-# @astrospec/cli
+# @openspec/cli
 
-Compatibility wrapper for `@mcp-secure-context/cli`.
+OpenSpec CLI entrypoint for contract validation, verification, and MCP Secure Context Sharing workflows.
 
-New adopters should use `@mcp-secure-context/cli`.
+`@mcp-secure-context/cli` remains the umbrella framework package; this package provides the standards-facing `openspec` command.

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.orionai.dev/astrospec/git-history-summary.schema.json",
+  "$id": "https://schemas.orionai.dev/openspec/git-history-summary.schema.json",
   "title": "GitHistorySummary",
   "type": "object",
   "additionalProperties": false,

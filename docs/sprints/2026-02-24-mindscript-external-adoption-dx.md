@@ -1,14 +1,14 @@
-# Sprint: AstroSpec External Adoption + AI Developer DX (2026-02-24)
+# Sprint: OpenSpec External Adoption + AI Developer DX (2026-02-24)
 
 ## Goal
 
-Make AstroSpec easy for external LLM vendors and AI developers to adopt with minimal coupling to Orion/Stardrive product internals.
+Make OpenSpec easy for external LLM vendors and AI developers to adopt with minimal coupling to Orion/Stardrive product internals.
 
 ## Scope
 
-1. Neutral public package namespace (`@astrospec/*`).
+1. Neutral public package namespace (`@openspec/*`).
 2. Compatibility wrappers for `@orionai/*` imports.
-3. Simple adapter package (`@astrospec/kit`) for 5-minute integration.
+3. Simple adapter package (`@openspec/kit`) for 5-minute integration.
 4. Protocol-first docs and quickstarts.
 5. OSS governance baseline + compatibility policy.
 6. Boundary and deep-import CI checks.
@@ -17,21 +17,21 @@ Make AstroSpec easy for external LLM vendors and AI developers to adopt with min
 
 ### Pass 0: Adoption Contract Freeze
 
-- Add `docs/astrospec/adoption-charter.md`.
+- Add `docs/openspec/adoption-charter.md`.
 - Freeze public vs private extension rules.
 
 ### Pass 1: Namespace Neutralization
 
 - Canonical package names:
-  - `@astrospec/agent-contracts`
-  - `@astrospec/mcp-profile`
+  - `@openspec/agent-contracts`
+  - `@openspec/mcp-profile`
 - Add compatibility wrapper packages:
-  - `@astrospec/agent-contracts`
-  - `@astrospec/mcp-profile`
+  - `@openspec/agent-contracts`
+  - `@openspec/mcp-profile`
 
 ### Pass 2: AI Developer Easy Path
 
-- Add `@astrospec/kit` with:
+- Add `@openspec/kit` with:
   - `validate(kind, payload)`
   - `callTool(name, args)`
 - Keep wrappers and advanced surfaces separate.
@@ -49,19 +49,19 @@ Make AstroSpec easy for external LLM vendors and AI developers to adopt with min
 
 ### Pass 5: Migration + Adoption Docs
 
-- Add migration map (`@orionai/*` -> `@astrospec/*`).
+- Add migration map (`@orionai/*` -> `@openspec/*`).
 - Add consumer quickstarts (schema-first, MCP-native).
 - Update root README links and adoption guidance.
 
 ## Validation Gates
 
 ```bash
-pnpm -F @astrospec/agent-contracts typecheck
-pnpm -F @astrospec/agent-contracts test
-pnpm -F @astrospec/mcp-profile typecheck
-pnpm -F @astrospec/mcp-profile test
-pnpm -F @astrospec/kit typecheck
-pnpm -F @astrospec/kit test
+pnpm -F @openspec/agent-contracts typecheck
+pnpm -F @openspec/agent-contracts test
+pnpm -F @openspec/mcp-profile typecheck
+pnpm -F @openspec/mcp-profile test
+pnpm -F @openspec/kit typecheck
+pnpm -F @openspec/kit test
 pnpm check:public-boundaries
 pnpm check:deep-imports
 pnpm check:starconsole-contract-drift
@@ -71,6 +71,6 @@ pnpm check:starconsole-contract-drift
 
 1. Public packages use neutral namespace.
 2. Compatibility wrappers preserve existing consumers.
-3. AI devs can integrate through one small package (`@astrospec/kit`).
+3. AI devs can integrate through one small package (`@openspec/kit`).
 4. Governance and compatibility policy are explicit.
 5. CI catches cross-brand coupling and deep import drift.

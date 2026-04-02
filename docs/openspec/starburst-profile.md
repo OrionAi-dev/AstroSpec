@@ -1,6 +1,6 @@
 # Starburst Profile
 
-`@astrospec/starburst-profile` defines portable discovery outputs for burst-and-collapse reasoning workflows.
+`@openspec/starburst-profile` defines portable discovery outputs for burst-and-collapse reasoning workflows.
 
 ## Contracts
 
@@ -22,7 +22,7 @@
 - `reusability`
 - `confidence`
 
-AstroSpec standardizes the dimensions and envelopes, not a vendor’s final weighting formula.
+OpenSpec standardizes the dimensions and envelopes, not a vendor’s final weighting formula.
 
 ## Lifecycle
 
@@ -39,4 +39,4 @@ Mutation and refinement history are included as portable artifacts, but they do 
 
 ## Boundary Rule
 
-Mode names such as `Supernova`, `Redshift`, or `Event Horizon` are valid runtime concepts, but they are not normative AstroSpec semantics by default.
+Mode names such as `Supernova`, `Redshift`, or `Event Horizon` are valid runtime concepts, but they are not normative OpenSpec semantics by default.

@@ -1,6 +1,6 @@
 # Release Guide
 
-AstroSpec releases are managed with **Changesets** and a dedicated GitHub Actions release workflow.
+OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions release workflow.
 
 ## Versioning strategy
 
@@ -51,7 +51,7 @@ AstroSpec releases are managed with **Changesets** and a dedicated GitHub Action
 - `.github/workflows/release.yml` is the canonical release workflow.
 - `NPM_TOKEN` must be configured in GitHub repository secrets before public publishing is attempted.
 - `GITHUB_TOKEN` is used by the workflow to create release PRs, tags, and GitHub releases.
-- `pnpm release:preflight` validates npm auth and reports whether the AstroSpec packages are unpublished or already versioned on npm.
+- `pnpm release:preflight` validates npm auth and reports whether the OpenSpec packages are unpublished or already versioned on npm.
 
 ## Release expectations
 

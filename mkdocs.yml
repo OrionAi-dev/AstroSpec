@@ -25,11 +25,11 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        "spec-bdd-context-turn.md": "astrospec/context-turn.md"
-        "astrospec/implementations/@software/README.md": "integrations/bdd/@software/README.md"
-        "astrospec/implementations/@software/template.md": "integrations/bdd/@software/template.md"
-        "astrospec/implementations/@software/examples.md": "integrations/bdd/@software/template.md"
-        "astrospec/implementations/bdd/astrospec.core/README.md": "integrations/bdd/astrospec.core/README.md"
+        "spec-bdd-context-turn.md": "openspec/context-turn.md"
+        "openspec/implementations/@software/README.md": "integrations/bdd/@software/README.md"
+        "openspec/implementations/@software/template.md": "integrations/bdd/@software/template.md"
+        "openspec/implementations/@software/examples.md": "integrations/bdd/@software/template.md"
+        "openspec/implementations/bdd/openspec.core/README.md": "integrations/bdd/openspec.core/README.md"
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
@@ -41,7 +41,7 @@ plugins:
         - openspec.md
         - mcp-integration.md
         - extensions/**
-        - migrations/legacy-astrospec/**
+        - migrations/legacy-openspec/**
 
 markdown_extensions:
   - admonition
@@ -95,23 +95,28 @@ nav:
                   - Robot: integrations/bdd/@software/adapters/robot-mapper.md
                   - SpecFlow: integrations/bdd/@software/adapters/specflow-mapper.md
               - Template: integrations/bdd/@software/template.md
-          - astrospec.core:
-              - Overview: integrations/bdd/astrospec.core/README.md
+          - openspec.core:
+              - Overview: integrations/bdd/openspec.core/README.md
 
   - API Reference:
-      - Core:
-          - core: api/core/README.md
-          - openspec: api/openspec/README.md
-          - cli: api/cli/README.md
-          - mcp-adapter: api/mcp-adapter/README.md
-          - sdk-typescript: api/sdk-typescript/README.md
-          - extensions-astrospec: api/extensions-astrospec/README.md
-          - retrieval-profile: api/retrieval-profile/README.md
+      - Umbrella Framework:
+          - "@mcp-secure-context/core": api/core/README.md
+          - "@mcp-secure-context/openspec": api/openspec/README.md
+          - "@mcp-secure-context/cli": api/cli/README.md
+          - "@mcp-secure-context/mcp-adapter": api/mcp-adapter/README.md
+          - "@mcp-secure-context/sdk-typescript": api/sdk-typescript/README.md
+          - "@mcp-secure-context/extensions-openspec": api/extensions-openspec/README.md
+      - Standards:
+          - "@openspec/schema": api/openspec-schema/README.md
+          - "@openspec/runtime": api/openspec-runtime/README.md
+          - "@openspec/kit": api/openspec-kit/README.md
+          - "@openspec/cli": api/openspec-cli/README.md
+          - "@openspec/retrieval-profile": api/retrieval-profile/README.md
       - Integrations:
           - mindql-core: api/integrations/mindql-core/README.md
           - mindgraphql-core: api/integrations/mindgraphql-core/README.md
 
   - Legacy:
       - AstroSpec Migration: migrations/legacy-astrospec/README.md
-      - AstroSpec Overview: astrospec/spec-overview.md
-      - Historical BDD Core Alias: spec-bdd-astrospec-core.md
+      - OpenSpec Overview: openspec/spec-overview.md
+      - Historical BDD Core Alias: spec-bdd-openspec-core.md

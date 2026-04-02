@@ -20,8 +20,12 @@ gen mcp-secure-context-cli cli
 # Public interop and profiles
 gen mcp-secure-context-mcp-adapter mcp-adapter
 gen mcp-secure-context-sdk-typescript sdk-typescript
-gen mcp-secure-context-extensions-astrospec extensions-astrospec
-gen astrospec-retrieval-profile retrieval-profile
+gen mcp-secure-context-extensions-openspec extensions-openspec
+gen openspec-schema openspec-schema
+gen openspec-runtime openspec-runtime
+gen openspec-kit openspec-kit
+gen openspec-cli openspec-cli
+gen openspec-retrieval-profile retrieval-profile
 
 # Integrations / generators (optional)
 gen integrations/mindql-core integrations/mindql-core

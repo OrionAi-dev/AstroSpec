@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { callSecureContext, createContextContainer, validate, validateContainer, validateRetrieval } from '@astrospec/kit';
+import { callSecureContext, createContextContainer, validate, validateContainer, validateRetrieval } from '@openspec/kit';
 
 test('validate returns deterministic hint for invalid plan-turn', () => {
   const out = validate('plan-turn', {});

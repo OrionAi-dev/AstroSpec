@@ -1,6 +1,6 @@
 # Templates & Librarian
 
-Templates capture recurring patterns of AstroSpec specs so they don’t need to be rebuilt from scratch every time.
+Templates capture recurring patterns of OpenSpec specs so they don’t need to be rebuilt from scratch every time.
 The **Librarian** manages templates: classifying, patching, promoting, and rolling back.
 
 ---
@@ -63,13 +63,13 @@ Example:
 Templates are stored with stable IDs:
 
 ```
-astrospec://templates/{intent}/{name}/{version}
+openspec://templates/{intent}/{name}/{version}
 ```
 
 Example:
 
 ```
-astrospec://templates/restaurant/standard/v1
+openspec://templates/restaurant/standard/v1
 ```
 
 ---

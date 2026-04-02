@@ -1,10 +1,10 @@
 # Context vs Turn
 
-AstroSpec distinguishes between **Context** (long-lived environment contract) and **Turn** (ephemeral per-request contract). Together they ensure that assumptions are explicit, scoped, and auditable.
+OpenSpec distinguishes between **Context** (long-lived environment contract) and **Turn** (ephemeral per-request contract). Together they ensure that assumptions are explicit, scoped, and auditable.
 
 ---
 
-## AstroSpec.Context
+## OpenSpec.Context
 
 A **Context** is a long-lived environment contract.
 
@@ -19,7 +19,7 @@ A **Context** is a long-lived environment contract.
 
 ---
 
-## AstroSpec.Turn
+## OpenSpec.Turn
 
 A **Turn** is an ephemeral, per-request contract.
 

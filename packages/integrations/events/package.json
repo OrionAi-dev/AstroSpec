@@ -1,5 +1,5 @@
 {
-  "name": "@astrospec/integration-events",
+  "name": "@openspec/integration-events",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -18,7 +18,7 @@
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*"
+    "@openspec/runtime": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.5.0",

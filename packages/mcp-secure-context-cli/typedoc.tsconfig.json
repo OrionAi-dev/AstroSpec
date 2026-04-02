@@ -5,11 +5,11 @@
       "@mcp-secure-context/openspec": [
         "../mcp-secure-context-openspec/dist/index.d.ts"
       ],
-      "@mcp-secure-context/extensions-astrospec": [
-        "../mcp-secure-context-extensions-astrospec/dist/index.d.ts"
+      "@mcp-secure-context/extensions-openspec": [
+        "../mcp-secure-context-extensions-openspec/dist/index.d.ts"
       ],
-      "@astrospec/retrieval-profile": [
-        "../astrospec-retrieval-profile/dist/index.d.ts"
+      "@openspec/retrieval-profile": [
+        "../openspec-retrieval-profile/dist/index.d.ts"
       ]
     }
   },

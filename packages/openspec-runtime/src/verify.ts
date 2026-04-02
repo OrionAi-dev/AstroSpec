@@ -3,7 +3,7 @@ import { promises as fs } from "node:fs";
 import { isAbsolute, resolve } from "node:path";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
-import type { AcceptanceCriterion, EvidenceRef, JsonObject, AstroSpecContext, AstroSpecTurn } from "./types";
+import type { AcceptanceCriterion, EvidenceRef, JsonObject, OpenSpecContext, OpenSpecTurn } from "./types";
 
 export interface VerifierResult {
   criterionId: string;
@@ -31,8 +31,8 @@ export interface VerifyEnv {
 export type VerifierFn = (input: {
   output: unknown;
   criterion: AcceptanceCriterion;
-  context?: AstroSpecContext;
-  turn?: AstroSpecTurn;
+  context?: OpenSpecContext;
+  turn?: OpenSpecTurn;
   env: VerifyEnv;
 }) => Promise<Omit<VerifierResult, "criterionId" | "verifier">>;
 
@@ -185,8 +185,8 @@ registerVerifier("artifact_exists", async ({ criterion, env }) => {
 export async function verifyOutput(input: {
   output: unknown;
   criteria: ReadonlyArray<AcceptanceCriterion>;
-  context?: AstroSpecContext;
-  turn?: AstroSpecTurn;
+  context?: OpenSpecContext;
+  turn?: OpenSpecTurn;
   env?: VerifyEnv;
 }): Promise<VerificationReport> {
   const now = (input.env?.now ? input.env.now() : new Date()).toISOString();

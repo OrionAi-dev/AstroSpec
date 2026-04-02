@@ -5,13 +5,13 @@ This quickstart uses the **MCP-native profile** as the default integration path 
 ## 1. Install
 
 ```bash
-npm i @astrospec/mcp-profile @astrospec/kit
+npm i @openspec/mcp-profile @openspec/kit
 ```
 
 ## 2. Default Path: Validate Through MCP Tool Contract
 
 ```ts
-import { callAstroSpecMcpTool } from '@astrospec/mcp-profile';
+import { callOpenSpecMcpTool } from '@openspec/mcp-profile';
 
 const payload = {
   id: 'log_1',
@@ -21,8 +21,8 @@ const payload = {
   status: 'ok',
 };
 
-const out = await callAstroSpecMcpTool({
-  name: 'astrospec.contract.validate',
+const out = await callOpenSpecMcpTool({
+  name: 'openspec.contract.validate',
   arguments: {
     kind: 'run-log-entry',
     payload,
@@ -37,7 +37,7 @@ if (!out.ok) {
 ## 3. Fallback Path: Direct Schema Validation (No MCP)
 
 ```ts
-import { validate } from '@astrospec/kit';
+import { validate } from '@openspec/kit';
 
 const out = validate('run-log-entry', {
   id: 'log_1',

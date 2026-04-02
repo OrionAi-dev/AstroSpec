@@ -1,10 +1,10 @@
-# AstroSpec Schema
+# OpenSpec Schema
 
-AstroSpec contracts are defined by canonical **JSON Schemas** (draft 2020-12).
+OpenSpec contracts are defined by canonical **JSON Schemas** (draft 2020-12).
 
-* Canonical package: `@astrospec/schema` (`packages/astrospec-schema/`)
-* Human-browsable copies: `docs/astrospec/schemas/`
-* Runtime validator: `@astrospec/runtime` (AJV)
+* Canonical package: `@openspec/schema` (`packages/openspec-schema/`)
+* Human-browsable copies: `docs/openspec/schemas/`
+* Runtime validator: `@openspec/runtime` (AJV)
 
 ---
 
@@ -12,12 +12,12 @@ AstroSpec contracts are defined by canonical **JSON Schemas** (draft 2020-12).
 
 Core schemas (current version `0.1`):
 
-* Context: `docs/astrospec/schemas/context-0.1.json`
-* Turn: `docs/astrospec/schemas/turn-0.1.json`
-* Acceptance criteria: `docs/astrospec/schemas/acceptance-criteria-0.1.json`
-* Provenance: `docs/astrospec/schemas/provenance-0.1.json`
-* Verification report: `docs/astrospec/schemas/verification-report-0.1.json`
-* Shared definitions: `docs/astrospec/schemas/defs-0.1.json`
+* Context: `docs/openspec/schemas/context-0.1.json`
+* Turn: `docs/openspec/schemas/turn-0.1.json`
+* Acceptance criteria: `docs/openspec/schemas/acceptance-criteria-0.1.json`
+* Provenance: `docs/openspec/schemas/provenance-0.1.json`
+* Verification report: `docs/openspec/schemas/verification-report-0.1.json`
+* Shared definitions: `docs/openspec/schemas/defs-0.1.json`
 
 ---
 

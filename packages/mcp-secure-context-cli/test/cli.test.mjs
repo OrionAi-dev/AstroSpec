@@ -15,7 +15,7 @@ function runCli(args, opts = {}) {
 }
 
 test('validate + lock + merge + verify smoke', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'astrospec-cli-'));
+  const dir = mkdtempSync(join(tmpdir(), 'openspec-cli-'));
   const ctxPath = join(dir, 'context.json');
   const turnPath = join(dir, 'turn.json');
   const outPath = join(dir, 'output.json');
@@ -101,7 +101,7 @@ test('validate + lock + merge + verify smoke', () => {
 });
 
 test('validate-contract and doctor commands', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'astrospec-cli-contract-'));
+  const dir = mkdtempSync(join(tmpdir(), 'openspec-cli-contract-'));
   const planPath = join(dir, 'plan.json');
   const retrievalPath = join(dir, 'retrieval.json');
   writeFileSync(
@@ -161,6 +161,6 @@ test('validate-contract and doctor commands', () => {
     assert.equal(res.status, 0, res.stderr || res.stdout);
     const report = JSON.parse(res.stdout);
     assert.ok(Array.isArray(report.packageMap.core));
-    assert.ok(report.packageMap.profiles.includes('@astrospec/retrieval-profile'));
+    assert.ok(report.packageMap.profiles.includes('@openspec/retrieval-profile'));
   }
 });

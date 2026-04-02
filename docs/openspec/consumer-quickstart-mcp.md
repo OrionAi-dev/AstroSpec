@@ -3,16 +3,16 @@
 ## Install
 
 ```bash
-npm i @astrospec/mcp-profile @astrospec/retrieval-profile
+npm i @openspec/mcp-profile @openspec/retrieval-profile
 ```
 
 ## Validate a Retrieval Query Tool Envelope
 
 ```ts
-import { callAstroSpecMcpTool } from '@astrospec/mcp-profile';
+import { callOpenSpecMcpTool } from '@openspec/mcp-profile';
 
-const out = await callAstroSpecMcpTool({
-  name: 'astrospec.retrieval.query',
+const out = await callOpenSpecMcpTool({
+  name: 'openspec.retrieval.query',
   arguments: {
     request: {
       query: 'Find the retention policy',
@@ -28,4 +28,4 @@ if (!out.ok) {
 
 ## Why This Path
 
-Use this when your runtime already speaks MCP and you want canonical AstroSpec tool/resource behavior.
+Use this when your runtime already speaks MCP and you want canonical OpenSpec tool/resource behavior.

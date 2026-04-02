@@ -1,5 +1,5 @@
 {
-  "name": "astrospec-derivedspec-example",
+  "name": "openspec-derivedspec-example",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -14,13 +14,13 @@
     }
   },
   "scripts": {
-    "pretypecheck": "pnpm -w -F @astrospec/runtime build",
+    "pretypecheck": "pnpm -w -F @openspec/runtime build",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
     "build": "pnpm exec tsup"
   },
   "dependencies": {
-    "@astrospec/runtime": "workspace:*",
-    "@astrospec/mindql-core": "workspace:*"
+    "@openspec/runtime": "workspace:*",
+    "@openspec/mindql-core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.0.0",

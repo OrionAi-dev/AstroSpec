@@ -1,6 +1,6 @@
 # Verification
 
-AstroSpec verification checks whether an output satisfies a contract.
+OpenSpec verification checks whether an output satisfies a contract.
 
 ## Core Verification
 

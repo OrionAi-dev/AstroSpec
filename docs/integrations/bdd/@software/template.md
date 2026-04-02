@@ -1,7 +1,7 @@
-# AstroSpec `@software` Template
+# OpenSpec `@software` Template
 
 Use this template to author a spec that validates against the **@software** profile.  
-It keeps AstroSpec agnostic and **references** external BDD artifacts instead of embedding them.
+It keeps OpenSpec agnostic and **references** external BDD artifacts instead of embedding them.
 
 ---
 
@@ -111,7 +111,7 @@ requirements:
 - `meta.id`: `^[A-Z]+-[0-9]+$` (e.g., `FEATURE-101`)
 - `requirements[].id` and `criteria[].id`: hierarchical, e.g., `FEATURE-101.1`, `FEATURE-101.1.1`
 - Keep `text` statements **clear and testable**
-- **No inline steps** in AstroSpec (no Given/When/Then). Always link external BDD via `bdd_ref`.
+- **No inline steps** in OpenSpec (no Given/When/Then). Always link external BDD via `bdd_ref`.
 
 ---
 

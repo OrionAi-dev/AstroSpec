@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { validate, validateRetrieval } from '@mcp-secure-context/extensions-astrospec';
+import { validate, validateRetrieval } from '@mcp-secure-context/extensions-openspec';
 
 test('validate returns deterministic hint for invalid plan-turn', () => {
   const out = validate('plan-turn', {});

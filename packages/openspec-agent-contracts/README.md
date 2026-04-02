@@ -1,4 +1,4 @@
-# @astrospec/agent-contracts
+# @openspec/agent-contracts
 
 Specialized downstream contract bundle for Starconsole-style agent orchestration payloads.
 
@@ -13,8 +13,8 @@ This package is useful for consumers who need portable schemas for:
 - run log entries
 - related orchestration payloads
 
-It is published and supported, but it is **not** the definition of AstroSpec core.
+It is published and supported, but it is **not** the definition of OpenSpec core.
 
 ## Use It When
 
-Use this package only if you need this orchestration contract family specifically. New AstroSpec adopters should start with core, retrieval profile, and MCP profile first.
+Use this package only if you need this orchestration contract family specifically. New OpenSpec adopters should start with core, retrieval profile, and MCP profile first.

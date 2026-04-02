@@ -8,14 +8,23 @@ const publicPackageDirs = [
   'packages/mcp-secure-context-openspec',
   'packages/mcp-secure-context-mcp-adapter',
   'packages/mcp-secure-context-sdk-typescript',
-  'packages/mcp-secure-context-extensions-astrospec',
+  'packages/mcp-secure-context-extensions-openspec',
   'packages/mcp-secure-context-cli',
-  'packages/astrospec-schema',
-  'packages/astrospec-runtime',
-  'packages/astrospec-retrieval-profile',
-  'packages/astrospec-kit',
-  'packages/astrospec-cli',
-  'packages/astrospec-agent-contracts',
+  'packages/openspec-schema',
+  'packages/openspec-runtime',
+  'packages/openspec-retrieval-profile',
+  'packages/openspec-reasoning',
+  'packages/openspec-graph-memory',
+  'packages/openspec-starburst-profile',
+  'packages/openspec-runtime-interfaces',
+  'packages/openspec-discovery-bundle',
+  'packages/openspec-kit',
+  'packages/openspec-cli',
+  'packages/openspec-agent-contracts',
+  'packages/integrations/mindql-core',
+  'packages/integrations/mindgraphql-core',
+  'packages/integrations/audio-openai',
+  'packages/integrations/events',
 ];
 
 function listSourceFiles(absDir) {
@@ -47,9 +56,9 @@ function findDeepImports(filePath) {
   let m;
   while ((m = importRe.exec(text))) {
     const spec = m[2] || m[3] || m[4] || '';
-    if (!spec.startsWith('@astrospec/') && !spec.startsWith('@mcp-secure-context/')) continue;
-    const afterScope = spec.startsWith('@astrospec/')
-      ? spec.replace(/^@astrospec\//, '')
+    if (!spec.startsWith('@openspec/') && !spec.startsWith('@mcp-secure-context/')) continue;
+    const afterScope = spec.startsWith('@openspec/')
+      ? spec.replace(/^@openspec\//, '')
       : spec.replace(/^@mcp-secure-context\//, '');
     if (!afterScope.includes('/')) continue;
     out.push(spec);
@@ -72,7 +81,7 @@ if (failures.length > 0) {
   for (const failure of failures) {
     console.error(` - ${failure}`);
   }
-  console.error('Use public package roots only (for example: @astrospec/runtime).');
+  console.error('Use public package roots only (for example: @openspec/runtime).');
   process.exit(1);
 }
 

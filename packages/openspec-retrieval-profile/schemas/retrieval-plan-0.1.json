@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/retrieval/retrieval-plan-0.1.json",
-  "title": "AstroSpec Retrieval Plan",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/retrieval/retrieval-plan-0.1.json",
+  "title": "OpenSpec Retrieval Plan",
   "$ref": "./retrieval-defs-0.1.json#/$defs/retrievalPlan"
 }

@@ -25,6 +25,6 @@
 
 ## Downstream Consumption Guidance
 
-1. Downstream adopters should use exact version pins for initial AstroSpec adoption.
+1. Downstream adopters should use exact version pins for initial OpenSpec adoption.
 2. Repo-pin or path-based testing is acceptable before the first formal published release, but it is not the release authority.
 3. Downstream repos should not treat unreleased branch state as canonical package supply.

@@ -1,6 +1,6 @@
-# @astrospec/starburst-profile
+# @openspec/starburst-profile
 
-Portable discovery and burst-collapse reasoning contracts for AstroSpec.
+Portable discovery and burst-collapse reasoning contracts for OpenSpec.
 
 ## What It Provides
 
@@ -26,7 +26,7 @@ It does not implement ranking policy, constellation assembly, or mutation heuris
 ## Commands
 
 ```bash
-pnpm -F @astrospec/starburst-profile typecheck
-pnpm -F @astrospec/starburst-profile test
-pnpm -F @astrospec/starburst-profile build
+pnpm -F @openspec/starburst-profile typecheck
+pnpm -F @openspec/starburst-profile test
+pnpm -F @openspec/starburst-profile build
 ```

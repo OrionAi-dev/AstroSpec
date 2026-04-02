@@ -1,6 +1,6 @@
-# AstroSpec Validation
+# OpenSpec Validation
 
-Validation ensures AstroSpec contracts are structurally correct **before** they are locked, executed, or verified.
+Validation ensures OpenSpec contracts are structurally correct **before** they are locked, executed, or verified.
 
 The core project treats **JSON Schema as canonical** and validates with **AJV (draft 2020-12)**.
 
@@ -23,7 +23,7 @@ Some checks are intentionally out of scope for schema validation (for example: w
 Validate a file (JSON or YAML):
 
 ```bash
-node packages/astrospec-cli/dist/cli.js validate path/to/spec.json
+node packages/openspec-cli/dist/cli.js validate path/to/spec.json
 ```
 
 Exit codes:
@@ -38,7 +38,7 @@ Exit codes:
 If you need validation inside an app:
 
 ```ts
-import { validateContext, validateTurn } from "@astrospec/runtime";
+import { validateContext, validateTurn } from "@openspec/runtime";
 
 const res = validateTurn(turn);
 if (!res.ok) {
@@ -50,7 +50,7 @@ if (!res.ok) {
 
 ## Schema Drift Guard (Docs)
 
-This repo keeps copies of the canonical schemas under `docs/astrospec/schemas/` for easy browsing.
+This repo keeps copies of the canonical schemas under `docs/openspec/schemas/` for easy browsing.
 
 CI enforces that those docs copies match the canonical package:
 

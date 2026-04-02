@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/graph-memory/graph-memory-defs-0.1.json",
-  "title": "AstroSpec Graph Memory Definitions v0.1",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/graph-memory/graph-memory-defs-0.1.json",
+  "title": "OpenSpec Graph Memory Definitions v0.1",
   "type": "object",
   "$defs": {
     "nodeType": {
@@ -53,16 +53,16 @@
         "supportingAssertions": {
           "type": "array",
           "items": {
-            "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/retrieval/knowledge-assertion-0.1.json"
+            "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/retrieval/knowledge-assertion-0.1.json"
           }
         },
         "memoryRecord": {
-          "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/retrieval/memory-record-0.1.json"
+          "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/retrieval/memory-record-0.1.json"
         },
         "refs": {
           "type": "array",
           "items": {
-            "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/defs-0.1.json#/$defs/evidenceRef"
+            "$ref": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/defs-0.1.json#/$defs/evidenceRef"
           }
         },
         "ext": { "type": "object", "additionalProperties": true }

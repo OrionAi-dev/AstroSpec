@@ -1,16 +1,16 @@
 # Cucumber Mapper
 
-This adapter connects AstroSpec `@software` criteria to **Cucumber** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from AstroSpec. Instead, it verifies links to Cucumber `.feature` files and `Scenario`s you reference, and produces a traceability index.
+This adapter connects OpenSpec `@software` criteria to **Cucumber** by **referencing external artifacts only**. It does **not** embed or generate Gherkin steps from OpenSpec. Instead, it verifies links to Cucumber `.feature` files and `Scenario`s you reference, and produces a traceability index.
 
 ## Design principles
 
-- **AstroSpec stays agnostic.** We only link to Cucumber; we do not copy Gherkin semantics into AstroSpec.
+- **OpenSpec stays agnostic.** We only link to Cucumber; we do not copy Gherkin semantics into OpenSpec.
 - **References over generation.** The mapper verifies and indexes your references; it does not author features or steps.
 - **Profiles by URL.** `bdd_ref.source` must be a URL listed in `bdd-registry.yaml` (e.g., Cucumber).
 
 ## What it does
 
-- Reads an AstroSpec YAML that declares:
+- Reads an OpenSpec YAML that declares:
   - `profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software`
   - One or more criteria with `bdd_ref` pointing to Cucumber artifacts
 - For each criterion with `bdd_ref`:
@@ -29,9 +29,9 @@ This adapter connects AstroSpec `@software` criteria to **Cucumber** by **refere
 
 > Note: Inline step fields such as `given`, `when`, `then` are **not used**. The mapper ignores them if present.
 
-## Minimal example (AstroSpec → Cucumber reference)
+## Minimal example (OpenSpec → Cucumber reference)
 
-AstroSpec input:
+OpenSpec input:
 
 ```yaml
 profile: https://orionai-dev.github.io/mcp-secure-context-sharing/profiles/@software
@@ -84,7 +84,7 @@ Mapper output (traceability index):
 
 ## Field mapping (reference-only)
 
-AstroSpec → Cucumber
+OpenSpec → Cucumber
 
 - `meta.id`, `meta.title` → used for discovery and file naming; **no content is generated**
 - `requirements[].id`, `requirements[].statement` → used for grouping in the index
@@ -96,7 +96,7 @@ AstroSpec → Cucumber
 ## File layout
 
 **Inputs**
-- AstroSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
+- OpenSpec specs: anywhere (examples under `docs/integrations/bdd/@software/examples/`)
 - Cucumber features: wherever your test suite keeps them; examples live alongside the YAML
 
 **Outputs**
@@ -105,11 +105,11 @@ AstroSpec → Cucumber
 
 ## Validation rules applied
 
-- AstroSpec file must validate against `@software` schema
+- OpenSpec file must validate against `@software` schema
 - `bdd_ref.source` must be a URL listed under Cucumber in `bdd-registry.yaml`
 - `bdd_ref.path` must resolve to an existing `.feature` (local or reachable URL)
 - `bdd_ref.scenario` must exist in the target `.feature`
-- Inline step fields are ignored; AstroSpec does **not** define steps
+- Inline step fields are ignored; OpenSpec does **not** define steps
 
 ## Naming guidance
 
@@ -119,10 +119,10 @@ AstroSpec → Cucumber
 ## Integration tips
 
 - Place step definitions where your Cucumber implementation expects them (e.g., `features/step_definitions/` for Ruby, `features/step_definitions/*.ts` for cucumber-js)
-- Tag scenarios with AstroSpec IDs for easier back-references:
+- Tag scenarios with OpenSpec IDs for easier back-references:
 
 ```gherkin
-@astrospec(FEATURE-101.1.1)
+@openspec(FEATURE-101.1.1)
 Scenario: Valid credentials produce a successful session
 ```
 
@@ -137,7 +137,7 @@ Scenario: Valid credentials produce a successful session
 
 ## Quick checklist
 
-- [ ] AstroSpec YAML validates against `@software` schema
+- [ ] OpenSpec YAML validates against `@software` schema
 - [ ] `bdd-registry.yaml` includes the Cucumber profile URL
 - [ ] External `.feature` file exists and contains the named Scenario
 - [ ] `dist/cucumber/index.json` produced for traceability

@@ -2,16 +2,16 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
 
-import { listSchemas, readSchema } from '@astrospec/schema';
-import type { JsonValue } from '@astrospec/runtime';
-import type { GraphMemoryNode, MemoryPromotionEnvelope, StructuralGraphMatch, StructuralGraphQuery } from '@astrospec/graph-memory';
-import type { ReasoningResult, ReasoningTask, ReasoningWorkflowContract } from '@astrospec/reasoning';
+import { listSchemas, readSchema } from '@openspec/schema';
+import type { JsonValue } from '@openspec/runtime';
+import type { GraphMemoryNode, MemoryPromotionEnvelope, StructuralGraphMatch, StructuralGraphQuery } from '@openspec/graph-memory';
+import type { ReasoningResult, ReasoningTask, ReasoningWorkflowContract } from '@openspec/reasoning';
 import type {
   EvaluationRound,
   HypothesisCandidate,
   RefinementHistory,
   SynthesisOutput,
-} from '@astrospec/starburst-profile';
+} from '@openspec/starburst-profile';
 
 import runtimeInterfaceDescriptorSchema from '../schemas/runtime-interface-descriptor-0.1.json' with { type: 'json' };
 

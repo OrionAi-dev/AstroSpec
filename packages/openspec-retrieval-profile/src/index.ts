@@ -2,8 +2,8 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
 
-import { listSchemas, readSchema } from '@astrospec/schema';
-import type { EvidenceRef, EvidenceSpan, JsonValue, ProvenanceEntry } from '@astrospec/runtime';
+import { listSchemas, readSchema } from '@openspec/schema';
+import type { EvidenceRef, EvidenceSpan, JsonValue, ProvenanceEntry } from '@openspec/runtime';
 
 import retrievalDefsSchema from '../schemas/retrieval-defs-0.1.json' with { type: 'json' };
 import retrievalRequestSchema from '../schemas/retrieval-request-0.1.json' with { type: 'json' };
@@ -23,7 +23,7 @@ export {
   retrievalStreamEventSchema,
 };
 
-export const ASTROSPEC_RETRIEVAL_ERROR_CODES = [
+export const OPENSPEC_RETRIEVAL_ERROR_CODES = [
   'AS_RETRIEVAL_INVALID_INPUT',
   'AS_RETRIEVAL_UNSUPPORTED_TECHNIQUE',
   'AS_RETRIEVAL_INDEX_UNAVAILABLE',
@@ -35,9 +35,9 @@ export const ASTROSPEC_RETRIEVAL_ERROR_CODES = [
   'AS_RETRIEVAL_NOT_AUTHORIZED',
 ] as const;
 
-export type RetrievalReasonCode = (typeof ASTROSPEC_RETRIEVAL_ERROR_CODES)[number];
+export type RetrievalReasonCode = (typeof OPENSPEC_RETRIEVAL_ERROR_CODES)[number];
 
-export const ASTROSPEC_RETRIEVAL_CONTRACT_KINDS = [
+export const OPENSPEC_RETRIEVAL_CONTRACT_KINDS = [
   'retrieval-request',
   'retrieval-response',
   'retrieval-plan',
@@ -46,7 +46,7 @@ export const ASTROSPEC_RETRIEVAL_CONTRACT_KINDS = [
   'retrieval-stream-event',
 ] as const;
 
-export type AstroSpecRetrievalContractKind = (typeof ASTROSPEC_RETRIEVAL_CONTRACT_KINDS)[number];
+export type OpenSpecRetrievalContractKind = (typeof OPENSPEC_RETRIEVAL_CONTRACT_KINDS)[number];
 
 export type RetrievalTechniqueId =
   | 'keyword'
@@ -308,7 +308,7 @@ function makeIssue(path: string, message: string): ValidationIssue {
     path,
     message,
     keyword: 'semantic',
-    schemaPath: 'astrospec.retrieval.semantic',
+    schemaPath: 'openspec.retrieval.semantic',
   };
 }
 
@@ -371,7 +371,7 @@ export function validateRetrievalStreamEvent(value: unknown): ValidationResult<R
 }
 
 export function validateRetrievalContract(
-  kind: AstroSpecRetrievalContractKind,
+  kind: OpenSpecRetrievalContractKind,
   value: unknown,
 ): ValidationResult<
   RetrievalRequest | RetrievalResponse | RetrievalPlan | MemoryRecord | KnowledgeAssertion | RetrievalStreamEvent

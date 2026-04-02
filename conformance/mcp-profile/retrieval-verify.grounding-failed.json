@@ -1,5 +1,5 @@
 {
-  "name": "astrospec.retrieval.verify",
+  "name": "openspec.retrieval.verify",
   "arguments": {
     "response": {
       "ok": true,

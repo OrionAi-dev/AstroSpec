@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/starburst/analogical-mapping-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/starburst/analogical-mapping-0.1.json",
   "title": "AnalogicalMapping",
   "type": "object",
   "additionalProperties": false,

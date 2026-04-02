@@ -1,18 +1,18 @@
 # TypeScript Bindings
 
-AstroSpec ships TypeScript types aligned with the canonical JSON Schemas.
+OpenSpec ships TypeScript types aligned with the canonical JSON Schemas.
 
 ## Core Packages
 
-- `@astrospec/schema`
-- `@astrospec/runtime`
+- `@openspec/schema`
+- `@openspec/runtime`
 
 ## Core Types
 
 The runtime exports:
 
-- `AstroSpecContext`
-- `AstroSpecTurn`
+- `OpenSpecContext`
+- `OpenSpecTurn`
 - `SpecField`
 - `AcceptanceCriterion`
 - `EvidenceRef`
@@ -37,7 +37,7 @@ The runtime exports:
 
 ## Retrieval Profile Types
 
-`@astrospec/retrieval-profile` exports:
+`@openspec/retrieval-profile` exports:
 
 - `RetrievalRequest`
 - `RetrievalResponse`
@@ -51,5 +51,5 @@ The runtime exports:
 
 ## DX Layers
 
-- `@astrospec/kit` provides convenience validation and MCP call helpers.
-- `@astrospec/cli` provides contract validation and verification workflows.
+- `@openspec/kit` provides convenience validation and MCP call helpers.
+- `@openspec/cli` provides contract validation and verification workflows.

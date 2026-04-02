@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/astrospec/graph-memory/structural-graph-match-0.1.json",
+  "$id": "https://orionai-dev.github.io/mcp-secure-context-sharing/schemas/openspec/graph-memory/structural-graph-match-0.1.json",
   "title": "StructuralGraphMatch",
   "type": "object",
   "additionalProperties": false,

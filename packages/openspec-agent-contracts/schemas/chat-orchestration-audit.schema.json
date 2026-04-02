@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.orionai.dev/astrospec/chat-orchestration-audit.schema.json",
+  "$id": "https://schemas.orionai.dev/openspec/chat-orchestration-audit.schema.json",
   "title": "ChatOrchestrationAudit",
   "type": "object",
   "additionalProperties": false,

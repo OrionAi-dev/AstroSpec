@@ -1,6 +1,6 @@
 {
   "descriptorId": "descriptor_orion_starburst_adapter",
-  "name": "Orion AstroSpec Adapter",
+  "name": "Orion OpenSpec Adapter",
   "interfaceKind": "discovery-workflow-adapter",
   "version": "0.1.0",
   "contractKinds": ["reasoning-task", "synthesis-output", "evaluation-round"],

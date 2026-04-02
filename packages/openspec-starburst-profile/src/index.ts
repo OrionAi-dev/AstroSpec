@@ -2,10 +2,10 @@ import type { ErrorObject, ValidateFunction } from 'ajv';
 import * as Ajv2020Module from 'ajv/dist/2020.js';
 import * as AjvFormatsModule from 'ajv-formats';
 
-import { listSchemas, readSchema } from '@astrospec/schema';
-import type { JsonValue } from '@astrospec/runtime';
-import type { ReasoningEvidence } from '@astrospec/reasoning';
-import { reasoningDefsSchema, reasoningEvidenceSchema } from '@astrospec/reasoning';
+import { listSchemas, readSchema } from '@openspec/schema';
+import type { JsonValue } from '@openspec/runtime';
+import type { ReasoningEvidence } from '@openspec/reasoning';
+import { reasoningDefsSchema, reasoningEvidenceSchema } from '@openspec/reasoning';
 
 import starburstDefsSchema from '../schemas/starburst-defs-0.1.json' with { type: 'json' };
 import abstractionOutputSchema from '../schemas/abstraction-output-0.1.json' with { type: 'json' };
@@ -31,7 +31,7 @@ export {
   refinementHistorySchema,
 };
 
-export const ASTROSPEC_STARBURST_CONTRACT_KINDS = [
+export const OPENSPEC_STARBURST_CONTRACT_KINDS = [
   'abstraction-output',
   'domain-pattern',
   'analogical-mapping',
@@ -43,7 +43,7 @@ export const ASTROSPEC_STARBURST_CONTRACT_KINDS = [
   'refinement-history',
 ] as const;
 
-export type AstroSpecStarburstContractKind = (typeof ASTROSPEC_STARBURST_CONTRACT_KINDS)[number];
+export type OpenSpecStarburstContractKind = (typeof OPENSPEC_STARBURST_CONTRACT_KINDS)[number];
 
 export interface AbstractionOutput {
   abstractionId: string;
@@ -246,7 +246,7 @@ function makeIssue(path: string, message: string): ValidationIssue {
     path,
     message,
     keyword: 'semantic',
-    schemaPath: 'astrospec.starburst.semantic',
+    schemaPath: 'openspec.starburst.semantic',
   };
 }
 
@@ -303,7 +303,7 @@ export function validateRefinementHistory(value: unknown): ValidationResult<Refi
 }
 
 export function validateStarburstContract(
-  kind: AstroSpecStarburstContractKind,
+  kind: OpenSpecStarburstContractKind,
   value: unknown,
 ): ValidationResult<
   | AbstractionOutput
