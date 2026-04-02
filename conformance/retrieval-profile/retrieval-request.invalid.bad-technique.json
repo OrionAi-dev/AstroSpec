@@ -1,0 +1,5 @@
+{
+  "requestId": "req_invalid_1",
+  "query": "Summarize the retention policy.",
+  "techniques": ["keyword", "unsupported-technique"]
+}

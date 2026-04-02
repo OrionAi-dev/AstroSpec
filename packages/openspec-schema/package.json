@@ -22,9 +22,6 @@
     "build": "tsup src/index.ts --dts --format esm,cjs --shims",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit"
   },
-  "dependencies": {
-    "@mcp-secure-context/core": "workspace:*"
-  },
   "devDependencies": {
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"

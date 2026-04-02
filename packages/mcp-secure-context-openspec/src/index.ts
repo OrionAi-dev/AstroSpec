@@ -1,2 +1,83 @@
-export * from "@openspec/schema";
-export * from "@openspec/runtime";
+export {
+  applyPatches,
+  assertContext,
+  assertTurn,
+  canonicalizeSpec,
+  canonicalizeValue,
+  diffSpecs,
+  lockSpec,
+  mergeContextIntoTurn,
+  registerVerifier,
+  signSpec,
+  stableStringify,
+  validateContext,
+  validateTurn,
+  verifyOutput,
+} from "@openspec/runtime";
+export type {
+  AcceptanceCriteria,
+  AcceptanceCriterion,
+  BaseField,
+  Context,
+  DerivedSpec,
+  EvidenceRef,
+  EvidenceRetrievalMetadata,
+  EvidenceSpan,
+  FieldScope,
+  FieldSource,
+  FieldType,
+  ISODateTime,
+  JsonArray,
+  JsonObject,
+  JsonPatch,
+  JsonPatchOp,
+  JsonPrimitive,
+  JsonValue,
+  OpenSpecBase,
+  OpenSpecContext,
+  OpenSpecContextRequestEnvelope,
+  OpenSpecRequestEnvelope,
+  OpenSpecTurn,
+  OpenSpecTurnRequestEnvelope,
+  Provenance,
+  ProvenanceEntry,
+  SpecDiff,
+  SpecField,
+  ToolBinding,
+  Turn,
+  ValidationError,
+  VerificationReport,
+  VerifierFn,
+  VerifierResult,
+  VerifyEnv,
+} from "@openspec/runtime";
+export { getSchemaPath, listSchemas, readSchema } from "@openspec/schema";
+export type { OpenSpecSchemaName } from "@openspec/schema";
+
+export {
+  getSecureContextSchemaPath,
+  listSecureContextSchemas,
+  readSecureContextSchema,
+} from "@mcp-secure-context/core";
+export type {
+  AccessMode,
+  ContainerType,
+  ContextContainer,
+  ContextPayload,
+  ContextPayloadMap,
+  KnowledgeObject,
+  MemoryReference,
+  PolicyMetadata,
+  ProvenanceEnvelope,
+  SecureContextSchemaName,
+  SensitivityLabel,
+  SignatureMetadata,
+  TaskState,
+  UserContext,
+  VerificationEnvelope,
+  VerificationStatus,
+} from "@mcp-secure-context/core";
+
+export { SCHEMA_IDS, validateWithSchema } from "./schema.js";
+export { assertContextContainer, validateContextContainer } from "./validation.js";
+export { digestContextContainer } from "./sign.js";

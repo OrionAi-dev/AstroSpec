@@ -22,8 +22,8 @@ import {
   validateRetrievalResponse,
   validateRetrievalStreamEvent,
 } from '@openspec/retrieval-profile';
-import { validate as validateContract } from '@mcp-secure-context/extensions-openspec';
-import type { OpenSpecKitKind } from '@mcp-secure-context/extensions-openspec';
+import { validate as validateContract } from '@openspec/kit';
+import type { OpenSpecKitKind } from '@openspec/kit';
 
 type Format = 'json' | 'yaml' | 'text';
 
@@ -333,8 +333,7 @@ async function cmdDoctor() {
       core: ['@mcp-secure-context/core', '@mcp-secure-context/openspec'],
       interop: ['@mcp-secure-context/mcp-adapter'],
       profiles: ['@openspec/retrieval-profile'],
-      dx: ['@mcp-secure-context/sdk-typescript', '@mcp-secure-context/cli'],
-      extensions: ['@mcp-secure-context/extensions-openspec'],
+      dx: ['@mcp-secure-context/sdk-typescript', '@mcp-secure-context/cli', '@openspec/kit'],
       specialized: ['@openspec/agent-contracts'],
     },
   };

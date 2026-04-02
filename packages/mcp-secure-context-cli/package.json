@@ -17,8 +17,8 @@
     "test": "node --test"
   },
   "dependencies": {
+    "@openspec/kit": "workspace:*",
     "@openspec/retrieval-profile": "workspace:*",
-    "@mcp-secure-context/extensions-openspec": "workspace:*",
     "@mcp-secure-context/openspec": "workspace:*",
     "yaml": "^2.8.1"
   },

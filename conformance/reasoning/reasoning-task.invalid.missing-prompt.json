@@ -1,0 +1,4 @@
+{
+  "taskId": "task_missing_prompt",
+  "objective": "This fixture intentionally omits the required prompt field."
+}

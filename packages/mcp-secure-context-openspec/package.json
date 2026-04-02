@@ -24,13 +24,17 @@
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
-    "test": "node --test"
+    "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
+    "@mcp-secure-context/core": "workspace:*",
     "@openspec/runtime": "workspace:*",
-    "@openspec/schema": "workspace:*"
+    "@openspec/schema": "workspace:*",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
+    "tsx": "^4.20.4",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   },

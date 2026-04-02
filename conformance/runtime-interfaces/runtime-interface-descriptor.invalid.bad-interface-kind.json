@@ -1,0 +1,6 @@
+{
+  "descriptorId": "descriptor_invalid_interface_kind",
+  "name": "Invalid Interface Descriptor",
+  "interfaceKind": "runtime-adapter",
+  "version": "0.1.0"
+}

@@ -9,4 +9,4 @@ Use this package to:
 - call secure-context MCP tools
 - build against the minimal secure-context surface only
 
-OpenSpec-compatible validation helpers now live in `@mcp-secure-context/extensions-openspec`.
+OpenSpec-compatible validation helpers now live in `@openspec/kit`.

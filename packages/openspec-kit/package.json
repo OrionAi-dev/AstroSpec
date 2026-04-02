@@ -24,8 +24,9 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@mcp-secure-context/extensions-openspec": "workspace:*",
-    "@mcp-secure-context/sdk-typescript": "workspace:*"
+    "@mcp-secure-context/sdk-typescript": "workspace:*",
+    "@openspec/agent-contracts": "workspace:*",
+    "@openspec/retrieval-profile": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",

@@ -25,6 +25,7 @@ Thank you for your interest in contributing!
 - `pnpm build`: build all workspace packages via Turbo.  
 - `pnpm lint`: run lint checks across packages.  
 - `pnpm test`: run tests across packages.  
+- `pnpm check:*`: package validation entrypoints that build the target package's workspace dependency closure before typecheck/test. Use these when validating a specific published package locally.  
 - `pnpm docs`: regenerate API docs (TypeDoc) via `tools/gen-docs.sh`.  
 - `pnpm changeset`: create a release note for a user-visible package change.  
 - `pnpm release:verify`: run the required gates for a public release.  

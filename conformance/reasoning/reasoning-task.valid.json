@@ -1,0 +1,9 @@
+{
+  "taskId": "task_operational_review",
+  "prompt": "How should an operational review system organize tickets, logs, transcripts, and decision records?",
+  "objective": "Produce a reusable structure for review graphs and replayable evidence linkage.",
+  "domainHints": ["operations", "evidence", "review"],
+  "constraints": ["traceable citations", "incremental replay"],
+  "evaluationTargets": ["structural validity", "usability", "reusability"],
+  "mode": "default"
+}

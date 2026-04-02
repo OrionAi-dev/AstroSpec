@@ -24,8 +24,7 @@
     "test": "node --test --import tsx tests/*.test.ts"
   },
   "dependencies": {
-    "@openspec/agent-contracts": "workspace:*",
-    "@openspec/retrieval-profile": "workspace:*"
+    "@openspec/kit": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.20.4",
