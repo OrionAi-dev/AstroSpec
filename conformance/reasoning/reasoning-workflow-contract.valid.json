@@ -1,26 +1,26 @@
 {
-  "workflowId": "workflow_legal_discovery",
+  "workflowId": "workflow_operational_review",
   "task": {
-    "taskId": "task_legal_evidence",
-    "prompt": "How should a legal evidence system organize call logs, transcripts, filings, and witness statements?",
+    "taskId": "task_operational_review",
+    "prompt": "How should an operational review system organize tickets, logs, transcripts, and decision records?",
     "graph": {
-      "graphId": "graph_legal",
+      "graphId": "graph_review",
       "roles": [
-        { "roleId": "abstraction_star", "title": "Abstraction Star" },
-        { "roleId": "legal_star", "title": "Legal Star" },
-        { "roleId": "evidence_star", "title": "Evidence Star" }
+        { "roleId": "abstraction_role", "title": "Abstraction Role" },
+        { "roleId": "analysis_role", "title": "Analysis Role" },
+        { "roleId": "evidence_role", "title": "Evidence Role" }
       ],
       "edges": [
-        { "from": "abstraction_star", "to": "legal_star", "relation": "informs" },
-        { "from": "legal_star", "to": "evidence_star", "relation": "supports" }
+        { "from": "abstraction_role", "to": "analysis_role", "relation": "informs" },
+        { "from": "analysis_role", "to": "evidence_role", "relation": "supports" }
       ]
     }
   },
   "roles": [
-    { "roleId": "abstraction_star", "title": "Abstraction Star" },
-    { "roleId": "legal_star", "title": "Legal Star" },
-    { "roleId": "evidence_star", "title": "Evidence Star" }
+    { "roleId": "abstraction_role", "title": "Abstraction Role" },
+    { "roleId": "analysis_role", "title": "Analysis Role" },
+    { "roleId": "evidence_role", "title": "Evidence Role" }
   ],
   "phases": ["abstraction", "analysis", "review", "synthesis"],
-  "expectedOutputs": ["evidence-graph", "timeline"]
+  "expectedOutputs": ["review-graph", "timeline"]
 }

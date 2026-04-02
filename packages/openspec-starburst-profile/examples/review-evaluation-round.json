@@ -1,9 +1,9 @@
 {
-  "roundId": "round_legal_1",
-  "candidateIds": ["candidate_evidence_graph", "candidate_timeline_tracker"],
+  "roundId": "round_review_1",
+  "candidateIds": ["candidate_review_graph", "candidate_timeline_tracker"],
   "scores": [
     {
-      "candidateId": "candidate_evidence_graph",
+      "candidateId": "candidate_review_graph",
       "structuralValidity": 0.92,
       "novelty": 0.61,
       "feasibility": 0.89,
@@ -19,5 +19,5 @@
       "confidence": 0.86
     }
   ],
-  "skepticNotes": ["Ensure claim linkage is citation-backed and replayable."]
+  "skepticNotes": ["Ensure evidence linkage is citation-backed and replayable."]
 }

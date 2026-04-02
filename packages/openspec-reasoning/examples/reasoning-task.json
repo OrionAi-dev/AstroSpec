@@ -1,24 +1,24 @@
 {
-  "taskId": "task_quantum_crypto",
-  "prompt": "How can cryptography be improved for the quantum computing era?",
-  "objective": "Generate structurally grounded architecture candidates for quantum-era cryptography.",
-  "domainHints": ["security", "distributed-systems", "biology"],
-  "constraints": ["portable contracts", "migration-friendly rollout"],
+  "taskId": "task_security_modernization",
+  "prompt": "How should a security platform modernize long-lived protection workflows for new algorithm requirements?",
+  "objective": "Generate structurally grounded migration candidates for evolving security architectures.",
+  "domainHints": ["security", "distributed-systems", "operations"],
+  "constraints": ["portable contracts", "incremental rollout"],
   "evaluationTargets": ["structural validity", "feasibility", "reusability"],
   "graph": {
-    "graphId": "graph_starburst_discovery",
+    "graphId": "graph_discovery_workflow",
     "roles": [
-      { "roleId": "abstraction_star", "title": "Abstraction Star", "interactionPattern": "sequential" },
-      { "roleId": "biology_star", "title": "Biology Star", "interactionPattern": "fanout" },
-      { "roleId": "skeptic_star", "title": "Skeptic Star", "interactionPattern": "review" },
-      { "roleId": "synthesis_star", "title": "Synthesis Star", "interactionPattern": "collapse" }
+      { "roleId": "abstraction_role", "title": "Abstraction Role", "interactionPattern": "sequential" },
+      { "roleId": "analysis_role", "title": "Analysis Role", "interactionPattern": "fanout" },
+      { "roleId": "review_role", "title": "Review Role", "interactionPattern": "review" },
+      { "roleId": "synthesis_role", "title": "Synthesis Role", "interactionPattern": "collapse" }
     ],
     "edges": [
-      { "from": "abstraction_star", "to": "biology_star", "relation": "informs" },
-      { "from": "biology_star", "to": "skeptic_star", "relation": "supports" },
-      { "from": "skeptic_star", "to": "synthesis_star", "relation": "refines" }
+      { "from": "abstraction_role", "to": "analysis_role", "relation": "informs" },
+      { "from": "analysis_role", "to": "review_role", "relation": "supports" },
+      { "from": "review_role", "to": "synthesis_role", "relation": "refines" }
     ],
-    "phases": ["abstraction", "burst", "skeptic-review", "collapse"]
+    "phases": ["abstraction", "analysis", "review", "synthesis"]
   },
   "mode": "default"
 }

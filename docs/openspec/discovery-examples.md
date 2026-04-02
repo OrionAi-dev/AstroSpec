@@ -2,42 +2,42 @@
 
 OpenSpec discovery packages ship example tasks and outputs for three reference prompts.
 
-## Quantum Cryptography
+## Security Modernization
 
 Prompt:
 
-`How can cryptography be improved for the quantum computing era?`
+`How should a security platform modernize long-lived protection workflows for new algorithm requirements?`
 
 Portable outputs include:
 
 - adaptive migration candidates
-- immune-style control-plane patterns
+- reusable control-plane patterns
 - structural evaluation rounds
 - final synthesis outputs
 
-## Legal Evidence Organization
+## Operational Review Organization
 
 Prompt:
 
-`How should a legal evidence system organize call logs, transcripts, filings, witness statements, and procedural events so they are easier to use in court?`
+`How should an operational review system organize tickets, logs, transcripts, decision records, and supporting evidence so incidents are easier to assess and replay?`
 
 Portable outputs include:
 
-- evidence graph candidates
-- procedural dependency structures
+- review graph candidates
+- evidence-linkage structures
 - contradiction review notes
-- claim linkage synthesis outputs
+- synthesis outputs for replayable review workflows
 
-## Astrology Insight Structure
+## Longitudinal Interpretation Structure
 
 Prompt:
 
-`How should an astrology insight engine structure natal chart data, transit analysis, symbolic themes, and event correlations so interpretations are more consistent and reusable over time?`
+`How should an interpretation engine structure recurring observations, evolving themes, and event correlations so outputs are more consistent and reusable over time?`
 
 Portable outputs include:
 
-- chart-memory abstractions
-- symbolic theme patterns
+- interpretation-memory abstractions
+- theme and correlation patterns
 - evaluation rounds
 - reusable synthesis envelopes
 

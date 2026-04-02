@@ -22,13 +22,13 @@
 import {
   buildReasoningTask,
   buildStructuralGraphQuery,
-  createLegalEvidenceOrganizationExampleTask,
+  createOperationalReviewExampleTask,
   validateDiscoveryContract,
 } from '@openspec/discovery-bundle';
 
-const task = createLegalEvidenceOrganizationExampleTask();
+const task = createOperationalReviewExampleTask();
 const query = buildStructuralGraphQuery({
-  abstractionFingerprint: 'claim-graph-with-procedural-dependencies',
+  abstractionSignature: 'trace-linked-review-graph',
 });
 
 validateDiscoveryContract('reasoning-task', task);

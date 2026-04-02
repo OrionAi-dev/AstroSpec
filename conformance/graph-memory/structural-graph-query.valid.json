@@ -1,5 +1,5 @@
 {
-  "abstractionFingerprint": "claim-graph-with-procedural-dependencies",
+  "abstractionSignature": "trace-linked-review-graph",
   "mechanismTags": ["timeline", "dependency", "contradiction"],
   "relationMotifs": ["ABSTRACTED_TO", "TESTED_AGAINST", "SUPPORTED_BY"],
   "topK": 10

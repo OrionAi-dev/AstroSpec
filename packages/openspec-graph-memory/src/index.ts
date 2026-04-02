@@ -118,7 +118,7 @@ export type GraphMemoryNode =
 
 export interface StructuralGraphQuery {
   queryId?: string;
-  abstractionFingerprint: string;
+  abstractionSignature: string;
   mechanismTags?: string[];
   topologySignature?: string;
   constraintVector?: string[];

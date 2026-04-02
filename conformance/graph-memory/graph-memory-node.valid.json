@@ -1,9 +1,9 @@
 {
   "nodeId": "candidate_adaptive_crypto_migration",
   "nodeType": "CandidateArchitecture",
-  "namespace": "starburst",
-  "title": "Adaptive Cryptographic Migration",
-  "summary": "Rotation and topology-aware migration strategy for quantum-era algorithms.",
+  "namespace": "discovery",
+  "title": "Adaptive Security Migration",
+  "summary": "Rotation and topology-aware migration strategy for long-lived security workflows.",
   "structuralSignature": "candidate:adaptive-rollover:v1",
   "mechanismTags": ["migration", "rollback", "compatibility"],
   "validationStatus": "validated"

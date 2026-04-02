@@ -10,8 +10,8 @@ import {
 
 const synthesis = {
   synthesisId: 'synthesis_1',
-  summary: 'Claim graphs and timelines converge into a reusable legal evidence architecture.',
-  selectedCandidateIds: ['candidate_evidence_graph'],
+  summary: 'Trace graphs and timelines converge into a reusable operational review architecture.',
+  selectedCandidateIds: ['candidate_review_graph'],
 };
 
 test('exports deterministic starburst contract kinds', () => {

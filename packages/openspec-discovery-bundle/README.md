@@ -6,7 +6,7 @@ High-level OpenSpec discovery bundle.
 
 - Re-exports for `@openspec/reasoning`, `@openspec/graph-memory`, `@openspec/starburst-profile`, and `@openspec/runtime-interfaces`
 - Builders for common discovery contracts
-- Example tasks for quantum cryptography, legal intelligence, and astrology insight workflows
+- Example tasks for security modernization, operational review, and longitudinal interpretation workflows
 - One place to validate discovery payloads across the public OpenSpec profile set
 
 ## Scope

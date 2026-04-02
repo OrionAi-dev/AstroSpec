@@ -1,9 +1,9 @@
 {
-  "descriptorId": "descriptor_orion_starburst_adapter",
-  "name": "Orion OpenSpec Adapter",
+  "descriptorId": "descriptor_local_discovery_adapter",
+  "name": "Local OpenSpec Discovery Adapter",
   "interfaceKind": "discovery-workflow-adapter",
   "version": "0.1.0",
   "contractKinds": ["reasoning-task", "synthesis-output", "evaluation-round"],
-  "capabilities": ["local-execution", "graph-memory-writeback"],
+  "capabilities": ["local-execution", "artifact-publication"],
   "transport": "in-process"
 }

@@ -32,6 +32,6 @@ It does not standardize:
 
 OpenSpec defines the contracts.
 
-Runtimes such as Orion execute the contracts.
+Vendor runtimes execute the contracts.
 
-Any Orion-specific scheduling, constellation assembly, or score policy belongs in Orion packages, not here.
+Any runtime-specific scheduling, constellation assembly, or score policy belongs in implementation packages, not here.

@@ -24,6 +24,6 @@
   },
   "stream": true,
   "meta": {
-    "product": "telescope"
+    "application": "reference-client"
   }
 }

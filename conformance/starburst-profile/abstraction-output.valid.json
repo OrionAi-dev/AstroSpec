@@ -1,7 +1,7 @@
 {
-  "abstractionId": "abstraction_astrology_reuse",
-  "problemFrame": "Create a reusable interpretation system for natal charts, transits, symbolic themes, and event correlations.",
+  "abstractionId": "abstraction_interpretation_reuse",
+  "problemFrame": "Create a reusable interpretation system for recurring observations, evolving themes, and event correlations.",
   "invariants": ["traceable observations", "consistent synthesis"],
-  "mechanisms": ["pattern extraction", "cross-chart comparison", "lineage tracking"],
+  "mechanisms": ["pattern extraction", "cross-context comparison", "lineage tracking"],
   "constraints": ["portable contracts", "clear public/private boundary"]
 }

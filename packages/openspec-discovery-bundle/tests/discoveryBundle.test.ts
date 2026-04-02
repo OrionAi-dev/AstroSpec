@@ -5,14 +5,14 @@ import {
   buildEvaluationScore,
   buildReasoningTask,
   buildStructuralGraphQuery,
-  createLegalEvidenceOrganizationExampleTask,
-  createQuantumCryptoExampleTask,
+  createOperationalReviewExampleTask,
+  createSecurityModernizationExampleTask,
   validateDiscoveryContract,
 } from '../src/index.js';
 
 test('builders produce valid defaults', () => {
   const task = buildReasoningTask({ prompt: 'How should a reasoning system store reusable analogies?' });
-  const query = buildStructuralGraphQuery({ abstractionFingerprint: 'reusable-analogy-memory' });
+  const query = buildStructuralGraphQuery({ abstractionSignature: 'reusable-analogy-memory' });
   const score = buildEvaluationScore({
     candidateId: 'candidate_1',
     structuralValidity: 0.9,
@@ -28,6 +28,6 @@ test('builders produce valid defaults', () => {
 });
 
 test('example tasks are populated and portable', () => {
-  assert.equal(createQuantumCryptoExampleTask().taskId, 'task_quantum_crypto');
-  assert.equal(createLegalEvidenceOrganizationExampleTask().domainHints?.includes('legal'), true);
+  assert.equal(createSecurityModernizationExampleTask().taskId, 'task_security_modernization');
+  assert.equal(createOperationalReviewExampleTask().domainHints?.includes('operations'), true);
 });

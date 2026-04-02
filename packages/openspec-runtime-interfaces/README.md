@@ -4,7 +4,7 @@ Neutral runtime and interoperability interfaces for OpenSpec.
 
 ## What It Provides
 
-- Interface shapes for reasoning runtimes, discovery runtimes, graph-memory providers, and constellation executors.
+- Interface shapes for reasoning runtimes, discovery runtimes, graph-memory providers, and specialized workflow executors.
 - A portable descriptor schema for publishing runtime capabilities without exposing proprietary implementation details.
 - Deterministic descriptor validation.
 

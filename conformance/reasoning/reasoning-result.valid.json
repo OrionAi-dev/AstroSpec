@@ -1,12 +1,12 @@
 {
-  "taskId": "task_legal_evidence",
+  "taskId": "task_operational_review",
   "status": "completed",
-  "summary": "The strongest candidate organizes materials around events, claims, and procedural dependencies.",
+  "summary": "The strongest candidate organizes materials around events, evidence links, and review dependencies.",
   "outputs": [
     {
-      "artifactId": "artifact_evidence_graph",
-      "kind": "evidence-graph",
-      "title": "Evidence Graph with Claim Linkage"
+      "artifactId": "artifact_review_graph",
+      "kind": "review-graph",
+      "title": "Operational Review Graph"
     }
   ],
   "scores": {

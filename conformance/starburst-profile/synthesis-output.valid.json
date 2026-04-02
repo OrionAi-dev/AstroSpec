@@ -1,5 +1,5 @@
 {
-  "synthesisId": "synthesis_astrology_1",
-  "summary": "A chart memory graph with transit-event lineage produced the most reusable interpretation structure.",
-  "selectedCandidateIds": ["candidate_chart_memory_graph"]
+  "synthesisId": "synthesis_interpretation_1",
+  "summary": "A reusable memory graph with event lineage produced the most reusable interpretation structure.",
+  "selectedCandidateIds": ["candidate_interpretation_memory_graph"]
 }

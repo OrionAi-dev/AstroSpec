@@ -6,7 +6,7 @@ import { validateRuntimeInterfaceDescriptor } from '../src/index.js';
 test('valid runtime interface descriptor passes', () => {
   const descriptor = {
     descriptorId: 'descriptor_1',
-    name: 'Local Starburst Adapter',
+    name: 'Local Discovery Adapter',
     interfaceKind: 'reasoning-runtime-adapter',
     version: '0.1.0',
     capabilities: ['local-execution'],

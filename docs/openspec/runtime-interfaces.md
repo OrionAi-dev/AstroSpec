@@ -18,8 +18,8 @@ This package exists so OpenSpec can publish interface shapes without embedding a
 
 It does not ship:
 
-- Orion orchestration
-- Starburst execution logic
+- vendor-specific orchestration
+- workflow-specific execution logic
 - graph-memory promotion heuristics
 - scheduler internals
 

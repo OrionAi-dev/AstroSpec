@@ -12,8 +12,8 @@ import {
 const node = {
   nodeId: 'node_1',
   nodeType: 'Abstraction',
-  namespace: 'starburst',
-  title: 'Legal Evidence Organization',
+  namespace: 'discovery',
+  title: 'Operational Review Organization',
   validationStatus: 'validated',
 };
 
@@ -26,7 +26,7 @@ test('valid graph node and structural query pass', () => {
   assert.equal(validateGraphMemoryNode(node).ok, true);
   assert.equal(
     validateStructuralGraphQuery({
-      abstractionFingerprint: 'timeline-linked-claim-graph',
+      abstractionSignature: 'trace-linked-review-graph',
       relationMotifs: ['ABSTRACTED_TO', 'SUPPORTED_BY'],
       topK: 3,
     }).ok,

@@ -84,7 +84,7 @@ acceptanceCriteria:
 
 ## AI and Automation
 
-* Context includes **tone, guardrails, overlays** (e.g., astrology, compliance).
+* Context includes **tone, guardrails, overlays** (e.g., domain analysis, compliance).
 * Turns clarify **task-specific parameters** and verify outputs before acting.
 
 ---

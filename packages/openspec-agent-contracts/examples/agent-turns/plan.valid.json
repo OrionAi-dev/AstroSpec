@@ -3,7 +3,7 @@
   "intent": "plan",
   "objective": "Implement orchestrator runtime",
   "constraints": ["read-only default", "write approval required"],
-  "assumptions": ["telescope api available"],
+  "assumptions": ["retrieval service available"],
   "steps": [
     {
       "id": "step-1",

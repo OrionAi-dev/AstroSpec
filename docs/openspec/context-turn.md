@@ -14,7 +14,7 @@ A **Context** is a long-lived environment contract.
   * `session` → ends when session ends
   * `rolling` → TTL/uses, auto-renew
   * `pinned` → explicit, global, requires consent
-* **Contents**: project id, role, tone, locale/timezone, privacy flags, filetype preferences, overlays (e.g., astrology), guardrails
+* **Contents**: project id, role, tone, locale/timezone, privacy flags, filetype preferences, overlays (e.g., domain analysis), guardrails
 * **Behavior**: persists across turns; provides defaults; refreshed periodically
 
 ---
@@ -57,9 +57,9 @@ A **Turn** is an ephemeral, per-request contract.
 ```json
 {
   "kind": "context",
-  "id": "ctx:Telescope",
+  "id": "ctx:ReviewWorkspace",
   "intent": "project_session",
-  "scope": { "type": "project", "id": "Telescope" },
+  "scope": { "type": "project", "id": "ReviewWorkspace" },
   "lifespan": { "mode": "rolling", "ttlDays": 30 },
   "fields": {
     "tone": { "type": "string", "value": "concise, technical", "source": "user" },
@@ -77,7 +77,7 @@ A **Turn** is an ephemeral, per-request contract.
   "kind": "turn",
   "id": "turn:123",
   "intent": "markdown_transform",
-  "inheritsFrom": "ctx:Telescope",
+  "inheritsFrom": "ctx:ReviewWorkspace",
   "fields": {
     "file": { "type": "string", "value": "README.md", "source": "user" },
     "escape_ticks": { "type": "boolean", "value": true, "source": "context" }

@@ -108,7 +108,7 @@ export function buildReasoningTask(input: Partial<ReasoningTask> & Pick<Reasonin
 }
 
 export function buildStructuralGraphQuery(
-  input: Partial<StructuralGraphQuery> & Pick<StructuralGraphQuery, 'abstractionFingerprint'>,
+  input: Partial<StructuralGraphQuery> & Pick<StructuralGraphQuery, 'abstractionSignature'>,
 ): StructuralGraphQuery {
   return {
     queryId: input.queryId ?? `query_${Date.now()}`,
@@ -125,36 +125,36 @@ export function buildEvaluationScore(
   return { notes: [], ...input };
 }
 
-export function createQuantumCryptoExampleTask(): ReasoningTask {
+export function createSecurityModernizationExampleTask(): ReasoningTask {
   return buildReasoningTask({
-    taskId: 'task_quantum_crypto',
-    prompt: 'How can cryptography be improved for the quantum computing era?',
-    objective: 'Produce structurally grounded candidates for post-quantum transition architectures.',
-    domainHints: ['security', 'systems', 'biology'],
+    taskId: 'task_security_modernization',
+    prompt: 'How should a security platform modernize long-lived protection workflows for new algorithm requirements?',
+    objective: 'Produce structurally grounded migration candidates for evolving security architectures.',
+    domainHints: ['security', 'systems', 'operations'],
     constraints: ['portable contracts', 'incremental deployment'],
     evaluationTargets: ['structural validity', 'feasibility', 'reusability'],
   });
 }
 
-export function createLegalEvidenceOrganizationExampleTask(): ReasoningTask {
+export function createOperationalReviewExampleTask(): ReasoningTask {
   return buildReasoningTask({
-    taskId: 'task_legal_evidence',
+    taskId: 'task_operational_review',
     prompt:
-      'How should a legal evidence system organize call logs, transcripts, filings, witness statements, and procedural events so they are easier to use in court?',
-    objective: 'Produce reusable evidence graph, timeline, and claim linkage candidates.',
-    domainHints: ['legal', 'evidence', 'procedure'],
-    constraints: ['traceable citations', 'procedural sequencing'],
+      'How should an operational review system organize tickets, logs, transcripts, decision records, and supporting evidence so incidents are easier to assess and replay?',
+    objective: 'Produce reusable review graph, timeline, and evidence-linkage candidates.',
+    domainHints: ['operations', 'evidence', 'review'],
+    constraints: ['traceable citations', 'incremental replay'],
     evaluationTargets: ['usability', 'structural validity', 'reusability'],
   });
 }
 
-export function createAstrologyInsightExampleTask(): ReasoningTask {
+export function createLongitudinalInterpretationExampleTask(): ReasoningTask {
   return buildReasoningTask({
-    taskId: 'task_astrology_insight',
+    taskId: 'task_longitudinal_interpretation',
     prompt:
-      'How should an astrology insight engine structure natal chart data, transit analysis, symbolic themes, and event correlations so interpretations are more consistent and reusable over time?',
-    objective: 'Produce reusable chart memory and interpretation lineage contracts.',
-    domainHints: ['astrology', 'symbolic', 'interpretation'],
+      'How should an interpretation engine structure recurring observations, evolving themes, and event correlations so outputs are more consistent and reusable over time?',
+    objective: 'Produce reusable interpretation memory and refinement lineage contracts.',
+    domainHints: ['interpretation', 'patterns', 'analysis'],
     constraints: ['public/private boundary', 'traceable observations'],
     evaluationTargets: ['consistency', 'reusability', 'structural validity'],
   });

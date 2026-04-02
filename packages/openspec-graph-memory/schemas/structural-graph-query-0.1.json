@@ -4,10 +4,10 @@
   "title": "StructuralGraphQuery",
   "type": "object",
   "additionalProperties": false,
-  "required": ["abstractionFingerprint"],
+  "required": ["abstractionSignature"],
   "properties": {
     "queryId": { "type": "string" },
-    "abstractionFingerprint": { "type": "string", "minLength": 1 },
+    "abstractionSignature": { "type": "string", "minLength": 1 },
     "mechanismTags": { "type": "array", "items": { "type": "string" } },
     "topologySignature": { "type": "string" },
     "constraintVector": { "type": "array", "items": { "type": "string" } },
