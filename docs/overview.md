@@ -44,6 +44,20 @@ Use it when you need:
 
 Use MCP adapters when the container or verification layer needs to be exposed through MCP resources or tool calls.
 
+## Orion And StarConsole Boundary
+
+Orion and StarConsole are good examples of the boundary this repo is meant to serve.
+
+- Orion can consume OpenSpec reasoning, retrieval, graph-memory, and runtime-interface contracts.
+- StarConsole can consume bounded context containers, reasoning/result exchange, verification
+  metadata, and MCP projections where external interoperability matters.
+
+This repo does not define:
+
+- a universal LLM provider adapter
+- provider/backend normalization
+- an orchestration runtime
+
 ## Design rules
 
 - Keep MCP central.

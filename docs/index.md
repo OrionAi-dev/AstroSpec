@@ -10,7 +10,8 @@ Use it when you need to share bounded context between agents, tools, and systems
 2. [Context Containers](context-containers.md)
 3. [OpenSpec](openspec.md)
 4. [MCP Integration](mcp-integration.md)
-5. [Legacy OpenSpec migration](migrations/legacy-openspec/README.md)
+5. [Orion and StarConsole adoption](openspec/orion-starconsole-adoption.md)
+6. [Legacy OpenSpec migration](migrations/legacy-openspec/README.md)
 
 ## Package roles
 
@@ -25,4 +26,6 @@ Use it when you need to share bounded context between agents, tools, and systems
 The repo still publishes retrieval, reasoning, graph-memory, and discovery-oriented packages for compatibility and advanced use cases, but those are no longer the primary onboarding path.
 
 - [Extensions overview](extensions/retrieval.md)
+- [Orion and StarConsole adoption](openspec/orion-starconsole-adoption.md)
+- [Repo-local issues](ISSUES.md)
 - [Legacy OpenSpec docs](migrations/legacy-openspec/README.md)

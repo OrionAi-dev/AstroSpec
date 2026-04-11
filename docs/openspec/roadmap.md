@@ -31,6 +31,8 @@
 - discovery bundle quickstart and examples
 - conformance fixtures for discovery profiles
 - explicit public/private guidance for discovery runtimes
+- Orion and StarConsole adoption guidance that keeps OpenSpec scoped to interoperability rather than
+  provider normalization
 
 ## v1.0.0 criteria
 
