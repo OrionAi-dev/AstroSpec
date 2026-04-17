@@ -11,8 +11,9 @@ Use it when you need to share bounded context between agents, tools, and systems
 3. [OpenSpec](openspec.md)
 4. [MCP Integration](mcp-integration.md)
 5. [Orion and StarConsole adoption](openspec/orion-starconsole-adoption.md)
-6. [Current sprint](sprints/2026-04-17-cross-repo-secure-context-hardening.md)
-7. [Legacy OpenSpec migration](migrations/legacy-openspec/README.md)
+6. [Vendored release-artifact consumers](openspec/vendored-consumers.md)
+7. [Current sprint](sprints/2026-04-17-cross-repo-secure-context-hardening.md)
+8. [Legacy OpenSpec migration](migrations/legacy-openspec/README.md)
 
 ## Package roles
 
@@ -28,6 +29,7 @@ The repo still publishes retrieval, reasoning, graph-memory, and discovery-orien
 
 - [Extensions overview](extensions/retrieval.md)
 - [Orion and StarConsole adoption](openspec/orion-starconsole-adoption.md)
+- [Vendored release-artifact consumers](openspec/vendored-consumers.md)
 - [Repo-local issues](ISSUES.md)
 - [Current sprint](sprints/2026-04-17-cross-repo-secure-context-hardening.md)
 - [Legacy OpenSpec docs](migrations/legacy-openspec/README.md)

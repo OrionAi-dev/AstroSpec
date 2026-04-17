@@ -139,6 +139,7 @@ MCP Secure Context Sharing fills that gap with:
 - [Overview](./docs/overview.md)
 - [Context Containers](./docs/context-containers.md)
 - [OpenSpec](./docs/openspec.md)
+- [Vendored release-artifact consumers](./docs/openspec/vendored-consumers.md)
 - [MCP Integration](./docs/mcp-integration.md)
 
 ## Legacy migration

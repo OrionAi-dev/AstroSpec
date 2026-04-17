@@ -59,3 +59,21 @@ OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions
 - No ad hoc version bumps should bypass the Changesets workflow.
 - Public releases must satisfy the release policy in `docs/governance/release-policy.md`.
 - Documentation-only changes should not create a changeset unless they change published package behavior or public contract semantics.
+
+## Vendored Downstream Consumers
+
+Some downstream consumers pin exact release artifacts for reproducibility.
+
+Release rule:
+
+- published packages remain the canonical contract
+- vendored tarballs are downstream mirrors of validated release artifacts
+
+Before a downstream vendored refresh is considered ready, the upstream release lane should satisfy:
+
+```bash
+pnpm check:secure-context-artifacts
+pnpm verify:adoption
+```
+
+For high-level downstream guidance, see [vendored-consumers.md](vendored-consumers.md).

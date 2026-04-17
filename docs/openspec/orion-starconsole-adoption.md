@@ -74,3 +74,5 @@ The preferred public contract is the published package lane.
 - external tool consumers should use the published or packed package artifacts directly
 - vendored-contract consumers may pin exact release artifacts downstream for reproducibility
 - both consumption modes should validate against the same packaged release behavior
+
+For high-level downstream vendoring guidance, see [vendored-consumers.md](vendored-consumers.md).
