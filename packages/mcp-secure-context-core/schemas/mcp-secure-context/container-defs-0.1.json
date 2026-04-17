@@ -95,8 +95,18 @@
         "handoffNotes": { "type": "string" },
         "inputRefs": { "type": "array", "items": { "type": "string" } },
         "outputRefs": { "type": "array", "items": { "type": "string" } },
+        "artifactRefs": { "type": "array", "items": { "type": "string" } },
+        "decisionRefs": { "type": "array", "items": { "type": "string" } },
+        "nextStepRefs": { "type": "array", "items": { "type": "string" } },
+        "blockingReasons": { "type": "array", "items": { "type": "string" } },
+        "activeRunId": { "type": "string" },
+        "attentionState": {
+          "enum": ["normal", "needs_attention", "blocked", "ready_to_handoff"]
+        },
+        "recommendedAction": { "type": "string" },
         "summary": { "type": "string" },
-        "updatedAt": { "type": "string", "format": "date-time" }
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "updatedBy": { "type": "string" }
       },
       "additionalProperties": false
     },
@@ -111,6 +121,11 @@
         "claims": { "type": "array", "items": { "type": "string" } },
         "evidenceRefs": { "type": "array", "items": { "type": "string" } },
         "sourceRefs": { "type": "array", "items": { "type": "string" } },
+        "artifactRefs": { "type": "array", "items": { "type": "string" } },
+        "reportRefs": { "type": "array", "items": { "type": "string" } },
+        "verificationRefs": { "type": "array", "items": { "type": "string" } },
+        "derivedFromRefs": { "type": "array", "items": { "type": "string" } },
+        "rationaleSummary": { "type": "string" },
         "version": { "type": "string" },
         "freshness": { "type": "string" }
       },

@@ -26,9 +26,28 @@ Use for user identity, role, persona, preferences, and session attributes.
 
 Use for task goals, status, constraints, handoff notes, and input/output references.
 
+Additive workflow-oriented fields may also be used for bounded control-plane handoff, for example:
+
+- `artifactRefs`
+- `decisionRefs`
+- `nextStepRefs`
+- `blockingReasons`
+- `activeRunId`
+- `attentionState`
+- `recommendedAction`
+- `updatedBy`
+
 ### `KnowledgeObject`
 
 Use for structured knowledge summaries, claims, evidence references, and source references.
+
+Additive bounded rationale and artifact-oriented fields may also be used, for example:
+
+- `artifactRefs`
+- `reportRefs`
+- `verificationRefs`
+- `derivedFromRefs`
+- `rationaleSummary`
 
 ### `MemoryReference`
 
@@ -39,6 +58,8 @@ Use for scoped references to external memory rather than full memory dumps.
 - Agent handoff: share `TaskState` plus minimal `UserContext`
 - Tool execution: share a scoped `KnowledgeObject` or `MemoryReference`
 - Enterprise boundary crossing: share only a policy-limited slice with expiration
+- Workflow handoff: share bounded `TaskState` with explicit next actions and related references
+- Artifact review: share `KnowledgeObject` with bounded evidence, report, and rationale summaries
 
 ## Least-privilege rules
 

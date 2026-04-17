@@ -79,8 +79,16 @@ export interface TaskState {
   handoffNotes?: string;
   inputRefs?: string[];
   outputRefs?: string[];
+  artifactRefs?: string[];
+  decisionRefs?: string[];
+  nextStepRefs?: string[];
+  blockingReasons?: string[];
+  activeRunId?: string;
+  attentionState?: 'normal' | 'needs_attention' | 'blocked' | 'ready_to_handoff';
+  recommendedAction?: string;
   summary?: string;
   updatedAt?: string;
+  updatedBy?: string;
 }
 
 export interface KnowledgeObject {
@@ -91,6 +99,11 @@ export interface KnowledgeObject {
   claims?: string[];
   evidenceRefs?: string[];
   sourceRefs?: string[];
+  artifactRefs?: string[];
+  reportRefs?: string[];
+  verificationRefs?: string[];
+  derivedFromRefs?: string[];
+  rationaleSummary?: string;
   version?: string;
   freshness?: string;
 }

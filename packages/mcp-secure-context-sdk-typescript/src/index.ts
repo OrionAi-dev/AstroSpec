@@ -10,7 +10,7 @@ import {
   type PolicyMetadata,
   type ProvenanceEnvelope,
 } from '@mcp-secure-context/core';
-import { validateContextContainer } from '@mcp-secure-context/openspec';
+import { digestContextContainer, validateContextContainer } from '@mcp-secure-context/openspec';
 
 export type {
   ContextContainer,
@@ -33,6 +33,19 @@ export type {
   SecureContextMcpToolName,
   SecureContextMcpToolSpec,
 } from '@mcp-secure-context/mcp-adapter';
+
+type VerifyContainerResult = {
+  containerId: string;
+  digest: string;
+  verification: ContextContainer['verification'] | null;
+};
+
+type ShareContainerResult = {
+  containerId: string;
+  uri: string;
+  audience?: string[];
+  expiresAt?: string | null;
+};
 
 export function createContextContainer<TType extends ContainerType>(input: {
   containerType: TType;
@@ -61,9 +74,29 @@ export function validateContainer(payload: unknown) {
   return validateContextContainer(payload);
 }
 
+export { digestContextContainer };
+
 export async function callSecureContext(
   name: SecureContextMcpToolName,
   args?: unknown,
 ): Promise<SecureContextMcpResult<unknown>> {
   return callSecureContextTool({ name, arguments: args });
+}
+
+export async function verifyContainer(
+  container: ContextContainer,
+): Promise<SecureContextMcpResult<VerifyContainerResult>> {
+  return (await callSecureContextTool({
+    name: 'mcp_secure_context.container.verify',
+    arguments: { container },
+  })) as SecureContextMcpResult<VerifyContainerResult>;
+}
+
+export async function shareContainer(
+  container: ContextContainer,
+): Promise<SecureContextMcpResult<ShareContainerResult>> {
+  return (await callSecureContextTool({
+    name: 'mcp_secure_context.container.share',
+    arguments: { container },
+  })) as SecureContextMcpResult<ShareContainerResult>;
 }

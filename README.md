@@ -78,7 +78,13 @@ Adapters, resource helpers, server patterns, and reference implementations for M
 ### TypeScript
 
 ```ts
-import { createContextContainer, validateContainer } from "@mcp-secure-context/sdk-typescript";
+import {
+  createContextContainer,
+  digestContextContainer,
+  shareContainer,
+  validateContainer,
+  verifyContainer
+} from "@mcp-secure-context/sdk-typescript";
 
 const container = createContextContainer({
   containerType: "task_state",
@@ -101,6 +107,9 @@ const container = createContextContainer({
 });
 
 const result = validateContainer(container);
+const digest = digestContextContainer(container);
+const verification = await verifyContainer(container);
+const share = await shareContainer(container);
 ```
 
 ### CLI
@@ -121,6 +130,8 @@ MCP Secure Context Sharing fills that gap with:
 - portable container formats
 - provenance and verification metadata
 - optional trust hardening through OpenSpec
+- direct SDK ergonomics for local tool consumers
+- release artifacts that support both installed-package and vendored-contract consumers
 
 ## Docs
 

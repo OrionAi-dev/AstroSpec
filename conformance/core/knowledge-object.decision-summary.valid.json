@@ -1,0 +1,30 @@
+{
+  "schema": "mcp-secure-context.container.v0.1",
+  "containerType": "knowledge_object",
+  "id": "decision-summary-1",
+  "version": "0.1.0",
+  "payload": {
+    "objectId": "decision-summary-1",
+    "kind": "decision_summary",
+    "title": "Decision summary for handoff",
+    "summary": "The draft was accepted for the next workflow phase.",
+    "claims": ["The evidence and report references support the acceptance decision."],
+    "evidenceRefs": ["evidence://source-1", "evidence://source-2"],
+    "reportRefs": ["report://decision-1"],
+    "artifactRefs": ["artifact://draft-1"],
+    "rationaleSummary": "The current draft satisfies the bounded acceptance criteria and is ready for the next step.",
+    "version": "v1",
+    "freshness": "current"
+  },
+  "policy": {
+    "audience": ["agent"],
+    "allowedActions": ["read"],
+    "sensitivity": "internal"
+  },
+  "provenance": {
+    "createdAt": "2026-04-17T00:00:00.000Z",
+    "createdBy": "agent://decider",
+    "sourceRefs": ["decision://accept-1"],
+    "derivation": "Bounded rationale and evidence summary"
+  }
+}

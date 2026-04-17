@@ -1,48 +1,25 @@
 # MCP Secure Context Sharing Repo-Local Issues
 
-## Active Alignment Cluster
+## Active Chapter
 
-These are repo-local issue drafts for the current adoption-alignment pass. They are not GitHub
-issues in this pass.
+Public GitHub tracking for the current chapter lives in:
 
-### 1. Publish Orion and StarConsole adoption guidance
+- `#15` Cross-repo secure context package hardening and public tracking
+- `#16` Harden release artifacts and package graph for external consumers
+- `#17` Add direct SDK ergonomics for local tool consumers
+- `#18` Add workflow-control and bounded rationale container examples
+- `#19` Document vendored-contract consumer validation and refresh expectations
+- `#20` Align public adoption docs for external tools and contract consumers
 
-Goal:
-document how Orion and StarConsole should consume OpenSpec and MCP Secure Context Sharing without
-overclaiming provider or orchestration standardization.
+Tracking rule:
 
-Acceptance criteria:
+- public GitHub issues stay sanitized and outcome-oriented
+- downstream repo-specific implementation detail remains in the consumer repos
+- repo-local sprint docs mirror the public issue tree exactly
 
-- repo docs include an Orion/StarConsole adoption guide
-- the guide states that OpenSpec is not a universal provider adapter layer
+## Recently Completed
 
-### 2. Clarify runtime-interface descriptor examples
-
-Goal:
-make `@openspec/runtime-interfaces` easier to apply to capability runtimes and workflow consumers.
-
-Acceptance criteria:
-
-- docs explain how `ReasoningRuntimeAdapter`, `DiscoveryWorkflowAdapter`, `GraphMemoryProvider`, and
-  `RuntimeInterfaceDescriptor` apply to Orion and StarConsole style consumers
-
-### 3. Add reasoning exchange examples and conformance guidance
-
-Goal:
-clarify how `ReasoningTask`, `ReasoningResult`, and `ReasoningWorkflowContract` should be used for
-portable exchange without implying scheduler standardization.
-
-Acceptance criteria:
-
-- docs describe Orion as an example reasoning-profile consumer
-- docs keep scheduling and runtime policy out of OpenSpec scope
-
-### 4. Clarify MCP projection guidance
-
-Goal:
-document MCP projection as an interoperability layer without suggesting that MCP replaces provider
-orchestration or backend normalization.
-
-Acceptance criteria:
-
-- docs explicitly separate MCP projection from provider-standardization claims
+- `#11` Publish Orion and StarConsole adoption guidance
+- `#12` Clarify runtime-interface descriptor examples for Orion and StarConsole
+- `#13` Add reasoning exchange guidance for Orion-style consumers
+- `#14` Clarify MCP projection guidance without provider-standardization claims

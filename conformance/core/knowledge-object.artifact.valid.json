@@ -1,0 +1,31 @@
+{
+  "schema": "mcp-secure-context.container.v0.1",
+  "containerType": "knowledge_object",
+  "id": "artifact-summary-1",
+  "version": "0.1.0",
+  "payload": {
+    "objectId": "artifact-summary-1",
+    "kind": "artifact_summary",
+    "title": "Draft artifact summary",
+    "summary": "This object summarizes the current draft and its supporting references.",
+    "claims": ["The draft is complete enough for bounded review."],
+    "sourceRefs": ["source://brief-1"],
+    "artifactRefs": ["artifact://draft-1"],
+    "reportRefs": ["report://review-1"],
+    "verificationRefs": ["verification://review-1"],
+    "derivedFromRefs": ["artifact://outline-1"],
+    "version": "v1",
+    "freshness": "current"
+  },
+  "policy": {
+    "audience": ["tool", "agent"],
+    "allowedActions": ["read"],
+    "sensitivity": "internal"
+  },
+  "provenance": {
+    "createdAt": "2026-04-17T00:00:00.000Z",
+    "createdBy": "agent://reviewer",
+    "sourceRefs": ["artifact://draft-1"],
+    "derivation": "Bounded artifact handoff summary"
+  }
+}

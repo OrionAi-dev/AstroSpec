@@ -115,12 +115,12 @@ importers:
 
   packages/mcp-secure-context-cli:
     dependencies:
-      '@mcp-secure-context/extensions-openspec':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-extensions-openspec
       '@mcp-secure-context/openspec':
         specifier: workspace:*
         version: link:../mcp-secure-context-openspec
+      '@openspec/kit':
+        specifier: workspace:*
+        version: link:../openspec-kit
       '@openspec/retrieval-profile':
         specifier: workspace:*
         version: link:../openspec-retrieval-profile
@@ -146,12 +146,9 @@ importers:
 
   packages/mcp-secure-context-extensions-openspec:
     dependencies:
-      '@openspec/agent-contracts':
+      '@openspec/kit':
         specifier: workspace:*
-        version: link:../openspec-agent-contracts
-      '@openspec/retrieval-profile':
-        specifier: workspace:*
-        version: link:../openspec-retrieval-profile
+        version: link:../openspec-kit
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -184,16 +181,28 @@ importers:
 
   packages/mcp-secure-context-openspec:
     dependencies:
+      '@mcp-secure-context/core':
+        specifier: workspace:*
+        version: link:../mcp-secure-context-core
       '@openspec/runtime':
         specifier: workspace:*
         version: link:../openspec-runtime
       '@openspec/schema':
         specifier: workspace:*
         version: link:../openspec-schema
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
     devDependencies:
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.2)
+      tsx:
+        specifier: ^4.20.4
+        version: 4.21.0
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
@@ -310,12 +319,15 @@ importers:
 
   packages/openspec-kit:
     dependencies:
-      '@mcp-secure-context/extensions-openspec':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-extensions-openspec
       '@mcp-secure-context/sdk-typescript':
         specifier: workspace:*
         version: link:../mcp-secure-context-sdk-typescript
+      '@openspec/agent-contracts':
+        specifier: workspace:*
+        version: link:../openspec-agent-contracts
+      '@openspec/retrieval-profile':
+        specifier: workspace:*
+        version: link:../openspec-retrieval-profile
     devDependencies:
       tsup:
         specifier: ^8.5.0
@@ -431,10 +443,6 @@ importers:
         version: 5.9.2
 
   packages/openspec-schema:
-    dependencies:
-      '@mcp-secure-context/core':
-        specifier: workspace:*
-        version: link:../mcp-secure-context-core
     devDependencies:
       tsup:
         specifier: ^8.5.0

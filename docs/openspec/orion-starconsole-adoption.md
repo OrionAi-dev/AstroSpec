@@ -44,6 +44,8 @@ Recommended usage:
 
 - use bounded containers for least-privilege handoff and portable context exchange
 - use OpenSpec verification and provenance metadata for externalized reasoning or verifier artifacts
+- use the direct SDK lane for local export or handoff helpers
+- treat packed or published release artifacts as the contract for external consumers
 - keep StarConsole's workflow model, checkpoints, approvals, and tool policy StarConsole-owned
 
 Do not use OpenSpec as:
@@ -64,3 +66,11 @@ It is not:
 
 The shared structured-model adapter seam should remain implementation-owned by Orion and consumed by
 StarConsole where useful.
+
+## Consumption Modes
+
+The preferred public contract is the published package lane.
+
+- external tool consumers should use the published or packed package artifacts directly
+- vendored-contract consumers may pin exact release artifacts downstream for reproducibility
+- both consumption modes should validate against the same packaged release behavior

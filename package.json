@@ -31,8 +31,9 @@
     "check:public-boundaries": "node tools/check-public-boundaries.mjs",
     "check:deep-imports": "node tools/check-deep-imports.mjs",
     "check:breaking-gate": "node tools/check-breaking-change-gate.mjs",
+    "check:secure-context-artifacts": "node tools/check-secure-context-artifacts.mjs",
     "verify:contracts": "node tools/run-package-check.mjs @openspec/agent-contracts && pnpm check:starconsole-contract-drift",
-    "verify:adoption": "pnpm check:duplicate-artifacts && pnpm check:public-boundaries && pnpm check:deep-imports && pnpm check:mcp-parity && pnpm check:retrieval-profile && pnpm check:reasoning-profile && pnpm check:graph-memory && pnpm check:starburst-profile && pnpm check:runtime-interfaces && pnpm check:discovery-bundle && pnpm verify:contracts && pnpm smoke:external:mcp-default-fallback"
+    "verify:adoption": "pnpm check:duplicate-artifacts && pnpm check:public-boundaries && pnpm check:deep-imports && pnpm check:mcp-parity && pnpm check:retrieval-profile && pnpm check:reasoning-profile && pnpm check:graph-memory && pnpm check:starburst-profile && pnpm check:runtime-interfaces && pnpm check:discovery-bundle && pnpm check:secure-context-artifacts && pnpm verify:contracts && pnpm smoke:external:mcp-default-fallback"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.6",
