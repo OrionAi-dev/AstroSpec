@@ -2,7 +2,7 @@
 
 ## Active Chapter
 
-### `#21` Stage the first public release plan for secure-context packages
+### `#22` Run public release verification in CI
 
 Status:
 
@@ -10,10 +10,9 @@ Status:
 
 Intended result:
 
-- fix the broken Changesets setup so the release workflow can compute a real version plan
-- stage the missing release metadata for the recent secure-context SDK and workflow-profile hardening
-- keep the public release docs explicit about the first contract-critical package set and release
-  prerequisites
+- run `pnpm release:verify` in normal CI on pull requests and `main`
+- catch publish-surface regressions before they reach the release workflow
+- keep release docs explicit that CI and the release workflow enforce the same public release lane
 
 Tracking rule:
 
@@ -23,6 +22,7 @@ Tracking rule:
 
 ## Recently Completed
 
+- `#21` Stage the first public release plan for secure-context packages
 - `#15` Cross-repo secure context package hardening and public tracking
 - `#16` Harden release artifacts and package graph for external consumers
 - `#17` Add direct SDK ergonomics for local tool consumers

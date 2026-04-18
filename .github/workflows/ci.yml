@@ -44,6 +44,9 @@ jobs:
       - name: Run tests
         run: pnpm test
 
+      - name: Verify public release lane
+        run: pnpm release:verify
+
       - name: Check schema drift (docs vs canonical)
         run: pnpm check:schema-drift
 

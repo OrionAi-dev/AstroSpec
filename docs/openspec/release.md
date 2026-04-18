@@ -18,7 +18,8 @@ OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions
 2. **Push the branch** and open a PR. The release workflow on `main` will manage version PRs and publishing after merge.
 3. **Merge the PR** with the changeset intact.
 4. On `main`, GitHub Actions will:
-   - run `pnpm release:verify`
+   - run the normal CI lane, including `pnpm release:verify`
+   - rerun `pnpm release:verify` in the release workflow before versioning or publishing
    - open or update a release PR if unpublished changesets exist
    - publish packages to npm when the release PR is merged
 5. **Review the release PR carefully**. It is the point where version bumps, changelog notes, and internal dependency rewrites become canonical.
@@ -68,6 +69,7 @@ on first.
 ## Required CI and secrets
 
 - `.github/workflows/release.yml` is the canonical release workflow.
+- `.github/workflows/ci.yml` also runs `pnpm release:verify` so public-package regressions are caught on pull requests before the release workflow runs.
 - `NPM_TOKEN` must be configured in GitHub repository secrets before public publishing is attempted.
 - `GITHUB_TOKEN` is used by the workflow to create release PRs, tags, and GitHub releases.
 - `pnpm release:preflight` validates npm auth and reports whether the OpenSpec packages are unpublished or already versioned on npm.
