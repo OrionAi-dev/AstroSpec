@@ -2,26 +2,11 @@
 
 ## Active Chapter
 
-### `#22` Run public release verification in CI
-
-Status:
-
-- open
-
-Intended result:
-
-- run `pnpm release:verify` in normal CI on pull requests and `main`
-- catch publish-surface regressions before they reach the release workflow
-- keep release docs explicit that CI and the release workflow enforce the same public release lane
-
-Tracking rule:
-
-- public GitHub issues stay sanitized and outcome-oriented
-- downstream repo-specific implementation detail remains in the consumer repos
-- future repo-local sprint docs should mirror the public issue tree exactly
+No active repo-local issue chapter is open right now.
 
 ## Recently Completed
 
+- `#22` Run public release verification in CI
 - `#21` Stage the first public release plan for secure-context packages
 - `#15` Cross-repo secure context package hardening and public tracking
 - `#16` Harden release artifacts and package graph for external consumers
