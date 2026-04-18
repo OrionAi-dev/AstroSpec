@@ -35,9 +35,10 @@ Use this for any PR that changes published package behavior:
 
 1. Add a changeset with `pnpm changeset`.
 2. Make sure `pnpm release:verify` passes locally.
-3. Merge the PR normally. Do not hand-edit package versions.
-4. The GitHub release workflow will open or update the release PR on `main`.
-5. Merging the release PR is the only supported path for public package publication.
+3. Check `pnpm release:status` so the staged release plan is readable before merge.
+4. Merge the PR normally. Do not hand-edit package versions.
+5. The GitHub release workflow will open or update the release PR on `main`.
+6. Merging the release PR is the only supported path for public package publication.
 
 ### Docs regeneration checklist
 Use this when updating docs or APIs:

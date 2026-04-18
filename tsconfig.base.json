@@ -30,7 +30,8 @@
       "@mcp-secure-context/openspec": ["packages/mcp-secure-context-openspec/src/index.ts"],
       "@mcp-secure-context/mcp-adapter": ["packages/mcp-secure-context-mcp-adapter/src/index.ts"],
       "@mcp-secure-context/sdk-typescript": ["packages/mcp-secure-context-sdk-typescript/src/index.ts"],
-      "@mcp-secure-context/cli": ["packages/mcp-secure-context-cli/src/cli.ts"]
+      "@mcp-secure-context/cli": ["packages/mcp-secure-context-cli/src/main.ts"],
+      "@mcp-secure-context/cli/main": ["packages/mcp-secure-context-cli/src/main.ts"]
     }
   },
   "exclude": [

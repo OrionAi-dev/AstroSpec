@@ -11,7 +11,7 @@
     "changeset": "changeset",
     "release:status": "changeset status",
     "version-packages": "changeset version",
-    "release:verify": "pnpm build && pnpm test && pnpm check:schema-drift && pnpm verify:adoption",
+    "release:verify": "node tools/check-public-release-packages.mjs && pnpm check:schema-drift && pnpm verify:adoption",
     "release:preflight": "node tools/check-release-preflight.mjs",
     "release:publish": "pnpm release:preflight && changeset publish",
     "docs": "tools/gen-docs.sh",

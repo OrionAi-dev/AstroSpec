@@ -2,8 +2,8 @@
 
 ## Required For Public Releases
 
-1. relevant package builds pass
-2. tests pass
+1. relevant public package builds pass
+2. tests for the public release lane pass
 3. conformance fixtures are up to date
 4. schema drift checks pass
 5. docs and examples match the shipped contract surface
@@ -14,6 +14,8 @@
 1. Public releases are cut from `main` only.
 2. The canonical release mechanism is the GitHub Actions workflow in `.github/workflows/release.yml`.
 3. Versioning must be driven by Changesets, not manual `package.json` edits.
+4. Release verification should validate the public package lane without being blocked by unrelated
+   private experimental workspaces.
 
 ## Required Inputs
 

@@ -2,7 +2,18 @@
 
 ## Active Chapter
 
-No active public chapter is open right now.
+### `#21` Stage the first public release plan for secure-context packages
+
+Status:
+
+- open
+
+Intended result:
+
+- fix the broken Changesets setup so the release workflow can compute a real version plan
+- stage the missing release metadata for the recent secure-context SDK and workflow-profile hardening
+- keep the public release docs explicit about the first contract-critical package set and release
+  prerequisites
 
 Tracking rule:
 

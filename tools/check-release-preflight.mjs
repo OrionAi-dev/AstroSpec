@@ -29,13 +29,15 @@ function readPublicPackageManifests() {
   const rootPackageManifests = fs
     .readdirSync(packagesDir, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && (entry.name.startsWith('openspec-') || entry.name.startsWith('mcp-secure-context-')))
-    .map((entry) => path.join(packagesDir, entry.name, 'package.json'));
+    .map((entry) => path.join(packagesDir, entry.name, 'package.json'))
+    .filter((manifestPath) => fs.existsSync(manifestPath));
 
   const integrationPackageManifests = fs.existsSync(integrationsDir)
     ? fs
         .readdirSync(integrationsDir, { withFileTypes: true })
         .filter((entry) => entry.isDirectory())
         .map((entry) => path.join(integrationsDir, entry.name, 'package.json'))
+        .filter((manifestPath) => fs.existsSync(manifestPath))
     : [];
 
   return [...rootPackageManifests, ...integrationPackageManifests]

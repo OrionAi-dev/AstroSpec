@@ -23,6 +23,19 @@ OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions
    - publish packages to npm when the release PR is merged
 5. **Review the release PR carefully**. It is the point where version bumps, changelog notes, and internal dependency rewrites become canonical.
 
+## First public release set
+
+The first public release should treat this package lane as the canonical minimum:
+
+- `@mcp-secure-context/core`
+- `@mcp-secure-context/openspec`
+- `@mcp-secure-context/mcp-adapter`
+- `@mcp-secure-context/sdk-typescript`
+
+Additional OpenSpec packages may be published in the same release window, but the secure-context
+lane above is the contract-critical set that external tools and vendored downstream consumers rely
+on first.
+
 ## Local commands
 
 - Create a changeset:
@@ -41,6 +54,12 @@ OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions
   ```bash
   pnpm release:verify
   ```
+  This validates the public release lane rather than every private experimental workspace in the
+  repo.
+- Inspect staged versioning changes:
+  ```bash
+  pnpm release:status
+  ```
 - Run publish preflight:
   ```bash
   pnpm release:preflight
@@ -52,6 +71,8 @@ OpenSpec releases are managed with **Changesets** and a dedicated GitHub Actions
 - `NPM_TOKEN` must be configured in GitHub repository secrets before public publishing is attempted.
 - `GITHUB_TOKEN` is used by the workflow to create release PRs, tags, and GitHub releases.
 - `pnpm release:preflight` validates npm auth and reports whether the OpenSpec packages are unpublished or already versioned on npm.
+- `.changeset/config.json` and at least one reviewed changeset entry must exist before the workflow
+  can compute a release plan.
 
 ## Release expectations
 

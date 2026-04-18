@@ -7,12 +7,25 @@
   "bin": {
     "mcp-secure-context": "dist/cli.js"
   },
-  "main": "dist/cli.js",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
+    },
+    "./main": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/cli.ts --dts --format esm",
+    "build": "tsup src/cli.ts src/main.ts --dts --format esm",
     "typecheck": "pnpm exec tsc -p tsconfig.json --noEmit",
     "test": "node --test"
   },

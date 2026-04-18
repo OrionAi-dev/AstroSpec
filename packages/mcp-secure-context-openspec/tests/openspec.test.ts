@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
   assertContextContainer,
   digestContextContainer,
+  type ContextContainer,
   validateContextContainer,
 } from "../src/index.js";
 
@@ -26,7 +27,7 @@ const container = {
     createdAt: "2026-02-28T00:00:00.000Z",
     createdBy: "agent://planner",
   },
-};
+} satisfies ContextContainer;
 
 test("context container validation succeeds for a valid container", () => {
   const result = validateContextContainer(container);
